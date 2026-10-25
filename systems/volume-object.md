@@ -22,7 +22,7 @@ tiny name, top left                    whisper, top right
               reprint field (optional)
 ```
 
-- FOV ≤ 28. Camera `z` starts around 8–10. If any edge of the mesh is cropped, increase `z`.
+- FOV 30–34. Camera `z` ≈ 5.2–6.2 on a ~1.7-wide mesh. `z` 8–10 paints empty cream. Fail. If the mesh is cropped, pull back a little, do not jump to 9+.
 - Canvas: `#stage { inset:0; width:100%; height:100%; display:block }`. `setSize(innerWidth, innerHeight)` must update CSS. A 2× drawing buffer with unlocked CSS parks the object on the right edge (cropped FOLD). Fail.
 - HUD: top corners + slider **below**. Input never sits on the mesh.
 - No visible stage disk. Soft contact shadow only.
@@ -38,11 +38,11 @@ Authored surface: a canvas the product wrote, a shader field, or vertices that c
 ```js
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.shadowMap.enabled = true;
-scene.background = new THREE.Color(0xf6f3ec); // or ink, if the loop is night
-camera = new THREE.PerspectiveCamera(26, aspect, 0.1, 40);
-camera.position.set(0, 0.08, 9.2);
-// Hemisphere + one key (cast shadow) + a cool fill
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+scene.background = new THREE.Color(0xf6f3ec); // or 0x08090d at night
+camera = new THREE.PerspectiveCamera(32, aspect, 0.1, 40);
+camera.position.set(0, 0.12, 5.5);
+// key + cool fill + a rim from behind. A flat unlit slab is VEIL-fail.
 ```
 
 ## Required interaction
