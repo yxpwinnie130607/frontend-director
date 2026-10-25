@@ -219,8 +219,16 @@ img,svg{display:block;max-width:100%}
 
 /* ---------- 响应式 ---------- */
 @media (max-width:900px){
-  .band-body{grid-template-columns:1fr;gap:var(--sp-2);align-items:start}
-  .nums{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px}
+  /* 窄屏不再撑满视口：单列堆叠后内容本来就变高，再压 78vh 只会得到
+     上半屏一大片纯黑 + 底部一行数字，band 读起来像空了一块。 */
+  .band{min-height:auto;padding-bottom:var(--sp-2)}
+  .band-body{grid-template-columns:1fr;gap:var(--sp-2);align-items:start;padding-top:var(--sp-1)}
+  .band-quote{font-size:clamp(26px,4.6vw,34px)}
+  /* 四个数字必须留在一行 —— 掉成 2×2 会读成"两行卡片"，
+     而且把 band 撑高一倍，band 就不再是一条带了。 */
+  .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0 clamp(10px,2vw,20px)}
+  .num .v{font-size:clamp(24px,5.6vw,40px)}
+  .num .k{font-size:9.5px;letter-spacing:.08em;white-space:normal}
   .why{grid-template-columns:1fr;row-gap:var(--sp-1)}
   .why .cell{border-top:1px solid var(--line);padding-top:var(--sp-1)}
   .why .cell:first-child{padding-top:0}

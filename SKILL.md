@@ -201,6 +201,8 @@ One action that belongs to this page. Not a particle field plus a cursor plus a 
 
 It is the content's physics. Kill it and the page goes ordinary. One per page.
 
+**Before inventing one, open [library/08-动效库](library/08-动效库/README.md).** Every entry there is an action reverse-engineered from a live site: original timing numbers, the shader or tween verbatim, a single-file reproduction that runs on open, and the failure conditions. Take the closest one and swap the assets — do not re-derive a wipe from first principles. If nothing in the library fits the content, then invent, and add what you built back as the next entry.
+
 Directions that work: a material wipe tied to the job, a form that becomes the idea, type that machines itself, a scale jump of one word. Recipes: [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md).
 
 Entry budget, then hand off to that loop: air 0.00–0.20s, title 0.20–0.45s, dek 0.45–0.90s, chrome 0.90–1.40s, signature 1.40s+. Total **≤ 1.8s**.
