@@ -1,52 +1,57 @@
 ---
 name: frontend-director
-description: Create beautiful websites and interfaces using a coding agent's frontend skills. Confirms purpose, length, content, and density, then shows three interactive first-viewport directions. After the user picks one, builds that system only. Use when building landing pages, portfolios, brand sites, or marketing sites.
+description: Create highly interactive websites using a coding agent's frontend skills. Uses Recent (recent.design) websites as the interaction templates. Confirms purpose, length, content, and density, then shows three live first-viewport directions. After the user picks one, builds that living system only. Use when building landing pages, product sites, portfolios, or marketing sites.
 ---
 
 # Frontend Director
 
-A coding-agent skill for websites. The model already knows CSS. Without a **loaded visual system**, it emits quieter slop: white page, centered headline, one tinted word, a pill CTA, a card. That is how 「拾贝」failed. This skill exists so that cannot happen again.
+The ceiling is **Recent websites** (https://recent.design, formerly Godly). Not their colors. Their law: **the page is a machine you can use**. Pointer, scroll, and type change the room. A still poster with nice type is the same as no skill.
 
-**Zara's frontend-slides works because it asks four things, shows three directions, then builds one.** Same here. Confirm the brief. Preview three interactive first viewports. Build only the one they pick. That is how you stop wasting tokens and stop shipping the average page.
+Displace on Recent is the model: the homepage *is* a desktop you open, type in, drag. Offer Studio is a world you enter. Linear puts a working product on stage. 素笺-as-a-letter, a feature list with rules, a dead draft list, a fake window of gray bars: those fail this skill.
+
+Visual can be quiet or loud. **Still is not allowed.** Quiet paper that writes back when you type is in. Quiet paper you can only read is out.
+
+**Confirm the brief. Preview three live first viewports. Build only the one they pick.**
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
 Read supporting files only when the phase says so:
 
-- [archetypes.md](archetypes.md) — index. Pick one id.
-- [systems/](systems/) — the recipe. Read **only** the chosen file, in full.
-- [motion.md](motion.md) — after the system is chosen, if the system calls for motion.
+- [archetypes.md](archetypes.md) — index. Pick three live ids.
+- [systems/](systems/) — the recipe. Read **only** the shortlisted files, in full.
+- [motion.md](motion.md) — the live engine. Read for every preview and every build.
 - [forbidden.md](forbidden.md) — before shipping.
 - [verdicts.md](verdicts.md) — if the page kind is unclear.
-- [ceiling.md](ceiling.md) — optional, after the system is loaded.
+- [ceiling.md](ceiling.md) — optional, after a system is loaded.
 
 ---
 
 ## Design aesthetics
 
-You converge toward generic, on-distribution output. Force distinctive work.
+You converge toward static landings. Force a living page.
 
-- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. Never leave the browser default. The system file names the pair. Use it.
-- **Color:** Commit. Copy the system's `:root` hex values. Dominant ground + one sharp accent. Do not invent a second palette mid-page. Do not tint a single word in the headline and call it design.
-- **Atmosphere:** The page has a room (paper, night, split, field). A white void with type on it is not a room.
-- **Motion:** One entrance, or physics on the primary object. Prefer CSS. See [motion.md](motion.md). Honor `prefers-reduced-motion`.
-- **Interaction:** A product or consumer-tool page that you cannot *use* in the first viewport has failed. The object is the design.
+- **Alive first:** before fonts, decide the loop. What does pointer do? What does scroll do? What does type do? If you cannot answer all three, you are not ready to mark up.
+- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. The system file names the pair. Use it.
+- **Color:** Copy the system's `:root`. Dominant ground + one sharp accent. Do not tint a single headline word.
+- **Atmosphere:** A room (paper, night, stage). A white void with type is not a room.
+- **Motion:** Continuous, not a 400ms fade-in. Pointer lerps, scroll drives properties, output writes on. See [motion.md](motion.md). Honor `prefers-reduced-motion` by keeping the *interaction* and dropping the decoration.
+- **Product:** If the brief is a tool (文案, write, generate, clip, edit), the first viewport *is* that tool running. A screenshot of the tool is a fail.
 
-Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, glass on every surface, fade-up on every block, Space Grotesk as the new Inter.
+Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, fake browser chrome with gray bars, dead lists, Space Grotesk as the new Inter.
 
 ---
 
 ## Hard rules (non-negotiable)
 
-1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three first-viewport previews. Phase 3 is the site.
-2. **Load a system before any markup.** If you have not read `systems/<id>.md`, you are not designing. You are guessing.
-3. **Copy the system's `:root` and font `<link>`s.** Do not "interpret" them into Tailwind defaults.
-4. **First viewport follows the system's skeleton.** If the skeleton is split, do not center. If the skeleton is an object, the object is on screen without scrolling.
-5. **Product / consumer / ritual tools must be interactive in the first viewport.** Paste, type, drop, toggle, or add — and the object responds. A screenshot of a product is a fail for these kinds. A muted card under a headline is a fail.
+1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three live first-viewport previews. Phase 3 is the site.
+2. **Every first viewport must be alive.** On first paint, without scrolling to another section, the user can do at least two of: move the pointer and the room follows; scroll and a property (clip, scale, x, progress) changes; type/click and the page writes or spawns. A screenshot that later "has JS" is a fail.
+3. **Load a system and [motion.md](motion.md) before any markup.** If you have not read them, you are guessing.
+4. **Copy the system's `:root`, font `<link>`s, and the live engine.** Do not "interpret" them into a static Tailwind landing.
+5. **Product / consumer / writing / generate tools must be usable in the first viewport.** Type, paste, generate, add. The object responds *and* moves. A letter about the product, a feature table, or a fake window is a fail.
 6. **One system per page.** Do not blend night Linear with editorial serif with a teal word.
-7. **"Quiet" is not "generic SaaS."** Quiet means one material, one type, one object. It still has a room and a working thing.
-8. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
-9. **No em-dash (`—`) in visible copy.**
+7. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
+8. **No em-dash (`—`) in visible copy.**
+9. **Do not ship a still page and call it "restrained."** Restrained means one material. It still moves.
 
 ---
 
@@ -54,15 +59,15 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 - **New page** → Phase 1.
 - **Redesign** → audit tokens and IA first ([verdicts.md](verdicts.md) redesign row), then Phase 1.
-- **Enhance existing** → do not change the system mid-flight unless asked. Fix density, type, interaction.
+- **Enhance existing** → do not change the system mid-flight unless asked. Make the existing page *alive* first.
 
 ---
 
 ## Phase 1 — Confirm the brief (four questions)
 
-**Auto-analyze first.** Before asking anything, write 2–4 sentences of your read: what this site is, who it is for, what the first-viewport object might be, and whether it is a marketing page or the product itself. Then **ask all four together**, plus **1–3 follow-up questions** that pin down what they actually mean (not generic taste questions). Use a structured-question UI if the environment has one. Otherwise one compact message, numbered.
+**Auto-analyze first.** Write 2–4 sentences: what this site is, who it is for, what the user *does* in the first viewport (type, scroll, drag, generate), and whether it is a marketing page or the product itself. Then **ask all four together**, plus **1–3 follow-ups** that pin this site. Use a structured-question UI if the environment has one.
 
-Follow-ups are for this brief only. Examples: "Is 拾贝 the product they use, or a landing that sells it?" "One screen they paste into, or a 5-section story?" "Quiet object, or a denser reading page?" Do not ask ten questions. Do not ask about fonts or colors here.
+Follow-ups are for this brief only. Examples: "Is this the writing tool, or a page that sells it?" "Should I be able to generate a line of copy in the first screen?" Do not ask about fonts or colors.
 
 Do not skip this unless they said "直接做 / just build / no questions."
 
@@ -70,11 +75,11 @@ Do not skip this unless they said "直接做 / just build / no questions."
 What is this site for?
 
 - Product marketing / landing
+- The product itself (usable tool)
 - Personal or applicant portfolio
 - Brand / studio / campaign
 - Commerce / object story
 - Editorial / essay
-- Community / education
 
 **Question 2 — Length** (header: "Length")  
 How much site?
@@ -94,92 +99,92 @@ Do they have copy and assets?
 **Question 4 — Density** (header: "Density")  
 How should it feel?
 
-- Low / cinematic — one idea per viewport, air, chapter changes
-- High / reading-first — more self-contained, denser, still designed
+- Low / cinematic — one idea per viewport, but the idea *moves*
+- High / reading-first — denser, still interactive
 
-Prefill your inferred answers in the question labels so they can tap to confirm. Example: *"Purpose (reading this as: product marketing for a weekly clip tray)."*
+Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you use in the first screen)."*
 
 If they pick "All content ready," ask them to paste it in the same turn.  
-If they send images, scan them before Phase 2; usable images shape the outline.
+If they send images, scan them before Phase 2.
 
-Remember density. It changes type scale, section count, and whether the first viewport is a room or a packed stage.
-
-Clip / Sunday / 摘录 / 稍后再看 briefs default Purpose to product marketing and should later preview `ritual-object` as one of the three directions.
+**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself (or product marketing that *is* the product). One of the three directions must be `live-machine`.
 
 ---
 
-## Phase 2 — Three interactive directions (not three sites)
+## Phase 2 — Three live directions (not three posters)
 
-Show, don't tell. Most people cannot name a vibe. They can pick a room they can click.
+Show, don't tell. People pick a room they can *use*.
 
-1. Open [archetypes.md](archetypes.md) only. From Purpose + Density, shortlist **three different** system ids. Typical mix: one safe, one bold, one wildcard that fits this brief. Clip/journal briefs must include `ritual-object`.
-2. Read **only those three** `systems/<id>.md` files. Do not read the others. Do not read [ceiling.md](ceiling.md) yet.
-3. Build **three first-viewport previews** — self-contained HTML (or three tiny routes). Each preview:
-   - Uses that system's fonts, `:root`, and skeleton
-   - Is interactive (the required interaction works)
-   - Uses the user's real product name and copy, not "Style A"
-   - Is one viewport tall. No full landing, no extra sections
-4. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three.
-5. In the chat, name them for the user only (not on the page): Direction A: `ritual-object` / B: … / C: …
+1. Open [archetypes.md](archetypes.md). For product / tool / virtual-product briefs, shortlist **`live-machine` + `kinetic-scroll` + `pointer-world`**. For brand/studio: swap one for `one-world`. For clip/Sunday/摘录: swap one for `ritual-object` (and keep `live-machine`). Do not shortlist three still systems.
+2. If you can reach the web, open https://recent.design and filter **Web**. Open 3 website posts (not posters, not 3D stills). For each, write one line: what you can *do*. Map those three verbs onto the three systems. Do not copy their skin.
+3. Read **only those three** `systems/<id>.md` files and [motion.md](motion.md).
+4. Build **three first-viewport previews** — self-contained HTML. Each preview:
+   - Uses that system's fonts, `:root`, skeleton, and live loop
+   - Is interactive *now* (pointer, scroll, or type works)
+   - Uses the user's real product name and copy
+   - Is one viewport tall. No extra marketing sections
+5. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. **Click, move, type in each before you show them.** If a preview is still, rebuild it.
+6. In the chat, name them for the user only: Direction A: `live-machine` / B: `kinetic-scroll` / C: `pointer-world`
 
-**Preview authenticity (non-negotiable):**
+**Preview authenticity:**
 
 - Looks like the real first screen of their site
-- No "preview", "option A", "safe", "bold", file names, or system ids on the page
+- No "preview", "option A", file names, or system ids on the page
 - No tinted headline word, no em-dash
+- No fake browser window of gray bars
 
-Ask (header: "Direction"): which one? A / B / C / mix (then ask what to mix).
+Ask (header: "Direction"): which one? A / B / C / mix.
 
-**Stop.** Do not generate the rest of the site. This is the token save.
+**Stop.** Do not generate the rest of the site.
 
 ---
 
 ## Phase 3 — Build only the one they picked
 
-Read `systems/<id>.md` again if you need the "rest of page" rules. Read [motion.md](motion.md) if that system calls for motion. Read [forbidden.md](forbidden.md) before you call it done.
+Read the chosen `systems/<id>.md` again. Read [motion.md](motion.md). Read [forbidden.md](forbidden.md) before you call it done.
 
-From the chosen file, take fonts, `:root`, first-viewport skeleton (you already have it), required interaction, and what the rest of the page may do.
+Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something* (hover wipe, scroll pin, add, generate). Do not invent a second system.
 
-Length from Phase 1 sets section count. Density sets type scale and air. Content from Phase 1 is the copy. Do not invent a second system.
-
-Default stack: one HTML file, or a single Next/React page, with CSS variables from the system. Interaction in a small client island.
+Default stack: one HTML file, or a single Next/React page, with CSS variables from the system. The live engine from [motion.md](motion.md) in a small script.
 
 **Every page must include:**
 
-- The system's fonts, loaded
-- The system's `:root`, intact
+- The system's fonts and `:root`
+- The live engine (pointer lerp + the system's required loop)
 - Semantic HTML, keyboardable primary action
-- The required interaction, working
-- `prefers-reduced-motion` fallback
+- The required interaction, working on first paint
+- `prefers-reduced-motion` fallback that keeps the interaction
 
 **Do not include:**
 
-- A marketing stack that the system did not ask for
+- A letter about the product instead of the product
+- Fake browser chrome / gray placeholder bars
+- Feature rows with a line under each claim
 - Lucide icons in rounded squares
 - Three-tier pricing as the visual climax
 - Fake "Sarah Chen, CEO" quotes
 
-Comments in CSS: mark `/* === SYSTEM TOKENS === */`, `/* === FIRST VIEWPORT === */`, `/* === INTERACTION === */`.
+Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.
 
 ---
 
 ## Phase 4 — Look
 
-Open the page. Click the primary object. Type or paste if the system requires it. Scroll. Narrow to a phone width.
+Open the page. Move the pointer across it. Scroll. Type or click the primary object. Narrow to a phone width.
 
 Then read [forbidden.md](forbidden.md). One hit is a fail.
 
 **Ship bar:**
 
 - [ ] Four questions confirmed; one of three directions picked
-- [ ] System id named; `systems/<id>.md` was read
-- [ ] Tokens and fonts are the system's, not defaults
-- [ ] First viewport matches the skeleton
-- [ ] Required interaction works in the first viewport (for product / ritual / consumer)
-- [ ] No forbidden pattern
-- [ ] Opened in a browser
+- [ ] System id named; `systems/<id>.md` and `motion.md` were read
+- [ ] Pointer, scroll, or type changes the first viewport *continuously*
+- [ ] If it is a tool, you can do the job in the first viewport
+- [ ] Tokens and fonts are the system's
+- [ ] No forbidden pattern (especially 素笺-still and SaaS-stack)
+- [ ] Opened in a browser and used, not only screenshotted
 - [ ] No tinted headline word, no em-dash
-- [ ] Mobile is an authored collapse, not a cramped stack of the desktop
+- [ ] Mobile keeps the loop; it is not a cramped stack of a dead desktop
 
 If a box cannot be ticked, the page is not done.
 
@@ -189,4 +194,4 @@ If a box cannot be ticked, the page is not done.
 
 - Not a slide engine. For decks, use a slides skill.
 - Not a request to restyle a product surface the user did not name.
-- Not permission to invent a fifteenth average system.
+- Not permission to ship a static editorial landing and call it taste.

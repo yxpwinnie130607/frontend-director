@@ -2,13 +2,23 @@
 
 If a first viewport could be swapped onto another company by changing three nouns, it is slop.
 
+## Specimen C — still product (this skill, 素笺)
+
+A writing tool sold as a static landing. Three cousins, all fail:
+
+- A letter ("你好，这是一封关于素笺的信") plus a fake window of gray bars and "上一张 / 下一张".
+- A beige type poster and four hairline feature rows (无账号 / 行距 / 导出 / 买断).
+- A black page, yellow "开始写一页" that does not write, and a dead draft list.
+
+You cannot type. Nothing follows the pointer. Scroll does not change a property. **This is the same as no skill.** If the brief is a tool, ship `live-machine`, not a letter.
+
 ## Specimen A — quiet slop (this skill, first version)
 
 A weekly-return clip product (「拾贝」) built with judgment and no recipe. White void. Centered Newsreader-like headline. **One word tinted teal** (沉底). Pill nav + pill CTA. A dead product card under "先看看它的三条规矩." An em-dash in the body. You cannot paste a link into the tray.
 
 This is worse than no skill: it is the SaaS average with better copy. **Any cousin fails.** Especially: tinted headline word, centered stack, tray you cannot use.
 
-If the brief is a clip / Sunday / 摘录 product, the system is `ritual-object`. Not `product-stage-day`.
+If the brief is a clip / Sunday / 摘录 product, preview `live-machine` and `ritual-object`. Not a still letter.
 
 ## Specimen B — loud slop
 
@@ -38,7 +48,9 @@ Hit any one of these and the page is not done.
 - Purple-to-blue gradient, indigo glow, or a blurred orb behind glass.
 - Gradient text on the words "AI," "Intelligence," or "Future."
 - "Now in beta" / "V0.6" / "Invite-only" eyebrows unless the brief is actually a launch.
-- Div-built fake dashboards, fake terminals, fake task lists.
+- Div-built fake dashboards, fake terminals, fake task lists, fake Mac windows of gray bars.
+- A letter about the product instead of the product.
+- Feature rows with a hairline under each claim.
 - "Scroll to explore" as decoration.
 
 ### Sections
@@ -61,10 +73,11 @@ Hit any one of these and the page is not done.
 
 ### Motion
 
+- A still first viewport. If pointer, scroll, and type do nothing, the page has failed.
 - Fade-up on every block, staggered 100ms, for no reason.
 - Infinite loops on informational cards.
 - Scroll hijack that does not change a chapter.
-- Custom cursors.
+- Custom cursors with nothing to do.
 
 ### Copy
 

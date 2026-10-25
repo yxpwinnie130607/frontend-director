@@ -1,19 +1,19 @@
 # Frontend Director
 
-Create beautiful websites and interfaces using a coding agent's frontend skills.
+Create highly interactive websites using a coding agent's frontend skills.
 
-Judgment without a recipe produces quieter slop. This skill ships **executable systems**: fonts, hex tokens, a first-viewport skeleton, and a working interaction. The agent picks one system and builds inside it — the same way [frontend-slides](https://github.com/zarazhangrui/frontend-slides) ships style presets instead of asking the model to "make it beautiful."
+The templates are **Recent websites** ([recent.design](https://recent.design), formerly Godly): pages you can use, not posters you read. This skill ships **live systems** — `live-machine`, `kinetic-scroll`, `pointer-world` — with fonts, tokens, a first-viewport skeleton, and a required pointer / scroll / type loop. A still landing with nice type is the same as no skill.
 
 Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
-1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**, plus a few follow-ups that pin down this site.
-2. Builds **three interactive first-viewport directions** (not three full sites).
-3. You pick one. Only then does it load that system's full recipe and build the site.
-4. The primary object works (paste, add, toggle, open). It opens the page and fails on a forbidden pattern.
+1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**.
+2. For a product / 文案 / generate brief, builds **three live first screens**: `live-machine`, `kinetic-scroll`, `pointer-world`.
+3. You pick one. Only then does it build the rest of that system.
+4. Pointer, scroll, or type must change the first viewport. A letter, a feature table, or a dead list fails.
 
-A clip / Sunday / 摘录 product always includes `ritual-object` as one of the three directions.
+A clip / Sunday / 摘录 product keeps `live-machine` and adds `ritual-object` as one of the three.
 
 ## Install
 
@@ -51,7 +51,7 @@ A personal portfolio for a designer who writes. Quiet.
 A studio site. One idea, taken all the way.
 ```
 
-The agent should confirm the four questions, then open three clickable first screens, then build only the one you pick.
+The agent should confirm the four questions, then open three *usable* first screens, then build only the one you pick.
 
 ## Files
 

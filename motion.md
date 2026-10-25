@@ -1,55 +1,105 @@
-# Motion — after a system is chosen
+# Motion — the live engine
 
-Match feeling to the system. Do not sprinkle fade-up on every block.
+Include this engine in every preview and every build. A page that only fades in on load has failed.
 
-| Feeling | Use | Avoid |
-|---|---|---|
-| Dramatic | One slow chapter change (1–1.4s), scale 0.96 → 1 | Per-card fade |
-| Playful | Spring on the primary object only | Bobbing everything |
-| Calm | 200–300ms opacity on the object you just used | Scroll hijack |
-| Editorial | Stagger 2–3 lines of the headline, then stop | Infinite loops |
+`prefers-reduced-motion: reduce` keeps the *job* (type, generate, add, open) and drops lerp / pin / custom cursor.
 
-## Allowed CSS
-
-```css
-:root {
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration: 0.6s;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: rise var(--duration) var(--ease-out-expo) forwards;
-}
-@keyframes rise {
-  to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; animation: none; }
-}
-```
-
-Animate only `transform` and `opacity`. Never `top`, `left`, `width`, `height`.
-
-## Interaction physics (primary object only)
+## 1. Pointer lerp (required unless kinetic-scroll is the only loop)
 
 ```js
-// Press: scale 0.98. Release: spring back.
-// Add-item: new node enters from y:16, opacity 0 → 1.
-// Do not attach this to every card on the page.
+let mx = 0.5, my = 0.5, cx = 0.5, cy = 0.5;
+window.addEventListener("pointermove", (e) => {
+  mx = e.clientX / innerWidth;
+  my = e.clientY / innerHeight;
+});
+(function tick() {
+  cx += (mx - cx) * 0.08;
+  cy += (my - cy) * 0.08;
+  document.documentElement.style.setProperty("--px", cx.toFixed(4));
+  document.documentElement.style.setProperty("--py", cy.toFixed(4));
+  requestAnimationFrame(tick);
+})();
 ```
 
-## Background rooms (only if the system asks)
-
 ```css
-.room-grid {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+.stage {
+  transform: translate3d(calc((var(--px) - 0.5) * 24px), calc((var(--py) - 0.5) * 16px), 0);
+}
+.spot {
+  background: radial-gradient(
+    420px circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
+    rgba(255,255,255,0.16),
+    transparent 55%
+  );
 }
 ```
 
-No particle canvas unless the system is `one-world` and the world needs it.
+## 2. Writer (required for generate / 文案 / write tools)
+
+```js
+function writeOut(el, text, ms = 12) {
+  el.textContent = "";
+  let i = 0;
+  const id = setInterval(() => {
+    el.textContent = text.slice(0, ++i);
+    if (i >= text.length) clearInterval(id);
+  }, ms);
+}
+```
+
+Never dump the full output in one frame. Never show gray bars instead of text.
+
+## 3. Scroll progress (required for kinetic-scroll)
+
+```js
+const pin = document.querySelector("[data-pin]");
+function onScroll() {
+  const r = pin.getBoundingClientRect();
+  const max = pin.offsetHeight - innerHeight;
+  const p = Math.min(1, Math.max(0, -r.top / max));
+  document.documentElement.style.setProperty("--progress", p.toFixed(4));
+}
+addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+```
+
+Bind 3 properties to `--progress`. Example:
+
+```css
+.word {
+  transform: scale(calc(1.15 - var(--progress) * 0.35));
+  clip-path: inset(0 0 calc(var(--progress) * 40%) 0);
+}
+.panel { transform: translateY(calc((1 - var(--progress)) * 40vh)); }
+```
+
+## 4. Magnetic control
+
+```js
+const btn = document.querySelector("[data-magnet]");
+btn.addEventListener("pointermove", (e) => {
+  const r = btn.getBoundingClientRect();
+  const x = e.clientX - (r.left + r.width / 2);
+  const y = e.clientY - (r.top + r.height / 2);
+  btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+});
+btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
+```
+
+## 5. Allowed vs fail
+
+| Use | Fail |
+|---|---|
+| One continuous loop (pointer or scroll) plus one job (type/generate/add) | Fade-up on every block |
+| Spring on the object you just used | Infinite loops on informational cards |
+| Chapter pin that changes 3 properties | "Scroll to explore" on a still hero |
+| Writer for output | Gray bars, fake window, dead list |
+
+Animate only `transform` and `opacity` (plus `clip-path` for kinetic-scroll). Never `top`, `left`, `width`, `height`.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .stage, .word, .panel, [data-magnet] { transform: none !important; }
+  .spot { display: none; }
+}
+```

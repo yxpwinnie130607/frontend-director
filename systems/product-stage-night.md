@@ -54,6 +54,8 @@ Split. Headline left or top. **The panel is a real UI**: sidebar + list + detail
 
 A static screenshot, a fake task list of `<div>`s you cannot add to, or a product card below the fold: fail.
 
+Also include the pointer lerp from [motion.md](../motion.md). New rows write on (writer), they do not pop in fully formed.
+
 ## Rest of page
 
 Three capabilities as sentences, not cards. Changelog as a list. No logo wall in the hero.

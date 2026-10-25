@@ -36,6 +36,7 @@ Build the room with CSS (radial burst, grid, or a single canvas). It is the only
 
 - Scroll or click enters the **door**: theme flips to `--door` and the work stage appears.
 - This is one chapter change. Implement it (scroll-linked or click). A static pretty hero with no door: fail.
+- Include pointer lerp from [motion.md](../motion.md) so the room follows the hand before the door.
 
 ## Rest of page
 

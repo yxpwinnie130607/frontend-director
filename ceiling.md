@@ -4,7 +4,17 @@ These were read on the live web, not from memory of "premium SaaS." Steal courag
 
 The working picker is [archetypes.md](archetypes.md) — fourteen directions, pick one. This file is the longer reading for those sites.
 
-The living overflow index is **Godly, now Recent**: https://recent.design (https://godly.website redirects here). It is a daily masonry of finished design — websites, interfaces, branding, motion, illustration, posters, print — not a template shop. Use it only as `recent-overflow` when the archetype table has no fit.
+The living ceiling is **Godly, now Recent**: https://recent.design (https://godly.website redirects here). Filter **Web** / open the Websites entries. Those sites are the templates for this skill: interactive desktops, scroll puppets, pointer worlds. Do not use the homepage's 3D stills and posters as website templates.
+
+---
+
+## Displace — https://displace.agency  (Recent: Websites, Interactive)
+
+**Kind:** agency site that is a machine.
+
+**What to steal:** the homepage *is* a desktop. Apps, notes, a terminal. You open, type, drag. The site does not explain the studio first.
+
+**Do not steal:** the Mac skin, the traffic lights, the wallpaper. Steal "the first screen is usable."
 
 ---
 
@@ -122,7 +132,7 @@ This is a curated feed of *objects*, not only full websites. Top filters: All / 
 
 When you need a fresh ceiling:
 
-1. Filter by the same *kind* as the brief. A product page looks at Websites + Interfaces. A brand studio looks at Branding + Websites. A portfolio may look at Websites or a single poster-strength image. Do not graze All and average the pretty ones.
-2. Open two pieces. For each, write: what they omitted, and which one layer they went hard on.
-3. The omission is the lesson. The decoration is not.
-4. Do not clone a card from the feed onto the page. Steal the courage (empty field, one object, type as architecture, product as hero). Leave the skin.
+1. Filter **Web**. Open website posts, not 3D stills, posters, or illustration.
+2. For each, write the loop: pointer / scroll / type / drag. That verb maps to `live-machine`, `kinetic-scroll`, or `pointer-world`.
+3. Steal the loop. Leave the skin (no torus, no flower, no Mac wallpaper).
+4. If the first viewport of your page cannot be used the way that Recent site can, rebuild.

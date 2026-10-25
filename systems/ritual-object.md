@@ -74,6 +74,8 @@ The room is paper. Not white `#fff`. Not a teal marketing site.
 
 If this loop does not work, the page has failed, even if the type is beautiful.
 
+Also include the pointer lerp and writer from [motion.md](../motion.md). New slips enter (y + opacity). The tray is not a still still-life.
+
 ## Rest of page
 
 One short rule list as running text, not three icon cards.  

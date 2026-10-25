@@ -6,13 +6,13 @@ Use this after the design read. Pick the row that matches the brief. The hard la
 
 **Audience:** buyers who already know the category. They need to feel the product, not be told it is "intelligent."
 
-**May go hard:** `product-state` first. Put a real (or honestly miniaturized) product in the first viewport, the way Linear and Amie do. Type can be large, but it is not the event. Layout can be wide and dark or light, but chrome stays thin.
+**May go hard:** `interaction` first. The page is a Recent website: you use the product in the first viewport (Displace / Linear), or scroll puppets the room, or the pointer is the light. Type can be large, but a still headline is not the event.
 
-**Must hold back:** invented illustration, bento-of-everything, three-tier pricing as the visual climax, logo walls inside the hero, motion that hides the product.
+**Must hold back:** invented illustration, bento-of-everything, three-tier pricing as the visual climax, logo walls inside the hero, a letter about the product, a fake window of gray bars.
 
-**Aesthetic:** quiet confidence. Specific headline. One accent at most. The page should still work if you turn motion off.
+**Aesthetic:** alive. Specific headline. One accent. Motion is the product of pointer / scroll / type, not a fade-in.
 
-**Wrong-hard:** a cinematic WebGL hero on top of a product that is a list and a text box. That is costume.
+**Wrong-hard:** a cinematic WebGL skin on top of a dead list. Costume. Also wrong: a beautiful still poster. That is the 素笺 fail.
 
 ## Brand / studio / campaign site
 
