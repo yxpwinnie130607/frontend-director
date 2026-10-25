@@ -40,6 +40,7 @@ Do not add a skybox PNG. Do not add a gradient CSS behind a transparent canvas. 
 ## Fail
 
 - Accidental cream: camera too far **or** `scene.background` unset **or** CSS `#fff` behind a WebGL clear **or** a tiny toy stick in a huge pale field (STRIKE). Empty cream around a crayon is not Augen haze. Augen haze has falloff that eats the object's edges **and** an object with presence.
+- Hard-cutout sticker: FogExp2 at 0.07 does nothing if the mesh is an opaque blot whose limb is a binary edge (SIGIL). The first frame must show the limb mixing into the ground. A maroon logo on flat gray-beige is INK's hard paper, not Augen.
 - A second background (CSS gradient + Three color).
 - Visible stage floor that reads as a disk.
 - Bloom on the whole frame. SSAO as decoration.

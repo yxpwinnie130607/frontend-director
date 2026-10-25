@@ -33,6 +33,9 @@ Has mass and readable type (better than STRIKE). Still fail if: (1) RoomEnvironm
 ### CHIME
 A smooth lathe pot on leftover cream. The profile never returns down the inner wall, so the well is closed and the inscribed line is invisible. A second `CircleGeometry` under the mesh reads as a **plate / stage-disk cousin**. After the event: cream becomes black, the rim wobbles, no word constellation. **Mass without a readable face is still KEPT. A closed pot is not a singing bowl. A plate under the object is a stage disk.** Fail.
 
+### SIGIL
+An irregular wax blot with a circular gold stamp. Idle type can read (SIGIL in the ring) and the dye can stay oxblood. Still fail: (1) the limb is a **hard cutout** on flat gray-beige, FogExp2 / fresnel comments or not, so it is a sticker, not Augen still-life; (2) no thickness in the first frame, a spilled-ink puddle with three drip toes; (3) after the event the air goes night and a star-ring appears, but the **body stays a black puddle** and the word stays printed on it. **A readable stamp on a hard-cutout blot is a sticker. Haze must eat the limb. A leftover black puddle under a ring of dots is not a dissolve.** Fail. Do not ship an ink-blot / paw-blob / logo sticker as wax.
+
 ## Composition law (hard)
 
 For object + control and material-transform first viewports:
@@ -68,6 +71,8 @@ Hit any one and the page is not done.
 - Background hex swap while the mesh stays the same (not a transition).
 - Dissolve that reads as two blobs or a cotton ball.
 - Closed lathe / pot that hides the inscribed face (CHIME).
+- Hard-cutout blot / ink-sticker with a circular stamp (SIGIL). Readable gold type does not save it.
+- Leftover black puddle under a star ring after the event (SIGIL).
 - A second disk under the mesh that reads as a plate (stage-disk cousin).
 - Camera `z` 8–10 on a ~1.7 mesh (empty cream).
 - Canvas CSS 2× viewport (object on the right edge).
@@ -85,4 +90,4 @@ Hit any one and the page is not done.
 
 Cover the logo. If you cannot tell what the company is, rewrite the first viewport.
 
-Does the first screenshot show a complete object with designed air and **readable marks**, or a cropped poster / a form / a vitamin / a crayon in cream / empty cream / milky plastic? If the latter, rebuild.
+Does the first screenshot show a complete object with designed air and **readable marks**, or a cropped poster / a form / a vitamin / a crayon in cream / empty cream / milky plastic / a hard-cutout sticker? If the latter, rebuild.

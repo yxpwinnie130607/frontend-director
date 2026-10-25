@@ -55,6 +55,7 @@ A white-void sheet + tick slider, even with correct composition, is **not** a co
 - Slider wrinkles a plane and stops (FOLD, even when the wad is good).
 - Background hex swap while the mesh stays the same (STRIKE).
 - Hex swap + a rim wobble with no readable field (CHIME).
+- Night hex + a star ring while the **body stays a black puddle** and the word stays printed on it (SIGIL). The leftover cutout must go. The field is the object.
 - `renderer.domElement.style.opacity` as the transition.
 - Clone Podium's blob, Astro Dither's hand, or Shopify's edition camera path.
 - Two climaxes stacked (dissolve **and** portal **and** wipe).
