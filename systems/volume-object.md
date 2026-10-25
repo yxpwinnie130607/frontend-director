@@ -31,6 +31,7 @@ tiny name, top left                    whisper, top right
 ## 质感
 
 Authored surface: a canvas the product wrote, a shader field, or vertices that crumple.  
+A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass needs **thickness**: a thin box, authored face, dark edges, rim light that catches.  
 `CapsuleGeometry` / smooth `SphereGeometry` / `BoxGeometry` + `material.color.lerp` is a vitamin. Fail.
 
 ## Renderer contract
