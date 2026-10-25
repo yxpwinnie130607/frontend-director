@@ -1,6 +1,16 @@
 # Forbidden zone
 
-If a first viewport could be swapped onto another company by changing three nouns, it is slop. Live specimen, read on the day this skill was written:
+If a first viewport could be swapped onto another company by changing three nouns, it is slop.
+
+## Specimen A — quiet slop (this skill, first version)
+
+A weekly-return clip product (「拾贝」) built with judgment and no recipe. White void. Centered Newsreader-like headline. **One word tinted teal** (沉底). Pill nav + pill CTA. A dead product card under "先看看它的三条规矩." An em-dash in the body. You cannot paste a link into the tray.
+
+This is worse than no skill: it is the SaaS average with better copy. **Any cousin fails.** Especially: tinted headline word, centered stack, tray you cannot use.
+
+If the brief is a clip / Sunday / 摘录 product, the system is `ritual-object`. Not `product-stage-day`.
+
+## Specimen B — loud slop
 
 **https://smart-email-nexus.lovable.app** — Lovable-generated "AI email assistant." Textbook.
 

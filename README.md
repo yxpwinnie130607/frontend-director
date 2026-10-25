@@ -1,19 +1,20 @@
 # Frontend Director
 
-A coding-agent skill that directs frontend design with judgment.
+Create beautiful websites and interfaces using a coding agent's frontend skills.
 
-The model already knows CSS. This skill tells it **when to hold back, when to go hard, and which one reference system to execute**. It matches the brief to one of fourteen archetypes, then builds the page inside that system. It does not average Linear with Offer Studio. It does not unleash every effect at once.
+Judgment without a recipe produces quieter slop. This skill ships **executable systems**: fonts, hex tokens, a first-viewport skeleton, and a working interaction. The agent picks one system and builds inside it — the same way [frontend-slides](https://github.com/zarazhangrui/frontend-slides) ships style presets instead of asking the model to "make it beautiful."
 
 Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
-1. Reads the brief (landing, portfolio, brand, commerce, …).
-2. Sets energy: quiet / restrained / hard — and **one** hard layer (`layout` · `type` · `material` · `motion` · `image` · `product-state`).
-3. Picks **exactly one** archetype from the library.
-4. Executes that system. Looks at the result in a browser. Fails if a slop pattern lands.
+1. Reads the brief.
+2. Picks **exactly one** id from `archetypes.md`.
+3. Loads `systems/<id>.md` in full (tokens, type, skeleton, required JS).
+4. Builds that room. The primary object works (paste, add, toggle, open).
+5. Opens the page. Fails on a forbidden pattern.
 
-The library is small on purpose. Fourteen directions cover the matrix. [Recent](https://recent.design) (formerly Godly) is overflow, not a second catalog.
+A clip / Sunday / 摘录 product uses `ritual-object`, not a centered SaaS hero.
 
 ## Install
 
@@ -57,8 +58,10 @@ The agent should answer with a one-line design read and `Executing <id> because 
 
 | File | Role |
 |---|---|
-| `SKILL.md` | Director: permission, brief, taste, look |
-| `archetypes.md` | Fourteen systems. Pick one, execute that one |
+| `SKILL.md` | Director: phases, hard rules, look |
+| `archetypes.md` | Index. Pick one id |
+| `systems/` | Recipes: tokens, skeleton, required interaction |
+| `motion.md` | Motion after a system is chosen |
 | `verdicts.md` | Where to go hard by page kind |
 | `ceiling.md` | Why the reference sites work |
 | `forbidden.md` | Slop that must not ship |

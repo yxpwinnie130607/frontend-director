@@ -1,133 +1,140 @@
 ---
 name: frontend-director
-description: Directs frontend design by matching the brief to one reference archetype and executing that system. Holds back or goes hard on a single layer. Use when building or redesigning landing pages, portfolios, brand sites, marketing sites, or when the user wants work that does not look like AI slop. Not for dashboards, settings, tables, or existing product chrome unless the user names that surface.
+description: Create beautiful websites and interfaces using a coding agent's frontend skills. Matches a brief to one executable visual system (tokens, type, first-viewport skeleton, working interaction) and builds inside it. Use when building landing pages, portfolios, brand sites, or marketing sites. Not for dashboards, settings, or tables unless the user names that surface.
 ---
 
 # Frontend Director
 
-You are a director, not a catalog. The model already knows CSS, Grid, Motion, GSAP, and WebGL. This skill supplies **taste and verdicts**.
+A coding-agent skill for websites. The model already knows CSS. Without a **loaded visual system**, it emits quieter slop: white page, centered headline, one tinted word, a pill CTA, a card. That is how 「拾贝」failed. This skill exists so that cannot happen again.
+
+**Zara's frontend-slides works because it ships recipes, not vibes.** Same here. Pick one system. Copy its tokens. Build its first viewport. Make the object work.
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
-Read supporting files only when needed:
+Read supporting files only when the phase says so:
 
-- [archetypes.md](archetypes.md) — the working library. Match, pick **one**, execute that one
-- [verdicts.md](verdicts.md) — where to go hard by page kind
-- [ceiling.md](ceiling.md) — longer notes on the ceiling sites
-- [forbidden.md](forbidden.md) — slop that must not ship
-
----
-
-## 1. Permission
-
-You may go far. You may not be average. You may not stack the whole toolkit.
-
-- **Allowed:** unusual layout, huge type, one strong material, one cinematic motion chapter, real images, a product UI used as the hero.
-- **Forbidden:** the statistical default (centered Inter hero, purple glow, three or four equal feature cards, fake testimonials, decorative motion).
-- **Also forbidden:** the opposite default. Do not "unleash everything." One page gets **one hard layer**. The rest stays quiet so that layer can be seen.
-- **Thesis rule:** before code, name the one thing the page will be remembered for. If you cannot name it in one sentence, you do not have a design yet.
-
-A hard layer is one of: `layout` · `type` · `material` · `motion` · `image` · `product-state`.
-
-Going hard means taking that layer to the wall. It does not mean adding a second layer.
+- [archetypes.md](archetypes.md) — index. Pick one id.
+- [systems/](systems/) — the recipe. Read **only** the chosen file, in full.
+- [motion.md](motion.md) — after the system is chosen, if the system calls for motion.
+- [forbidden.md](forbidden.md) — before shipping.
+- [verdicts.md](verdicts.md) — if the page kind is unclear.
+- [ceiling.md](ceiling.md) — optional, after the system is loaded.
 
 ---
 
-## 2. Read the brief
+## Design aesthetics
 
-Before any code, write one line:
+You converge toward generic, on-distribution output. Force distinctive work.
 
-> Reading this as: **\<page kind>** for **\<audience>**, **\<vibe>**, hard layer = **\<one layer>**.
+- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. Never leave the browser default. The system file names the pair. Use it.
+- **Color:** Commit. Copy the system's `:root` hex values. Dominant ground + one sharp accent. Do not invent a second palette mid-page. Do not tint a single word in the headline and call it design.
+- **Atmosphere:** The page has a room (paper, night, split, field). A white void with type on it is not a room.
+- **Motion:** One entrance, or physics on the primary object. Prefer CSS. See [motion.md](motion.md). Honor `prefers-reduced-motion`.
+- **Interaction:** A product or consumer-tool page that you cannot *use* in the first viewport has failed. The object is the design.
 
-Examples:
-
-- *Reading this as: product marketing for technical buyers, quiet-confident, hard layer = product-state.*
-- *Reading this as: personal portfolio for a hiring panel, editorial and specific, hard layer = type.*
-- *Reading this as: brand studio site for incoming clients, cinematic, hard layer = motion.*
-
-If the brief truly forks (preserve vs overhaul, luxury vs utility, person vs studio), ask **one** question. Do not interview.
-
-Then open [verdicts.md](verdicts.md) and take the gate for that page kind. The gate wins over taste preferences.
-
-Then open [archetypes.md](archetypes.md). Match `kind + energy + layer`, pick **exactly one** id, and say `Executing <id> because <one reason>.` That id is the template. Build the whole page inside it. Do not blend two ids. Do not invent a fifteenth average.
-
-**Hard gates (do not override):**
-
-| Surface | Verdict |
-|---|---|
-| Marketing / landing / brand / campaign | May go hard on **one** layer |
-| Portfolio / personal | Restrain chrome. Let the person or the work be the event |
-| Existing brand with tokens | Stay inside the system. Invent inside the tokens |
-| Product app, settings, tables, wizards, docs | Hold back. Clarity is the design |
-| Accessibility-first, public-sector, trust-critical commerce | Aesthetics yield to contrast, language, and obvious actions |
-| User named an existing control | Restore or refine that control. Do not replace it |
-
-If you cannot say why this page needs a hard layer, the hard layer is `none`. Ship a quiet, specific page.
+Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, glass on every surface, fade-up on every block, Space Grotesk as the new Inter.
 
 ---
 
-## 3. Taste, then execute the one you picked
+## Hard rules (non-negotiable)
 
-Taste is not a mood board of "premium." It is a small library of systems that already solved this.
-
-1. You already picked one id from [archetypes.md](archetypes.md). Read **only that card**. If you need more flesh, read the matching note in [ceiling.md](ceiling.md).
-2. Read [forbidden.md](forbidden.md) before you choose a hero, a card, or a palette.
-3. Steal **structure and courage**, not decoration. `brand-one-world` is "one thesis, one world, then a door" — not Offer Studio's burst. `one-metaphor` is "their object" — not Jane's tree.
-4. If the library has no fit, use `recent-overflow` once. Do not collect a moodboard.
-
-**What "looks designed" actually means here:**
-
-- One idea is obvious in the first viewport.
-- Type is doing structural work, not sitting on a card.
-- Space is decided, not leftover.
-- Motion, if any, changes a chapter or answers an action.
-- Images are real, or the page admits it needs them.
-- Copy is specific. If a sentence could sit on any other company's site, rewrite it.
-
-**What "you would not watch this" means:**
-
-- The page is a stack of familiar SaaS sections.
-- Every section is trying to be the hero.
-- The visual system could be swapped onto a different product overnight.
-
-If the user cannot name a vibe, do **not** ask them to describe aesthetics. Infer from audience and stakes, declare the read, and proceed. Visual comparison (two or three tiny direction frames) only when the fork is real and the cost of guessing is high.
+1. **Load a system before any markup.** If you have not read `systems/<id>.md`, you are not designing. You are guessing.
+2. **Copy the system's `:root` and font `<link>`s.** Do not "interpret" them into Tailwind defaults.
+3. **First viewport follows the system's skeleton.** If the skeleton is split, do not center. If the skeleton is an object, the object is on screen without scrolling.
+4. **Product / consumer / ritual tools must be interactive in the first viewport.** Paste, type, drop, toggle, or add — and the object responds. A screenshot of a product is a fail for these kinds. A muted card under a headline is a fail.
+5. **One system per page.** Do not blend night Linear with editorial serif with a teal word.
+6. **"Quiet" is not "generic SaaS."** Quiet means one material, one type, one object. It still has a room and a working thing.
+7. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
+8. **No em-dash (`—`) in visible copy.**
 
 ---
 
-## 4. Look. Do not just write.
+## Phase 0 — Detect
 
-A design that has not been opened is a draft. Do not declare the work done from code.
+- **New page** → Phase 1.
+- **Redesign** → audit tokens and IA first ([verdicts.md](verdicts.md) redesign row), then Phase 1.
+- **Enhance existing** → do not change the system mid-flight unless asked. Fix density, type, interaction.
 
-After the first working render:
+---
 
-1. Open the page in a browser.
-2. Use it: click the primary action, scroll the full page, resize to a phone width.
-3. Compare the first viewport to the thesis you named. If the thesis is not visible without explanation, the page failed.
-4. Walk [forbidden.md](forbidden.md). One hit is a fail. Fix it.
-5. Check the quiet parts: empty, loading, error, hover, focus, reduced motion. These are part of the design, not leftovers.
+## Phase 1 — Read, then pick
 
-**Ship bar (all must be true):**
+Write one line:
 
-- [ ] Design read declared, one hard layer named, or honestly `none`
-- [ ] Exactly one archetype id chosen and named; the page stays inside that system
-- [ ] First viewport states the thesis without a caption
-- [ ] No forbidden-zone pattern from [forbidden.md](forbidden.md)
-- [ ] Opened in a browser, not only imagined
-- [ ] Primary action works; mobile does not collapse into a cramped stack of the desktop layout
-- [ ] Motion, if claimed, is visible and motivated; if not claimed, the page is still
-- [ ] Contrast holds on every CTA, input, and body sentence
-- [ ] Visible copy is specific; no leftover "unlock / seamless / next-gen / transform your"
-- [ ] Existing product chrome was not restyled unless the user named it
+> Reading this as: **\<page kind>** for **\<audience>**, energy **\<quiet|restrained|hard>**, system = **\<id>**.
+
+Then open [archetypes.md](archetypes.md). Pick **exactly one** id. Say:
+
+> Executing **\<id>** because \<one reason>.
+
+If the brief is a weekly/daily habit product, a clipping box, a tray, a journal, a "come back later" tool — pick `ritual-object`. Do not pick `product-stage-day`. That is how 拾贝 became a SaaS template.
+
+If the brief forks, ask **one** question. Otherwise proceed.
+
+---
+
+## Phase 2 — Load the recipe
+
+Read `systems/<id>.md` in full. Do not skim.
+
+From that file, take:
+
+1. Font links
+2. `:root` tokens
+3. First-viewport skeleton
+4. Required interaction (implement it, do not fake it)
+5. What the rest of the page is allowed to do
+
+If the system says to read [motion.md](motion.md), do it now. Otherwise skip.
+
+---
+
+## Phase 3 — Build
+
+Default stack: one HTML file, or a single Next/React page, with CSS variables from the system. Interaction in a small client island.
+
+**Every page must include:**
+
+- The system's fonts, loaded
+- The system's `:root`, intact
+- Semantic HTML, keyboardable primary action
+- The required interaction, working
+- `prefers-reduced-motion` fallback
+
+**Do not include:**
+
+- A marketing stack that the system did not ask for
+- Lucide icons in rounded squares
+- Three-tier pricing as the visual climax
+- Fake "Sarah Chen, CEO" quotes
+
+Comments in CSS: mark `/* === SYSTEM TOKENS === */`, `/* === FIRST VIEWPORT === */`, `/* === INTERACTION === */`.
+
+---
+
+## Phase 4 — Look
+
+Open the page. Click the primary object. Type or paste if the system requires it. Scroll. Narrow to a phone width.
+
+Then read [forbidden.md](forbidden.md). One hit is a fail.
+
+**Ship bar:**
+
+- [ ] System id named; `systems/<id>.md` was read
+- [ ] Tokens and fonts are the system's, not defaults
+- [ ] First viewport matches the skeleton
+- [ ] Required interaction works in the first viewport (for product / ritual / consumer)
+- [ ] No forbidden pattern
+- [ ] Opened in a browser
+- [ ] No tinted headline word, no em-dash
+- [ ] Mobile is an authored collapse, not a cramped stack of the desktop
 
 If a box cannot be ticked, the page is not done.
 
 ---
 
-## 5. What this skill is not
+## What this skill is not
 
-- Not a CSS, GSAP, or design-system manual. Those stay out of this file.
-- Not a request to restyle an existing product surface the user did not name.
-- Not a license to generate three full pages when one thesis is enough.
-- Not a slide engine. If the user wants a deck, that is a different job.
-
-When the brief is a dashboard, a table, a settings page, or a wizard, say so, hold back, and only use this skill's marketing rules on marketing surfaces.
+- Not a slide engine. For decks, use a slides skill.
+- Not a request to restyle a product surface the user did not name.
+- Not permission to invent a fifteenth average system.
