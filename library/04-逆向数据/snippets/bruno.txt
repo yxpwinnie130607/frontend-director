@@ -1,0 +1,33 @@
+# bruno — https://bruno-simon.com
+# bundle 4858321 bytes
+
+ease 分布: {'power2.inOut': 16, 'power2.in': 16, 'power2.out': 10, 'power1.inOut': 8, 'back.out(2)': 8, 'linear': 5, 'back.in(4.5)': 3, 'back.out(3)': 2, 'none': 1, 'power4.inOut': 1}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== ScrollTrigger.create( =====
+&& _alignPlayhead(e, e._tTime), e; }, _scrollTrigger = function(e, r) { return (_globals.ScrollTrigger || _missingPlugin("scrollTrigger", r)) && _globals.ScrollTrigger.create(r, e); }, _attemptInitTween = function(e, r, s, o, a) { if (_initTween(e, r, a), !e._initted) return 1; if (!s && e._pt && !_reverting$1 && (e._dur && e.vars.lazy !== false || !e._dur && e.vars.lazy) && _lastRenderedFrame !== _ticker.frame) return _lazyTweens.push(e), e._lazy = [ a, o ], 1; }
+
+===== ease: =====
+h = this, c = _parsePosition(h, o), d = a, f = d.startAt, p = d.onStart, m = d.onStartParams, b = d.immediateRender, w, M = Tween.to(h, _setDefaults({ ease: a.ease || "none", lazy: false, immediateRender: false, time: c, overwrite: "auto", duration: a.duration || Math.abs((c - (f && "time" in f ? f.time : h._time)) / h.timeScale()) || _tinyNum, onStart: function() { if (h.pause(), !w) { var V = a.duration || Math.abs((c - (f && "time" in f ? f.time : h._time)) / h.timeScale()); M._dur !== V && _setDuration(M, V, 0, 1).render(M._time, true, true), w = 1; } p && p.apply(M, m || []); }
+
+seMap.none; q.duration() ? f = p = 0 : c.timeline = 0; } else if (M) { _inheritDefaults(_setDefaults(q.vars.defaults, { ease: "none" })), q._ease = _parseEase(M.ease || o.ease || "none"); var v = 0, x, $, P; if (_isArray(M)) M.forEach(function(D) { return q.to(H, D, ">"); }
+
+r (ee in K) for (x = K[ee].sort(function(D, k) { return D.t - k.t; }), v = 0, j = 0; j < x.length; j++) $ = x[j], P = { ease: $.e, duration: ($.t - (j ? x[j - 1].t : 0)) / 100 * f }, P[ee] = $.v, q.to(H, P, v), v += P.duration; q.duration() < f && q.to({}
+
+===== stagger: =====
+alse(d), startAt: null, delay: 0, onUpdate: f && function() { return _callback(e, "onUpdate"); }, stagger: 0 }, h))), e._startAt._dp = 0, e._startAt._sat = e, r < 0 && (_reverting$1 || !c && !w) && e._startAt.revert(_revertConfigNoKill), c && M && r <= 0 && s <= 0) { r && (e._zTime = r); return; }
+
+===== timeline({ =====
+n.z = s[r][1], r++; } }); }; } setPendulum() { this.references.items.get("balls")[0].rotation.reorder("YXZ"), gsapWithCSS.timeline({ yoyo: true, repeat: -1 }
+
+his.references.items.get("balls")[0].rotation, { x: 0.75, ease: "power2.out", delay: 0.75, duration: 0.75 }), gsapWithCSS.timeline({ yoyo: true, repeat: -1, delay: 1.5 }
+
+is.blackBoard.group = this.references.items.get("blackBoard")[0], this.blackBoard.parent = this.blackBoard.group.parent, this.blackBoard.timeline = gsapWithCSS.timeline({ repeat: -1, repeatDelay: 5, paused: true, onRepeat: () => { (this.state === _ProjectsArea.STATE_CLOSED || this.state === _ProjectsArea.STATE_CLOSING || !this.blackBoard.active) && this.blackBoard.timeline.pause(); } }
+
+===== matchMedia( =====
+ediaTime > 2 && (_dispatch("matchMediaInit"), _media.forEach(function(s) { var o = s.queries, a = s.conditions, h, c, d, f; for (c in o) h = _win$1.matchMedia(o[c]).matches, h && (d = 1), h !== a[c] && (a[c] = h, f = 1); f && (s.revert(), d && r.push(s)); }), _dispatch("matchMediaRevert"), r.forEach(function(s) { return s.onMatch(s, function(o) { return s.add(null, o); }); }
+
+lector && (h.selector = _context.selector), this.contexts.push(h), o = h.add("onMatch", o), h.queries = s; for (f in s) f === "all" ? p = 1 : (d = _win$1.matchMedia(s[f]), d && (_media.indexOf(h) < 0 && _media.push(h), (c[f] = d.matches) && (p = 1), d.addListener ? d.addListener(_onMediaChange) : d.addEventListener("change", _onMediaChange))); return p && o(h, function(m) { return h.add(null, m); }
+

@@ -1,0 +1,18 @@
+# unit9 — https://www.unit9.com
+# bundle 535445 bytes
+
+ease 分布: {'easeInOut': 11, 'easeOut': 1}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== ease: =====
+o&&(0,t.jsxs)(i.Fragment,{children:[(0,t.jsx)(O,{initial:{opacity:.9*!!L},animate:{opacity:.9*!!L,pointerEvents:L?"all":"none",transition:{duration:.6,delay:.6,ease:"easeInOut"}},exit:{opacity:0,transition:{duration:.6,ease:"easeInOut"}}
+
+t"}}}),(0,t.jsx)(S,{children:(0,t.jsxs)(I,{role:"dialog","aria-label":"Cookie consent",initial:{y:"100%"},animate:{y:0},exit:{y:"100%"},transition:{duration:.6,ease:"easeInOut"},children:[k&&(0,t.jsx)(C,{children:(0,t.jsx)(p.default,{markdown:k,raw:!0})}
+
+sx)(C,{children:(0,t.jsx)(p.default,{markdown:k,raw:!0})}),(0,t.jsx)(M,{initial:{height:0},animate:{height:c?"auto":0},exit:{height:0},transition:{duration:.35,ease:"easeInOut"},children:(0,t.jsxs)(E,{children:[(0,t.jsxs)(T,{children:[(0,t.jsxs)(A,{children:[(0,t.jsx)(P,{type:"checkbox",checked:!0,disabled:!0}),"Necessary"]}),(0,t.jsx)(B,{children:"Required for the site to function. Always active."})]}),(0,t.jsxs)(T,{children:[(0,t.jsxs)(A,{children:[(0,t.jsx)(P,{type:"checkbox",checked:u,onChange:e=>b(e.target.checked)}),"Analytics"]}),(0,t.jsx)(B,{children:"Helps us understand how visitors use the site so we can improve it."})]}),(0,t.jsxs)(T,{children:[(0,t.jsxs)(A,{children:[(0,t.jsx)(P,{type:"checkbox",checked:y,onChange:e=>w(e.target.checked)}),"Marketing"]}),(0,t.jsx)(B,{children:"Used to show you relevant ads on other sites."})]})]}
+
+===== matchMedia( =====
+ction uP(e,t,n){switch(e.tag){case 26:ux(e,t,n),e.flags&u_&&null!==e.memoizedState&&function(e,t,n,r){if("stylesheet"===n.type&&("string"!=typeof r.media||!1!==matchMedia(r.media).matches)&&0==(4&n.state.loading)){if(null===n.instance){var l=sW(r.href),a=t.querySelector(sq(l));if(a){null!==(t=a._p)&&"object"==typeof t&&"function"==typeof t.then&&(e.count++,e=s8.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=a,eQ(a);return}a=t.ownerDocument||t,r=sQ(r),(l=sF.get(l))&&sZ(r,l),eQ(a=a.createElement("link"));var o=a;o._p=new Promise(function(e,t){o.onload=e,o.onerror=t}),sf(a,"link",r),n.instance=a}null===e.stylesheets&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&0==(3&n.state.loading)&&(e.count++,n=s8.bind(e),t.addEventListener("load",n),t.addEventListener("error",n))}
+

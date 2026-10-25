@@ -1,0 +1,20 @@
+# linear — https://linear.app
+# bundle 1217779 bytes
+
+ease 分布: {'string': 1}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== ease: =====
+ons directly or use `ignoreSpans`.")}),C=!0)}function ye(t,e){const n=e.getOptions(),{publicKey:r}=e.getDsn()||{},s={environment:n.environment||"production",release:n.release,public_key:r,trace_id:t,org_id:ce(e)};return e.emit("createDsc",s),s}function be(t,e){const n=e.getPropagationContext();return n.dsc||ye(n.traceId,t)}
+
+={...e,event_id:e.event_id||n.event_id||$t(),timestamp:e.timestamp||Bt()},u=n.integrations||t.integrations.map(t=>t.name);!function(t,e){const{environment:n,release:r,dist:s,maxValueLength:i}=e;t.environment=t.environment||n||"production",!t.release&&r&&(t.release=r),!t.dist&&s&&(t.dist=s);const o=t.request;o?.url&&i&&(o.url=Ot(o.url,i)),i&&t.exception?.values?.forEach(t=>{t.value&&(t.value=Ot(t.value,i))}
+
+data,this._options.tunnel);for(const o of a.attachments||[])t=ht(t,vt(o));this.sendEnvelope(t).then(a=>this.emit("afterSendEvent",e,a))}sendSession(e){const{release:a,environment:t=pa}=this._options;if("aggregates"in e){const o=e.attrs||{};if(!o.release&&!a)return void(ma&&ca.warn(s));o.release=o.release||a,o.environment=o.environment||t,e.attrs=o}
+
+===== matchMedia( =====
+r,o;switch(e.tag){case 26:Yd(e,t,n),e.flags&Er&&(null!==e.memoizedState?function(e,t,n,r){var o,a,i;if(!("stylesheet"!==n.type||"string"==typeof r.media&&!1===matchMedia(r.media).matches||4&n.state.loading)){if(null===n.instance){if(o=sh(r.href),a=t.querySelector(uh(o)))return null!==(t=a._p)&&"object"==typeof t&&"function"==typeof t.then&&(e.count++,e=Ih.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=a,void ni(a);a=t.ownerDocument||t,r=ch(r),(o=Oo.get(o))&&mh(r,o),ni(a=a.createElement("link")),(i=a)._p=new Promise(function(e,t){i.onload=e,i.onerror=t}),pp(a,"link",r),n.instance=a}null===e.stylesheets&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&!(3&n.state.loading)&&(e.count++,n=Ih.bind(e),t.addEventListener("load",n),t.addEventListener("error",n))}
+
+\/____/\\/_/\n \\/`,ee=()=>`\n font-family: monospace;\n color: ${window.matchMedia("(prefers-color-scheme: dark)").matches?"#F7F8F8":"#282A30"};\n `,ae=!1,te=e=>{!ae&&(console.log(`%c${Q(e)}\n\nThe product development system for teams and agents\n\nWE'RE HIRING: https://linear.app/careers\nCHANGELOG: https://linear.app/changelog\n`,ee()),ae=!0)}
+

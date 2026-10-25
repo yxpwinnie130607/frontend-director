@@ -1,0 +1,27 @@
+{
+  "name": "gsap-react-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "从 lando / ojo / offer 逆向出来的 GSAP + Lenis 动效，React 实现",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7"
+  }
+}

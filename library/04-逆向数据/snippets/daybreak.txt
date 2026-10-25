@@ -1,0 +1,18 @@
+# daybreak — https://daybreak.studio
+# bundle 832736 bytes
+
+ease 分布: {'easeOut': 2, 'ease': 1, 'linear': 1}
+scrub 分布: {}
+start 分布: {'down': 2, 'start': 2, 'end': 1, '0%': 1}
+pin:true 出现 0 次
+
+===== ease: =====
+turn(0,r.jsx)(a.E.div,{variants:{hidden:{opacity:0,y:20,scale:.95,filter:"blur(10px)"},visible:{opacity:1,y:0,scale:1,filter:"blur(0px)",transition:{duration:1,ease:_.L.easeOutQuart}}},className:(0,y.Z)("frame-outer relative h-[90px] overflow-hidden",l),children:(0,r.jsxs)(c(),{href:t,onClick:o,className:"relative block h-full w-full focus:outline-none",children:[s&&(0,r.jsx)("video",{src:"/videos/gradient-orange.mp4",autoPlay:!0,muted:!0,playsInline:!0,loop:!0,className:"frame-inner absolute inset-0 h-full w-full object-cover"}),(0,r.jsxs)("div",{className:"frame-inner relative z-20 flex h-full w-full items-center justify-center gap-3 bg-white/25 px-6 shadow-inner shadow-white/75",children:[(0,r.jsx)(n,{className:"h-6 w-6 text-neutral-600/75"}),i&&(0,r.jsx)("span",{className:"text-base font-medium text-neutral-600/75",children:i})]})]}
+
+:"wait",initial:!1,children:o?(0,r.jsx)(a.E.div,{initial:{opacity:0,rotate:-90},animate:{opacity:1,rotate:0},exit:{opacity:0,rotate:90},transition:{duration:.2,ease:_.L.easeOutQuart},children:(0,r.jsx)(m.Z,{className:"m-3 aspect-square h-3 w-3 text-neutral-500",strokeWidth:2.25}
+
+500",strokeWidth:2.25})},"x"):(0,r.jsx)(a.E.div,{initial:{opacity:0,rotate:-90},animate:{opacity:1,rotate:0},exit:{opacity:0,rotate:90},transition:{duration:.2,ease:_.L.easeOutQuart},children:(0,r.jsx)(g,{className:"m-3 aspect-square h-3 w-3 text-neutral-500",strokeWidth:2.25}
+
+===== matchMedia( =====
+nt.addVariantChild(this)),this.values.forEach((e,t)=>this.bindToMotionValue(t,e)),o.current||function(){if(o.current=!0,r.j){if(window.matchMedia){let e=window.matchMedia("(prefers-reduced-motion)"),t=()=>i.current=e.matches;e.addListener(t),t()}else i.current=!1}}(),this.shouldReduceMotion="never"!==this.reducedMotionConfig&&("always"===this.reducedMotionConfig||i.current),this.parent&&this.parent.children.add(this),this.update(this.props,this.presenceContext)}unmount(){for(let e in m.R.delete(this.current),this.projection&&this.projection.unmount(),(0,T.Pn)(this.notifyUpdate),(0,T.Pn)(this.render),this.valueSubscriptions.forEach(e=>e()),this.removeFromVariantTree&&this.removeFromVariantTree(),this.parent&&this.parent.children.delete(this),this.events)this.events[e].clear();for(let e in this.features){let t=this.features[e];t&&(t.unmount(),t.isMounted=!1)}this.current=null}
+

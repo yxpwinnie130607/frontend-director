@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Baseline — 产品精细型基线</title>
+<style>
+/* ============================================================
+   TOKENS — 产品型：字号比 4.0，柔阴影，12px 圆角
+   ============================================================ */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f7f7f5;
+  --bg-ink:#0d0f12;
+  --ink:#101214;
+  --ink-70:rgba(16,18,20,.68);
+  --ink-45:rgba(16,18,20,.45);
+  --line:rgba(16,18,20,.09);
+  --line-strong:rgba(16,18,20,.16);
+  --accent:#ff5a1f;
+
+  --sans:"Inter","Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-display:clamp(38px,4.3vw,60px);
+  --t-h2:clamp(30px,3.2vw,44px);
+  --t-h3:21px;
+  --t-lead:18px;
+  --t-body:16px;
+  --t-small:14px;
+  --t-label:11px;
+
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:18px;
+  --r-pill:9999px;
+
+  --sh-1:0 1px 2px rgba(16,18,20,.06);
+  --sh-2:0 1px 2px rgba(16,18,20,.05),0 10px 28px -8px rgba(16,18,20,.14);
+  --sh-3:0 2px 4px rgba(16,18,20,.06),0 24px 56px -12px rgba(16,18,20,.22);
+
+  /* 时长只有三档：180 微交互 / 450 进场 / 620 慢速 */
+  --d1:180ms;
+  --d2:450ms;
+  --d3:620ms;
+
+  /* 时长只有三档：180 微交互 / 450 进场 / 620 慢速 */
+  --d1:180ms;
+  --d2:450ms;
+  --d3:620ms;
+
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.4,0,.2,1);
+
+  --pad:clamp(20px,5vw,48px);
+  --max:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* ============================================================
+   按钮：pill + 按下位移（不用 scale，用 1px 下沉更像物理）
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  height:44px;padding:0 22px;border-radius:var(--r-pill);
+  font-size:14.5px;font-weight:500;letter-spacing:-.01em;
+  background:var(--ink);color:#fff;box-shadow:var(--sh-1);
+  transition:transform 180ms var(--ease),box-shadow 180ms var(--ease),
+             background 180ms var(--ease);
+}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn:active{transform:translateY(1px);box-shadow:none}
+.btn.ghost{
+  background:transparent;color:var(--ink);
+  box-shadow:inset 0 0 0 1px var(--line-strong);
+}
+.btn.ghost:hover{background:var(--bg-soft);box-shadow:inset 0 0 0 1px var(--ink-45)}
+.btn.accent{background:var(--accent)}
+.btn.accent:hover{background:#f04e12}
+
+/* ============================================================
+   导航：sticky + 滚动后加边框（不是一上来就有阴影）
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px) saturate(180%);
+  -webkit-backdrop-filter:blur(14px) saturate(180%);
+  border-bottom:1px solid transparent;
+  transition:border-color 180ms var(--ease-io),background 180ms var(--ease-io);
+}
+.nav.stuck{border-bottom-color:var(--line)}
+.nav-in{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+  height:62px;display:flex;align-items:center;gap:28px;
+}
+.logo{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;letter-spacing:-.02em}
+.logo .mark{
+  width:22px;height:22px;border-radius:6px;background:var(--ink);
+  display:grid;place-items:center;color:#fff;font-size:11px;font-weight:700;
+}
+.nav-links{display:flex;gap:26px;margin-left:14px}
+.nav-links a{
+  font-size:14px;color:var(--ink-70);
+  transition:color 180ms var(--ease);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* ============================================================
+   Hero：左文右图，图是"产品窗口"（不是插画）
+   ============================================================ */
+.hero{padding:clamp(56px,9vh,110px) 0 clamp(40px,7vh,80px)}
+.hero-grid{
+  display:grid;grid-template-columns:1.12fr .88fr;
+  gap:clamp(28px,5vw,64px);align-items:center;
+}
+.hero h1{
+  margin:14px 0 18px;
+  font-size:var(--t-display);line-height:1.02;letter-spacing:-.045em;
+  font-weight:600;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{
+  margin:0 0 30px;font-size:var(--t-lead);line-height:1.55;
+  color:var(--ink-70);max-width:30em;
+}
+.hero .lead strong{color:var(--ink);font-weight:550}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-note{
+  margin-top:22px;display:flex;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* 产品窗口：柔阴影 + 细边 + 内部 chrome */
+.app{
+  border-radius:var(--r-lg);background:#fff;overflow:hidden;
+  box-shadow:var(--sh-3),inset 0 0 0 1px var(--line);
+  transition:transform 450ms var(--ease),box-shadow 450ms var(--ease);
+}
+.app:hover{transform:translateY(-3px);box-shadow:var(--sh-3),0 40px 80px -20px rgba(16,18,20,.3),inset 0 0 0 1px var(--line)}
+.app-bar{
+  height:34px;display:flex;align-items:center;gap:6px;padding:0 12px;
+  border-bottom:1px solid var(--line);background:var(--bg-soft);
+}
+.app-bar i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.app-bar span{
+  margin-left:10px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.06em;color:var(--ink-45);
+}
+.app-body{padding:18px;display:grid;gap:10px}
+.app-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.app-head strong{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.app-btn{
+  font-size:11px;padding:4px 10px;border-radius:var(--r-pill);
+  background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-45);
+}
+.app-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.app-head strong{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.app-btn{
+  font-size:11px;padding:4px 10px;border-radius:var(--r-pill);
+  background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-45);
+}
+.bar-line{height:9px;border-radius:4px;background:var(--bg-soft)}
+.bar-line.w{background:#eceae4}
+.app-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{
+  border-radius:var(--r-md);border:1px solid var(--line);
+  padding:13px;display:grid;gap:7px;background:#fff;
+  transition:border-color 180ms var(--ease),background 180ms var(--ease);
+}
+.tile:hover{border-color:var(--line-strong);background:#fcfcfa}
+.tile b{font-family:var(--mono);font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+.tile small{font-size:11px;color:var(--ink-45);letter-spacing:.04em}
+.tile.hot b{color:var(--accent)}
+
+/* ============================================================
+   Logo 条：一行 mono，不放大、不加边框
+   ============================================================ */
+.logos{
+  padding:var(--pad) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;
+  justify-content:flex-start;
+}
+.logos span{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  color:var(--ink-45);text-transform:uppercase;
+}
+.logos span:first-child{color:var(--ink);letter-spacing:.14em;margin-right:auto}
+
+/* ============================================================
+   功能：交替左右，靠间距而不是卡片分隔
+   ============================================================ */
+.feat{padding:clamp(64px,11vh,130px) 0}
+.feat-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(28px,6vw,90px);align-items:center;
+}
+.feat-row + .feat-row{margin-top:clamp(56px,9vh,110px)}
+.feat-row:nth-child(even) .feat-txt{order:2}
+.feat-txt h2{
+  margin:12px 0 16px;font-size:var(--t-h2);line-height:1.1;
+  letter-spacing:-.035em;font-weight:600;
+}
+.feat-txt p{margin:0 0 18px;color:var(--ink-70);max-width:34em}
+.feat-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:11px}
+.feat-list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--ink-70)}
+.feat-list li b{color:var(--ink);font-weight:550}
+.tick{
+  flex:0 0 auto;width:17px;height:17px;border-radius:50%;
+  background:var(--accent);color:#fff;display:grid;place-items:center;
+  font-size:10px;margin-top:3px;
+}
+.feat-vis{
+  border-radius:var(--r-md);background:var(--bg-soft);
+  box-shadow:inset 0 0 0 1px var(--line);
+  padding:26px;display:grid;gap:12px;min-height:260px;align-content:center;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 11px;
+  border-radius:var(--r-pill);background:#fff;border:1px solid var(--line);
+  font-size:12px;color:var(--ink-70);width:max-content;
+}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.meter{height:6px;border-radius:3px;background:#eceae4;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--accent);border-radius:3px;
+  transition:width 620ms var(--ease)}
+
+/* ============================================================
+   深色段：一次强对比，放数据
+   ============================================================ */
+.inkband{
+  background:var(--bg-ink);color:#fff;padding:clamp(64px,10vh,120px) 0;
+}
+.inkband h2{
+  margin:0 0 14px;font-size:var(--t-h2);line-height:1.1;letter-spacing:-.035em;
+  font-weight:600;max-width:16em;
+}
+.inkband h2 em{font-style:normal;color:var(--accent)}
+.inkband p{color:rgba(255,255,255,.62);margin:0 0 46px;max-width:44em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,44px)}
+.stat{border-top:1px solid rgba(255,255,255,.16);padding-top:20px}
+.stat b{
+  display:block;font-size:clamp(34px,3.6vw,52px);line-height:1;letter-spacing:-.04em;
+  font-weight:500;color:#fff;
+}
+.stat span{
+  display:block;margin-top:10px;font-family:var(--mono);font-size:var(--t-label);
+  letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);
+}
+
+/* ============================================================
+   定价：三张卡，中间高亮（用边框+阴影，不堆渐变）
+   ============================================================ */
+.price{padding:clamp(64px,11vh,130px) 0}
+.price-head{text-align:center;margin-bottom:clamp(34px,5vh,56px)}
+.price-head h2{margin:12px 0 12px;font-size:var(--t-h2);letter-spacing:-.035em;line-height:1.1}
+.price-head p{margin:0;color:var(--ink-70)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.plan{
+  border-radius:var(--r-md);border:1px solid var(--line);background:#fff;
+  padding:26px 24px 24px;box-shadow:var(--sh-1);
+  transition:box-shadow 180ms var(--ease),transform 180ms var(--ease),
+             border-color 180ms var(--ease);
+}
+.plan:hover{box-shadow:var(--sh-2);transform:translateY(-2px)}
+.plan.best{border-color:var(--ink);box-shadow:var(--sh-3)}
+.plan .tag{
+  display:inline-block;margin-bottom:14px;padding:3px 9px;border-radius:var(--r-pill);
+  background:var(--accent);color:#fff;font-family:var(--mono);font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.plan h3{margin:0 0 6px;font-size:var(--t-h3);font-weight:600;letter-spacing:-.02em}
+.plan .price-n{margin:10px 0 18px;font-size:34px;letter-spacing:-.03em;font-weight:600}
+.plan .price-n small{font-size:13px;font-weight:400;color:var(--ink-45);letter-spacing:0}
+.plan ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:9px;font-size:14px;color:var(--ink-70)}
+.plan ul li::before{content:"—";margin-right:8px;color:var(--ink-45)}
+.plan .btn{width:100%;justify-content:center}
+
+/* ============================================================
+   尾 CTA
+   ============================================================ */
+.final{padding:clamp(70px,12vh,150px) 0;border-top:1px solid var(--line);text-align:center}
+.final h2{margin:0 0 16px;font-size:var(--t-h2);letter-spacing:-.04em;line-height:1.06}
+.final p{margin:0 auto 30px;color:var(--ink-70);max-width:34em}
+.foot{
+  padding:26px 0 40px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* ============================================================
+   进入视口：只做 16px + 淡入，400ms（产品型的标准动作）
+   ============================================================ */
+[data-rise]{
+  opacity:0;transform:translateY(16px);
+  transition:opacity 450ms var(--ease),transform 450ms var(--ease);
+}
+[data-rise].in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid,.feat-row{grid-template-columns:1fr}
+  .feat-row:nth-child(even) .feat-txt{order:0}
+  .plans{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr;gap:22px}
+  .nav-links{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  [data-rise]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#"><span class="mark">M</span> MediaCoach</a>
+    <nav class="nav-links">
+      <a href="#features">功能</a>
+      <a href="#pricing">价格</a>
+      <a href="#faq">文档</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn ghost" href="#">登录</a>
+      <a class="btn" href="#pricing">开始用</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-rise>风格检索 · v2.4</div>
+        <h1 data-rise>选一个创作者。<br>像他那样<em>去写</em>。</h1>
+        <p class="lead" data-rise>
+          输入一个名字，把它拆成 <strong>Voice · Hooks · Pacing</strong> 三层规则，
+          再按这套规则改你的稿。从今天起，像他一样做一个百万粉丝的网红。
+        </p>
+        <div class="hero-cta" data-rise>
+          <a class="btn accent" href="#pricing">免费试一次 <span aria-hidden>→</span></a>
+          <a class="btn ghost" href="#features">看它怎么拆</a>
+        </div>
+        <div class="hero-note" data-rise>
+          <span>无需信用卡</span><span>本地运行</span><span>密钥只存本机</span>
+        </div>
+      </div>
+
+      <div class="app" data-rise>
+        <div class="app-bar"><i></i><i></i><i></i><span>style-profile.json</span></div>
+        <div class="app-body">
+          <div class="app-head">
+            <strong>听泉鉴宝</strong>
+            <span class="app-btn">已保存</span>
+          </div>
+          <div class="app-row">
+            <div class="tile hot"><b>92</b><small>Hooks 密度</small></div>
+            <div class="tile"><b>87</b><small>Voice 一致性</small></div>
+          </div>
+          <div class="bar-line w" style="width:92%"></div>
+          <div class="bar-line w" style="width:74%"></div>
+          <div class="bar-line" style="width:86%"></div>
+          <div class="bar-line" style="width:58%"></div>
+          <div class="app-row">
+            <div class="tile"><b>18.4</b><small>句长 / 字</small></div>
+            <div class="tile"><b>3</b><small>拍一停</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOGOS ================= -->
+  <div class="wrap">
+    <div class="logos">
+      <span>Used by</span>
+      <span>小红书</span><span>B 站</span><span>抖音</span>
+      <span>公众号</span><span>Newsletter</span>
+    </div>
+  </div>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="feat" id="features">
+    <div class="wrap">
+
+      <div class="feat-row" data-rise>
+        <div class="feat-txt">
+          <div class="eyebrow">01 — Retrieve</div>
+          <h2>一个名字，<br>拆出三层规则。</h2>
+          <p>不是"模仿语气"。是把一个创作者公开的内容，拆成可以照着写的结构。</p>
+          <ul class="feat-list">
+            <li><span class="tick">✓</span><span><b>Voice</b> — 人称、口语密度、口头禅</span></li>
+            <li><span class="tick">✓</span><span><b>Hooks</b> — 第几句下钩子、用什么句式</span></li>
+            <li><span class="tick">✓</span><span><b>Pacing</b> — 句长分布、换行位置、停顿</span></li>
+          </ul>
+        </div>
+        <div class="feat-vis">
+          <span class="chip on">听泉鉴宝</span>
+          <span class="chip">史蒂夫·乔布斯风格</span>
+          <span class="chip">新华社风</span>
+          <div class="meter"><i data-w="92"></i></div>
+          <div class="meter"><i data-w="74"></i></div>
+          <div class="meter"><i data-w="58"></i></div>
+        </div>
+      </div>
+
+      <div class="feat-row" data-rise>
+        <div class="feat-txt">
+          <div class="eyebrow">02 — Rewrite</div>
+          <h2>贴你的稿，<br>逐句标出问题。</h2>
+          <p>哪一句不像人话、哪个开头三秒就死、哪一段该删——标出来，并给出他会怎么写。</p>
+          <ul class="feat-list">
+            <li><span class="tick">✓</span><span>保留你的意思，只换节拍</span></li>
+            <li><span class="tick">✓</span><span>改完能直接发，不用二次加工</span></li>
+          </ul>
+        </div>
+        <div class="feat-vis">
+          <div class="bar-line" style="width:88%;background:#eceae4"></div>
+          <div class="bar-line" style="width:96%;background:#ffd9c9"></div>
+          <div class="bar-line" style="width:62%;background:#eceae4"></div>
+          <div class="bar-line" style="width:78%;background:#ffd9c9"></div>
+          <div class="bar-line" style="width:44%;background:#eceae4"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 深色数据 ================= -->
+  <section class="inkband">
+    <div class="wrap">
+      <h2 data-rise>不是给你模板。<br>是给你<em>一个人的手艺</em>。</h2>
+      <p data-rise>规则留在你手上，不在模型里。改完这一篇，下一篇你自己就会写了。</p>
+      <div class="stats">
+        <div class="stat" data-rise><b data-count="3">0</b><span>层拆解</span></div>
+        <div class="stat" data-rise><b data-count="42">0</b><span>篇样本</span></div>
+        <div class="stat" data-rise><b data-count="8" data-suffix="s">0</b><span>出档案</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 定价 ================= -->
+  <section class="price" id="pricing">
+    <div class="wrap">
+      <div class="price-head">
+        <div class="eyebrow">Pricing</div>
+        <h2>一次买断，不订阅。</h2>
+        <p>本地运行，密钥在你自己的电脑上。</p>
+      </div>
+      <div class="plans">
+        <div class="plan" data-rise>
+          <h3>试用</h3>
+          <div class="price-n">¥0</div>
+          <ul><li>3 次改稿</li><li>1 份风格档案</li><li>本地运行</li></ul>
+          <a class="btn ghost" href="#">开始</a>
+        </div>
+        <div class="plan best" data-rise>
+          <span class="tag">最常选</span>
+          <h3>个人版</h3>
+          <div class="price-n">¥299 <small>一次买断</small></div>
+          <ul><li>不限次改稿</li><li>不限份风格档案</li><li>口播稿 + 字幕</li><li>一年更新</li></ul>
+          <a class="btn accent" href="#">买断</a>
+        </div>
+        <div class="plan" data-rise>
+          <h3>团队</h3>
+          <div class="price-n">¥1,290</div>
+          <ul><li>5 个席位</li><li>共享风格库</li><li>批量导出</li></ul>
+          <a class="btn ghost" href="#">联系我们</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 尾 CTA ================= -->
+  <section class="final" id="faq">
+    <div class="wrap">
+      <h2 data-rise>下一篇。<br>别再自己猜。</h2>
+      <p data-rise>八秒出一份档案，然后你只需要改一版。</p>
+      <div class="hero-cta" style="justify-content:center" data-rise>
+        <a class="btn accent" href="#">打开媒策 <span aria-hidden>→</span></a>
+        <a class="btn ghost" href="#">先看一次检索</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div class="foot">
+      <span>© 2026 MediaCoach</span>
+      <span>本地运行 · 不上传稿件</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+/* ============================================================
+   1. 导航：滚过 8px 才加下边框（不做"一上来就有阴影"）
+   ============================================================ */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('stuck', scrollY > 8);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ============================================================
+   2. 进入视口：IntersectionObserver，不用动画库
+   ============================================================ */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!reduced && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      // 同一批元素错开 60ms（总错开 ≤ 400ms）
+      const sibs = [...e.target.parentElement.querySelectorAll('[data-rise]')];
+      const i = Math.max(0, sibs.indexOf(e.target));
+      e.target.style.transitionDelay = Math.min(i * 60, 180) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  document.querySelectorAll('[data-rise]').forEach((el) => io.observe(el));
+} else {
+  document.querySelectorAll('[data-rise]').forEach((el) => el.classList.add('in'));
+}
+
+/* ============================================================
+   3. 数字滚动：只跑一次，600ms
+   ============================================================ */
+if (!reduced && 'IntersectionObserver' in window) {
+  const countIO = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      const el = e.target;
+      const to = +el.dataset.count || 0;
+      const sfx = el.dataset.suffix || '';
+      const t0 = performance.now();
+      const dur = 600;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        const v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        el.textContent = v + sfx;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      countIO.unobserve(el);
+    }
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach((el) => countIO.observe(el));
+}
+
+/* ============================================================
+   4. 进度条：进入视口后从 0 长到目标宽度
+   ============================================================ */
+if (!reduced && 'IntersectionObserver' in window) {
+  const mIO = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      const el = e.target;
+      el.style.width = (el.dataset.w || 0) + '%';
+      mIO.unobserve(el);
+    }
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-w]').forEach((el) => {
+    el.style.width = '0%';
+    mIO.observe(el);
+  });
+} else {
+  document.querySelectorAll('[data-w]').forEach((el) => { el.style.width = el.dataset.w + '%'; });
+}
+</script>
+</body>
+</html>

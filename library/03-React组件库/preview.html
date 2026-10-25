@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSAP × Lenis Lab · 视觉预览（免安装）</title>
+<style>
+  :root{
+    --paper:#f6f3ec; --ink:#12161c; --ink-soft:#4a5563; --muted:#8d97a5;
+    --line:rgba(18,22,28,.14); --accent:#e4572e;
+    --sans:"Inter","PingFang SC",-apple-system,"Segoe UI",system-ui,sans-serif;
+    --display:"Iowan Old Style","Songti SC",Georgia,serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em}
+  em{font-style:italic;color:var(--accent)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+  .sec{padding:16vh 0}
+  .kicker{font:600 10.5px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--accent);
+    display:inline-flex;align-items:center;gap:8px}
+  .kicker::before{content:"";width:18px;height:2px;background:var(--accent)}
+  .lead{max-width:34em;color:var(--ink-soft);margin:22px 0 0}
+
+  .nav{position:fixed;inset:14px 0 auto;z-index:60;padding:0 6vw;display:flex;justify-content:center}
+  .nav-inner{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px 10px 20px;border-radius:999px;background:rgba(255,255,255,.72);
+    backdrop-filter:blur(16px) saturate(180%);border:1px solid var(--line);
+    box-shadow:0 18px 40px -26px rgba(18,22,28,.5)}
+  .brand{font-weight:700;font-size:14px}
+  .nav-links{display:flex;gap:22px;font-size:13px;color:var(--ink-soft)}
+  .nav-inner.on-dark{background:rgba(18,22,28,.55);border-color:rgba(255,255,255,.18);color:#fff}
+  .nav-inner.on-dark .brand{color:#fff}
+  .nav-inner.on-dark .nav-links{color:rgba(255,255,255,.75)}
+  .nav-inner.on-dark .btn{background:#fff;color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;
+    background:var(--ink);color:#fff;font:600 13px/1 var(--sans);text-decoration:none}
+
+  .hero{min-height:100vh;display:flex;align-items:center;padding:18vh 0 12vh}
+  .hero h1{font-size:clamp(40px,7.2vw,108px);line-height:.94}
+  .hero-meta{display:flex;gap:28px;margin-top:32px;color:var(--muted);font:500 11px/1 var(--mono);letter-spacing:.16em}
+
+  .mr-mask{display:block;overflow:hidden;padding-bottom:.06em}
+  .mr-inner{display:block;will-change:transform}
+
+  .px{overflow:hidden;border-radius:18px}
+  .px-media{height:46vh;border-radius:18px;display:grid;place-items:center;
+    font:600 12px/1 var(--mono);letter-spacing:.24em;color:rgba(18,22,28,.35);
+    background:radial-gradient(60% 80% at 20% 20%,#ffd9c8 0%,transparent 60%),
+      radial-gradient(70% 90% at 80% 70%,#cfe0ff 0%,transparent 62%),
+      linear-gradient(160deg,#e9e3d6,#cfd8e6)}
+
+  .ht{position:relative;background:var(--ink);color:#fff}
+  .ht-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
+  .ht-track{display:flex;gap:4vw;padding:0 6vw;will-change:transform}
+  .ht-item{flex:0 0 auto;width:62vw}
+  .ht-item-inner{will-change:transform}
+  .ht-card{height:56vh;border-radius:22px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;
+    border:1px solid rgba(255,255,255,.16);
+    background:
+      radial-gradient(120% 90% at 12% 0%, hsl(var(--h,18) 85% 62% / .34), transparent 62%),
+      radial-gradient(90% 80% at 100% 100%, hsl(calc(var(--h,18) + 40) 70% 55% / .18), transparent 60%),
+      linear-gradient(150deg,rgba(255,255,255,.10),rgba(255,255,255,.02))}
+  .ht-card h3{font-family:var(--display);font-size:clamp(26px,3.4vw,46px);line-height:1.06}
+  .ht-card p{color:rgba(255,255,255,.66);max-width:26em;margin:14px 0 0}
+  .ht-no{font:600 11px/1 var(--mono);letter-spacing:.22em;color:rgba(255,255,255,.45)}
+
+  .ps{position:relative}
+  .ps-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
+  .ps-panel{position:absolute;inset:0;display:grid;place-items:center;padding:0 6vw}
+  .ps-big{font-family:var(--display);font-size:clamp(40px,8vw,120px);line-height:.98;text-align:center}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:26px 22px;background:#fff;min-height:190px;
+    display:flex;flex-direction:column;justify-content:space-between}
+  .card b{font:600 10px/1 var(--mono);letter-spacing:.2em;color:var(--muted)}
+  .card h3{font-size:18px;margin:14px 0 8px}
+  .card p{margin:0;color:var(--ink-soft);font-size:13.5px}
+
+  .mq{overflow:hidden;padding:9vh 0;border-block:1px solid var(--line)}
+  .mq-track{display:flex;will-change:transform}
+  .mq-row{display:flex;flex:0 0 auto}
+  .mq-item{display:inline-flex;align-items:center;gap:3vw;padding-right:3vw;white-space:nowrap;
+    font-family:var(--display);font-size:clamp(30px,5vw,68px);letter-spacing:-.02em}
+  .mq-item i{color:var(--accent);font-style:normal;font-size:.4em}
+
+  .foot{padding:10vh 0 6vh;border-top:1px solid var(--line);color:var(--muted)}
+  .foot small{font:500 11px/1.9 var(--mono);letter-spacing:.12em}
+  .hud{position:fixed;right:14px;bottom:14px;z-index:80;font:600 10px/1.7 var(--mono);
+    letter-spacing:.1em;color:var(--muted);text-align:right;pointer-events:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">GSAP × Lenis Lab</span>
+    <div class="nav-links"><a href="#horizontal">横向</a><a href="#scene">钉住</a><a href="#cards">批量</a></div>
+    <div class="mg" id="mag"><a class="btn" href="#">开始</a></div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div>
+    <h1 class="mr">
+      <span class="mr-mask"><span class="mr-inner">Style is not</span></span>
+      <span class="mr-mask"><span class="mr-inner">a feeling.</span></span>
+      <span class="mr-mask"><span class="mr-inner"><em>It's a procedure.</em></span></span>
+    </h1>
+    <p class="lead">这一页每个动作都是从 lando / ojo / offer 的打包产物反推出来的：参数、触发点、scrub 等级按原站的值写。</p>
+    <div class="hero-meta"><span>LENIS LERP 0.1</span><span>SINGLE TICKER</span><span>SCRUB 1 / TRUE / 0</span></div>
+  </div>
+</header>
+
+<section class="sec wrap">
+  <div class="kicker">01 / parallax</div>
+  <h2 class="mr"><span class="mr-mask"><span class="mr-inner">两层不同速度，</span></span>
+      <span class="mr-mask"><span class="mr-inner">就有纵深。</span></span></h2>
+  <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:48px">
+    <div class="px" data-speed="0.16"><div class="px-media">SPEED 0.16</div></div>
+    <div class="px" data-speed="-0.1"><div class="px-media" style="height:38vh">SPEED -0.10</div></div>
+  </div>
+</section>
+
+<section class="ht" id="horizontal">
+  <div class="ht-sticky">
+    <div class="ht-track" id="track">
+      <div class="ht-item"><div class="ht-item-inner"><div class="ht-card" style="--h:18">
+        <div class="ht-no">01 / RETRIEVE</div>
+        <div><h3>先取一个人的写法</h3><p>把他怎么开口、在哪下钩子、什么节奏，拆成可复用的规则。</p></div>
+      </div></div></div>
+      <div class="ht-item"><div class="ht-item-inner"><div class="ht-card" style="--h:205">
+        <div class="ht-no">02 / REWRITE</div>
+        <div><h3>再换成你的内容</h3><p>同一条规则，套不同题材。横移的每一屏都是一次"换皮不换骨"。</p></div>
+      </div></div></div>
+      <div class="ht-item"><div class="ht-item-inner"><div class="ht-card" style="--h:160">
+        <div class="ht-no">03 / SHOOT</div>
+        <div><h3>最后拍出来</h3><p>断句、停顿、重音标好，镜头提示也给。</p></div>
+      </div></div></div>
+      <div class="ht-item"><div class="ht-item-inner"><div class="ht-card" style="--h:285">
+        <div class="ht-no">04 / END</div>
+        <div><h3>轨道走完</h3><p>外层高度 = 视口 + 位移距离，所以滚完正好停在最后一屏。</p></div>
+      </div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ps sec" id="scene" style="height:300vh;padding:0">
+  <div class="ps-sticky">
+    <div class="ps-panel"><div><div class="kicker" style="justify-content:center">02 / sticky scene</div>
+      <div class="ps-big">一屏<br>只有一件事。</div></div></div>
+    <div class="ps-panel"><div><div class="kicker" style="justify-content:center">still here</div>
+      <div class="ps-big">滚动<br><em>替它换气</em>。</div></div></div>
+    <div class="ps-panel"><div><div class="kicker" style="justify-content:center">and here</div>
+      <div class="ps-big">然后<br>再往下。</div></div></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="cards">
+  <div class="kicker">03 / batch</div>
+  <h2 class="mr"><span class="mr-mask"><span class="mr-inner">同一屏进来的，</span></span>
+      <span class="mr-mask"><span class="mr-inner">才算一批。</span></span></h2>
+  <div class="cards" id="grid">
+    <article class="card" data-grid-item><b>01</b><div><h3>Sticky, not pin</h3><p>横向用原生 sticky 撑高度，resize 不会错位。</p></div></article>
+    <article class="card" data-grid-item><b>02</b><div><h3>Function values</h3><p>x: () =&gt; -dist()，尺寸变了自动重算。</p></div></article>
+    <article class="card" data-grid-item><b>03</b><div><h3>One clock</h3><p>Lenis 挂在 gsap.ticker 上并优先执行。</p></div></article>
+    <article class="card" data-grid-item><b>04</b><div><h3>Scrub 分三级</h3><p>主位移 1，视差 true，纯函数 0。</p></div></article>
+    <article class="card" data-grid-item><b>05</b><div><h3>No autoplay</h3><p>跑马灯位置 = 滚动进度。</p></div></article>
+    <article class="card" data-grid-item><b>06</b><div><h3>Reduced motion</h3><p>关掉动效时静态但完整。</p></div></article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap" id="velo">
+    <div class="kicker">04 / velocity</div>
+    <h2 style="font-family:var(--display);font-size:clamp(38px,7vw,104px);line-height:.98;margin-top:20px">
+      快速滚动时，<br>内容会被<em>拖歪</em>一点。
+    </h2>
+  </div>
+</section>
+
+<div class="mq" id="mq">
+  <div class="mq-track" id="mqt">
+    <div class="mq-row" id="mqrow"></div>
+    <div class="mq-row" id="mqrow2"></div>
+  </div>
+</div>
+
+<footer class="foot wrap">
+  <small>Reverse-engineered values · lando.itsoffbrand.io / ojo.art / offer.studio<br>
+  Lenis 0.1 · scrub 1 / true / 0 · single ticker · no autoplay</small>
+</footer>
+
+<div class="hud" id="hud">—</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- 1. 单时钟：Lenis → gsap.ticker ---------- */
+  let lenis = null;
+  if (!reduced) {
+    lenis = new Lenis({ lerp: 0.1, smoothWheel: true, wheelMultiplier: 1,
+      touchMultiplier: 1.25, syncTouch: true, autoResize: true,
+      wrapper: document.documentElement, content: document.body });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000), false, true);  // prioritize
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* ---------- 2. 遮罩掀字 ---------- */
+  const inners = gsap.utils.toArray('.mr-inner');
+  if (reduced) gsap.set(inners, { yPercent: 0 });
+  else {
+    gsap.set(inners, { yPercent: 115 });
+    // 首屏：立即播
+    gsap.to('.hero .mr-inner', { yPercent: 0, duration: 1.15, stagger: 0.09, ease: 'expo.out', delay: 0.15 });
+    // 其它：进视口播
+    gsap.utils.toArray('.sec .mr').forEach(el => {
+      gsap.to(el.querySelectorAll('.mr-inner'), {
+        yPercent: 0, duration: 1.15, stagger: 0.1, ease: 'expo.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+      });
+    });
+  }
+
+  /* ---------- 3. 视差 ---------- */
+  gsap.utils.toArray('.px').forEach(box => {
+    if (reduced) return;
+    const speed = parseFloat(box.dataset.speed || '0.12');
+    gsap.fromTo(box.firstElementChild, { yPercent: -speed * 50 }, {
+      yPercent: speed * 50, ease: 'none',
+      scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+  });
+
+  /* ---------- 4. 横向：sticky + 函数值 + scrub 1 ---------- */
+  const section = document.getElementById('horizontal');
+  const track = document.getElementById('track');
+  const distance = () => Math.max(0, track.scrollWidth - innerWidth);
+  const layout = () => { section.style.height = (innerHeight + distance()) + 'px'; };
+  layout();
+
+  if (!reduced) {
+    const main = gsap.to(track, {
+      x: () => -distance(), ease: 'none',
+      scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom',
+        scrub: 1, invalidateOnRefresh: true, onRefreshInit: layout }
+    });
+    // 二级视差：containerAnimation
+    gsap.utils.toArray('#track .ht-item').forEach((item, i) => {
+      gsap.to(item.firstElementChild, {
+        xPercent: i % 2 ? 6 : -10, ease: 'none',
+        scrollTrigger: { trigger: item, containerAnimation: main,
+          start: 'left right', end: 'right left', scrub: true }
+      });
+    });
+  }
+
+  /* ---------- 5. 钉住场景 ---------- */
+  const panels = gsap.utils.toArray('.ps-panel');
+  if (reduced) gsap.set(panels, { opacity: 1, y: 0 });
+  else {
+    gsap.set(panels, { opacity: (i) => (i === 0 ? 1 : 0), y: (i) => (i === 0 ? 0 : 40) });
+    const tl = gsap.timeline({ scrollTrigger: { trigger: '.ps', start: 'top top', end: 'bottom bottom', scrub: true } });
+    // 每一幕停留 1 个单位，只在最后 0.34 里换幕 —— 停留长、转场短，才不会两幕叠在一起
+    const TR = 0.34;
+    panels.slice(1).forEach((panel, i) => {
+      const at = i + 1 - TR;
+      tl.to(panels[i], { opacity: 0, y: -26, scale: 0.985, duration: TR * 0.55, ease: 'power2.in' }, at)
+        .to(panel, { opacity: 1, y: 0, duration: TR * 0.9, ease: 'power2.out' }, at + TR * 0.35);
+    });
+  }
+
+  /* ---------- 6. 批量入场 ---------- */
+  const cards = gsap.utils.toArray('[data-grid-item]');
+  if (reduced) gsap.set(cards, { clearProps: 'all' });
+  else {
+    gsap.set(cards, { opacity: 0, y: 40 });
+    ScrollTrigger.batch(cards, { start: 'top 88%', once: true,
+      onEnter: b => gsap.to(b, { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out' }) });
+  }
+
+  /* ---------- 7. 速度倾斜 ---------- */
+  if (!reduced) {
+    const velo = document.getElementById('velo');
+    const skewTo = gsap.quickTo(velo, 'skewY', { duration: 0.5, ease: 'power3' });
+    const scaleTo = gsap.quickTo(velo, 'scaleY', { duration: 0.5, ease: 'power3' });
+    ScrollTrigger.create({ trigger: velo, start: 'top bottom', end: 'bottom top',
+      onUpdate: self => {
+        const s = gsap.utils.clamp(-7, 7, self.getVelocity() / -900);
+        skewTo(s); scaleTo(1 + Math.abs(s) * 0.004);
+      } });
+  }
+
+  /* ---------- 8. 磁性按钮 ---------- */
+  if (!reduced && matchMedia('(pointer:fine)').matches) {
+    const el = document.getElementById('mag');
+    const xTo = gsap.quickTo(el, 'x', { duration: 0.5, ease: 'power3' });
+    const yTo = gsap.quickTo(el, 'y', { duration: 0.5, ease: 'power3' });
+    addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      const near = Math.hypot(dx, dy) < 90 + r.width / 2;
+      xTo(near ? gsap.utils.clamp(-12, 12, dx * 0.18) : 0);
+      yTo(near ? gsap.utils.clamp(-12, 12, dy * 0.18) : 0);
+    }, { passive: true });
+  }
+
+  /* ---------- 9. 跑马灯：滚动驱动，不自动播 ---------- */
+  const words = ['Voice', 'Hooks', 'Pacing', 'Structure', 'Cadence'];
+  const row = words.map(w => `<span class="mq-item">${w}<i>✦</i></span>`).join('');
+  document.getElementById('mqrow').innerHTML = row;
+  document.getElementById('mqrow2').innerHTML = row;
+  if (!reduced) {
+    gsap.fromTo('#mqt', { x: '9vw' }, { x: '-9vw', ease: 'none',
+      scrollTrigger: { trigger: '#mq', start: '0% 100%', end: '100% 0%', scrub: 0 } });
+  }
+
+  /* ---------- 导航压到深色段自适应 ---------- */
+  const navInner = document.querySelector('.nav-inner');
+  const darkSec = document.getElementById('horizontal');
+  if (navInner && darkSec) {
+    new IntersectionObserver(([e]) => navInner.classList.toggle('on-dark', e.isIntersecting),
+      { rootMargin: '-64px 0px -100% 0px' }).observe(darkSec);
+  }
+
+  /* ---------- HUD：给验收用 ---------- */
+  const hud = document.getElementById('hud');
+  const stCount = () => ScrollTrigger.getAll().length;
+  addEventListener('load', () => {
+    setTimeout(() => { ScrollTrigger.refresh(); }, 300);
+  });
+  setInterval(() => {
+    hud.textContent = `ST ${stCount()} · y ${Math.round(scrollY)}`;
+  }, 400);
+
+  // 暴露给自动化验收
+  window.__lab = { lenis, ScrollTrigger, gsap };
+})();
+</script>
+</body>
+</html>

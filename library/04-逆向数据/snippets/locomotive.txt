@@ -1,0 +1,39 @@
+# locomotive — https://locomotive.ca
+# bundle 2557911 bytes
+
+ease 分布: {'power1.inOut': 12, 'power4.out': 4, 'power2.inOut': 3, 'none': 2, 'power2.out': 2, 'Power2.out': 2, 'power2.in': 1, 'linear': 1, 'Power4.out': 1}
+scrub 分布: {}
+start 分布: {'start': 1}
+pin:true 出现 0 次
+
+===== ScrollTrigger.create( =====
+st","_last",e._sort?"_start":0),HR(t)||(e._recent=t),r||pH(e,t),e._ts<0&&ET(e,e._tTime),e},mH=function(e,t){return(Pa.ScrollTrigger||xT("scrollTrigger",t))&&Pa.ScrollTrigger.create(t,e)},gH=function(e,t,i,r,s){if(uD(e,t,s),!e._initted)return 1;if(!i&&e._pt&&!Zs&&(e._dur&&e.vars.lazy!==!1||!e._dur&&e.vars.lazy)&&cH!==ea.frame)return hd.push(e),e._lazy=[s,r],1}
+
+===== ease: =====
+eturn Wn[ci]=mi},abortLoad:ut,retryLoad:Rt,requestProcessing:Zt,abortProcessing:ni,load:Ct,process:Dt,revert:Bt},NE(),{freeze:function(){return N.frozen=!0},release:function(){return N.released=!0}
+
+o,u),l=l._next;return o},t.tweenTo=function(r,s){s=s||{};var o=this,a=ml(o,r),l=s,c=l.startAt,u=l.onStart,h=l.onStartParams,d=l.immediateRender,f,p=as.to(o,Ra({ease:s.ease||"none",lazy:!1,immediateRender:!1,time:a,overwrite:"auto",duration:s.duration||Math.abs((a-(c&&"time"in c?c.time:o._time))/o.timeScale())||lr,onStart:function(){if(o.pause(),!f){var v=s.duration||Math.abs((a-(c&&"time"in c?c.time:o._time))/o.timeScale());p._dur!==v&&Zm(p,v,0,1).render(p._time,!0,!0),f=1}u&&u.apply(p,h||[])}
+
+1&&C.delay&&(a._delay=u=C.delay,a._start+=u,C.delay=0),T.to(D,C,A?A(w,D,_):0),T._ease=mn.none;T.duration()?c=u=0:a.timeline=0}else if(p){hy(Ra(T.vars.defaults,{ease:"none"})),T._ease=$f(p.ease||r.ease||"none");var V=0,H,j,le;if(ho(p))p.forEach(function(ie){return T.to(_,ie,">")}
+
+===== stagger: =====
+tartAt=as.set(v,Ra({data:"isStart",overwrite:!1,parent:y,immediateRender:!0,lazy:!m&&ta(l),startAt:null,delay:0,onUpdate:c&&function(){return Ia(e,"onUpdate")},stagger:0},o))),e._startAt._dp=0,e._startAt._sat=e,t<0&&(Zs||!a&&!f)&&e._startAt.revert(uT),a&&p&&t<=0&&i<=0){t&&(e._zTime=t);return}
+
+ity:0}),s.set(n,{opacity:1}),e[Math.floor(e.length*Math.random())]){case"base":for(let f=0;f<n.children.length;f++)s.set([...n.children[f].children],{opacity:1,stagger:.04},"row"+f);s.set(Na(Array.from(c.chars)),{opacity:0,stagger:.04}
+
+))]){case"base":for(let f=0;f<n.children.length;f++)s.set([...n.children[f].children],{opacity:1,stagger:.04},"row"+f);s.set(Na(Array.from(c.chars)),{opacity:0,stagger:.04}),s.add(()=>{}
+
+===== timeline({ =====
+s[this.currentIndex%this.$images.length],e=n.querySelector(".c-image_inner"),t=n.querySelector("img");t&&(t.classList.contains("-loaded")||Nc(t,null));let i=Nt.timeline({onComplete:()=>{this.timelines.splice(this.timelines.indexOf(i),1)}}
+
+a=()=>{var h,d;t++;let l=i[t%i.length];o(l,7),this.timelines[this.$cols.indexOf(n)]&&((d=(h=this.timelines[this.$cols.indexOf(n)]).kill)==null||d.call(h)),s=Nt.timeline({onComplete:()=>{Nt.set(n,{opacity:0}),c.revert(),requestAnimationFrame(()=>{a()})}}
+
+rAll("[data-hover-shuffle-child]").forEach(s=>{t.push(s),s.setAttribute("aria-label",s.innerText)}):(t=[e],e.setAttribute("aria-label",e.innerText)),this.tw=Nt.timeline({onComplete:()=>{t.forEach(s=>{s.innerText=s.getAttribute("aria-label"),s.removeAttribute("aria-label")})}}
+
+===== matchMedia( =====
+,x.ref.widthUpdated=K5(function(){x.ref.updateHistory=[],x.dispatch("DID_RESIZE_ROOT")},250),x.ref.previousAspectRatio=null,x.ref.updateHistory=[];var B=window.matchMedia("(pointer: fine) and (hover: hover)").matches,G="PointerEvent"in window;x.query("GET_ALLOW_REORDER")&&G&&!B&&(x.element.addEventListener("touchmove",WE,{passive:!1}
+
+){return t()})},XR=function(){var e=Date.now(),t=[];e-iH>2&&(UR("matchMediaInit"),Hf.forEach(function(i){var r=i.queries,s=i.conditions,o,a,l,c;for(a in r)o=Ic.matchMedia(r[a]).matches,o&&(l=1),o!==s[a]&&(s[a]=o,c=1);c&&(i.revert(),l&&t.push(i))}),UR("matchMediaRevert"),t.forEach(function(i){return i.onMatch(i,function(r){return i.add(null,r)})}
+
+.scope),a=o.conditions={},l,c,u;Dr&&!o.selector&&(o.selector=Dr.selector),this.contexts.push(o),r=o.add("onMatch",r),o.queries=i;for(c in i)c==="all"?u=1:(l=Ic.matchMedia(i[c]),l&&(Hf.indexOf(o)<0&&Hf.push(o),(a[c]=l.matches)&&(u=1),l.addListener?l.addListener(XR):l.addEventListener("change",XR)));return u&&r(o,function(h){return o.add(null,h)}
+

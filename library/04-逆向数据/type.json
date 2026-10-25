@@ -1,0 +1,3996 @@
+{
+ "generated": "2026-10-25",
+ "sites": [
+  {
+   "name": "lando",
+   "ok": true,
+   "type": {
+    "nEl": 864,
+    "maxSize": 110,
+    "bodyPx": 17,
+    "displaySizes": [
+     {
+      "px": 110,
+      "count": 3,
+      "sample": {
+       "text": "Redefining",
+       "family": "Brier",
+       "weight": "700",
+       "ls": "-2.5px",
+       "lh": "91.3px",
+       "transform": "uppercase",
+       "tag": "strong"
+      }
+     },
+     {
+      "px": 106,
+      "count": 7,
+      "sample": {
+       "text": "limits,",
+       "family": "Mona Sans Variable",
+       "weight": "400",
+       "ls": "-0.833333px",
+       "lh": "95.25px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 98,
+      "count": 2,
+      "sample": {
+       "text": "ON",
+       "family": "Brier",
+       "weight": "700",
+       "ls": "-2.91667px",
+       "lh": "78.975px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 93,
+      "count": 5,
+      "sample": {
+       "text": "TRACK",
+       "family": "Mona Sans Variable",
+       "weight": "700",
+       "ls": "-3.33333px",
+       "lh": "79.3333px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 73,
+      "count": 4,
+      "sample": {
+       "text": "bringing",
+       "family": "Brier",
+       "weight": "700",
+       "ls": "-1.66667px",
+       "lh": "62.06px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 70,
+      "count": 2,
+      "sample": {
+       "text": "Always",
+       "family": "Mona Sans Variable",
+       "weight": "700",
+       "ls": "-0.0625px",
+       "lh": "59.92px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 63,
+      "count": 4,
+      "sample": {
+       "text": "Hall of Fame",
+       "family": "Brier",
+       "weight": "700",
+       "ls": "normal",
+       "lh": "55.375px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 60,
+      "count": 4,
+      "sample": {
+       "text": "Helmets",
+       "family": "Mona Sans Variable",
+       "weight": "700",
+       "ls": "-1.66667px",
+       "lh": "53.16px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 110,
+      "count": 3
+     },
+     {
+      "px": 106,
+      "count": 7
+     },
+     {
+      "px": 98,
+      "count": 2
+     },
+     {
+      "px": 93,
+      "count": 5
+     },
+     {
+      "px": 73,
+      "count": 4
+     },
+     {
+      "px": 70,
+      "count": 2
+     },
+     {
+      "px": 63,
+      "count": 4
+     },
+     {
+      "px": 60,
+      "count": 4
+     },
+     {
+      "px": 32,
+      "count": 3
+     },
+     {
+      "px": 27,
+      "count": 3
+     },
+     {
+      "px": 25,
+      "count": 49
+     },
+     {
+      "px": 20,
+      "count": 8
+     },
+     {
+      "px": 17,
+      "count": 19
+     },
+     {
+      "px": 15,
+      "count": 1
+     },
+     {
+      "px": 14,
+      "count": 5
+     },
+     {
+      "px": 13,
+      "count": 2
+     },
+     {
+      "px": 12,
+      "count": 32
+     },
+     {
+      "px": 10,
+      "count": 2
+     },
+     {
+      "px": 8,
+      "count": 18
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Mona Sans Variable",
+      "c": 821
+     },
+     {
+      "v": "Brier",
+      "c": 43
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(244, 244, 237)",
+      "c": 404
+     },
+     {
+      "v": "rgb(40, 44, 32)",
+      "c": 191
+     },
+     {
+      "v": "rgb(83, 84, 80)",
+      "c": 72
+     },
+     {
+      "v": "rgb(17, 17, 18)",
+      "c": 66
+     },
+     {
+      "v": "rgb(210, 255, 0)",
+      "c": 52
+     },
+     {
+      "v": "rgb(221, 225, 210)",
+      "c": 30
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(210, 255, 0)",
+      "c": 43
+     },
+     {
+      "v": "rgb(59, 60, 56)",
+      "c": 27
+     },
+     {
+      "v": "rgb(178, 199, 58)",
+      "c": 9
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 7
+     },
+     {
+      "v": "rgb(17, 17, 18)",
+      "c": 2
+     },
+     {
+      "v": "rgb(244, 244, 237)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(210, 255, 0)",
+      "sat": 1,
+      "c": 52
+     },
+     {
+      "color": "b:rgb(210, 255, 0)",
+      "sat": 1,
+      "c": 43
+     },
+     {
+      "color": "t:rgb(178, 199, 58)",
+      "sat": 0.71,
+      "c": 9
+     },
+     {
+      "color": "b:rgb(178, 199, 58)",
+      "sat": 0.71,
+      "c": 9
+     }
+    ],
+    "radius": [
+     {
+      "v": "7.2px",
+      "c": 7
+     },
+     {
+      "v": "44.2167px",
+      "c": 7
+     },
+     {
+      "v": "9.86667px",
+      "c": 1
+     },
+     {
+      "v": "2.66667px",
+      "c": 1
+     }
+    ],
+    "borders": 8,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "ojo",
+   "ok": true,
+   "type": {
+    "nEl": 262,
+    "maxSize": 137,
+    "bodyPx": 13,
+    "displaySizes": [
+     {
+      "px": 137,
+      "count": 1,
+      "sample": {
+       "text": "T",
+       "family": "Miss Fajardose",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "75.24px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 55,
+      "count": 1,
+      "sample": {
+       "text": "he world's first AI Design Agent T",
+       "family": "Faculty Glyphic",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "75.24px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 40,
+      "count": 7,
+      "sample": {
+       "text": "Build your agent team and skills b",
+       "family": "Faculty Glyphic",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "48px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 137,
+      "count": 1
+     },
+     {
+      "px": 55,
+      "count": 1
+     },
+     {
+      "px": 40,
+      "count": 7
+     },
+     {
+      "px": 20,
+      "count": 7
+     },
+     {
+      "px": 18,
+      "count": 2
+     },
+     {
+      "px": 14,
+      "count": 5
+     },
+     {
+      "px": 13,
+      "count": 15
+     },
+     {
+      "px": 12,
+      "count": 9
+     },
+     {
+      "px": 11,
+      "count": 8
+     },
+     {
+      "px": 8,
+      "count": 24
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Geist Sans",
+      "c": 186
+     },
+     {
+      "v": "ui-monospace",
+      "c": 25
+     },
+     {
+      "v": "Lexend",
+      "c": 20
+     },
+     {
+      "v": "Faculty Glyphic",
+      "c": 11
+     },
+     {
+      "v": "Noto Sans CJK SC",
+      "c": 10
+     },
+     {
+      "v": "JetBrains Mono",
+      "c": 9
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 143
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 48
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.8)",
+      "c": 7
+     },
+     {
+      "v": "rgb(137, 220, 235)",
+      "c": 7
+     },
+     {
+      "v": "rgba(0, 0, 0, 0.3)",
+      "c": 6
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.65)",
+      "c": 6
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 6
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 6
+     },
+     {
+      "v": "rgb(18, 17, 34)",
+      "c": 2
+     },
+     {
+      "v": "rgb(13, 13, 13)",
+      "c": 2
+     },
+     {
+      "v": "rgb(255, 192, 0)",
+      "c": 1
+     },
+     {
+      "v": "rgb(48, 48, 48)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(137, 220, 235)",
+      "sat": 0.42,
+      "c": 7
+     },
+     {
+      "color": "t:rgb(137, 180, 250)",
+      "sat": 0.45,
+      "c": 6
+     },
+     {
+      "color": "t:rgb(243, 139, 168)",
+      "sat": 0.43,
+      "c": 5
+     },
+     {
+      "color": "t:rgb(94, 234, 212)",
+      "sat": 0.6,
+      "c": 2
+     },
+     {
+      "color": "b:rgb(255, 192, 0)",
+      "sat": 1,
+      "c": 1
+     },
+     {
+      "color": "t:rgb(255, 192, 0)",
+      "sat": 1,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "16px",
+      "c": 8
+     },
+     {
+      "v": "4px",
+      "c": 7
+     },
+     {
+      "v": "999px",
+      "c": 5
+     },
+     {
+      "v": "8px",
+      "c": 4
+     },
+     {
+      "v": "9999px",
+      "c": 3
+     },
+     {
+      "v": "12px",
+      "c": 3
+     }
+    ],
+    "borders": 6,
+    "shadows": 16,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "offer",
+   "ok": true,
+   "type": {
+    "nEl": 3,
+    "maxSize": 32,
+    "bodyPx": 16,
+    "displaySizes": [],
+    "allSizes": [
+     {
+      "px": 32,
+      "count": 1
+     },
+     {
+      "px": 16,
+      "count": 2
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "PingFang SC",
+      "c": 3
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 3
+     }
+    ],
+    "colorsBg": [],
+    "accents": [],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "igloo",
+   "ok": true,
+   "type": {
+    "nEl": 4,
+    "maxSize": null,
+    "bodyPx": null,
+    "displaySizes": [],
+    "allSizes": [],
+    "topFamilies": [
+     {
+      "v": "PingFang SC",
+      "c": 4
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 4
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(160, 165, 177)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "active",
+   "ok": true,
+   "type": {
+    "nEl": 3,
+    "maxSize": 15,
+    "bodyPx": 15,
+    "displaySizes": [],
+    "allSizes": [
+     {
+      "px": 15,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "PingFang SC",
+      "c": 2
+     },
+     {
+      "v": "Arial",
+      "c": 1
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 2
+     },
+     {
+      "v": "rgb(136, 136, 136)",
+      "c": 1
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(16, 22, 44)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(16, 22, 44)",
+      "sat": 0.64,
+      "c": 1
+     }
+    ],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "darkroom",
+   "ok": true,
+   "type": {
+    "nEl": 378,
+    "maxSize": 251,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 251,
+      "count": 1,
+      "sample": {
+       "text": "darkroom",
+       "family": "sauce",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "251.001px",
+       "transform": "none",
+       "tag": "p"
+      }
+     },
+     {
+      "px": 200,
+      "count": 4,
+      "sample": {
+       "text": "Where",
+       "family": "therma",
+       "weight": "400",
+       "ls": "-9.99999px",
+       "lh": "160px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 120,
+      "count": 11,
+      "sample": {
+       "text": "Oreo & BTS",
+       "family": "therma",
+       "weight": "700",
+       "ls": "-6px",
+       "lh": "96px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 251,
+      "count": 1
+     },
+     {
+      "px": 200,
+      "count": 4
+     },
+     {
+      "px": 120,
+      "count": 11
+     },
+     {
+      "px": 16,
+      "count": 3
+     },
+     {
+      "px": 14,
+      "count": 169
+     },
+     {
+      "px": 10,
+      "count": 16
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "mono",
+      "c": 357
+     },
+     {
+      "v": "therma",
+      "c": 17
+     },
+     {
+      "v": "sauce",
+      "c": 4
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "lab(49.9009 73.4337 56.9833)",
+      "c": 363
+     },
+     {
+      "v": "lab(0 0 0)",
+      "c": 12
+     },
+     {
+      "v": "oklab(0.499977 0.175211 0.0930235)",
+      "c": 3
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "lab(8.68092 26.9862 11.739)",
+      "c": 11
+     },
+     {
+      "v": "lab(49.9009 73.4337 56.9833)",
+      "c": 6
+     },
+     {
+      "v": "lab(0 0 0)",
+      "c": 5
+     },
+     {
+      "v": "oklch(0.5882 0.2334 27.96)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [],
+    "borders": 34,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "lusion",
+   "ok": true,
+   "type": {
+    "nEl": 1069,
+    "maxSize": 144,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 144,
+      "count": 38,
+      "sample": {
+       "text": "Bold Ideas,",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "-2.88px",
+       "lh": "144px",
+       "transform": "none",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 115,
+      "count": 8,
+      "sample": {
+       "text": "Featured Work",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "-2.304px",
+       "lh": "103.68px",
+       "transform": "none",
+       "tag": "h4"
+      }
+     },
+     {
+      "px": 108,
+      "count": 1,
+      "sample": {
+       "text": "Play Reel",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "108px",
+       "transform": "uppercase",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 86,
+      "count": 11,
+      "sample": {
+       "text": "Step",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "99.36px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 50,
+      "count": 1,
+      "sample": {
+       "text": "About Us",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "50.4px",
+       "transform": "uppercase",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 49,
+      "count": 2,
+      "sample": {
+       "text": "Subscribe to",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "55.89px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 43,
+      "count": 532,
+      "sample": {
+       "text": "O",
+       "family": "Aeonik",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "49.68px",
+       "transform": "none",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 144,
+      "count": 38
+     },
+     {
+      "px": 115,
+      "count": 8
+     },
+     {
+      "px": 108,
+      "count": 1
+     },
+     {
+      "px": 86,
+      "count": 11
+     },
+     {
+      "px": 50,
+      "count": 1
+     },
+     {
+      "px": 49,
+      "count": 2
+     },
+     {
+      "px": 43,
+      "count": 532
+     },
+     {
+      "px": 38,
+      "count": 2
+     },
+     {
+      "px": 36,
+      "count": 1
+     },
+     {
+      "px": 26,
+      "count": 10
+     },
+     {
+      "px": 22,
+      "count": 3
+     },
+     {
+      "px": 18,
+      "count": 11
+     },
+     {
+      "px": 14,
+      "count": 18
+     },
+     {
+      "px": 13,
+      "count": 13
+     },
+     {
+      "px": 12,
+      "count": 2
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Aeonik",
+      "c": 1069
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 923
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 141
+     },
+     {
+      "v": "rgb(240, 241, 250)",
+      "c": 3
+     },
+     {
+      "v": "rgb(26, 47, 251)",
+      "c": 2
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 7
+     },
+     {
+      "v": "rgb(240, 241, 250)",
+      "c": 2
+     },
+     {
+      "v": "rgb(43, 46, 58)",
+      "c": 1
+     },
+     {
+      "v": "rgb(228, 230, 239)",
+      "c": 1
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 1
+     },
+     {
+      "v": "rgb(18, 20, 22)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(26, 47, 251)",
+      "sat": 0.9,
+      "c": 2
+     }
+    ],
+    "radius": [
+     {
+      "v": "15px",
+      "c": 12
+     },
+     {
+      "v": "100%",
+      "c": 3
+     },
+     {
+      "v": "87.5px",
+      "c": 2
+     },
+     {
+      "v": "324px",
+      "c": 2
+     },
+     {
+      "v": "18px",
+      "c": 1
+     },
+     {
+      "v": "76.5px",
+      "c": 1
+     }
+    ],
+    "borders": 0,
+    "shadows": 2,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "resn",
+   "ok": true,
+   "type": {
+    "nEl": 12,
+    "maxSize": 10,
+    "bodyPx": null,
+    "displaySizes": [],
+    "allSizes": [
+     {
+      "px": 10,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "sans-serif",
+      "c": 6
+     },
+     {
+      "v": "Fort-Book",
+      "c": 4
+     },
+     {
+      "v": "Fort-Medium",
+      "c": 2
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 6
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 6
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(20, 18, 20)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "bruno",
+   "ok": true,
+   "type": {
+    "nEl": 10,
+    "maxSize": null,
+    "bodyPx": null,
+    "displaySizes": [],
+    "allSizes": [],
+    "topFamilies": [
+     {
+      "v": "Nunito",
+      "c": 10
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 10
+     }
+    ],
+    "colorsBg": [],
+    "accents": [],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "basement",
+   "ok": true,
+   "type": {
+    "nEl": 360,
+    "maxSize": 87,
+    "bodyPx": 20,
+    "displaySizes": [
+     {
+      "px": 87,
+      "count": 1,
+      "sample": {
+       "text": "A digital studio & branding powerh",
+       "family": "Geist",
+       "weight": "600",
+       "ls": "-3.48px",
+       "lh": "78px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     },
+     {
+      "px": 76,
+      "count": 5,
+      "sample": {
+       "text": "Featured Projects",
+       "family": "Geist",
+       "weight": "600",
+       "ls": "-3.04px",
+       "lh": "68px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 87,
+      "count": 1
+     },
+     {
+      "px": 76,
+      "count": 5
+     },
+     {
+      "px": 38,
+      "count": 12
+     },
+     {
+      "px": 24,
+      "count": 4
+     },
+     {
+      "px": 20,
+      "count": 21
+     },
+     {
+      "px": 13,
+      "count": 21
+     },
+     {
+      "px": 12,
+      "count": 8
+     },
+     {
+      "px": 9,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Geist",
+      "c": 357
+     },
+     {
+      "v": "Geist Mono",
+      "c": 3
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(230, 230, 230)",
+      "c": 183
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 82
+     },
+     {
+      "v": "rgba(0, 0, 0, 0)",
+      "c": 40
+     },
+     {
+      "v": "color(srgb 0.901961 0.901961 0.901961)",
+      "c": 24
+     },
+     {
+      "v": "rgb(196, 196, 196)",
+      "c": 16
+     },
+     {
+      "v": "rgb(117, 117, 117)",
+      "c": 14
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(46, 46, 46)",
+      "c": 13
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 9
+     },
+     {
+      "v": "rgb(26, 26, 26)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(255, 77, 0)",
+      "sat": 1,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "9999px",
+      "c": 3
+     }
+    ],
+    "borders": 6,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "daybreak",
+   "ok": true,
+   "type": {
+    "nEl": 10,
+    "maxSize": 14,
+    "bodyPx": 14,
+    "displaySizes": [],
+    "allSizes": [
+     {
+      "px": 14,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "__aspekta_f8cca9",
+      "c": 9
+     },
+     {
+      "v": "ui-sans-serif",
+      "c": 1
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(9, 9, 11)",
+      "c": 8
+     },
+     {
+      "v": "rgb(115, 115, 115)",
+      "c": 2
+     }
+    ],
+    "colorsBg": [],
+    "accents": [],
+    "radius": [],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "mercury",
+   "ok": true,
+   "type": {
+    "nEl": 802,
+    "maxSize": 65,
+    "bodyPx": 16,
+    "displaySizes": [
+     {
+      "px": 65,
+      "count": 5,
+      "sample": {
+       "text": "+",
+       "family": "arcadiaDisplay",
+       "weight": "480",
+       "ls": "normal",
+       "lh": "71.8784px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 49,
+      "count": 1,
+      "sample": {
+       "text": "Radically different banking",
+       "family": "arcadiaDisplay",
+       "weight": "480",
+       "ls": "normal",
+       "lh": "54.2819px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 42,
+      "count": 4,
+      "sample": {
+       "text": "Loved by + of themost ambitious en",
+       "family": "arcadiaDisplay",
+       "weight": "480",
+       "ls": "0.42px",
+       "lh": "48.3px",
+       "transform": "none",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 65,
+      "count": 5
+     },
+     {
+      "px": 49,
+      "count": 1
+     },
+     {
+      "px": 42,
+      "count": 4
+     },
+     {
+      "px": 32,
+      "count": 4
+     },
+     {
+      "px": 28,
+      "count": 8
+     },
+     {
+      "px": 24,
+      "count": 3
+     },
+     {
+      "px": 21,
+      "count": 6
+     },
+     {
+      "px": 18,
+      "count": 30
+     },
+     {
+      "px": 16,
+      "count": 106
+     },
+     {
+      "px": 12,
+      "count": 9
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "arcadia",
+      "c": 751
+     },
+     {
+      "v": "arcadiaDisplay",
+      "c": 51
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 350
+     },
+     {
+      "v": "rgb(237, 237, 243)",
+      "c": 308
+     },
+     {
+      "v": "rgb(195, 195, 204)",
+      "c": 105
+     },
+     {
+      "v": "rgba(0, 0, 0, 0)",
+      "c": 23
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 9
+     },
+     {
+      "v": "rgb(42, 41, 36)",
+      "c": 4
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(30, 30, 42)",
+      "c": 7
+     },
+     {
+      "v": "rgb(23, 23, 33)",
+      "c": 6
+     },
+     {
+      "v": "rgba(156, 180, 232, 0.2)",
+      "c": 6
+     },
+     {
+      "v": "rgb(82, 102, 235)",
+      "c": 3
+     },
+     {
+      "v": "rgba(175, 178, 206, 0.2)",
+      "c": 2
+     },
+     {
+      "v": "rgb(252, 252, 250)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(82, 102, 235)",
+      "sat": 0.65,
+      "c": 3
+     }
+    ],
+    "radius": [
+     {
+      "v": "4px",
+      "c": 86
+     },
+     {
+      "v": "12px",
+      "c": 27
+     },
+     {
+      "v": "40px",
+      "c": 10
+     },
+     {
+      "v": "32px",
+      "c": 5
+     },
+     {
+      "v": "8px",
+      "c": 3
+     },
+     {
+      "v": "3.35544e+07px",
+      "c": 3
+     }
+    ],
+    "borders": 18,
+    "shadows": 1,
+    "blurred": 4
+   }
+  },
+  {
+   "name": "linear",
+   "ok": true,
+   "type": {
+    "nEl": 1476,
+    "maxSize": 72,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 72,
+      "count": 1,
+      "sample": {
+       "text": "Built for the future. Available to",
+       "family": "Inter Variable",
+       "weight": "510",
+       "ls": "-1.584px",
+       "lh": "72px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     },
+     {
+      "px": 48,
+      "count": 7,
+      "sample": {
+       "text": "Purpose-built for modern teams wit",
+       "family": "Inter Variable",
+       "weight": "510",
+       "ls": "-1.056px",
+       "lh": "48px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 72,
+      "count": 1
+     },
+     {
+      "px": 48,
+      "count": 7
+     },
+     {
+      "px": 32,
+      "count": 2
+     },
+     {
+      "px": 24,
+      "count": 4
+     },
+     {
+      "px": 20,
+      "count": 1
+     },
+     {
+      "px": 16,
+      "count": 4
+     },
+     {
+      "px": 15,
+      "count": 64
+     },
+     {
+      "px": 14,
+      "count": 140
+     },
+     {
+      "px": 13,
+      "count": 117
+     },
+     {
+      "px": 12,
+      "count": 157
+     },
+     {
+      "px": 11,
+      "count": 2
+     },
+     {
+      "px": 10,
+      "count": 23
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Inter Variable",
+      "c": 1283
+     },
+     {
+      "v": "Berkeley Mono",
+      "c": 193
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(247, 248, 248)",
+      "c": 721
+     },
+     {
+      "v": "rgb(138, 143, 152)",
+      "c": 241
+     },
+     {
+      "v": "rgb(208, 214, 224)",
+      "c": 167
+     },
+     {
+      "v": "rgb(98, 102, 109)",
+      "c": 132
+     },
+     {
+      "v": "rgb(226, 228, 231)",
+      "c": 60
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 59
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(15, 16, 17)",
+      "c": 34
+     },
+     {
+      "v": "rgba(0, 255, 5, 0.1)",
+      "c": 10
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.02)",
+      "c": 9
+     },
+     {
+      "v": "rgb(8, 9, 10)",
+      "c": 6
+     },
+     {
+      "v": "rgba(243, 78, 82, 0.1)",
+      "c": 4
+     },
+     {
+      "v": "rgba(39, 166, 68, 0.07)",
+      "c": 4
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(247, 156, 224)",
+      "sat": 0.37,
+      "c": 31
+     },
+     {
+      "color": "t:rgb(247, 191, 139)",
+      "sat": 0.44,
+      "c": 22
+     },
+     {
+      "color": "t:rgb(255, 223, 159)",
+      "sat": 0.38,
+      "c": 10
+     },
+     {
+      "color": "t:rgb(131, 220, 220)",
+      "sat": 0.4,
+      "c": 9
+     },
+     {
+      "color": "t:rgb(143, 166, 255)",
+      "sat": 0.44,
+      "c": 8
+     },
+     {
+      "color": "t:rgb(109, 120, 213)",
+      "sat": 0.49,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "9999px",
+      "c": 72
+     },
+     {
+      "v": "8px",
+      "c": 26
+     },
+     {
+      "v": "12px",
+      "c": 24
+     },
+     {
+      "v": "4px",
+      "c": 24
+     },
+     {
+      "v": "50%",
+      "c": 19
+     },
+     {
+      "v": "9px",
+      "c": 18
+     }
+    ],
+    "borders": 83,
+    "shadows": 35,
+    "blurred": 2
+   }
+  },
+  {
+   "name": "vercel",
+   "ok": true,
+   "type": {
+    "nEl": 422,
+    "maxSize": 64,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 64,
+      "count": 1,
+      "sample": {
+       "text": "Agentic Infrastructure",
+       "family": "GeistSans",
+       "weight": "400",
+       "ls": "-3.84px",
+       "lh": "64px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     },
+     {
+      "px": 56,
+      "count": 5,
+      "sample": {
+       "text": "Build agents on infrastructure tha",
+       "family": "GeistSans",
+       "weight": "450",
+       "ls": "-3.36px",
+       "lh": "56px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 64,
+      "count": 1
+     },
+     {
+      "px": 56,
+      "count": 5
+     },
+     {
+      "px": 24,
+      "count": 10
+     },
+     {
+      "px": 16,
+      "count": 9
+     },
+     {
+      "px": 14,
+      "count": 116
+     },
+     {
+      "px": 13,
+      "count": 4
+     },
+     {
+      "px": 12,
+      "count": 1
+     },
+     {
+      "px": 11,
+      "count": 4
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "GeistSans",
+      "c": 414
+     },
+     {
+      "v": "Geist Mono",
+      "c": 8
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(23, 23, 23)",
+      "c": 219
+     },
+     {
+      "v": "rgb(77, 77, 77)",
+      "c": 178
+     },
+     {
+      "v": "rgb(143, 143, 143)",
+      "c": 10
+     },
+     {
+      "v": "lab(100 0 0)",
+      "c": 7
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 6
+     },
+     {
+      "v": "rgba(0, 0, 0, 0)",
+      "c": 1
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 11
+     },
+     {
+      "v": "rgb(250, 250, 250)",
+      "c": 4
+     },
+     {
+      "v": "rgb(23, 23, 23)",
+      "c": 3
+     },
+     {
+      "v": "oklab(0.730438 -0.0555127 -0.136139 / 0.8)",
+      "c": 3
+     }
+    ],
+    "accents": [],
+    "radius": [
+     {
+      "v": "3.35544e+07px",
+      "c": 16
+     },
+     {
+      "v": "6px",
+      "c": 6
+     },
+     {
+      "v": "20px",
+      "c": 6
+     },
+     {
+      "v": "4px",
+      "c": 4
+     },
+     {
+      "v": "8px",
+      "c": 3
+     }
+    ],
+    "borders": 4,
+    "shadows": 16,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "family",
+   "ok": true,
+   "type": {
+    "nEl": 1253,
+    "maxSize": 68,
+    "bodyPx": 17,
+    "displaySizes": [
+     {
+      "px": 68,
+      "count": 4,
+      "sample": {
+       "text": "Your",
+       "family": "Family",
+       "weight": "500",
+       "ls": "-1.36px",
+       "lh": "74.8px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 44,
+      "count": 18,
+      "sample": {
+       "text": "Explore Ethereum",
+       "family": "Family",
+       "weight": "500",
+       "ls": "-1.35px",
+       "lh": "48px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 68,
+      "count": 4
+     },
+     {
+      "px": 44,
+      "count": 18
+     },
+     {
+      "px": 23,
+      "count": 2
+     },
+     {
+      "px": 19,
+      "count": 13
+     },
+     {
+      "px": 17,
+      "count": 73
+     },
+     {
+      "px": 15,
+      "count": 61
+     },
+     {
+      "px": 14,
+      "count": 42
+     },
+     {
+      "px": 13,
+      "count": 17
+     },
+     {
+      "px": 12,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Inter",
+      "c": 1230
+     },
+     {
+      "v": "Family",
+      "c": 23
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(71, 70, 69)",
+      "c": 723
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 114
+     },
+     {
+      "v": "color(display-p3 0.203922 0.203922 0.2)",
+      "c": 85
+     },
+     {
+      "v": "rgb(18, 18, 18)",
+      "c": 38
+     },
+     {
+      "v": "color(display-p3 0.286275 0.266667 0.25098)",
+      "c": 36
+     },
+     {
+      "v": "color(display-p3 0.517647 0.509804 0.505882)",
+      "c": 34
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "color(display-p3 1 1 1)",
+      "c": 30
+     },
+     {
+      "v": "color(display-p3 0.984314 0.980392 0.976471)",
+      "c": 20
+     },
+     {
+      "v": "color(display-p3 0.00392157 0.552941 1)",
+      "c": 9
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 7
+     },
+     {
+      "v": "color(display-p3 0.203922 0.780392 0.34902)",
+      "c": 4
+     },
+     {
+      "v": "color(display-p3 1 0.745098 0.298039)",
+      "c": 4
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(249, 115, 22)",
+      "sat": 0.91,
+      "c": 3
+     },
+     {
+      "color": "t:rgb(26, 136, 248)",
+      "sat": 0.9,
+      "c": 3
+     }
+    ],
+    "radius": [
+     {
+      "v": "10px",
+      "c": 30
+     },
+     {
+      "v": "40px",
+      "c": 30
+     },
+     {
+      "v": "72px",
+      "c": 27
+     },
+     {
+      "v": "12px",
+      "c": 25
+     },
+     {
+      "v": "6px",
+      "c": 10
+     },
+     {
+      "v": "7.5%",
+      "c": 9
+     }
+    ],
+    "borders": 0,
+    "shadows": 37,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "apple",
+   "ok": true,
+   "type": {
+    "nEl": 778,
+    "maxSize": 56,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 56,
+      "count": 3,
+      "sample": {
+       "text": "iPhone Duo",
+       "family": "SF Pro Display",
+       "weight": "600",
+       "ls": "-0.28px",
+       "lh": "60px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     },
+     {
+      "px": 40,
+      "count": 1,
+      "sample": {
+       "text": "Incredible carrier deals at Apple",
+       "family": "SF Pro Display",
+       "weight": "600",
+       "ls": "normal",
+       "lh": "44px",
+       "transform": "none",
+       "tag": "h3"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 56,
+      "count": 3
+     },
+     {
+      "px": 40,
+      "count": 1
+     },
+     {
+      "px": 28,
+      "count": 4
+     },
+     {
+      "px": 21,
+      "count": 22
+     },
+     {
+      "px": 17,
+      "count": 16
+     },
+     {
+      "px": 14,
+      "count": 30
+     },
+     {
+      "px": 12,
+      "count": 230
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "SF Pro Text",
+      "c": 731
+     },
+     {
+      "v": "SF Pro Display",
+      "c": 36
+     },
+     {
+      "v": "SF Pro HK",
+      "c": 11
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgba(0, 0, 0, 0.56)",
+      "c": 223
+     },
+     {
+      "v": "rgb(29, 29, 31)",
+      "c": 160
+     },
+     {
+      "v": "rgb(41, 151, 255)",
+      "c": 126
+     },
+     {
+      "v": "rgba(0, 0, 0, 0.72)",
+      "c": 103
+     },
+     {
+      "v": "rgba(0, 0, 0, 0.8)",
+      "c": 59
+     },
+     {
+      "v": "rgb(245, 245, 247)",
+      "c": 33
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(245, 245, 247)",
+      "c": 26
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 22
+     },
+     {
+      "v": "rgb(0, 113, 227)",
+      "c": 9
+     },
+     {
+      "v": "rgb(250, 250, 252)",
+      "c": 2
+     },
+     {
+      "v": "rgb(29, 29, 31)",
+      "c": 1
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.8)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(41, 151, 255)",
+      "sat": 0.84,
+      "c": 126
+     },
+     {
+      "color": "t:rgb(0, 102, 204)",
+      "sat": 1,
+      "c": 20
+     },
+     {
+      "color": "b:rgb(0, 113, 227)",
+      "sat": 1,
+      "c": 9
+     },
+     {
+      "color": "b:rgb(36, 86, 142)",
+      "sat": 0.75,
+      "c": 1
+     },
+     {
+      "color": "b:rgb(48, 4, 2)",
+      "sat": 0.96,
+      "c": 1
+     },
+     {
+      "color": "b:rgb(198, 152, 81)",
+      "sat": 0.59,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "980px",
+      "c": 34
+     },
+     {
+      "v": "11px",
+      "c": 1
+     },
+     {
+      "v": "8px",
+      "c": 1
+     },
+     {
+      "v": "999px",
+      "c": 1
+     },
+     {
+      "v": "50%",
+      "c": 1
+     }
+    ],
+    "borders": 36,
+    "shadows": 0,
+    "blurred": 1
+   }
+  },
+  {
+   "name": "rauno",
+   "ok": true,
+   "type": {
+    "nEl": 65,
+    "maxSize": 720,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 720,
+      "count": 3,
+      "sample": {
+       "text": "DD",
+       "family": "X",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "normal",
+       "transform": "none",
+       "tag": "h3"
+      }
+     },
+     {
+      "px": 85,
+      "count": 12,
+      "sample": {
+       "text": "Rauno Freiberg",
+       "family": "X",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "normal",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 75,
+      "count": 1,
+      "sample": {
+       "text": "Make it fast. Make it beautiful. M",
+       "family": "X",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "normal",
+       "transform": "none",
+       "tag": "p"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 720,
+      "count": 3
+     },
+     {
+      "px": 85,
+      "count": 12
+     },
+     {
+      "px": 75,
+      "count": 1
+     },
+     {
+      "px": 14,
+      "count": 5
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "X",
+      "c": 65
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 37
+     },
+     {
+      "v": "rgb(23, 23, 23)",
+      "c": 23
+     },
+     {
+      "v": "rgb(111, 111, 111)",
+      "c": 5
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 7
+     },
+     {
+      "v": "rgb(255, 255, 2)",
+      "c": 3
+     },
+     {
+      "v": "color(display-p3 0.99 0.4 0.02)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(255, 255, 2)",
+      "sat": 0.99,
+      "c": 3
+     }
+    ],
+    "radius": [
+     {
+      "v": "12px",
+      "c": 5
+     },
+     {
+      "v": "9999px",
+      "c": 2
+     }
+    ],
+    "borders": 1,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "unit9",
+   "ok": true,
+   "type": {
+    "nEl": 65,
+    "maxSize": 72,
+    "bodyPx": null,
+    "displaySizes": [
+     {
+      "px": 72,
+      "count": 2,
+      "sample": {
+       "text": "/",
+       "family": "Satoshi",
+       "weight": "500",
+       "ls": "normal",
+       "lh": "normal",
+       "transform": "uppercase",
+       "tag": "p"
+      }
+     },
+     {
+      "px": 48,
+      "count": 3,
+      "sample": {
+       "text": "EXP",
+       "family": "Satoshi",
+       "weight": "500",
+       "ls": "normal",
+       "lh": "normal",
+       "transform": "uppercase",
+       "tag": "div"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 72,
+      "count": 2
+     },
+     {
+      "px": 48,
+      "count": 3
+     },
+     {
+      "px": 11,
+      "count": 15
+     },
+     {
+      "px": 10,
+      "count": 3
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Satoshi",
+      "c": 65
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 35
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 27
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.7)",
+      "c": 3
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 5
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [],
+    "borders": 5,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "ustwo",
+   "ok": true,
+   "type": {
+    "nEl": 281,
+    "maxSize": 216,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 216,
+      "count": 1,
+      "sample": {
+       "text": "Digital products people stick with",
+       "family": "ABC Diatype Condensed",
+       "weight": "100",
+       "ls": "-6.48333px",
+       "lh": "172.889px",
+       "transform": "uppercase",
+       "tag": "h1"
+      }
+     },
+     {
+      "px": 196,
+      "count": 10,
+      "sample": {
+       "text": "LONDON",
+       "family": "ABC Diatype Condensed",
+       "weight": "300",
+       "ls": "-2.944px",
+       "lh": "153.088px",
+       "transform": "uppercase",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 160,
+      "count": 1,
+      "sample": {
+       "text": "9.6 / 10",
+       "family": "ABC Diatype Condensed",
+       "weight": "100",
+       "ls": "-2.39861px",
+       "lh": "159.907px",
+       "transform": "uppercase",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 47,
+      "count": 1,
+      "sample": {
+       "text": "We design and build digital experi",
+       "family": "ABC Diatype",
+       "weight": "400",
+       "ls": "-1.40055px",
+       "lh": "56.0222px",
+       "transform": "none",
+       "tag": "p"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 216,
+      "count": 1
+     },
+     {
+      "px": 196,
+      "count": 10
+     },
+     {
+      "px": 160,
+      "count": 1
+     },
+     {
+      "px": 47,
+      "count": 1
+     },
+     {
+      "px": 38,
+      "count": 2
+     },
+     {
+      "px": 34,
+      "count": 2
+     },
+     {
+      "px": 30,
+      "count": 9
+     },
+     {
+      "px": 27,
+      "count": 1
+     },
+     {
+      "px": 24,
+      "count": 1
+     },
+     {
+      "px": 22,
+      "count": 6
+     },
+     {
+      "px": 18,
+      "count": 5
+     },
+     {
+      "px": 16,
+      "count": 2
+     },
+     {
+      "px": 14,
+      "count": 38
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "ABC Diatype",
+      "c": 266
+     },
+     {
+      "v": "ABC Diatype Condensed",
+      "c": 12
+     },
+     {
+      "v": "DM Mono",
+      "c": 3
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(43, 43, 43)",
+      "c": 187
+     },
+     {
+      "v": "rgb(246, 246, 246)",
+      "c": 45
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 36
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.9)",
+      "c": 6
+     },
+     {
+      "v": "rgb(41, 255, 173)",
+      "c": 4
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 3
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(43, 43, 43)",
+      "c": 2
+     },
+     {
+      "v": "rgb(41, 255, 173)",
+      "c": 2
+     },
+     {
+      "v": "rgb(158, 185, 214)",
+      "c": 1
+     },
+     {
+      "v": "rgb(8, 8, 8)",
+      "c": 1
+     },
+     {
+      "v": "rgb(168, 168, 152)",
+      "c": 1
+     },
+     {
+      "v": "rgb(200, 232, 248)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(41, 255, 173)",
+      "sat": 0.84,
+      "c": 4
+     },
+     {
+      "color": "b:rgb(41, 255, 173)",
+      "sat": 0.84,
+      "c": 2
+     },
+     {
+      "color": "b:rgb(72, 248, 184)",
+      "sat": 0.71,
+      "c": 1
+     },
+     {
+      "color": "b:rgb(163, 217, 255)",
+      "sat": 0.36,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "4px",
+      "c": 5
+     },
+     {
+      "v": "80px",
+      "c": 2
+     },
+     {
+      "v": "28px",
+      "c": 1
+     }
+    ],
+    "borders": 3,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "unseen",
+   "ok": true,
+   "type": {
+    "nEl": 19,
+    "maxSize": 48,
+    "bodyPx": 16,
+    "displaySizes": [
+     {
+      "px": 48,
+      "count": 1,
+      "sample": {
+       "text": "unseen.studio",
+       "family": "GD Sherpa",
+       "weight": "600",
+       "ls": "normal",
+       "lh": "60px",
+       "transform": "none",
+       "tag": "div"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 48,
+      "count": 1
+     },
+     {
+      "px": 20,
+      "count": 1
+     },
+     {
+      "px": 16,
+      "count": 5
+     },
+     {
+      "px": 13,
+      "count": 1
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "GD Sherpa",
+      "c": 17
+     },
+     {
+      "v": "Arial",
+      "c": 2
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(17, 17, 17)",
+      "c": 8
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 8
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 2
+     },
+     {
+      "v": "rgb(0, 0, 238)",
+      "c": 1
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 3
+     },
+     {
+      "v": "rgb(2, 105, 160)",
+      "c": 1
+     },
+     {
+      "v": "rgb(141, 198, 63)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(2, 105, 160)",
+      "sat": 0.99,
+      "c": 1
+     },
+     {
+      "color": "b:rgb(141, 198, 63)",
+      "sat": 0.68,
+      "c": 1
+     },
+     {
+      "color": "t:rgb(0, 0, 238)",
+      "sat": 1,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "4px",
+      "c": 1
+     }
+    ],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "abhishek",
+   "ok": true,
+   "type": {
+    "nEl": 706,
+    "maxSize": 76,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 76,
+      "count": 1,
+      "sample": {
+       "text": "I craft digital experiences that d",
+       "family": "Bluu Next Bold",
+       "weight": "700",
+       "ls": "-1.52px",
+       "lh": "76px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 76,
+      "count": 1
+     },
+     {
+      "px": 36,
+      "count": 10
+     },
+     {
+      "px": 32,
+      "count": 7
+     },
+     {
+      "px": 24,
+      "count": 1
+     },
+     {
+      "px": 20,
+      "count": 10
+     },
+     {
+      "px": 18,
+      "count": 8
+     },
+     {
+      "px": 16,
+      "count": 17
+     },
+     {
+      "px": 14,
+      "count": 28
+     },
+     {
+      "px": 11,
+      "count": 9
+     },
+     {
+      "px": 10,
+      "count": 20
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "sans-serif",
+      "c": 585
+     },
+     {
+      "v": "Geist Medium",
+      "c": 33
+     },
+     {
+      "v": "Bluu Next Bold",
+      "c": 22
+     },
+     {
+      "v": "Geist Light",
+      "c": 22
+     },
+     {
+      "v": "JetBrains Mono",
+      "c": 19
+     },
+     {
+      "v": "Geist Regular",
+      "c": 17
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 536
+     },
+     {
+      "v": "rgb(237, 238, 240)",
+      "c": 70
+     },
+     {
+      "v": "rgb(158, 158, 255)",
+      "c": 54
+     },
+     {
+      "v": "rgb(119, 123, 132)",
+      "c": 46
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgba(221, 234, 248, 0.08)",
+      "c": 25
+     },
+     {
+      "v": "rgb(24, 25, 27)",
+      "c": 10
+     },
+     {
+      "v": "rgb(17, 17, 19)",
+      "c": 8
+     },
+     {
+      "v": "rgb(66, 66, 66)",
+      "c": 1
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 1
+     },
+     {
+      "v": "rgba(17, 17, 19, 0.7)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(158, 158, 255)",
+      "sat": 0.38,
+      "c": 54
+     }
+    ],
+    "radius": [
+     {
+      "v": "3px",
+      "c": 64
+     },
+     {
+      "v": "2px",
+      "c": 12
+     },
+     {
+      "v": "4px",
+      "c": 6
+     },
+     {
+      "v": "99px",
+      "c": 6
+     },
+     {
+      "v": "6px",
+      "c": 4
+     },
+     {
+      "v": "8px",
+      "c": 3
+     }
+    ],
+    "borders": 0,
+    "shadows": 9,
+    "blurred": 1
+   }
+  },
+  {
+   "name": "locomotive",
+   "ok": true,
+   "type": {
+    "nEl": 247,
+    "maxSize": 110,
+    "bodyPx": null,
+    "displaySizes": [
+     {
+      "px": 110,
+      "count": 9,
+      "sample": {
+       "text": "Lightship",
+       "family": "LocomotiveNew",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "110px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 70,
+      "count": 19,
+      "sample": {
+       "text": "Locomotive® Digital-first Design A",
+       "family": "LocomotiveNew",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "77px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 110,
+      "count": 9
+     },
+     {
+      "px": 70,
+      "count": 19
+     },
+     {
+      "px": 26,
+      "count": 62
+     },
+     {
+      "px": 0,
+      "count": 8
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "HelveticaNowDisplay",
+      "c": 210
+     },
+     {
+      "v": "LocomotiveNew",
+      "c": 37
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 204
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 43
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 3
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [],
+    "borders": 12,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "islands",
+   "ok": true,
+   "type": {
+    "nEl": 376,
+    "maxSize": 75,
+    "bodyPx": null,
+    "displaySizes": [
+     {
+      "px": 75,
+      "count": 1,
+      "sample": {
+       "text": "hello@14islands.com",
+       "family": "AftenScreen",
+       "weight": "400",
+       "ls": "-3px",
+       "lh": "75px",
+       "transform": "none",
+       "tag": "h4"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 75,
+      "count": 1
+     },
+     {
+      "px": 27,
+      "count": 70
+     },
+     {
+      "px": 12,
+      "count": 9
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "BentonSans",
+      "c": 210
+     },
+     {
+      "v": "AftenScreen",
+      "c": 166
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(7, 7, 7)",
+      "c": 290
+     },
+     {
+      "v": "rgb(162, 162, 169)",
+      "c": 85
+     },
+     {
+      "v": "rgb(121, 121, 121)",
+      "c": 1
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 2
+     },
+     {
+      "v": "rgb(242, 242, 242)",
+      "c": 1
+     }
+    ],
+    "accents": [],
+    "radius": [
+     {
+      "v": "4.16667px",
+      "c": 20
+     },
+     {
+      "v": "5px",
+      "c": 1
+     }
+    ],
+    "borders": 0,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "monks",
+   "ok": true,
+   "type": {
+    "nEl": 331,
+    "maxSize": 67,
+    "bodyPx": 15,
+    "displaySizes": [
+     {
+      "px": 67,
+      "count": 1,
+      "sample": {
+       "text": "Transforming",
+       "family": "Morian Trial",
+       "weight": "700",
+       "ls": "normal",
+       "lh": "76.6667px",
+       "transform": "none",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 41,
+      "count": 6,
+      "sample": {
+       "text": "What We Do",
+       "family": "Helvetica Now",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "48.8px",
+       "transform": "none",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 67,
+      "count": 1
+     },
+     {
+      "px": 41,
+      "count": 6
+     },
+     {
+      "px": 23,
+      "count": 4
+     },
+     {
+      "px": 18,
+      "count": 2
+     },
+     {
+      "px": 16,
+      "count": 1
+     },
+     {
+      "px": 15,
+      "count": 36
+     },
+     {
+      "px": 13,
+      "count": 5
+     },
+     {
+      "px": 12,
+      "count": 2
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Helvetica Now",
+      "c": 327
+     },
+     {
+      "v": "Morian Trial",
+      "c": 3
+     },
+     {
+      "v": "object-fit: cover",
+      "c": 1
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(234, 232, 228)",
+      "c": 226
+     },
+     {
+      "v": "rgb(45, 45, 45)",
+      "c": 76
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 15
+     },
+     {
+      "v": "rgb(25, 23, 21)",
+      "c": 10
+     },
+     {
+      "v": "rgb(222, 223, 229)",
+      "c": 2
+     },
+     {
+      "v": "rgb(85, 85, 85)",
+      "c": 1
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(45, 45, 45)",
+      "c": 27
+     },
+     {
+      "v": "rgb(25, 23, 21)",
+      "c": 20
+     },
+     {
+      "v": "rgb(234, 232, 228)",
+      "c": 4
+     },
+     {
+      "v": "rgb(222, 223, 229)",
+      "c": 4
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 2
+     }
+    ],
+    "accents": [],
+    "radius": [
+     {
+      "v": "100px",
+      "c": 68
+     },
+     {
+      "v": "4px",
+      "c": 4
+     },
+     {
+      "v": "50%",
+      "c": 4
+     },
+     {
+      "v": "2px",
+      "c": 4
+     }
+    ],
+    "borders": 2,
+    "shadows": 3,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "cuberto",
+   "ok": true,
+   "type": {
+    "nEl": 717,
+    "maxSize": 81,
+    "bodyPx": 22,
+    "displaySizes": [
+     {
+      "px": 81,
+      "count": 5,
+      "sample": {
+       "text": "Digital",
+       "family": "Suisse Intl",
+       "weight": "500",
+       "ls": "-0.81px",
+       "lh": "81px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 72,
+      "count": 15,
+      "sample": {
+       "text": "Selected",
+       "family": "Suisse Intl",
+       "weight": "500",
+       "ls": "-1.44px",
+       "lh": "72px",
+       "transform": "none",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 81,
+      "count": 5
+     },
+     {
+      "px": 72,
+      "count": 15
+     },
+     {
+      "px": 38,
+      "count": 5
+     },
+     {
+      "px": 29,
+      "count": 5
+     },
+     {
+      "px": 23,
+      "count": 65
+     },
+     {
+      "px": 22,
+      "count": 58
+     },
+     {
+      "px": 18,
+      "count": 27
+     },
+     {
+      "px": 16,
+      "count": 28
+     },
+     {
+      "px": 14,
+      "count": 15
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "Suisse Intl",
+      "c": 717
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 373
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 315
+     },
+     {
+      "v": "color(srgb 1 1 1 / 0.7)",
+      "c": 29
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 15
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 8
+     },
+     {
+      "v": "rgb(238, 238, 238)",
+      "c": 4
+     },
+     {
+      "v": "rgb(227, 245, 243)",
+      "c": 3
+     },
+     {
+      "v": "rgb(241, 243, 250)",
+      "c": 2
+     }
+    ],
+    "accents": [],
+    "radius": [
+     {
+      "v": "18px",
+      "c": 24
+     },
+     {
+      "v": "50%",
+      "c": 14
+     },
+     {
+      "v": "99999px",
+      "c": 12
+     },
+     {
+      "v": "7.2px",
+      "c": 5
+     },
+     {
+      "v": "72px",
+      "c": 4
+     },
+     {
+      "v": "1000px",
+      "c": 4
+     }
+    ],
+    "borders": 9,
+    "shadows": 0,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "waaark",
+   "ok": true,
+   "type": {
+    "nEl": 70,
+    "maxSize": 50,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 50,
+      "count": 4,
+      "sample": {
+       "text": "Vision",
+       "family": "Playfair Display",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "50px",
+       "transform": "none",
+       "tag": "a"
+      }
+     },
+     {
+      "px": 48,
+      "count": 1,
+      "sample": {
+       "text": "We create elegant and functional c",
+       "family": "Playfair Display",
+       "weight": "400",
+       "ls": "normal",
+       "lh": "57.6px",
+       "transform": "none",
+       "tag": "p"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 50,
+      "count": 4
+     },
+     {
+      "px": 48,
+      "count": 1
+     },
+     {
+      "px": 26,
+      "count": 2
+     },
+     {
+      "px": 16,
+      "count": 2
+     },
+     {
+      "px": 14,
+      "count": 4
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "sofia-pro",
+      "c": 60
+     },
+     {
+      "v": "Playfair Display",
+      "c": 10
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 66
+     },
+     {
+      "v": "rgb(48, 63, 128)",
+      "c": 4
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 190, 201)",
+      "c": 1
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(48, 63, 128)",
+      "sat": 0.63,
+      "c": 4
+     }
+    ],
+    "radius": [
+     {
+      "v": "50%",
+      "c": 3
+     }
+    ],
+    "borders": 1,
+    "shadows": 1,
+    "blurred": 0
+   }
+  },
+  {
+   "name": "terminal",
+   "ok": true,
+   "type": {
+    "nEl": 1375,
+    "maxSize": 70,
+    "bodyPx": 14,
+    "displaySizes": [
+     {
+      "px": 70,
+      "count": 35,
+      "sample": {
+       "text": "Powering the yards behind the bran",
+       "family": "SuisseIntl",
+       "weight": "400",
+       "ls": "-3.6px",
+       "lh": "70px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     },
+     {
+      "px": 48,
+      "count": 2,
+      "sample": {
+       "text": "Contact us and we will be in touch",
+       "family": "SuisseIntl",
+       "weight": "500",
+       "ls": "-0.853333px",
+       "lh": "50.395px",
+       "transform": "none",
+       "tag": "strong"
+      }
+     },
+     {
+      "px": 46,
+      "count": 6,
+      "sample": {
+       "text": "One Modular Platform",
+       "family": "SuisseIntl",
+       "weight": "400",
+       "ls": "-0.46px",
+       "lh": "55.2px",
+       "transform": "none",
+       "tag": "span"
+      }
+     },
+     {
+      "px": 44,
+      "count": 2,
+      "sample": {
+       "text": "$",
+       "family": "SuisseIntl",
+       "weight": "400",
+       "ls": "-0.6px",
+       "lh": "52.8px",
+       "transform": "none",
+       "tag": "p"
+      }
+     },
+     {
+      "px": 40,
+      "count": 12,
+      "sample": {
+       "text": "T",
+       "family": "SuisseIntl",
+       "weight": "600",
+       "ls": "normal",
+       "lh": "31.2px",
+       "transform": "none",
+       "tag": "span"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 70,
+      "count": 35
+     },
+     {
+      "px": 48,
+      "count": 2
+     },
+     {
+      "px": 46,
+      "count": 6
+     },
+     {
+      "px": 44,
+      "count": 2
+     },
+     {
+      "px": 40,
+      "count": 12
+     },
+     {
+      "px": 38,
+      "count": 1
+     },
+     {
+      "px": 35,
+      "count": 384
+     },
+     {
+      "px": 34,
+      "count": 2
+     },
+     {
+      "px": 27,
+      "count": 3
+     },
+     {
+      "px": 23,
+      "count": 14
+     },
+     {
+      "px": 22,
+      "count": 6
+     },
+     {
+      "px": 20,
+      "count": 16
+     },
+     {
+      "px": 18,
+      "count": 21
+     },
+     {
+      "px": 17,
+      "count": 4
+     },
+     {
+      "px": 16,
+      "count": 6
+     },
+     {
+      "px": 15,
+      "count": 7
+     },
+     {
+      "px": 14,
+      "count": 70
+     },
+     {
+      "px": 13,
+      "count": 17
+     },
+     {
+      "px": 12,
+      "count": 5
+     },
+     {
+      "px": 11,
+      "count": 13
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "SuisseIntl",
+      "c": 1335
+     },
+     {
+      "v": "Geist Mono",
+      "c": 40
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(5, 36, 36)",
+      "c": 665
+     },
+     {
+      "v": "rgb(221, 221, 221)",
+      "c": 384
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 267
+     },
+     {
+      "v": "rgb(194, 194, 194)",
+      "c": 14
+     },
+     {
+      "v": "rgba(5, 36, 36, 0.7)",
+      "c": 12
+     },
+     {
+      "v": "rgb(31, 31, 31)",
+      "c": 11
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 32
+     },
+     {
+      "v": "rgba(5, 36, 36, 0.05)",
+      "c": 6
+     },
+     {
+      "v": "rgb(240, 240, 240)",
+      "c": 4
+     },
+     {
+      "v": "rgb(5, 36, 36)",
+      "c": 4
+     },
+     {
+      "v": "rgb(171, 255, 2)",
+      "c": 3
+     },
+     {
+      "v": "rgba(0, 0, 0, 0.3)",
+      "c": 2
+     }
+    ],
+    "accents": [
+     {
+      "color": "b:rgb(171, 255, 2)",
+      "sat": 0.99,
+      "c": 3
+     }
+    ],
+    "radius": [
+     {
+      "v": "8px",
+      "c": 24
+     },
+     {
+      "v": "20px",
+      "c": 4
+     },
+     {
+      "v": "24px",
+      "c": 3
+     },
+     {
+      "v": "12px",
+      "c": 3
+     },
+     {
+      "v": "18px",
+      "c": 1
+     },
+     {
+      "v": "10px",
+      "c": 1
+     }
+    ],
+    "borders": 11,
+    "shadows": 1,
+    "blurred": 8
+   }
+  },
+  {
+   "name": "superlist",
+   "ok": true,
+   "type": {
+    "nEl": 1044,
+    "maxSize": 64,
+    "bodyPx": 16,
+    "displaySizes": [
+     {
+      "px": 64,
+      "count": 2,
+      "sample": {
+       "text": "Tasks, notes, and plans.",
+       "family": "Haffer XH SemiBold",
+       "weight": "600",
+       "ls": "-1.28px",
+       "lh": "60.8px",
+       "transform": "none",
+       "tag": "h1"
+      }
+     },
+     {
+      "px": 51,
+      "count": 52,
+      "sample": {
+       "text": "Real-time collaboration",
+       "family": "Haffer XH SemiBold",
+       "weight": "600",
+       "ls": "-1.02px",
+       "lh": "61.2px",
+       "transform": "none",
+       "tag": "div"
+      }
+     },
+     {
+      "px": 48,
+      "count": 8,
+      "sample": {
+       "text": "Stop juggling five different apps.",
+       "family": "Haffer XH SemiBold",
+       "weight": "600",
+       "ls": "-0.96px",
+       "lh": "52.8px",
+       "transform": "none",
+       "tag": "h2"
+      }
+     }
+    ],
+    "allSizes": [
+     {
+      "px": 64,
+      "count": 2
+     },
+     {
+      "px": 51,
+      "count": 52
+     },
+     {
+      "px": 48,
+      "count": 8
+     },
+     {
+      "px": 30,
+      "count": 1
+     },
+     {
+      "px": 24,
+      "count": 9
+     },
+     {
+      "px": 18,
+      "count": 13
+     },
+     {
+      "px": 16,
+      "count": 104
+     },
+     {
+      "px": 14,
+      "count": 46
+     },
+     {
+      "px": 12,
+      "count": 3
+     }
+    ],
+    "topFamilies": [
+     {
+      "v": "sans-serif",
+      "c": 755
+     },
+     {
+      "v": "Inter",
+      "c": 108
+     },
+     {
+      "v": "CUSTOM;Blender Medium",
+      "c": 60
+     },
+     {
+      "v": "Haffer XH SemiBold",
+      "c": 49
+     },
+     {
+      "v": "Jersey 10",
+      "c": 41
+     },
+     {
+      "v": "Satoshi",
+      "c": 30
+     }
+    ],
+    "colorsText": [
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 704
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 172
+     },
+     {
+      "v": "rgb(0, 0, 238)",
+      "c": 52
+     },
+     {
+      "v": "rgb(142, 141, 160)",
+      "c": 48
+     },
+     {
+      "v": "rgb(238, 238, 238)",
+      "c": 16
+     },
+     {
+      "v": "color(display-p3 0.56 0.53 0.98)",
+      "c": 14
+     }
+    ],
+    "colorsBg": [
+     {
+      "v": "rgb(24, 24, 36)",
+      "c": 34
+     },
+     {
+      "v": "rgb(24, 24, 37)",
+      "c": 3
+     },
+     {
+      "v": "rgb(255, 255, 255)",
+      "c": 2
+     },
+     {
+      "v": "rgba(255, 255, 255, 0.05)",
+      "c": 1
+     },
+     {
+      "v": "rgb(38, 37, 59)",
+      "c": 1
+     },
+     {
+      "v": "rgb(0, 0, 0)",
+      "c": 1
+     }
+    ],
+    "accents": [
+     {
+      "color": "t:rgb(0, 0, 238)",
+      "sat": 1,
+      "c": 52
+     },
+     {
+      "color": "t:rgb(248, 102, 219)",
+      "sat": 0.59,
+      "c": 11
+     },
+     {
+      "color": "t:rgb(255, 74, 54)",
+      "sat": 0.79,
+      "c": 1
+     },
+     {
+      "color": "t:rgb(247, 57, 247)",
+      "sat": 0.77,
+      "c": 1
+     },
+     {
+      "color": "t:rgb(251, 231, 78)",
+      "sat": 0.69,
+      "c": 1
+     },
+     {
+      "color": "t:rgb(37, 144, 241)",
+      "sat": 0.85,
+      "c": 1
+     }
+    ],
+    "radius": [
+     {
+      "v": "20px",
+      "c": 51
+     },
+     {
+      "v": "8px",
+      "c": 11
+     },
+     {
+      "v": "10px",
+      "c": 6
+     },
+     {
+      "v": "100px",
+      "c": 4
+     },
+     {
+      "v": "38px",
+      "c": 1
+     },
+     {
+      "v": "200px",
+      "c": 1
+     }
+    ],
+    "borders": 0,
+    "shadows": 35,
+    "blurred": 1
+   }
+  }
+ ]
+}

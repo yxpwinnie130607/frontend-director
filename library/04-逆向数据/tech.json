@@ -1,0 +1,2762 @@
+{
+ "generated": "2026-10-25",
+ "sites": [
+  {
+   "name": "lando",
+   "url": "https://landonorris.com",
+   "ok": true,
+   "html_bytes": 218978,
+   "title": "McLaren Formula 1 Driver — Lando Norris",
+   "asset_count": 15,
+   "assets": [
+    {
+     "url": "https://lando.itsoffbrand.io/dev-js/lando.OFF+BRAND.js",
+     "bytes": 1323639,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://lando.itsoffbrand.io/dev-js/lando.OFF+BRAND.gold-android-fix-03.js",
+     "bytes": 1323177,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://lando.itsoffbrand.io/dev-js/lando-by-OFF+BRAND.05.js",
+     "bytes": 1323370,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://assets.itsoffbrand.io/lando/dev-js/lando-by-OFF+BRAND.js",
+     "bytes": 1457237,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XWvzdS",
+     "bytes": 13103,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://cs.iubenda.com/sync/2095750.js",
+     "bytes": 6293,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://cdn.iubenda.com/cs/iubenda_cs.js",
+     "bytes": 4104,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://assets.itsoffbrand.io/lando/dev-js/transitions-rive-isolate.js",
+     "bytes": 106783,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 5553794,
+   "features": {
+    "rive": 630,
+    "clip_path": 246,
+    "lenis": 44,
+    "gsap": 605,
+    "three": 1044,
+    "ogl": 51,
+    "pixi": 4,
+    "shader": 2951,
+    "postprocessing": 136,
+    "css_3d": 54
+   },
+   "numbers": {
+    "ease_cubic": [
+     [
+      "1, 0, 0.37, 1",
+      4
+     ],
+     [
+      "0.65, 0.05, 0, 1",
+      1
+     ]
+    ],
+    "lerp": [
+     [
+      "0.1",
+      4
+     ]
+    ],
+    "scrub_num": [
+     [
+      "0.5",
+      4
+     ],
+     [
+      "1",
+      4
+     ],
+     [
+      "0",
+      4
+     ]
+    ],
+    "touchMultiplier": [
+     [
+      "1",
+      4
+     ],
+     [
+      "1.25",
+      3
+     ],
+     [
+      "2",
+      1
+     ]
+    ],
+    "wheelMultiplier": [
+     [
+      "1",
+      4
+     ]
+    ],
+    "duration": [
+     [
+      "0.5",
+      87
+     ],
+     [
+      "2",
+      75
+     ],
+     [
+      "0.6",
+      56
+     ],
+     [
+      "0.3",
+      45
+     ],
+     [
+      "1",
+      26
+     ],
+     [
+      "1.5",
+      24
+     ]
+    ],
+    "stagger": [
+     [
+      "0.02",
+      28
+     ],
+     [
+      "0.015",
+      20
+     ],
+     [
+      "0.03",
+      12
+     ],
+     [
+      "0",
+      8
+     ],
+     [
+      "0.05",
+      8
+     ],
+     [
+      "0.06",
+      4
+     ]
+    ],
+    "ease_name": [
+     [
+      "power2.out",
+      144
+     ],
+     [
+      "none",
+      72
+     ],
+     [
+      "power3.out",
+      40
+     ],
+     [
+      "expo.in",
+      20
+     ],
+     [
+      "expo.out",
+      20
+     ],
+     [
+      "power2.in",
+      17
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "ojo",
+   "url": "https://ojo.art",
+   "ok": true,
+   "html_bytes": 68316,
+   "title": "OJO | AI Design Agent Workspace for Product Teams",
+   "asset_count": 29,
+   "assets": [
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/entry.client-kRhkx8oY.js",
+     "bytes": 183505,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/chunk-DiZcS62U.js",
+     "bytes": 826,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/mixpanel-client-n5mrFMNd.js",
+     "bytes": 3100,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/react-dom-BWPUvghz.js",
+     "bytes": 3568,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/chunk-OE4NN4TA-Dm6oKnRW.js",
+     "bytes": 117602,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/jsx-runtime-8IXtLZNE.js",
+     "bytes": 424,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/react-BqUPCMBh.js",
+     "bytes": 7521,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/src-Dh17z7ce.js",
+     "bytes": 4132,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/preload-helper-BW6Csw41.js",
+     "bytes": 1193,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://ojo.art/_static/irise-official/assets/en-BjUkF5zQ.js",
+     "bytes": 7920,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 329745,
+   "features": {
+    "framer": 1,
+    "css_3d": 1,
+    "clip_path": 2
+   },
+   "numbers": {},
+   "has_inline_module": true
+  },
+  {
+   "name": "offer",
+   "url": "https://offer.studio",
+   "ok": true,
+   "html_bytes": 114,
+   "title": "",
+   "asset_count": 0,
+   "assets": [],
+   "bundle_bytes": 0,
+   "features": {},
+   "numbers": {},
+   "has_inline_module": false
+  },
+  {
+   "name": "igloo",
+   "url": "https://igloo.inc",
+   "ok": true,
+   "html_bytes": 1410,
+   "title": "Igloo Inc.",
+   "asset_count": 1,
+   "assets": [
+    {
+     "url": "https://www.igloo.inc/assets/index-2e130bc1.js",
+     "bytes": 16546,
+     "file": "asset00.js"
+    }
+   ],
+   "bundle_bytes": 16546,
+   "features": {
+    "willchange": 1
+   },
+   "numbers": {
+    "duration": [
+     [
+      "0",
+      1
+     ],
+     [
+      "5",
+      1
+     ],
+     [
+      "250",
+      1
+     ],
+     [
+      "750",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "active",
+   "url": "https://active-theory.com",
+   "ok": true,
+   "html_bytes": 3084,
+   "title": "",
+   "asset_count": 0,
+   "assets": [],
+   "bundle_bytes": 0,
+   "features": {},
+   "numbers": {},
+   "has_inline_module": false
+  },
+  {
+   "name": "freight",
+   "url": "https://www.studio-freight.com",
+   "ok": false,
+   "error": "fetch failed"
+  },
+  {
+   "name": "darkroom",
+   "url": "https://darkroom.engineering",
+   "ok": true,
+   "html_bytes": 181040,
+   "title": "where things get developed - darkroom.engineering",
+   "asset_count": 18,
+   "assets": [
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/01q7n9em3rvje.js",
+     "bytes": 27121,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/1j7l-cfe3_xn1.js",
+     "bytes": 162269,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/06iq3gtdj2m24.js",
+     "bytes": 254281,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/turbopack-2lrx8mash18lb.js",
+     "bytes": 10986,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/1xcruhep_rb8t.js",
+     "bytes": 14645,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/4339wbwwdgidn.js",
+     "bytes": 9873,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/2clwjzbalkbl9.js",
+     "bytes": 31466,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/07gdaov0a-kbx.js",
+     "bytes": 41728,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/40kjkbwaj2li2.js",
+     "bytes": 56725,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://darkroom.engineering/_next/static/immutable/chunks/1_x15oi0bjwhp.js",
+     "bytes": 2108,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 611195,
+   "features": {
+    "lenis": 14,
+    "gsap": 3,
+    "clip_path": 5,
+    "css_3d": 1
+   },
+   "numbers": {
+    "lerp": [
+     [
+      ".1",
+      4
+     ],
+     [
+      ".05",
+      1
+     ],
+     [
+      "1",
+      1
+     ]
+    ],
+    "duration": [
+     [
+      "0",
+      5
+     ],
+     [
+      "1.1",
+      4
+     ],
+     [
+      "1.2",
+      4
+     ],
+     [
+      "1",
+      2
+     ],
+     [
+      ".6",
+      2
+     ],
+     [
+      ".9",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "expo.out",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "lusion",
+   "url": "https://lusion.co",
+   "ok": true,
+   "html_bytes": 59580,
+   "title": "Lusion - Award Winning 3D and Interactive Web Studio",
+   "asset_count": 3,
+   "assets": [
+    {
+     "url": "https://lusion.co/_astro/hoisted.CUO_IjfL.js",
+     "bytes": 1251728,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://lusion.co/_astro/about.CNa9RfUh.css",
+     "bytes": 90367,
+     "file": "asset02.css"
+    }
+   ],
+   "bundle_bytes": 1342069,
+   "features": {
+    "three": 250,
+    "ogl": 13,
+    "shader": 1035,
+    "postprocessing": 59,
+    "willchange": 40,
+    "css_3d": 174
+   },
+   "numbers": {
+    "ease_cubic": [
+     [
+      ".4,0,.1,1",
+      32
+     ],
+     [
+      ".35,0,0,1",
+      32
+     ],
+     [
+      ".1,0,.1,1",
+      3
+     ],
+     [
+      ".4,0,0,1",
+      2
+     ],
+     [
+      ".16,1,.3,1",
+      2
+     ],
+     [
+      ".4,.1,0,1",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "resn",
+   "url": "https://www.resn.co.nz",
+   "ok": true,
+   "html_bytes": 4292,
+   "title": "Resn - Creative Digital Agency | Ideation, Design, and Development",
+   "asset_count": 4,
+   "assets": [
+    {
+     "url": "https://www.resn.co.nz/20260721233115_1_0_a02666f/js/libs/es6-shim.min.js",
+     "bytes": 56557,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://www.resn.co.nz/20260721233115_1_0_a02666f/js/libs/modernizr-2.5.3.min.js",
+     "bytes": 15274,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://js.hs-scripts.com/5452172.js",
+     "bytes": 2125,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://www.resn.co.nz/20260721233115_1_0_a02666f/css/critical_mobile.css",
+     "bytes": 243,
+     "file": "asset03.css"
+    }
+   ],
+   "bundle_bytes": 74199,
+   "features": {
+    "clip_path": 1,
+    "css_3d": 1
+   },
+   "numbers": {},
+   "has_inline_module": false
+  },
+  {
+   "name": "bruno",
+   "url": "https://bruno-simon.com",
+   "ok": true,
+   "html_bytes": 58784,
+   "title": "Bruno's",
+   "asset_count": 3,
+   "assets": [
+    {
+     "url": "https://bruno-simon.com/assets/index-ORr3L4no.js",
+     "bytes": 4858337,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://bruno-simon.com/assets/index-Di03QkGT.css",
+     "bytes": 40256,
+     "file": "asset02.css"
+    }
+   ],
+   "bundle_bytes": 4898577,
+   "features": {
+    "rapier": 3,
+    "gsap": 34,
+    "three": 313,
+    "ogl": 27,
+    "shader": 124,
+    "postprocessing": 35,
+    "willchange": 3,
+    "css_3d": 29
+   },
+   "numbers": {
+    "duration": [
+     [
+      "1",
+      22
+     ],
+     [
+      "0.3",
+      14
+     ],
+     [
+      "0.6",
+      13
+     ],
+     [
+      "1.5",
+      13
+     ],
+     [
+      "2",
+      12
+     ],
+     [
+      "0.5",
+      10
+     ]
+    ],
+    "stagger": [
+     [
+      "0",
+      2
+     ]
+    ],
+    "damping": [
+     [
+      "4",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.4, 0, 0.2, 1",
+      2
+     ],
+     [
+      "${l.toObject(",
+      1
+     ],
+     [
+      "0.25, 0.46, 0.45, 0.94",
+      1
+     ],
+     [
+      ".4,1.6,.65,1",
+      1
+     ],
+     [
+      ".42,0,.47,-.55",
+      1
+     ],
+     [
+      ".49,2.2,.53,.75",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "power2.in",
+      16
+     ],
+     [
+      "power2.out",
+      10
+     ],
+     [
+      "linear",
+      5
+     ],
+     [
+      "none",
+      1
+     ],
+     [
+      "power1.out",
+      1
+     ],
+     [
+      "power1.in",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "basement",
+   "url": "https://basement.studio",
+   "ok": true,
+   "html_bytes": 233889,
+   "title": "basement.studio | We make cool shit that performs.",
+   "asset_count": 34,
+   "assets": [
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/1yd-upqhz66o4.js",
+     "bytes": 55688,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/0phv6_6w26n5_.js",
+     "bytes": 26919,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/0253lq6y62ku0.js",
+     "bytes": 126763,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/3kx7b58sebyg-.js",
+     "bytes": 204919,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/392qqbxvmen7z.js",
+     "bytes": 219796,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/2q7qc57lz7cz-.js",
+     "bytes": 27108,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/turbopack-1_8b1879c1lsf.js",
+     "bytes": 11382,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/15kasuxgc7cs4.js",
+     "bytes": 15216,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/1tgeusr_19mx3.js",
+     "bytes": 32843,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://basement.studio/_next/static/immutable/chunks/3q30ff4jlz5fl.js",
+     "bytes": 34558,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 755182,
+   "features": {
+    "postprocessing": 27,
+    "clip_path": 3,
+    "css_3d": 4,
+    "rapier": 5
+   },
+   "numbers": {
+    "duration": [
+     [
+      "16",
+      39
+     ],
+     [
+      "0",
+      4
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.4, 0, 0.6, 1",
+      39
+     ]
+    ],
+    "ease_name": [
+     [
+      "string",
+      1
+     ],
+     [
+      "70d274e3638a20d53246896177e6ed24915c7662",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "daybreak",
+   "url": "https://daybreak.studio",
+   "ok": true,
+   "html_bytes": 37122,
+   "title": "Daybreak Studio",
+   "asset_count": 11,
+   "assets": [
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/polyfills-42372ed130431b0a.js",
+     "bytes": 112594,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/webpack-36ca4f27b4e31f18.js",
+     "bytes": 5990,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/framework-33f4e086115e8923.js",
+     "bytes": 140001,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/main-d3cdc45defeb82a0.js",
+     "bytes": 116788,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/pages/_app-58fbbb0a1dd37327.js",
+     "bytes": 409689,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/7161-8b0291aa016d2acc.js",
+     "bytes": 9193,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/5624-cf8499435176f6e9.js",
+     "bytes": 20494,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/chunks/pages/index-0be4a1c18f994e6b.js",
+     "bytes": 15920,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/m79tPogLUJ1NjaoHSPWFd/_buildManifest.js",
+     "bytes": 1888,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://daybreak.studio/_next/static/m79tPogLUJ1NjaoHSPWFd/_ssgManifest.js",
+     "bytes": 238,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 832736,
+   "features": {
+    "willchange": 9,
+    "lenis": 9,
+    "clip_path": 8,
+    "css_3d": 16
+   },
+   "numbers": {
+    "duration": [
+     [
+      ".3",
+      10
+     ],
+     [
+      ".2",
+      2
+     ],
+     [
+      "1",
+      1
+     ],
+     [
+      ".6",
+      1
+     ],
+     [
+      ".4",
+      1
+     ],
+     [
+      ".8",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      ".61,1,.88,1",
+      40
+     ],
+     [
+      "0.19, 1, 0.22, 1",
+      7
+     ],
+     [
+      "0.16, 1, 0.3, 1",
+      2
+     ],
+     [
+      "0.34, 1.2, 0.64, 1",
+      2
+     ],
+     [
+      "0.34, 1.56, 0.64, 1",
+      1
+     ],
+     [
+      "0.22, 1, 0.36, 1",
+      1
+     ]
+    ],
+    "touchMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "wheelMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "damping": [
+     [
+      "10",
+      2
+     ],
+     [
+      "2",
+      1
+     ],
+     [
+      "25",
+      1
+     ],
+     [
+      "0",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "ease",
+      1
+     ],
+     [
+      "linear",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "mercury",
+   "url": "https://mercury.com",
+   "ok": true,
+   "html_bytes": 831967,
+   "title": "Online Business Banking For Startups, Small Businesses &amp; Scaling Companies",
+   "asset_count": 42,
+   "assets": [
+    {
+     "url": "https://mercury.com/_next/static/chunks/172baxmxvye7e.js",
+     "bytes": 29534,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/1rn_edmalfa4k.js",
+     "bytes": 50444,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/0_42ctm5rxplp.js",
+     "bytes": 31444,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/1x_yk5jx9hpm9.js",
+     "bytes": 208591,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/3k4pr2lr1wsc2.js",
+     "bytes": 187128,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/3quwe2kpiakfk.js",
+     "bytes": 32466,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/3hq93wukb4bid.js",
+     "bytes": 158887,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/12ero6ee_9k0p.js",
+     "bytes": 118392,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/turbopack-2h-u0he6dowwt.js",
+     "bytes": 10365,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://mercury.com/_next/static/chunks/1jqasljrjo3xc.js",
+     "bytes": 28385,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 855628,
+   "features": {
+    "clip_path": 113,
+    "rapier": 5
+   },
+   "numbers": {
+    "duration": [
+     [
+      "0",
+      6
+     ],
+     [
+      "45",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.76,0.00,0.24,1.00",
+      2
+     ]
+    ],
+    "ease_name": [
+     [
+      "string",
+      1
+     ],
+     [
+      "0bd609fdfd152e648a281e322fd2cc0b02333292",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "linear",
+   "url": "https://linear.app",
+   "ok": true,
+   "html_bytes": 1264671,
+   "title": "Linear – The system for product development",
+   "asset_count": 298,
+   "assets": [
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/C_JJxWoe.js",
+     "bytes": 1324,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/BwOZYkAI.js",
+     "bytes": 566774,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/index-jT703Tec.js",
+     "bytes": 80941,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/DTzYCV9G.js",
+     "bytes": 1011,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/pUWrsKj42.js",
+     "bytes": 444,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/ChyxXR8K2.js",
+     "bytes": 29894,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/DfM1EPK12.js",
+     "bytes": 320918,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/CEST5uBk.js",
+     "bytes": 43849,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/HNyT92pq.js",
+     "bytes": 172266,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://static.linear.app/web/_next/static/chunks/PPnH9BIT.js",
+     "bytes": 370,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 1217779,
+   "features": {
+    "clip_path": 46,
+    "rapier": 5
+   },
+   "numbers": {
+    "duration": [
+     [
+      "0",
+      3
+     ],
+     [
+      "30",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "string",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "vercel",
+   "url": "https://vercel.com",
+   "ok": true,
+   "html_bytes": 587078,
+   "title": "Agentic Infrastructure - Vercel",
+   "asset_count": 46,
+   "assets": [
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/25vjthgmkzuc7.js",
+     "bytes": 43868,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3dg69k3b5wbpo.js",
+     "bytes": 34612,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/2_vfd1mmin8ts.js",
+     "bytes": 132780,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3erjgz0gn2jhc.js",
+     "bytes": 39228,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3_oh1p3ti-_hm.js",
+     "bytes": 207741,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/turbopack-2r4iil63bdncy.js",
+     "bytes": 13500,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/1axh2yppco4s5.js",
+     "bytes": 14339,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/2wx451xyt412o.js",
+     "bytes": 11960,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/39tlkeulwe6rj.js",
+     "bytes": 991,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/39_z7n6ro0f0b.js",
+     "bytes": 46380,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 545272,
+   "features": {
+    "willchange": 13,
+    "clip_path": 5
+   },
+   "numbers": {
+    "duration": [
+     [
+      "2",
+      3
+     ],
+     [
+      "950",
+      3
+     ],
+     [
+      "1000",
+      3
+     ],
+     [
+      "0",
+      3
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.23,1,0.32,1",
+      2
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "family",
+   "url": "https://family.co",
+   "ok": true,
+   "html_bytes": 678794,
+   "title": "Family",
+   "asset_count": 14,
+   "assets": [
+    {
+     "url": "https://plausible.io/js/plausible.js",
+     "bytes": 2841,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+     "bytes": 91460,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/webpack-585c8f050ef949b4.js",
+     "bytes": 5097,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/framework-30835d7902f44e99.js",
+     "bytes": 210599,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/main-85030167001b2c48.js",
+     "bytes": 124683,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/pages/_app-43f221936c062d2f.js",
+     "bytes": 3031890,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/7344-810f6f0cc8248ee4.js",
+     "bytes": 27337,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/2711-b3e3740a952320a2.js",
+     "bytes": 9347,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/861-4bee4940f7ae3785.js",
+     "bytes": 103229,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://family.co/_next/static/chunks/7087-0908057adee7ff82.js",
+     "bytes": 990306,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 4591892,
+   "features": {
+    "willchange": 95,
+    "clip_path": 66,
+    "css_3d": 74,
+    "framer": 1,
+    "lottie": 35
+   },
+   "numbers": {
+    "duration": [
+     [
+      "3",
+      34
+     ],
+     [
+      "4",
+      32
+     ],
+     [
+      "200",
+      28
+     ],
+     [
+      "2",
+      25
+     ],
+     [
+      "1",
+      20
+     ],
+     [
+      "80",
+      13
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.19, 1, 0.22, 1",
+      37
+     ],
+     [
+      "0.175, 0.885, 0.32, 1.1",
+      9
+     ],
+     [
+      "0.19,1,0.22,1",
+      6
+     ],
+     [
+      "0.15, 1.15, 0.6, 1",
+      4
+     ],
+     [
+      "0.455, 0.03, 0.515, 0.955",
+      3
+     ],
+     [
+      "0.16, 1, 0.6, 1",
+      2
+     ]
+    ],
+    "damping": [
+     [
+      "80",
+      13
+     ],
+     [
+      "10",
+      2
+     ],
+     [
+      ".65",
+      1
+     ],
+     [
+      ".6",
+      1
+     ],
+     [
+      ".45",
+      1
+     ],
+     [
+      "2",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "linear",
+      17
+     ],
+     [
+      "anticipate",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "apple",
+   "url": "https://www.apple.com",
+   "ok": true,
+   "html_bytes": 326328,
+   "title": "Apple",
+   "asset_count": 21,
+   "assets": [
+    {
+     "url": "https://www.apple.com/v/homepage/a/scripts/head.built.js",
+     "bytes": 6740,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.umd.js",
+     "bytes": 166301,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://www.apple.com/metrics/ac-analytics/2.30.0/scripts/ac-analytics.js",
+     "bytes": 466023,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://www.apple.com/metrics/ac-analytics/2.30.0/scripts/auto-init.js",
+     "bytes": 111,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://www.apple.com/ac/globalfooter/8/en_US/scripts/ac-globalfooter.built.js",
+     "bytes": 9686,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://www.apple.com/ac/localeswitcher/4/en_US/scripts/localeswitcher.built.js",
+     "bytes": 191420,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://www.apple.com/v/homepage/a/scripts/iphone-duo.built.js",
+     "bytes": 2596,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://www.apple.com/autopush/us/fam-gallery/scripts/endless-entertainment-gallery.built.js",
+     "bytes": 157299,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://www.apple.com/v/homepage/a/scripts/inline-media.built.js",
+     "bytes": 7493,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://www.apple.com/v/homepage/a/scripts/main.built.js",
+     "bytes": 90784,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 1098297,
+   "features": {
+    "matter": 2,
+    "three": 3,
+    "ogl": 7,
+    "css_3d": 8
+   },
+   "numbers": {
+    "lerp": [
+     [
+      "3",
+      2
+     ]
+    ],
+    "duration": [
+     [
+      "4",
+      2
+     ],
+     [
+      "1",
+      1
+     ],
+     [
+      ".5",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.23, 1, 0.32, 1",
+      2
+     ],
+     [
+      "0.645, 0.045, 0.355, 1",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "rauno",
+   "url": "https://rauno.me",
+   "ok": true,
+   "html_bytes": 31463,
+   "title": "Rauno Freiberg",
+   "asset_count": 11,
+   "assets": [
+    {
+     "url": "https://rauno.me/_next/static/chunks/polyfills-42372ed130431b0a.js",
+     "bytes": 112594,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/webpack-8b0d1a8e7707cac6.js",
+     "bytes": 3898,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/framework-7c95b8e5103c9e90.js",
+     "bytes": 182720,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/main-bff256145eb15a4d.js",
+     "bytes": 117556,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/pages/_app-8bc0311d52546293.js",
+     "bytes": 187216,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/540-088f4efa2701a7ea.js",
+     "bytes": 27919,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/chunks/pages/index-6f720d660d3ff7f8.js",
+     "bytes": 18984,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/nf-5fPrMS_TjUIJDeX_SG/_buildManifest.js",
+     "bytes": 1832,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/nf-5fPrMS_TjUIJDeX_SG/_ssgManifest.js",
+     "bytes": 106,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://rauno.me/_next/static/css/e621362aa87785a2.css",
+     "bytes": 8352,
+     "file": "asset09.css"
+    }
+   ],
+   "bundle_bytes": 661120,
+   "features": {
+    "willchange": 1,
+    "clip_path": 7,
+    "css_3d": 12
+   },
+   "numbers": {
+    "duration": [
+     [
+      "150",
+      1
+     ],
+     [
+      "200",
+      1
+     ],
+     [
+      "800",
+      1
+     ],
+     [
+      ".8",
+      1
+     ],
+     [
+      ".3",
+      1
+     ],
+     [
+      ".45",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      ".2, .8, .2, 1",
+      2
+     ],
+     [
+      "${e}, ${t}, ${i}, ${r}",
+      1
+     ]
+    ],
+    "damping": [
+     [
+      "32",
+      2
+     ],
+     [
+      "80",
+      2
+     ],
+     [
+      "45",
+      1
+     ],
+     [
+      "10",
+      1
+     ],
+     [
+      "2",
+      1
+     ],
+     [
+      "25",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "ease",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "unit9",
+   "url": "https://www.unit9.com",
+   "ok": true,
+   "html_bytes": 20194,
+   "title": "UNIT9 — Experiential &amp; Production Studio",
+   "asset_count": 16,
+   "assets": [
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/5577754086970b0f.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 3021,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/794f88d07efcb610.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 42929,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/1820f7407e506d38.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 34445,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/835e9fab99809224.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 29642,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/3ffe05773cba5909.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 210728,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/3169ce0fec01e431.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 74346,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/c6463c48f8bea7a2.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 50823,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/b83e9443234e5d4a.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 40980,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/d060f4c5dd0bc290.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 38007,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://www.unit9.com/_next/static/chunks/turbopack-51026f3b108dc989.js?dpl=dpl_7S92AzKTCcwR7r9tvbPwdNKeMUDy",
+     "bytes": 10593,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 535445,
+   "features": {
+    "clip_path": 9,
+    "css_3d": 4
+   },
+   "numbers": {
+    "duration": [
+     [
+      ".6",
+      5
+     ],
+     [
+      ".3",
+      3
+     ],
+     [
+      ".2",
+      2
+     ],
+     [
+      ".1",
+      2
+     ],
+     [
+      ".15",
+      2
+     ],
+     [
+      ".35",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "ustwo",
+   "url": "https://www.ustwo.com",
+   "ok": true,
+   "html_bytes": 285535,
+   "title": "ustwo | Digital Product Studio",
+   "asset_count": 5,
+   "assets": [
+    {
+     "url": "https://app.rybbit.io/api/script.js",
+     "bytes": 37068,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://www.ustwo.com/webpack-runtime-1adfab93b6aa2c01ad13.js",
+     "bytes": 25298,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://www.ustwo.com/framework-f6868c6d8853b1d0c181.js",
+     "bytes": 144834,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://www.ustwo.com/styles-ed964111d8f3d26e82e0.js",
+     "bytes": 8676,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://www.ustwo.com/app-67a6580fbb31d28caaae.js",
+     "bytes": 248459,
+     "file": "asset04.js"
+    }
+   ],
+   "bundle_bytes": 464317,
+   "features": {
+    "willchange": 2,
+    "clip_path": 3,
+    "css_3d": 2
+   },
+   "numbers": {
+    "duration": [
+     [
+      "0.6",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "0.18, 0.47, 0.27, 0.92",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "ponney",
+   "url": "https://ponney.studio",
+   "ok": false,
+   "error": "fetch failed"
+  },
+  {
+   "name": "unseen",
+   "url": "https://unseen.studio",
+   "ok": true,
+   "html_bytes": 114,
+   "title": "",
+   "asset_count": 0,
+   "assets": [],
+   "bundle_bytes": 0,
+   "features": {},
+   "numbers": {},
+   "has_inline_module": false
+  },
+  {
+   "name": "abhishek",
+   "url": "https://abhishek.design",
+   "ok": true,
+   "html_bytes": 464944,
+   "title": "Abhishek Vaghela - Product Designer",
+   "asset_count": 28,
+   "assets": [
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/script_main.1MFmxT4R.mjs",
+     "bytes": 6848,
+     "file": "asset01.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/rolldown-runtime.Dh6celcD.mjs",
+     "bytes": 629,
+     "file": "asset02.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/react.BpKPsBQp.mjs",
+     "bytes": 144630,
+     "file": "asset03.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/framer.BEnqUpA2.mjs",
+     "bytes": 451723,
+     "file": "asset04.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/motion.Df8biXlH.mjs",
+     "bytes": 150901,
+     "file": "asset05.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/Y6gVwtlcQZY2YlMeTjA4SKqWmermucwxXf2Y0b5LkvQ.xtso0J6i.mjs",
+     "bytes": 183836,
+     "file": "asset06.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/ThemeChanger.DHtuU544.mjs",
+     "bytes": 5810,
+     "file": "asset07.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/shared-lib.B0JJ4czo.mjs",
+     "bytes": 69094,
+     "file": "asset08.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/5H287AHWopdNlAejpprDUU/Parallax_Hover.CZxtHWoB.mjs",
+     "bytes": 8320,
+     "file": "asset09.mjs"
+    }
+   ],
+   "bundle_bytes": 1021739,
+   "features": {
+    "willchange": 98,
+    "css_3d": 112,
+    "clip_path": 6
+   },
+   "numbers": {
+    "duration": [
+     [
+      ".2",
+      3
+     ],
+     [
+      "1.5",
+      3
+     ],
+     [
+      "1",
+      2
+     ],
+     [
+      "0",
+      2
+     ],
+     [
+      ".45",
+      2
+     ],
+     [
+      "800",
+      1
+     ]
+    ],
+    "damping": [
+     [
+      "60",
+      9
+     ],
+     [
+      "30",
+      3
+     ],
+     [
+      "10",
+      2
+     ],
+     [
+      "50",
+      2
+     ],
+     [
+      "25",
+      1
+     ],
+     [
+      "35",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      ".4,1.2,.6,1",
+      2
+     ],
+     [
+      "${e}, ${r}, ${t}, ${o}",
+      1
+     ],
+     [
+      "${t.ease.join(`,`",
+      1
+     ],
+     [
+      "${e}, ${t}, ${n}, ${r}",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "linear",
+      3
+     ],
+     [
+      "ease",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "locomotive",
+   "url": "https://locomotive.ca",
+   "ok": true,
+   "html_bytes": 66871,
+   "title": "Locomotive | Montreal web agency",
+   "asset_count": 5,
+   "assets": [
+    {
+     "url": "https://www.google.com/recaptcha/api.js?render=explicit",
+     "bytes": 1550,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://locomotive.ca/assets/scripts/vendors.js?v=1792099941132",
+     "bytes": 5519,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://locomotive.ca/assets/scripts/app.js?v=1792099941132",
+     "bytes": 2550863,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://locomotive.ca/assets/styles/main.css?v=1792099941132",
+     "bytes": 200101,
+     "file": "asset04.css"
+    }
+   ],
+   "bundle_bytes": 2757984,
+   "features": {
+    "locomotive": 1,
+    "css_3d": 58,
+    "lenis": 11,
+    "gsap": 37,
+    "three": 232,
+    "ogl": 12,
+    "barba": 15,
+    "shader": 472,
+    "willchange": 10,
+    "clip_path": 14
+   },
+   "numbers": {
+    "ease_cubic": [
+     [
+      "0.215, 0.61, 0.355, 1",
+      46
+     ],
+     [
+      "0.23, 1, 0.32, 1",
+      9
+     ]
+    ],
+    "duration": [
+     [
+      "0",
+      12
+     ],
+     [
+      "1",
+      7
+     ],
+     [
+      ".25",
+      5
+     ],
+     [
+      "250",
+      4
+     ],
+     [
+      ".3",
+      3
+     ],
+     [
+      "2",
+      3
+     ]
+    ],
+    "stagger": [
+     [
+      ".04",
+      6
+     ],
+     [
+      ".02",
+      5
+     ],
+     [
+      "0",
+      2
+     ],
+     [
+      ".08",
+      1
+     ],
+     [
+      ".01",
+      1
+     ],
+     [
+      ".1",
+      1
+     ]
+    ],
+    "damping": [
+     [
+      ".65",
+      1
+     ],
+     [
+      ".6",
+      1
+     ],
+     [
+      ".45",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "power4.out",
+      4
+     ],
+     [
+      "none",
+      2
+     ],
+     [
+      "power2.out",
+      2
+     ],
+     [
+      "power2.in",
+      1
+     ],
+     [
+      "linear",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "islands",
+   "url": "https://14islands.com",
+   "ok": true,
+   "html_bytes": 163032,
+   "title": "14islands | Creative design &amp; technology agency",
+   "asset_count": 17,
+   "assets": [
+    {
+     "url": "https://14islands.com/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js",
+     "bytes": 91381,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/webpack-65147f106dc96d2a.js",
+     "bytes": 7060,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/framework-38911e4ef3a93200.js",
+     "bytes": 210531,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/main-7dfedb4da87490c1.js",
+     "bytes": 99046,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/pages/_app-2ead1a926c2c8c7f.js",
+     "bytes": 2055386,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/7871-532bc44b7a944427.js",
+     "bytes": 105616,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/4965-cbd937b765a0f78c.js",
+     "bytes": 9963,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/9240-7ea3a200487ff076.js",
+     "bytes": 59357,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/2468-56710948c00b64bc.js",
+     "bytes": 11281,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://14islands.com/_next/static/chunks/4052-41b95387a9145ff3.js",
+     "bytes": 15538,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 2665089,
+   "features": {
+    "lenis": 11,
+    "three": 262,
+    "ogl": 12,
+    "shader": 355,
+    "clip_path": 6,
+    "css_3d": 18
+   },
+   "numbers": {
+    "duration": [
+     [
+      "0",
+      8
+     ],
+     [
+      "1",
+      2
+     ],
+     [
+      ".4",
+      1
+     ],
+     [
+      ".8",
+      1
+     ],
+     [
+      ".3",
+      1
+     ],
+     [
+      ".45",
+      1
+     ]
+    ],
+    "damping": [
+     [
+      "10",
+      2
+     ],
+     [
+      "1",
+      1
+     ],
+     [
+      "2",
+      1
+     ],
+     [
+      "25",
+      1
+     ],
+     [
+      "0",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      "${e}, ${t}, ${i}, ${r}",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "ease",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "monks",
+   "url": "https://www.mediamonks.com",
+   "ok": true,
+   "html_bytes": 188037,
+   "title": "Monks",
+   "asset_count": 52,
+   "assets": [
+    {
+     "url": "https://cdn.cookielaw.org/consent/fd7f30d2-a621-4c6b-a158-1e3d85844189/otSDKStub.js",
+     "bytes": 27685,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://www.google.com/recaptcha/enterprise.js?render=6Lf56QAsAAAAAJKQzZkuoD3XHjSEYshr3tTUeHLC",
+     "bytes": 1731,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/core/assets/vendor/jquery/jquery.min.js?v=3.7.1",
+     "bytes": 188066,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/core/misc/drupalSettingsLoader.js?v=10.6.9",
+     "bytes": 188066,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/core/misc/drupal.js?v=10.6.9",
+     "bytes": 188066,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/core/misc/drupal.init.js?v=10.6.9",
+     "bytes": 188066,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/themes/custom/monks/static/chunks/main.js?v=1.0.0",
+     "bytes": 188066,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/modules/contrib/statistics/statistics.js?v=10.6.9",
+     "bytes": 188066,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://www.mediamonks.com/themes/contrib/stable/css/system/components/align.module.css?tnaoum",
+     "bytes": 188066,
+     "file": "asset08.css"
+    },
+    {
+     "url": "https://www.mediamonks.com/themes/contrib/stable/css/system/components/fieldgroup.module.css?tnaoum",
+     "bytes": 188066,
+     "file": "asset09.css"
+    }
+   ],
+   "bundle_bytes": 1533712,
+   "features": {
+    "lottie": 36
+   },
+   "numbers": {},
+   "has_inline_module": false
+  },
+  {
+   "name": "cuberto",
+   "url": "https://cuberto.com",
+   "ok": true,
+   "html_bytes": 73662,
+   "title": "Cuberto | Digital Design &amp; Development Agency",
+   "asset_count": 23,
+   "assets": [
+    {
+     "url": "https://cuberto.com/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DEurQHMF.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 13854,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.CqtjrkGh.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 20381,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/page.CFTZkKq1.js",
+     "bytes": 84,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.CW8OEsnx.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 1429,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.B2DOFWPC.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 11455,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.B2sJen6M.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 1641,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.CUeB0S19.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 940,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.XzcFPccV.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 1480,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/ShowreelModal.astro_astro_type_script_index_0_lang.B1KT2MH_.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 626,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://cuberto.com/_astro/index.astro_astro_type_script_index_0_lang.CHWeNzN6.js?dpl=dpl_H9hBbGT2XCmvNrfob5SRvQoNxaiz",
+     "bytes": 1149,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 53039,
+   "features": {
+    "clip_path": 5,
+    "lenis": 10,
+    "gsap": 24,
+    "gsap_ticker": 2
+   },
+   "numbers": {
+    "ease_cubic": [
+     [
+      ".16,1,.3,1",
+      2
+     ]
+    ],
+    "touchMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "wheelMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "duration": [
+     [
+      ".4",
+      2
+     ],
+     [
+      ".8",
+      2
+     ],
+     [
+      "1",
+      2
+     ],
+     [
+      ".7",
+      1
+     ],
+     [
+      "2.5",
+      1
+     ]
+    ],
+    "stagger": [
+     [
+      ".1",
+      3
+     ],
+     [
+      ".2",
+      2
+     ],
+     [
+      ".06",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "waaark",
+   "url": "https://waaark.com",
+   "ok": true,
+   "html_bytes": 1313786,
+   "title": "wrk - French Creative Web Studio",
+   "asset_count": 12,
+   "assets": [
+    {
+     "url": "https://waaark.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+     "bytes": 1239,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/jquery-2.2.0.min.js?ver=1",
+     "bytes": 85589,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/jquery.touchSwipe.min.js?ver=1",
+     "bytes": 11972,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/jquery.mousewheel.min.js?ver=1",
+     "bytes": 2771,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/TweenMax.min.js?ver=1",
+     "bytes": 108426,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/SplitText.min.js?ver=1",
+     "bytes": 6694,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/bodymovin.js?ver=1",
+     "bytes": 171691,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/plugins.js?ver=1",
+     "bytes": 20150,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://waaark.com/theme/js/script.js?ver=1",
+     "bytes": 118416,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://use.typekit.net/zbn4sad.js",
+     "bytes": 17000,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 543942,
+   "features": {
+    "clip_path": 54,
+    "three": 1,
+    "css_3d": 35
+   },
+   "numbers": {
+    "duration": [
+     [
+      "600",
+      2
+     ],
+     [
+      "800",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": false
+  },
+  {
+   "name": "terminal",
+   "url": "https://terminal-industries.com",
+   "ok": true,
+   "html_bytes": 553291,
+   "title": "Terminal Yard Operating System | The New Industry Standard in Yard Operations",
+   "asset_count": 55,
+   "assets": [
+    {
+     "url": "https://t.contentsquare.net/uxa/dc87b898eec11.js",
+     "bytes": 7041,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://app.salespeak.ai/widget.js",
+     "bytes": 145775,
+     "file": "asset01.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/B4erEYb0.js",
+     "bytes": 640121,
+     "file": "asset02.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/DQn280C5.js",
+     "bytes": 228,
+     "file": "asset03.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/B8tolC06.js",
+     "bytes": 822,
+     "file": "asset04.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/PgBCjdfH.js",
+     "bytes": 13200,
+     "file": "asset05.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/CpPNxrJ7.js",
+     "bytes": 2643,
+     "file": "asset06.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/ZK3YGKzM.js",
+     "bytes": 1794,
+     "file": "asset07.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/CGvfNypw.js",
+     "bytes": 9263,
+     "file": "asset08.js"
+    },
+    {
+     "url": "https://terminal-industries.com/_nuxt/BdzaFdQC.js",
+     "bytes": 228,
+     "file": "asset09.js"
+    }
+   ],
+   "bundle_bytes": 821101,
+   "features": {
+    "willchange": 21,
+    "clip_path": 56,
+    "css_3d": 20,
+    "lenis": 9,
+    "gsap": 118,
+    "gsap_ticker": 2
+   },
+   "numbers": {
+    "duration": [
+     [
+      "1.2",
+      10
+     ],
+     [
+      ".15",
+      9
+     ],
+     [
+      "1",
+      8
+     ],
+     [
+      ".2",
+      7
+     ],
+     [
+      ".5",
+      4
+     ],
+     [
+      ".6",
+      4
+     ]
+    ],
+    "ease_cubic": [
+     [
+      ".39,.575,.565,1",
+      25
+     ],
+     [
+      ".19,1,.22,1",
+      18
+     ],
+     [
+      ".4,0,.2,1",
+      12
+     ],
+     [
+      "0.42, 0, 0.58, 1",
+      10
+     ],
+     [
+      "0.215, 0.61, 0.355, 1",
+      6
+     ],
+     [
+      ".16,1,.3,1",
+      5
+     ]
+    ],
+    "touchMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "wheelMultiplier": [
+     [
+      "1",
+      1
+     ]
+    ],
+    "stagger": [
+     [
+      "0",
+      2
+     ]
+    ],
+    "ease_name": [
+     [
+      "expo.out",
+      6
+     ],
+     [
+      "power2.out",
+      5
+     ],
+     [
+      "power1.in",
+      4
+     ],
+     [
+      "power1.out",
+      3
+     ],
+     [
+      "none",
+      1
+     ],
+     [
+      "expo",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  },
+  {
+   "name": "superlist",
+   "url": "https://www.superlist.com",
+   "ok": true,
+   "html_bytes": 668573,
+   "title": "Superlist — Task Management &amp; To-Do List App for Work and Life",
+   "asset_count": 36,
+   "assets": [
+    {
+     "url": "https://www.dubcdn.com/analytics/script.js",
+     "bytes": 3590,
+     "file": "asset00.js"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/script_main.C1ZXaqXg.mjs",
+     "bytes": 368938,
+     "file": "asset04.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/rolldown-runtime.Dh6celcD.mjs",
+     "bytes": 629,
+     "file": "asset05.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/react.Ch6ngbUS.mjs",
+     "bytes": 144734,
+     "file": "asset06.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/motion.B552WaAK.mjs",
+     "bytes": 149193,
+     "file": "asset07.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/framer.CXHCfPb1.mjs",
+     "bytes": 434013,
+     "file": "asset08.mjs"
+    },
+    {
+     "url": "https://framerusercontent.com/sites/1WbyQRQvjOymgJeI4dY7Nr/Ksi2y89lw.2OG0FxjB.mjs",
+     "bytes": 43582,
+     "file": "asset09.mjs"
+    }
+   ],
+   "bundle_bytes": 1144599,
+   "features": {
+    "willchange": 59,
+    "clip_path": 19,
+    "css_3d": 133
+   },
+   "numbers": {
+    "duration": [
+     [
+      ".2",
+      6
+     ],
+     [
+      ".4",
+      4
+     ],
+     [
+      "0",
+      3
+     ],
+     [
+      ".3",
+      3
+     ],
+     [
+      ".14",
+      2
+     ],
+     [
+      ".1",
+      2
+     ]
+    ],
+    "damping": [
+     [
+      "60",
+      6
+     ],
+     [
+      "10",
+      2
+     ],
+     [
+      "40",
+      2
+     ],
+     [
+      "34",
+      2
+     ],
+     [
+      "52",
+      2
+     ],
+     [
+      "35",
+      1
+     ]
+    ],
+    "ease_cubic": [
+     [
+      ".44,0,.56,1",
+      1
+     ],
+     [
+      "${e}, ${r}, ${t}, ${o}",
+      1
+     ],
+     [
+      "0.44, 0, 0.56, 1",
+      1
+     ],
+     [
+      "${e}, ${t}, ${n}, ${r}",
+      1
+     ],
+     [
+      "${t.ease.join(`,`",
+      1
+     ]
+    ],
+    "ease_name": [
+     [
+      "linear",
+      3
+     ],
+     [
+      "ease",
+      1
+     ]
+    ]
+   },
+   "has_inline_module": true
+  }
+ ]
+}

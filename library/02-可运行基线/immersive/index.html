@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Immersive Baseline — 3D 沉浸型基线</title>
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --void:#08090c;
+  --ink:#f2f4f6;
+  --ink-60:rgba(242,244,246,.60);
+  --ink-34:rgba(242,244,246,.34);
+  --line:rgba(242,244,246,.14);
+  --accent:#d6ff2e;
+
+  --sans:"Helvetica Neue","Inter",-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-display:clamp(40px,5.6vw,88px);
+  --t-h2:clamp(26px,3vw,44px);
+  --t-body:15.5px;
+  --t-label:10.5px;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --edge:clamp(20px,3.6vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--void);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#0a0b08}
+
+/* ============================================================
+   画布：固定全屏，z-index 0
+   ============================================================ */
+#gl{
+  position:fixed;inset:0;width:100%;height:100%;z-index:0;
+  display:block;
+}
+/* 左侧压一层渐变，保证文字可读（不是装饰，是功能） */
+.veil{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(96deg, rgba(8,9,12,.96) 0%, rgba(8,9,12,.88) 26%,
+                    rgba(8,9,12,.42) 48%, rgba(8,9,12,0) 68%),
+    radial-gradient(120% 90% at 50% 120%, rgba(8,9,12,.9) 0%, rgba(8,9,12,0) 60%);
+}
+
+/* ============================================================
+   HUD：固定层，只有三样东西
+   ============================================================ */
+.hud{position:fixed;inset:0;z-index:5;pointer-events:none}
+.hud-brand{
+  position:absolute;top:var(--edge);left:var(--edge);
+  display:flex;align-items:center;gap:9px;
+  font-size:14.5px;font-weight:600;letter-spacing:-.01em;pointer-events:auto;
+}
+.hud-brand .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 12px var(--accent);
+  animation:pulse 2.6s var(--ease-out) infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+
+.hud-right{
+  position:absolute;top:var(--edge);right:var(--edge);
+  display:flex;flex-direction:column;align-items:flex-end;gap:5px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-34);
+}
+.hud-right b{color:var(--accent);font-weight:500}
+
+.progress{
+  position:absolute;right:var(--edge);top:50%;transform:translateY(-50%);
+  width:1px;height:min(34vh,240px);background:var(--line);
+}
+.progress i{
+  position:absolute;left:0;top:0;width:1px;height:0;background:var(--accent);
+  display:block;
+}
+.progress span{
+  position:absolute;right:12px;top:0;transform:translateY(-50%);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--ink-34);
+}
+
+/* ============================================================
+   内容：三个屏的文字，左对齐，压在画布上
+   ============================================================ */
+main{position:relative;z-index:4}
+.panel{
+  min-height:100svh;padding:0 var(--edge);
+  display:flex;flex-direction:column;justify-content:center;
+  max-width:min(46vw,620px);
+}
+.panel .eyebrow{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-34);margin-bottom:22px;
+}
+.panel h1,.panel h2{
+  margin:0 0 24px;font-weight:400;
+  font-size:var(--t-display);line-height:1.02;letter-spacing:-.035em;
+}
+.panel h1 em,.panel h2 em{font-style:normal;color:var(--accent)}
+.panel p{margin:0;color:var(--ink-60);max-width:36ch}
+.panel p strong{color:var(--ink);font-weight:500}
+
+.spec{
+  display:grid;grid-template-columns:repeat(3,auto);gap:0;
+  margin-top:38px;border-top:1px solid var(--line);max-width:420px;
+}
+.spec div{padding:14px 26px 0 0}
+.spec div+div{padding-left:26px;border-left:1px solid var(--line)}
+.spec b{
+  display:block;font-family:var(--mono);font-size:22px;font-weight:500;
+  color:var(--accent);letter-spacing:-.02em;
+}
+.spec span{
+  display:block;margin-top:5px;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-34);
+}
+
+.scroll-hint{
+  position:absolute;left:var(--edge);bottom:var(--edge);
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-34);
+}
+.scroll-hint .bar{width:34px;height:1px;background:var(--ink-34);display:block}
+
+/* ============================================================
+   响应式：窄屏时文字占满，画布退为背景
+   ============================================================ */
+@media (max-width:860px){
+  .veil{background:
+    linear-gradient(180deg, rgba(8,9,12,.55) 0%, rgba(8,9,12,.9) 46%, rgba(8,9,12,.96) 100%)}
+  .panel{max-width:none;justify-content:flex-end;padding-bottom:16vh}
+  .panel h1,.panel h2{font-size:clamp(38px,10vw,58px)}
+  .progress{display:none}
+  .spec{grid-template-columns:repeat(3,1fr)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<canvas id="gl"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<div class="hud">
+  <a class="hud-brand" href="#" aria-label="Orbit">
+    <span class="dot"></span> ORBIT
+  </a>
+  <div class="hud-right">
+    <span>WebGL · <b>WebGL2</b></span>
+    <span>18.4k tris</span>
+  </div>
+  <div class="progress" aria-hidden="true">
+    <i id="bar"></i><span>000</span>
+  </div>
+</div>
+
+<main>
+  <section class="panel" data-panel>
+    <div class="eyebrow">01 — Material</div>
+    <h1>光线决定<br>它的<em>价格</em>。</h1>
+    <p>同一个几何体，换一套材质和环境，就从"塑料玩具"变成"产品广告"。
+       差别不在模型，在 <strong>roughness、反射和轮廓光</strong>。</p>
+    <div class="spec">
+      <div><b>0.12</b><span>roughness</span></div>
+      <div><b>0.95</b><span>metalness</span></div>
+      <div><b>1.75</b><span>dpr cap</span></div>
+    </div>
+  </section>
+
+  <section class="panel" data-panel>
+    <div class="eyebrow">02 — Camera</div>
+    <h2>镜头在动。<br>物体<em>几乎不动</em>。</h2>
+    <p>整页只推近 <strong>1.4 个单位</strong>，fov 固定在 42。
+       位移越大越像特效，越小越像摄影。</p>
+  </section>
+
+  <section class="panel" data-panel>
+    <div class="eyebrow">03 — Restraint</div>
+    <h2>一个场景。<br>只说<em>一件事</em>。</h2>
+    <p>三个几何体、一盏主光、一层雾。剩下的交给留白。</p>
+  </section>
+</main>
+
+<div class="scroll-hint" aria-hidden="true">
+  <span class="bar"></span> Scroll
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+/* ============================================================
+   0. 环境贴图：程序化生成（零外链，且金属有东西可反射）
+   ============================================================ */
+function makeEnv(renderer){
+  const W = 1024, H = 512;
+  const c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  const g = c.getContext('2d');
+
+  /* 底色：上暗下更暗，中间一条地平线亮带 */
+  const grad = g.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0.00, '#1a1f27');
+  grad.addColorStop(0.44, '#0f1319');
+  grad.addColorStop(0.50, '#2b323c');
+  grad.addColorStop(0.56, '#13171d');
+  grad.addColorStop(1.00, '#05060a');
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+
+  /* 硬边柔光箱：金属会反射出带清晰边界的长条高光 —— 这是"产品摄影"的关键 */
+  const panel = (x, y, w, h, color, alpha, blur) => {
+    g.save();
+    g.globalAlpha = alpha;
+    g.filter = `blur(${blur}px)`;
+    g.fillStyle = color;
+    g.fillRect(x, y, w, h);
+    g.restore();
+  };
+  panel(150, 30, 300, 120, '#ffffff', 0.98, 6);     // 主光箱（左上）
+  panel(150, 30, 300, 8, '#ffffff', 1.00, 1);       // 主光箱的上边缘（更硬）
+  panel(620, 60, 150, 200, '#cfdcf0', 0.65, 10);    // 副光箱（右侧）
+  panel(60, 300, 900, 5, '#ffffff', 0.42, 1);       // 地平线亮带
+  panel(430, 380, 260, 60, '#ff6a1a', 0.18, 24);    // 地面暖反光
+
+  const tex = new THREE.CanvasTexture(c);
+  tex.mapping = THREE.EquirectangularReflectionMapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  pmrem.compileEquirectangularShader();
+  const env = pmrem.fromEquirectangular(tex).texture;
+  tex.dispose(); pmrem.dispose();
+  return env;
+}
+
+/* ============================================================
+   1. 场景
+   ============================================================ */
+const canvas = document.getElementById('gl');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let renderer, scene, camera, group, objects = [], clock;
+let scrollP = 0, pointer = { x: 0, y: 0 }, target = { x: 0, y: 0 };
+
+function init(){
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));   // ← 实测上限 1.75
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;          // ← 电影感
+  renderer.toneMappingExposure = 0.95;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x08090c, 9, 22);
+  scene.environment = makeEnv(renderer);
+
+  camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 9.4);
+
+  clock = new THREE.Clock();
+  group = new THREE.Group();
+  scene.add(group);
+
+  /* --- 三个几何体，只有基础形体，质感全在材质 --- */
+  const metal = (color, rough) => new THREE.MeshStandardMaterial({
+    color, roughness: rough, metalness: 0.86, envMapIntensity: 2.0,
+  });
+
+  // 1 扭结（主角）
+  const knot = new THREE.Mesh(new THREE.TorusKnotGeometry(1.15, 0.36, 220, 32), metal(0xdde3ea, 0.16));
+  knot.position.set(2.9, 0.1, 0);
+  knot.castShadow = true; knot.receiveShadow = true;
+  knot.castShadow = true; knot.receiveShadow = true;
+  group.add(knot); objects.push({ mesh: knot, spin: 0.12 });
+
+  // 2 二十面体（配角，偏冷）
+  const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(0.72, 0), metal(0x8fa4bd, 0.06));
+  ico.position.set(4.7, 1.9, -1.6);
+  ico.castShadow = true;
+  ico.castShadow = true;
+  group.add(ico); objects.push({ mesh: ico, spin: -0.2 });
+
+  // 3 环（最远，做纵深）
+  const torus = new THREE.Mesh(new THREE.TorusGeometry(2.6, 0.055, 24, 160), metal(0xd6ff2e, 0.3));
+  torus.position.set(2.4, 0, -3.2);
+  torus.rotation.set(1.24, 0.3, 0);
+  group.add(torus); objects.push({ mesh: torus, spin: 0.04 });
+
+  // 三盏灯：主光冷白、补光暖橙、轮廓光（塑边）
+  const key = new THREE.DirectionalLight(0xffffff, 2.6); key.position.set(4, 6, 6);
+  key.castShadow = true;
+  key.shadow.mapSize.set(1024, 1024);
+  key.shadow.camera.near = 1; key.shadow.camera.far = 24;
+  key.shadow.camera.left = -8; key.shadow.camera.right = 8;
+  key.shadow.camera.top = 8; key.shadow.camera.bottom = -8;
+  key.shadow.bias = -0.0006;
+  const fill = new THREE.DirectionalLight(0xff7a2f, 0.85); fill.position.set(-6, -2, 2);
+  const rim  = new THREE.DirectionalLight(0xdfeaff, 1.6); rim.position.set(-3, 4, -6);
+  scene.add(key, fill, rim, new THREE.AmbientLight(0x1c222a, 0.55));
+
+  // 地面反光面（只给一点点，让它"站在地上"）
+  const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(40, 40),
+    new THREE.MeshStandardMaterial({ color: 0x0a0c10, roughness: 0.55, metalness: 0.45 })
+  );
+  floor.receiveShadow = true;
+  floor.rotation.x = -Math.PI / 2; floor.position.y = -4.6;
+  scene.add(floor);
+
+  addEventListener('resize', onResize, { passive: true });
+  addEventListener('pointermove', (e) => {
+    target.x = (e.clientX / innerWidth) * 2 - 1;
+    target.y = (e.clientY / innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  bindScroll();
+  animate();
+}
+
+function onResize(){
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+}
+
+/* ============================================================
+   2. 滚动 → 场景（gsap ticker 统一驱动，不建第二个 rAF）
+   ============================================================ */
+function bindScroll(){
+  // 滚动进度用 ScrollTrigger 采集，交给渲染循环自己插值
+  ScrollTrigger.create({
+    trigger: 'main', start: 'top top', end: 'bottom bottom',
+    onUpdate: (self) => { scrollP = self.progress; },
+  });
+
+  // 进度条
+  const bar = document.getElementById('bar');
+  const num = bar.parentElement.querySelector('span');
+  ScrollTrigger.create({
+    trigger: 'main', start: 'top top', end: 'bottom bottom',
+    onUpdate: (self) => {
+      bar.style.height = (self.progress * 100) + '%';
+      num.textContent = String(Math.round(self.progress * 100)).padStart(3, '0');
+    },
+  });
+}
+
+/* ============================================================
+   3. 渲染循环：所有运动都是 scroll / pointer 的函数
+   ============================================================ */
+function animate(){
+  const t = clock.getElapsedTime();
+
+  // 阻尼：0.05 很"重"，0.1 跟手
+  const k = reduced ? 1 : 0.075;
+  pointer.x += (target.x - pointer.x) * k;
+  pointer.y += (target.y - pointer.y) * k;
+
+  // 整体缓慢自转（滚动会叠加）
+  group.rotation.y = -0.28 + scrollP * 1.15 + pointer.x * 0.16;
+  group.rotation.x = pointer.y * 0.1;
+
+  // 相机只推近 1.4 个单位
+  camera.position.z = 9.4 - scrollP * 1.4;
+  camera.position.y = 0.2 + scrollP * 0.5;
+  camera.lookAt(2.6, 0, 0);
+
+  // 各物体自转（单轴，互不干扰）
+  objects.forEach((o, i) => {
+    o.mesh.rotation.x += o.spin * 0.004;
+    o.mesh.rotation.y += o.spin * 0.006;
+    // 主角随滚动放大一点，形成"接近"的错觉
+    if (i === 0) o.mesh.scale.setScalar(1 + scrollP * 0.12);
+  });
+
+  // 雾随滚动变薄 → 越往后越"清晰"
+  scene.fog.near = 9 - scrollP * 3;
+  scene.fog.far = 22 + scrollP * 10;
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
+
+/* ============================================================
+   4. 页签隐藏时暂停（省电，也是性能红线）
+   ============================================================ */
+let rafId = null;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { renderer.setAnimationLoop(null); }
+});
+
+/* ============================================================
+   5. 文字进场（一条 timeline，绝对时间）
+   ============================================================ */
+function enter(){
+  if (reduced) return;
+  gsap.set('[data-panel] > *', { opacity: 0, y: 18 });
+  gsap.utils.toArray('[data-panel]').forEach((panel) => {
+    gsap.to(panel.children, {
+      opacity: 1, y: 0, duration: 0.62, ease: 'expo.out', stagger: 0.06,
+      scrollTrigger: { trigger: panel, start: 'top 62%', toggleActions: 'play none none reverse' },
+    });
+  });
+}
+
+if (window.THREE) {
+  init();
+  enter();
+} else {
+  // three 加载失败 → 退化为纯排版页（不留白屏）
+  document.getElementById('gl').style.display = 'none';
+  document.body.style.background = '#08090c';
+  enter();
+}
+</script>
+</body>
+</html>

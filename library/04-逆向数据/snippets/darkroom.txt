@@ -1,0 +1,22 @@
+# darkroom — https://darkroom.engineering
+# bundle 611195 bytes
+
+ease 分布: {'power3.inOut': 11, 'expo.out': 1, 'expo.inOut': 1}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== ease: =====
+rtain-line",{text:i}),t.fromTo(".curtain-text-line-left",{x:(e,t,r)=>e===r.length-1?"16%":`${y(e)}%`},{duration:1.1,x:(e,t,r)=>e===r.length-1?"4%":`${y(e)-4}%`,ease:"power3.inOut"}),t.fromTo(".curtain-text-line-right",{x:e=>`${-y(e)}%`}
+
+n:1.1,x:(e,t,r)=>e===r.length-1?"4%":`${y(e)-4}%`,ease:"power3.inOut"}),t.fromTo(".curtain-text-line-right",{x:e=>`${-y(e)}%`},{duration:1.1,x:e=>`${-y(e)+4}%`,ease:"power3.inOut"},"<"),t.fromTo("#curtain-content",{translateY:"100%"}
+
+right",{x:e=>`${-y(e)}%`},{duration:1.1,x:e=>`${-y(e)+4}%`,ease:"power3.inOut"},"<"),t.fromTo("#curtain-content",{translateY:"100%"},{duration:1.1,translateY:0,ease:"power3.inOut"},0),t.fromTo("#curtain",{clipPath:"inset(100% 0 0 0)"}
+
+===== matchMedia( =====
+ction uU(e,t,n){switch(e.tag){case 26:uj(e,t,n),e.flags&uA&&(null!==e.memoizedState?function(e,t,n,r){if("stylesheet"===n.type&&("string"!=typeof r.media||!1!==matchMedia(r.media).matches)&&0==(4&n.state.loading)){if(null===n.instance){var l=f1(r.href),a=t.querySelector(f2(l));if(a){null!==(t=a._p)&&"object"==typeof t&&"function"==typeof t.then&&(e.count++,e=dc.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=a,tn(a);return}a=t.ownerDocument||t,r=f3(r),(l=fq.get(l))&&f9(r,l),tn(a=a.createElement("link"));var o=a;o._p=new Promise(function(e,t){o.onload=e,o.onerror=t}),cX(a,"link",r),n.instance=a}null===e.stylesheets&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&0==(3&n.state.loading)&&(e.count++,n=dc.bind(e),t.addEventListener("load",n),t.addEventListener("error",n))}
+
+siq7welusq.js"].map(t=>e.l(t))).then(()=>t(13704)))},7402,e=>{"use strict";var t=e.i(15010);let s="(prefers-reduced-motion: reduce)";function r(e){let t=window.matchMedia(s);return t.addEventListener("change",e),()=>t.removeEventListener("change",e)}function V(){return window.matchMedia(s).matches}
+
+otion: reduce)";function r(e){let t=window.matchMedia(s);return t.addEventListener("change",e),()=>t.removeEventListener("change",e)}function V(){return window.matchMedia(s).matches}function H(){return!1}
+

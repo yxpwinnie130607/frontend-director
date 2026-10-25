@@ -1,0 +1,37 @@
+# cuberto — https://cuberto.com
+# bundle 53039 bytes
+
+ease 分布: {}
+scrub 分布: {'!0': 1}
+start 分布: {}
+pin:true 出现 0 次
+
+===== scrub: =====
+tion:1}),e}magicParallax(){this.main.classList.contains(`-static`)||n.create({trigger:this.main,animation:this.tlParallax(),start:`top bottom`,end:`bottom top`,scrub:!0})}tlParallax(){let e=r.timeline();return r.set(this.media,{scale:1.05}),e.fromTo(this.media,{y:`-10%`},{y:`10%`,ease:`none`},0),e}
+
+===== ease: =====
+To(this.backdrop,{opacity:0},{opacity:1},0),e.fromTo(this.fill,{scaleY:0,transformOrigin:`bottom bottom`},{scaleY:1,transformOrigin:`bottom bottom`,duration:.7,ease:`power4.inOut`,immediateRender:!1},0),e}tlHide(){let e=n.timeline({paused:!0});return e.set(this.el,{pointerEvents:`none`},0),e.set(this.backdrop,{opacity:0},0),e.to(this.fill,{opacity:0,duration:.4},0),e.set(this.el,{display:`none`}),e}
+
+k.x-(e.stick.x-t.clientX)*e.options.stickDelta:t.clientX,y:e.stick?e.stick.y-(e.stick.y-t.clientY)*e.options.stickDelta:t.clientY,overwrite:e.options.overwrite,ease:e.options.ease,duration:e.visible?e.options.speed:0,onUpdate:function(){return e.vel={x:t.clientX-e.pos.x,y:t.clientY-e.pos.y}}
+
+eturn e.set(this.main,{willChange:`transform`},0),e.fromTo(this.main,{clipPath:`inset(5% 10% round 2rem)`,scale:.9},{clipPath:`inset(0% 0% round 2rem)`,scale:1,ease:`expo.out`,duration:2.5},.1),e.from(this.main,{opacity:0,duration:1}
+
+===== stagger: =====
+his.enterTl=this.tlEnter()}tlEnter(){let e=n.timeline({paused:!0});return e.fromTo(this.logoPath,{scale:0,transformOrigin:`center center`},{scale:1,duration:.4,stagger:.06,transformOrigin:`center center`},0),window.innerWidth>=768&&(e.set([this.nav,this.action],{willChange:`transform`}
+
+,0),window.innerWidth>=768&&(e.set([this.nav,this.action],{willChange:`transform`}),e.fromTo([this.nav,this.action],{y:20,opacity:0},{y:0,opacity:1,duration:.8,stagger:.1,clearProps:`all`},0)),e}bindToggle(){this.toggleBtn.addEventListener(`click`,()=>this.toggle())}
+
+his.enterTl.play()}handleEnter(){this.enterTl=this.tlEnter()}tlEnter(){let e=n.timeline({paused:!0});return this.header&&e.add(r(this.header.firstElementChild,{stagger:.1}),0),this.title&&e.add(r(this.title.firstElementChild),0),this.text&&e.add(r(this.text.firstElementChild),.1),this.detail.length&&e.add(i(this.detail),.4),e}};t.define(`TopheadSection`,a,`.TopheadSection`);export{a as default}
+
+===== timeline({ =====
+t.classList.add(`loader`),await this.showTl.play(0)}async hide(){document.documentElement.classList.remove(`loader`),await this.hideTl.play(0)}tlShow(){let e=n.timeline({paused:!0}
+
+,{scaleY:0,transformOrigin:`bottom bottom`},{scaleY:1,transformOrigin:`bottom bottom`,duration:.7,ease:`power4.inOut`,immediateRender:!1},0),e}tlHide(){let e=n.timeline({paused:!0}
+
+sList.toggle(`-visible`,t>0&&e>t),e=t},window.addEventListener(`scroll`,this.scrollFn,{passive:!0})}handleEnter(){this.enterTl=this.tlEnter()}tlEnter(){let e=n.timeline({paused:!0}
+
+===== matchMedia( =====
+ng=!1;_isStopped=!1;_isLocked=!1;_preventNextNativeScrollEvent=!1;_resetVelocityTimeout=null;_rafId=null;_isDraggingSelection=!1;reducedMotionMediaQuery=window.matchMedia(`(prefers-reduced-motion: reduce)`);isTouching;isIos;time=0;userData={}
+
+.follower.removeVideo(),this.follower.removeState(`-pointer`),this.follower.removeState(`-inverse`),this.follower.removeState(`-opaque`))}initFollower(){window.matchMedia(`(pointer:fine)`).matches&&(this.follower=new r({el:`.Cursor`,className:`Cursor`,innerClassName:`inner`,textClassName:`text`,mediaClassName:`media`,mediaBoxClassName:`box`,iconSvgClassName:`icon`,iconSvgSrc:`/assets/sprites/svgsprites.svg`,skewing:1.5,skewingMedia:.5,speed:.5}
+

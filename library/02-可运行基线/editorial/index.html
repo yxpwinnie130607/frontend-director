@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editorial Baseline — 编辑叙事型基线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — 所有数值都来自 28 站实测（见 docs/02-aesthetic-fingerprint.md）
+   ============================================================ */
+:root{
+  --paper:#f2efe9;
+  --ink:#14140f;
+  --ink-60:rgba(20,20,15,.58);
+  --ink-38:rgba(20,20,15,.38);
+  --line:rgba(20,20,15,.16);
+  --line-strong:rgba(20,20,15,.42);
+  --accent:#ff3d00;
+  --dark:#0f100c;
+
+  --sans:"Helvetica Neue","Inter",-apple-system,"Segoe UI",Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style","Songti SC",Georgia,serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  /* 字号阶梯：正文 16px 为 1 */
+  --t-display:clamp(54px,9.9vw,152px);
+  --t-h2:clamp(34px,4.4vw,64px);
+  --t-h3:clamp(20px,2vw,30px);
+  --t-lead:clamp(17px,1.45vw,21px);
+  --t-body:16px;
+  --t-small:13px;
+  --t-label:10.5px;
+
+  --lh-display:.86;
+  --lh-title:.98;
+  --lh-body:1.58;
+
+  --ls-display:-.045em;
+  --ls-h2:-.032em;
+  --ls-label:.19em;
+
+  --dur-fast:180ms;
+  --dur-mid:450ms;
+  --dur-slow:620ms;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-inout:cubic-bezier(.4,0,.2,1);
+
+  --sp-1:24px;
+  --sp-2:64px;
+  --sp-3:clamp(72px,10vh,140px);
+  --sp-4:clamp(140px,20vh,260px);
+
+  --edge:clamp(20px,4vw,64px);   /* 贴边距：不居中 */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+
+/* ============================================================
+   导航：细线 + mono，不用胶囊、不用阴影
+   ============================================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--edge);
+  mix-blend-mode:multiply;      /* 压到深色段上会变暗，不换色 */
+}
+.brand{
+  display:flex;align-items:baseline;gap:8px;
+  font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:-.02em;
+}
+.brand i{font-family:var(--mono);font-style:normal;font-size:9px;
+  letter-spacing:.14em;color:var(--ink-38);transform:translateY(-1px)}
+.nav nav{display:flex;gap:clamp(16px,2.4vw,34px)}
+.nav nav a{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-60);
+  transition:color var(--dur-fast) var(--ease-out);
+}
+.nav nav a:hover{color:var(--ink)}
+.nav .idx{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;color:var(--ink-38)}
+
+/* ============================================================
+   首屏：贴边大字 + 遮罩掀字；右下角只有一个 mono 注释
+   ============================================================ */
+.hero{
+  min-height:100svh;padding:calc(var(--edge) + 64px) var(--edge) var(--sp-2);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;
+}
+.hero-top{
+  position:absolute;top:calc(var(--edge) + 60px);left:var(--edge);right:var(--edge);
+  display:flex;justify-content:space-between;gap:24px;
+}
+.eyebrow{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:var(--ls-label);
+  text-transform:uppercase;color:var(--ink-60);
+}
+.hero h1{
+  margin:0;max-width:15ch;
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--t-display);line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);
+}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.mask{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.mask>span{display:block;will-change:transform}
+
+.hero-side{
+  position:absolute;right:var(--edge);top:calc(var(--edge) + 120px);
+  display:flex;flex-direction:column;align-items:center;gap:18px;
+}
+.hero-side .rule{display:block;width:1px;height:clamp(80px,18vh,180px);background:var(--line-strong)}
+.hero-side .vert{
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.24em;
+  text-transform:uppercase;color:var(--ink-38);white-space:nowrap;
+}
+
+.hero-foot{
+  margin-top:var(--sp-2);
+  display:grid;grid-template-columns:1.6fr .8fr;gap:clamp(20px,5vw,72px);
+  align-items:end;padding-top:var(--sp-1);border-top:1px solid var(--line);
+}
+.hero-foot p{margin:0;max-width:34ch;color:var(--ink-60);font-size:var(--t-lead);line-height:1.5}
+.hero-foot p b{font-weight:500;color:var(--ink)}
+.hero-meta{display:flex;flex-direction:column;gap:6px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-38);text-align:right}
+
+/* ============================================================
+   图版：CSS + 内联 SVG 生成的抽象构成（零外链，永不加载失败）
+   ============================================================ */
+.fig{position:relative;overflow:hidden;background:#ddd8cd;isolation:isolate}
+.fig figcaption{
+  position:absolute;left:14px;bottom:12px;z-index:3;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.86);
+  mix-blend-mode:difference;
+}
+.fig{position:relative}
+.fig-out{position:relative}
+.fig-out figcaption{
+  margin-top:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-38);
+}
+.fig .veil{position:absolute;inset:0;z-index:2;background:var(--paper);
+  transform-origin:bottom;will-change:transform}
+
+/* ============================================================
+   分栏：非对称 1.45 : .8，图片咬出左边界
+   ============================================================ */
+.split{
+  padding:var(--sp-3) var(--edge);
+  display:grid;grid-template-columns:1.45fr .8fr;
+  gap:clamp(24px,4vw,64px);align-items:start;
+}
+.split .fig{aspect-ratio:4/3;margin-left:calc(var(--edge) * -1)}
+.split .copy{padding-top:clamp(8px,4vh,40px)}
+.split h2{
+  margin:0 0 var(--sp-1);
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--t-h2);line-height:var(--lh-title);letter-spacing:var(--ls-h2);
+}
+.split p{margin:0 0 18px;color:var(--ink-60);max-width:38ch}
+.split p strong{color:var(--ink);font-weight:500}
+.kv{list-style:none;margin:var(--sp-2) 0 0;padding:0;
+  display:grid;grid-template-columns:auto 1fr;gap:10px 20px;
+  font-size:var(--t-small)}
+.kv dt,.kv .k{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-38);padding-top:2px}
+.kv .v{color:var(--ink)}
+
+/* ============================================================
+   项目索引：1px 分隔线 + 编号 + hover 预览（不是卡片）
+   ============================================================ */
+.index{padding:var(--sp-3) var(--edge) var(--sp-3)}
+.index-head{display:flex;justify-content:space-between;align-items:baseline;
+  gap:24px;margin-bottom:var(--sp-2)}
+.index-head h2{margin:0;font-family:var(--serif);font-weight:400;
+  font-size:var(--t-h2);line-height:1;letter-spacing:var(--ls-h2)}
+.index-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-strong)}
+.row{position:relative;border-bottom:1px solid var(--line)}
+.row a{
+  display:grid;grid-template-columns:64px 1fr auto auto;gap:18px;align-items:center;
+  padding:22px 0;transition:padding-left var(--dur-mid) var(--ease-out);
+}
+.row a:hover{padding-left:14px}
+.row .no{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.12em;color:var(--ink-38)}
+.row .name{font-family:var(--sans);font-size:clamp(19px,2.1vw,27px);
+  font-weight:500;letter-spacing:-.02em;transition:color var(--dur-fast)}
+.row a:hover .name{color:var(--accent)}
+.row .cat{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-38)}
+.row .yr{font-family:var(--mono);font-size:var(--t-small);color:var(--ink-60)}
+
+/* hover 预览：跟随指针的浮窗 */
+.peek{
+  position:fixed;z-index:40;width:300px;height:220px;pointer-events:none;
+  opacity:0;transform:translate(-50%,-50%) scale(.94);
+  transition:opacity 260ms var(--ease-out),transform 320ms var(--ease-out);
+  overflow:hidden;will-change:transform,opacity;
+}
+.peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.peek .fig{width:100%;height:100%}
+
+/* ============================================================
+   深色段：节奏切换点；横向 sticky 轨道
+   ============================================================ */
+.dark{background:var(--dark);color:#f4f1ea}
+.dark .fig .veil{background:var(--dark)}
+.ht{position:relative}
+.ht-sticky{position:sticky;top:0;height:100svh;overflow:hidden;
+  display:flex;align-items:center}
+.ht-track{display:flex;gap:clamp(16px,3vw,48px);padding:0 var(--edge);will-change:transform}
+.ht-item{flex:0 0 auto;width:min(46vw,600px)}
+.ht-item .fig{aspect-ratio:5/3}
+.ht-item h3{margin:16px 0 8px;font-family:var(--sans);font-weight:500;
+  font-size:var(--t-h3);line-height:1.16;letter-spacing:-.01em}
+.ht-item p{margin:0;font-size:var(--t-small);color:rgba(244,241,234,.55);max-width:40ch}
+.ht-cap{position:absolute;left:var(--edge);bottom:clamp(18px,4vh,48px);
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:var(--ls-label);
+  text-transform:uppercase;color:rgba(244,241,234,.42)}
+
+/* ============================================================
+   引言：一行大字，大量留白
+   ============================================================ */
+.quote{padding:var(--sp-4) var(--edge);border-bottom:1px solid var(--line)}
+.quote blockquote{
+  margin:0;max-width:22ch;
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(26px,3.4vw,50px);line-height:1.14;letter-spacing:-.02em;
+}
+.quote blockquote span{color:var(--accent)}
+.quote cite{display:block;margin-top:var(--sp-2);
+  font-family:var(--mono);font-size:var(--t-label);font-style:normal;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-38)}
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.foot{padding:var(--sp-2) var(--edge) var(--sp-1);
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-38)}
+.foot a{border-bottom:1px solid transparent;transition:border-color var(--dur-fast)}
+.foot a:hover{border-color:var(--ink-38);color:var(--ink)}
+
+/* ============================================================
+   响应式：≤ 860px 全部单列（不要试图保留非对称）
+   ============================================================ */
+@media (max-width:860px){
+  .nav nav{display:none}
+  .hero-foot{grid-template-columns:1fr}
+  .hero-meta{text-align:left;flex-direction:row;gap:16px;flex-wrap:wrap}
+  .hero-side{display:none}
+  .split{grid-template-columns:1fr}
+  .split .fig{margin-left:calc(var(--edge) * -1);margin-right:calc(var(--edge) * -1);aspect-ratio:1/1}
+  .row a{grid-template-columns:44px 1fr auto;gap:12px}
+  .row .cat{display:none}
+  .peek{display:none}
+  .ht-item{width:80vw}
+}
+
+/* ============================================================
+   reduced-motion：全部降级
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .mask>span{transform:none!important}
+  .fig .veil{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top">FOLD<i>STUDIO</i></a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <span class="idx">2016—26</span>
+</header>
+
+<main id="top">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-top">
+      <span class="eyebrow">Image &amp; Interface</span>
+      <span class="eyebrow">Beijing / Remote</span>
+    </div>
+
+    <h1>
+      <span class="mask"><span>We make</span></span>
+      <span class="mask"><span>the part</span></span>
+      <span class="mask"><span><em>people keep</em>.</span></span>
+    </h1>
+
+    <div class="hero-side" aria-hidden="true">
+      <span class="rule"></span>
+      <span class="vert">Independent design practice — est. 2016</span>
+    </div>
+
+    <div class="hero-foot">
+      <p>我们把复杂的产品，做成<b>一句话就能记住</b>的样子。
+         影像、版式、交互，三件事一起做。</p>
+      <div class="hero-meta">
+        <span>Scroll</span>
+        <span>↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 非对称分栏 ==================== -->
+  <section class="split" id="about">
+    <div class="fig-out">
+      <figure class="fig" data-fig="1">
+        <div class="veil"></div>
+      </figure>
+      <figcaption>Fig. 01 — Mask &amp; Grid</figcaption>
+    </div>
+    <div class="copy">
+      <h2>先把骨架<br>立住。</h2>
+      <p>一个页面如果有 <strong>1px 的分隔线</strong>、一套 7 档的字号、和一处刻意的空白，
+         就不需要卡片、阴影和圆角来证明它是被设计过的。</p>
+      <p>我们做的第一件事永远是把内容排成一条能呼吸的线，然后才决定它怎么动。</p>
+      <dl class="kv">
+        <dt>Type</dt><dd class="v">1 serif + 1 grotesk + 1 mono</dd>
+        <dt>Ratio</dt><dd class="v">display ÷ body = 7.5</dd>
+        <dt>Rule</dt><dd class="v">Border, never shadow</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==================== 项目索引 ==================== -->
+  <section class="index" id="work">
+    <div class="index-head">
+      <h2>Selected work</h2>
+      <span class="eyebrow">04 / 12</span>
+    </div>
+    <ul class="index-list">
+      <li class="row"><a href="#" data-peek="1">
+        <span class="no">01</span>
+        <span class="name">Helio — 产品影像</span>
+        <span class="cat">Direction</span>
+        <span class="yr">2026</span>
+      </a></li>
+      <li class="row"><a href="#" data-peek="2">
+        <span class="no">02</span>
+        <span class="name">Kite — 编辑型官网</span>
+        <span class="cat">Web</span>
+        <span class="yr">2025</span>
+      </a></li>
+      <li class="row"><a href="#" data-peek="3">
+        <span class="no">03</span>
+        <span class="name">Noon — 品牌重制</span>
+        <span class="cat">Identity</span>
+        <span class="yr">2025</span>
+      </a></li>
+      <li class="row"><a href="#" data-peek="4">
+        <span class="no">04</span>
+        <span class="name">Slate — 交互装置</span>
+        <span class="cat">Installation</span>
+        <span class="yr">2024</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- hover 预览浮窗 -->
+  <div class="peek" id="peek" aria-hidden="true"><figure class="fig" data-fig="2"></figure></div>
+
+  <!-- ==================== 深色 + 横向轨道 ==================== -->
+  <section class="dark ht" id="horizontal" style="height:300vh">
+    <div class="ht-sticky">
+      <div class="ht-track">
+        <article class="ht-item">
+          <figure class="fig" data-fig="3"><div class="veil"></div><figcaption>01 — Surface</figcaption></figure>
+          <h3>先定一层表面</h3>
+          <p>材质、颗粒、光的落点。所有"质感"都在这一层决定，后面的动效只是让它活起来。</p>
+        </article>
+        <article class="ht-item">
+          <figure class="fig" data-fig="4"><div class="veil"></div><figcaption>02 — Rhythm</figcaption></figure>
+          <h3>再定节奏</h3>
+          <p>三档时长、两条曲线、一处错开。多一个都是噪声。</p>
+        </article>
+        <article class="ht-item">
+          <figure class="fig" data-fig="5"><div class="veil"></div><figcaption>03 — Signature</figcaption></figure>
+          <h3>最后留一个动作</h3>
+          <p>只做一个能记住的动作。它必须和内容有关，不能是通用特效。</p>
+        </article>
+        <article class="ht-item">
+          <figure class="fig" data-fig="6"><div class="veil"></div><figcaption>04 — Restraint</figcaption></figure>
+          <h3>然后是克制</h3>
+          <p>删到只剩必须的。剩下的每一个像素都要能解释为什么在这。</p>
+        </article>
+      </div>
+      <span class="ht-cap">Scroll to move →</span>
+    </div>
+  </section>
+
+  <!-- ==================== 引言 ==================== -->
+  <section class="quote">
+    <blockquote>
+      Design is not what it looks like.<br>
+      It's what it <span>refuses</span> to do.
+    </blockquote>
+    <cite>— Working principle, 2016</cite>
+  </section>
+
+</main>
+
+<footer class="foot" id="contact">
+  <span>© 2026 Fold Studio</span>
+  <a href="mailto:hi@fold.studio">hi@fold.studio</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ============================================================
+   0. 生成抽象图形（零外链，永不 404）
+   ============================================================ */
+(function paint(){
+  /* 六种构成，各自不同 —— 不是同一张渐变换色 */
+  const P = [
+    ['#1b1c17','#ff3d00','#c9c4b4'],
+    ['#e8e2d4','#1b1c17','#b23a10'],
+    ['#101211','#7d8a6a','#e6e0cf'],
+    ['#dcd6c6','#8a3b12','#14140f'],
+    ['#12140f','#ff3d00','#5c6153'],
+    ['#efe9dc','#2b3a4a','#c05a2a'],
+  ];
+
+  const arts = [
+    /* 0 同心圆 */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      <g fill="none" stroke="${b}" stroke-opacity=".30">
+        ${Array.from({length:11},(_,k)=>`<circle cx="250" cy="330" r="${40+k*46}"/>`).join('')}
+      </g>
+      <rect x="600" y="0" width="200" height="600" fill="${a}" opacity=".14"/>
+      <rect x="0" y="86" width="800" height="2" fill="${a}" opacity=".5"/>`,
+
+    /* 1 点阵（半径递变） */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      <g fill="${a}">
+        ${Array.from({length:16},(_,y)=>Array.from({length:21},(_,x)=>{
+          const d=Math.hypot(x-10,y-8)/13; const r=2.6+6*Math.max(0,1-d);
+          return `<circle cx="${40+x*36}" cy="${40+y*35}" r="${r.toFixed(1)}" opacity="${(0.25+0.55*(1-d)).toFixed(2)}"/>`;
+        }).join('')).join('')}
+      </g>`,
+
+    /* 2 斜线束 */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      <g stroke="${a}" stroke-width="1.6">
+        ${Array.from({length:46},(_,k)=>`<line x1="${-300+k*30}" y1="600" x2="${60+k*30}" y2="0" stroke-opacity="${(0.10+0.5*Math.abs(Math.sin(k*.4))).toFixed(2)}"/>`).join('')}
+      </g>
+      <circle cx="600" cy="200" r="120" fill="${b}" opacity=".16"/>`,
+
+    /* 3 包豪斯几何 */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      <rect x="70" y="80" width="300" height="300" fill="${a}" opacity=".9"/>
+      <circle cx="560" cy="230" r="150" fill="${b}" opacity=".82"/>
+      <path d="M300 600 L520 320 L740 600 Z" fill="${a}" opacity=".45"/>
+      <rect x="70" y="420" width="640" height="2" fill="${b}" opacity=".6"/>`,
+
+    /* 4 竖条（节拍） */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      ${Array.from({length:26},(_,k)=>{
+        const h=90+Math.abs(Math.sin(k*.55))*400;
+        return `<rect x="${30+k*29}" y="${560-h}" width="13" height="${h}" fill="${k%5===0?a:b}" opacity="${k%5===0?.95:.34}"/>`;
+      }).join('')}
+      <rect x="0" y="560" width="800" height="2" fill="${a}" opacity=".5"/>`,
+
+    /* 5 极坐标放射 */
+    (bg,a,b)=>`<rect width="800" height="600" fill="${bg}"/>
+      <g transform="translate(400,300)">
+        ${Array.from({length:60},(_,k)=>{
+          const ang=k*6*Math.PI/180;
+          const r1=70, r2=180+80*Math.abs(Math.cos(k*.3));
+          return `<line x1="${Math.cos(ang)*r1}" y1="${Math.sin(ang)*r1}" x2="${Math.cos(ang)*r2}" y2="${Math.sin(ang)*r2}" stroke="${a}" stroke-opacity="${(0.15+0.5*Math.abs(Math.cos(k*.3))).toFixed(2)}" stroke-width="2"/>`;
+        }).join('')}
+        <circle r="66" fill="${b}" opacity=".2"/>
+        <circle r="20" fill="${a}"/>
+      </g>`,
+  ];
+
+  document.querySelectorAll('[data-fig]').forEach((el)=>{
+    const i = (parseInt(el.dataset.fig, 10) - 1) % 6;
+    const [bg,a,b] = P[i];
+    el.insertAdjacentHTML('afterbegin',
+      `<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+        style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+        ${arts[i](bg,a,b)}
+        <g opacity=".5"><rect width="800" height="600" fill="none" stroke="rgba(0,0,0,.18)"/></g>
+      </svg>`);
+  });
+})();
+
+/* ============================================================
+   1. 单时钟：Lenis 挂在 gsap.ticker 上（prioritize = true）
+   ============================================================ */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+gsap.registerPlugin(ScrollTrigger);
+
+let lenis = null;
+if (window.Lenis && !reduced){
+  lenis = new Lenis({
+    lerp: 0.1,
+    smoothWheel: true,
+    touchMultiplier: 1.25,
+    wrapper: document.documentElement,
+    content: document.body,
+  });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t)=> lenis.raf(t * 1000), false, true);   // ← prioritize
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* ============================================================
+   2. 首屏编排：一条 timeline，绝对时间
+   ============================================================ */
+if (!reduced){
+  gsap.set('.mask > span', { yPercent: 118 });
+  gsap.set('.hero-foot, .hero-top', { opacity: 0 });
+
+  const tl = gsap.timeline({ delay: 0.15 });
+  tl.to('.mask > span', {
+      yPercent: 0, duration: 0.62, ease: 'expo.out', stagger: 0.075,
+    }, 0)
+    .to('.hero-top', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 0.1)
+    .to('.hero-foot', { opacity: 1, duration: 0.55, ease: 'power2.out' }, 0.42);
+}
+
+/* ============================================================
+   3. 图片揭示：mask 从下往上拉开（scrub，跟手）
+   ============================================================ */
+if (!reduced){
+  gsap.utils.toArray('.split .fig, .ht-item .fig').forEach((fig)=>{
+    const veil = fig.querySelector('.veil');
+    if (!veil) return;
+    gsap.fromTo(veil, { scaleY: 1 }, {
+      scaleY: 0, ease: 'none',
+      scrollTrigger: {
+        trigger: fig, start: 'top 88%', end: 'bottom 62%', scrub: 0.6,
+      }
+    });
+  });
+}
+
+/* ============================================================
+   4. 横向轨道：sticky + 函数值 + scrub:1（不用 pin）
+   ============================================================ */
+(function horizontal(){
+  const sec = document.querySelector('.ht');
+  const track = document.querySelector('.ht-track');
+  if (!sec || !track) return;
+
+  const dist = () => Math.max(0, track.scrollWidth - window.innerWidth + 40);
+
+  const layout = () => {
+    sec.style.height = (dist() + window.innerHeight) + 'px';
+  };
+  layout();
+
+  if (reduced) return;
+
+  gsap.to(track, {
+    x: () => -dist(),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: sec,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onRefresh: layout,
+    }
+  });
+})();
+
+/* ============================================================
+   5. 列表 hover 预览：指针跟随 + 淡入
+   ============================================================ */
+(function peek(){
+  const box = document.getElementById('peek');
+  if (!box || reduced || !matchMedia('(pointer:fine)').matches) return;
+  let x = 0, y = 0, tx = 0, ty = 0, active = false;
+
+  gsap.ticker.add(()=>{
+    if (!active) return;
+    x += (tx - x) * 0.16;
+    y += (ty - y) * 0.16;
+    box.style.left = x + 'px';
+    box.style.top  = y + 'px';
+  });
+
+  document.querySelectorAll('[data-peek]').forEach((a)=>{
+    a.addEventListener('pointerenter', ()=>{ active = true; box.classList.add('on'); });
+    a.addEventListener('pointerleave', ()=>{ active = false; box.classList.remove('on'); });
+  });
+  addEventListener('pointermove', (e)=>{ tx = e.clientX + 180; ty = e.clientY; }, { passive:true });
+})();
+
+/* ============================================================
+   6. 磁性：只给品牌标记，幅度 ±8px
+   ============================================================ */
+(function magnet(){
+  const el = document.querySelector('.brand');
+  if (!el || reduced || !matchMedia('(pointer:fine)').matches) return;
+  const xTo = gsap.quickTo(el, 'x', { duration: 0.5, ease: 'power3' });
+  const yTo = gsap.quickTo(el, 'y', { duration: 0.5, ease: 'power3' });
+
+  el.addEventListener('pointermove', (e)=>{
+    const r = el.getBoundingClientRect();
+    xTo(gsap.utils.clamp(-8, 8, (e.clientX - r.left - r.width/2) * 0.2));
+    yTo(gsap.utils.clamp(-8, 8, (e.clientY - r.top - r.height/2) * 0.2));
+  });
+  el.addEventListener('pointerleave', ()=>{ xTo(0); yTo(0); });
+})();
+
+/* ============================================================
+   7. resize：布局变了才刷新（防抖）
+   ============================================================ */
+let rt;
+addEventListener('resize', ()=>{
+  clearTimeout(rt);
+  rt = setTimeout(()=>{
+    const sec = document.querySelector('.ht');
+    const track = document.querySelector('.ht-track');
+    if (sec && track) sec.style.height = (Math.max(0, track.scrollWidth - innerWidth + 40) + innerHeight) + 'px';
+    ScrollTrigger.refresh();
+  }, 220);
+}, { passive:true });
+
+/* 字体/图片就绪后再刷一次，避免触发点偏差 */
+if (document.fonts) document.fonts.ready.then(()=> setTimeout(()=> ScrollTrigger.refresh(), 180));
+</script>
+</body>
+</html>

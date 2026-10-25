@@ -1,0 +1,13 @@
+# ojo — https://ojo.art
+# bundle 329745 bytes
+
+ease 分布: {}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== matchMedia( =====
+n!0}return!1}function Wf(e){return!(e.type===`stylesheet`&&!(e.state.loading&3))}function Gf(e,t,n,r){if(n.type===`stylesheet`&&(typeof r.media!=`string`||!1!==matchMedia(r.media).matches)&&!(n.state.loading&4)){if(n.instance===null){var i=Af(r.href),a=t.querySelector(jf(i));if(a){t=a._p,typeof t==`object`&&t&&typeof t.then==`function`&&(e.count++,e=Jf.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=a,O(a);return}a=t.ownerDocument||t,r=Mf(r),(i=mf.get(i))&&Rf(r,i),a=a.createElement(`link`),O(a);var o=a;o._p=new Promise(function(e,t){o.onload=e,o.onerror=t}),Pd(a,`link`,r),n.instance=a}e.stylesheets===null&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&!(n.state.loading&3)&&(e.count++,n=Jf.bind(e),t.addEventListener(`load`,n),t.addEventListener(`error`,n))}
+
+(e)&&e.rel===`stylesheet`&&r.push({...e,rel:`preload`,as:`style`});await Promise.all(r.map(Di))}async function Di(e){return new Promise(t=>{if(e.media&&!window.matchMedia(e.media).matches||document.querySelector(`link[rel="stylesheet"][href="${e.href}
+

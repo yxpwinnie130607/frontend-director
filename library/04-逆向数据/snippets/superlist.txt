@@ -1,0 +1,22 @@
+# superlist — https://www.superlist.com
+# bundle 1144599 bytes
+
+ease 分布: {}
+scrub 分布: {}
+start 分布: {}
+pin:true 出现 0 次
+
+===== ease: =====
+,Pr,Fr,Ir,Lr,Rr,zr=t((()=>{_(),V(),P(),i(),Et(),At(),Tr(),Dr={ZN_knl7Y2:{hover:!0}},Or=`framer-4asSX`,kr={ZN_knl7Y2:`framer-v-1k938fo`},Ar={delay:0,duration:.2,ease:[.44,0,.56,1],type:`tween`},jr=(e,t,n)=>{if(typeof e!=`string`)return``;let r=new Date(e);if(isNaN(r.getTime()))return``;let i=`en-US`;try{return r.toLocaleString(n||i,t)}catch{return r.toLocaleString(i,t)}}
+
+r:h?_:n||`var(--Text_50, #f7f7ff)`,borderRadius:`4px 4px 4px 4px`},initial:{width:1,opacity:0},animate:{width:h?`100%`:1,opacity:+!!h},transition:{duration:.14,ease:`easeOut`}})})]}),d?.iconSvg&&T(`span`,{dangerouslySetInnerHTML:{__html:d.iconSvg},style:{display:`inline-block`,width:`${d.iconHeight||16}px`,height:`${d.iconHeight||16}px`,marginLeft:`${d.marginLeft||4}px`,marginBottom:`${d.marginBottom||4}px`,alignSelf:`center`,color:h?_:n||`var(--Text_50, #f7f7ff)`,transition:`color 0.14s easeOut`}}
+
+Vo={WI4d7yZBu:{hover:!0}},Ho=[`WI4d7yZBu`,`UTysUY6Vh`],Uo=`framer-gHOxZ`,Wo={UTysUY6Vh:`framer-v-1v18f2x`,WI4d7yZBu:`framer-v-z1xnhi`},Go={delay:0,duration:.14,ease:[.12,.23,.5,1],type:`tween`},Ko=e=>typeof e==`object`&&e&&typeof e.src==`string`?e:typeof e==`string`?{src:e}
+
+===== matchMedia( =====
+);e.addValue(r,O(t===void 0?i:t,{owner:e}))}}for(let r in n)t[r]===void 0&&e.removeValue(r);return t}function Tn(){if(Lu.current=!0,Ru)if(o.matchMedia){let e=o.matchMedia(`(prefers-reduced-motion)`),t=()=>Iu.current=e.matches;e.addEventListener(`change`,t),t()}else Iu.current=!1}function En(e){Bu=e}
+
+orMessage:Zl.bind(null,t,n),fallback:null,children:e})),i&&(e=A(Yl,{scopeId:t,nodeId:n,children:e})),e)}function iu(){if(yC!==void 0||s===void 0)return;let e=J.matchMedia(`(any-hover: hover)`);yC=e.matches,e.addEventListener(`change`,function(e){let t=e.matches;if(t!==yC){yC=t;for(let e of bC)e()}}
+
+qm(e,t,n){return r.useCallback(r=>!n||!e?{}:t?Object.assign({},n[e]?.[r],n[t]?.[r]):n[e]?.[r]||{},[e,t,n])}function Jm(e){for(let[t,n]of Object.entries(e))if(J.matchMedia(n).matches)return t}function Ym(e){let t=[];for(let{hash:n,mediaQuery:r}of e)r&&J.matchMedia(r).matches&&t.push(n);if(t.length>0)return t;let n=e[0]?.hash;if(n)return[n]}
+

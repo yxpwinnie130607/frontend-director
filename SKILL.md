@@ -1,81 +1,38 @@
 ---
 name: frontend-director
-description: Create 3D, highly interactive websites at the Recent quality bar (volume, physical light, a loop you can use). Confirms purpose, length, content, and density, then invents three original 3D first-viewport directions for this product. After the user picks one, builds that world. Use when building landing pages, product sites, portfolios, or marketing sites.
+description: Ships three runnable regimes (Editorial, Immersive, Product), 28-site measured numbers, and a 12-item verify. Confirms purpose, length, content, and density, then copies a baseline and pastes fingerprint numbers. When the brief is Immersive, upgrades that baseline to Recent-grade 3D (volume, physical light, a real scene change). Use when building landing pages, product sites, portfolios, editorial sites, or marketing sites.
 ---
 
 # Frontend Director
 
-Teach the **Recent bar**: volume, physical material, designed air, a real scene change. Five Recent posts are the ceiling and example loops, not a catalog. After install, invent a new object and world for **this** brief. Do not copy Earth, the Vercel jacket, the baroque sofa, the cassette, FOLD, or VEIL.
+The operating system is MOTION-LIBRARY's five-step law. This file is enough to run it. Open library docs or `systems/` only when a step needs them.
 
-A dark card with a yellow button is the same as no skill. A cropped poster filling the frame is the same as no skill. A cream crumple slider is not a site.
+**Do not start from a blank file.** Copy a runnable baseline. Paste measured numbers. Add one signature action. Run verify. Twelve items must pass.
 
-**Confirm the brief. Invent three live first viewports. Build only the one they pick.**
+A dark card with a yellow button is the same as no skill. A cream crumple slider is not a site. Those fails still stand. They do **not** veto Editorial flush type or a Product first viewport.
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
-This file is enough to decide. When you build, read only:
-
-- [systems/atmosphere.md](systems/atmosphere.md) — the air you named
-- [systems/transition.md](systems/transition.md) — the scene change you named
-- [motion.md](motion.md) — pointer / type / scroll engine
-- **1–2** `systems/<loop>.md` files that match the invented loop
-
-Read [forbidden.md](forbidden.md) before shipping. Open [references.md](references.md) only if you need a ceiling loop spelled out. Do not load the rest of `systems/`.
-
 ---
 
-## Hard laws (one line per fail)
+## Operating system (five steps)
 
-1. **Do not build the site until they pick a direction.** Phase 1 confirms. Phase 2 is three invented first-viewport previews. Phase 3 is the site.
-2. **Invent the object for this brief.** Then pick air and a transition. Do not shortlist Earth / crumple / portal / jacket / cassette.
-3. **Studio camera.** FOV ~32. `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 on a small mesh paints **empty cream**. Fail. If cropped, pull back a little; do not jump to 9+.
-4. **Canvas CSS = viewport.** `#stage { inset:0; width:100%; height:100%; display:block }`. `setSize(innerWidth, innerHeight)` must update style. A 2× drawing buffer with unlocked CSS **parks the object on the right edge**. Fail.
-5. **Whole object, studio air.** Colored mesh occupies 25–40% of the short axis, centered, air on every side. **Projected width ≥ 18% of the short axis.** A match / pencil / crayon / nail / stick that is 30% tall and 2% wide is empty cream (STRIKE). HUD = top corners + a control **below** the object. HUD never sits on the mesh.
-6. **No gray stage disk.** Soft elliptical contact only. A `CircleGeometry` floor is allowed only when the loop is a room you are inside.
-7. **Authored surface with mass.** Canvas / shader / vertices the product wrote, on a silhouette you could name. `Capsule` / smooth `Sphere` / `Box` / `Cylinder` + a sphere head is a vitamin (KEPT / STRIKE) even with a wood map. A smooth lathe pot that hides its inner face is a **closed pot** (CHIME). An irregular blot with a circular stamp and **no readable thickness** is a **sticker** (SIGIL), even if the word is gold and the dye stays oxblood. If a stranger says "that is a Three.js cylinder" or "that is an IKEA bowl" or "that is a logo sticker," fail. **Idle marks must read:** you must see the inscribed line in the first screenshot. A second disk under the mesh that reads as a plate is a stage disk.
-8. **Atmosphere is required.** Name one family before markup: paper studio / white haze / night void / fogged room / field-as-sky. Leftover CSS cream is not air. **Augen is white haze still-life, not a night void.** A hard-cutout sticker on gray-beige is not haze (SIGIL). Interfere is 2D SaaS, not the bar.
-9. **Transition is required.** Name one family before markup: **gate / chapter wipe / dissolve / morph / camera chapter / portal jump**. A crumple slider is a material event, not the site. **Painting the void a new hex behind a leftover crayon is not a transition** (STRIKE). A leftover **black puddle** under a star ring is the same fail (SIGIL). Air *and* the object must change. The body must give up its cutout.
-10. **Night glass.** Thickness (thin box, not a mapped plane) + rest yaw ≈ 0.35 + specular / clearcoat. `transmission` on a mapped night face washes to **milky plastic**. Prefer clearcoat; if you transmit, stay ≤ 0.06 and keep the first frame ink-dark.
-11. **Dissolve.** Sample **bright authored marks**. Scatter ≤ 3% of the glyph width. Random plane pixels smear the word. After the event the field must still **read as the line**. Two blobs or a cotton ball is STRIKE. Fail.
-12. **Printed type.** Offscreen `measureText` often returns **0**. Load the face, then draw **glyph-by-glyph** with fallback advance (`w > 2 ? w : 40`) and a real word gap. `fillText(wholeLine)` collapsing to one word is a fail.
-13. **The product job hits the mesh.** Type reprints / dissolves / pours. A letter, a 工作台 card, a textarea, or a yellow fill button is a fail.
-14. **No headline word in a second color. No em-dash (`—`) in visible copy.**
-15. **One world per page.** Do not blend night Linear with editorial serif with a teal word.
-
-Copy these numbers when the loop is one object in a studio:
-
-```js
-camera = new THREE.PerspectiveCamera(32, aspect, 0.1, 40);
-camera.position.set(0, 0.12, 5.5); // ~1.7 mesh. z 8–10 = empty cream
-renderer.setSize(innerWidth, innerHeight); // also sets canvas CSS. never leave a 2× style
+```
+Confirm brief     four questions (kept — they pin the job)
+1  Declare regime  Editorial / Immersive / Product. Write it first.
+2  Copy baseline   library/02-可运行基线/<regime>/index.html
+3  Paste numbers   type ratio, weight 400–600, tracking, stagger budget, color count
+4  One signature   one action that belongs to this page
+5  Run verify      node library/06-工具脚本/verify.mjs <page>   — 12 items must pass
 ```
 
----
-
-## Taste (alive, not a kit)
-
-- **Alive first:** before fonts, name the loop. What does pointer do? Scroll? Type? If you cannot answer all three, you are not ready to mark up.
-- **Type:** one display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display.
-- **Color:** dominant ground + one sharp accent. Do not tint a single headline word.
-- **Volume:** first screen is WebGL. `MeshPhysicalMaterial` or `MeshStandardMaterial`, lights, environment, shadows, ACES. An unlit cube is a fail. A CSS card is a fail.
-- **炫酷:** one complete object, or a room you are inside. Designed air. Tiny chrome.
-- **Avoid:** purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, fake browser chrome, Space Grotesk as the new Inter.
+Do not skip a step. Do not invent a fourth regime. Do not rebuild the skeleton after you copy it.
 
 ---
 
-## Phase 0 — Detect
+## Confirm the brief (four questions)
 
-- **New page** → Phase 1.
-- **Redesign** → audit tokens and IA first ([verdicts.md](verdicts.md) redesign row), then Phase 1.
-- **Enhance existing** → do not change the world mid-flight unless asked. Make the existing page *alive* first.
-
----
-
-## Phase 1 — Confirm the brief (four questions)
-
-**Auto-analyze first.** Write 2–4 sentences: what this site is, who it is for, what the user *does* in the first viewport (type, scroll, drag, generate), and whether it is a marketing page or the product itself. Then **ask all four together**, plus **1–3 follow-ups** that pin this site. Use a structured-question UI if the environment has one.
-
-Follow-ups are for this brief only. Examples: "Is this the writing tool, or a page that sells it?" "Should I be able to generate a line of copy in the first screen?" Do not ask about fonts or colors.
+**Auto-analyze first.** Write 2–4 sentences: what this site is, who it is for, what the user *does* in the first viewport, and whether it is a marketing page or the product itself. Then **ask all four together**, plus **1–3 follow-ups** that pin this site. Use a structured-question UI if the environment has one.
 
 Do not skip this unless they said "直接做 / just build / no questions."
 
@@ -113,138 +70,229 @@ How should it feel?
 Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you use in the first screen)."*
 
 If they pick "All content ready," ask them to paste it in the same turn.  
-If they send images, scan them before Phase 2.
+If they send images, scan them before you copy a baseline.
 
-**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. Then invent three original 3D directions for **this** product. A writing tool is not a planet unless that metaphor fits.
+**Detect first:** new page → confirm, then step 1. Redesign → audit tokens and IA first ([verdicts.md](verdicts.md) redesign row), then confirm. Enhance existing → do not change the world mid-flight unless asked.
 
 ---
 
-## Phase 2 — Invent, then pick families, then preview
+## Step 1 — Declare one regime
 
-Show, don't tell. People pick a room they can *use*.
+Write this line before any markup:
 
-**Do not open the technique library yet. Do not open [references.md](references.md) yet.**
+> Regime: Editorial | Immersive | Product. Because: [one sentence from the brief].
 
-1. Confirm the four questions from Phase 1 (or the user skipped them).
-2. **Invent three original objects / worlds for THIS product.** Not three template ids. A writing tool might be a vessel, a ribbon of type, a night room of drafts — not a planet, not a changelog poster, unless that *is* the metaphor.
-3. **Write one card per direction before any markup.** If a line is blank, you are not ready to build:
+Decision tree ([library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01-taxonomy.md)):
 
 ```
-Object:      [invented thing bound to this brief]
-Atmosphere:  paper studio | white haze | night void | fogged room | field-as-sky
-Transition:  gate | chapter wipe | dissolve | morph | camera chapter | portal jump
-Surface:     [canvas / shader / vertices the product wrote]
-Composition: whole object, FOV 32, z 5.2–6.2, HUD below, no stage disk
+1. Show a virtual space or a 3D body?
+   yes → Immersive     library/02-可运行基线/immersive/
+   no  ↓
+2. Remember a brand / a person, or click a button?
+   remember → Editorial    library/02-可运行基线/editorial/
+   click    ↓
+3. Features, CTA, conversion?
+   yes → Product       library/02-可运行基线/product/
 ```
 
-A cream crumple slider with no named air and no named scene change is not a card. Rebuild the card.
+Editorial + Immersive may stack (editorial skeleton, 3D vision). **Product does not mix** with the other two.
 
-4. Match each card to a **loop family**. Then read **only** [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), [motion.md](motion.md), and the **1–2** files that teach that family:
+| | Editorial | Immersive | Product |
+|---|---|---|---|
+| Type ratio (display ÷ body) | **5–18** | no DOM display title | **4.0–5.1** |
+| Radius | 0–8px | — | 10–16px (buttons pill) |
+| Depth | **1px rule, 0 shadow** | canvas depth | **soft shadow, 0 border** |
+| Motion | ScrollTrigger + scrub | per-frame rAF | CSS transition |
+| GSAP | high | mid (type layer only) | **almost never** |
 
-| Family | The loop | Read |
-|---|---|---|
-| Object + control | One lit mesh. A control rewrites the volume. | `volume-object` (add `earth-timeline` only if a slider rewrites a globe-like body) |
-| Material transform | A sheet or body physically changes. | `crumple` — and you still need a transition that is not the slider |
-| Room you enter | Camera is inside. A portal or door jumps the world. | `portal-room` or `volume-world` |
-| Field / shader | An object becomes a living field. | `shader-dissolve` or `volume-field` |
-| Spatial deck | Dark space. Several authored objects. Click brings one forward. | `spatial-deck` |
-| Kinetic chapter | Scroll drives the **mesh**. | `kinetic-scroll` |
+Purpose → regime (defaults, not a veto):
 
-Do not load the other system files. Do not force Earth, crumple, or a portal onto every product.
+- Brand / studio / campaign / editorial / portfolio that must be remembered → Editorial
+- Usable 3D tool, object story, or a space you enter → Immersive
+- Product marketing / SaaS / pricing / conversion → Product
 
-5. Build **three first-viewport previews** — self-contained HTML. Each one:
-   - Is the invented studio, with the named air and the named transition
-   - Uses the camera / canvas numbers in Hard laws
-   - Pointer orbits *now*; the product job hits the mesh
-   - Uses the user's real product name and copy
-   - Is one viewport tall
-6. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Use each. If a preview is a 2D card, a vitamin mesh, a cropped poster, empty cream, a right-edge park, a cream crumple slider, or a clone of Earth / jacket / sofa / cassette / FOLD / VEIL, rebuild it.
-7. In the chat, name them by **what they do**, not by template id. Example: Direction A: a glass vessel you pour a line into / B: a sheet of drafts that peels / C: a night room of echoes.
-
-**Preview authenticity:** looks like the real first screen. No "preview", "option A", file names, or system ids on the page. No tinted headline word, no em-dash, no fake browser window, no yellow fill button, no 工作台 card.
-
-Ask (header: "Direction"): which one? A / B / C / mix.
-
-**Stop.** Do not generate the rest of the site.
+A Product first viewport that is CSS + IntersectionObserver is legal. An Editorial first viewport that is flush type and 1px rules is legal. `systems/*` do not forbid those.
 
 ---
 
-## Phase 3 — Build only the one they picked
+## Step 2 — Copy the baseline
 
-Rebuild the chosen invented world. Re-read the 1–2 technique files for its loop, [motion.md](motion.md), [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), and [forbidden.md](forbidden.md) before you call it done.
+```bash
+cp "library/02-可运行基线/<regime>/index.html" ./index.html
+```
 
-Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something*. Do not invent a second unrelated system.
+Then only: drop unused sections, swap in real copy, retoken color. **Do not rewrite the structure.** The baseline *is* the grid (flush type, 1px rules, sticky track / lightbox / product stack). Re-organizing it returns the three-card template.
 
-Default stack: one HTML file with a Three.js importmap. HUD is a whisper over the canvas, **never on the object**.
-
-**Every page must include:**
-
-- A WebGL canvas covering the first viewport, CSS size = viewport
-- Physical materials, studio lights, ACES, shadows
-- The whole studio-object visible with air (unless the loop is a room you are inside)
-- Camera FOV ~32, `z` ~5.2–6.2 on a ~1.7 mesh
-- Pointer / scroll / type changing the volume
-- The product job applied to the mesh
-- The named atmosphere (body CSS hex = `scene.background`)
-- The named transition (air **and** object change; duration 0.7–1.4s)
-- `prefers-reduced-motion`: keep the mesh usable, slow the orbit
-
-**Do not include:**
-
-- A letter about the product instead of the product
-- A dark rounded "工作台" card, textarea, yellow fill button
-- Fake browser chrome / gray placeholder bars
-- Feature rows with a line under each claim
-- Lucide icons in rounded squares
-- An unlit cube or a vitamin Capsule / Sphere / Box / Cylinder stick (STRIKE)
-- A cropped mesh, a right-edge park, or HUD on the object
-- A gray stage disk
-- Empty cream from a far camera
-- A crumple slider sold as the whole site
-- Fake "Sarah Chen, CEO" quotes
-- A cloned Earth, Vercel jacket, baroque room, cassette, FOLD sheet, VEIL glass card, STRIKE crayon, or SIGIL sticker blot
-- A match / pencil / stick / cylinder+sphere toy in empty cream
-- A background hex swap sold as a world change
-
-Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.  
-Comments in JS: `/* atmosphere: … */`, `/* transition: … */`.
+React / Next: take components from [library/03-React组件库](library/03-React组件库) (`SmoothScroll`, `MaskReveal`, `HorizontalTrack`, `Parallax`, `Magnetic`, `Marquee`, `StaggerGrid`, `PinScene`, `VelocitySkew`). Do not restage those effects from scratch.
 
 ---
 
-## Phase 4 — Look
+## Step 3 — Paste fingerprint numbers
 
-Open the page. Move the pointer across it. Scroll. Type or click the primary object. Narrow to a phone width.
+Numbers are from 28 live sites ([library/01-规范/docs/02-aesthetic-fingerprint.md](library/01-规范/docs/02-aesthetic-fingerprint.md)). Adjectives do not change a sample. These do.
 
-Screenshot idle and after the event. If the idle frame is empty cream, a right-edge crop, HUD on the mesh, a gray disk, milky plastic, or a smeared word, the page is not done — fix the matching law in this file or [forbidden.md](forbidden.md), then rebuild. Do not polish a hand-crafted demo instead of the skill.
+| Metric | Paste this |
+|---|---|
+| Type ratio | Editorial **≥ 5** (aim 6–8). Product **4.0–5.1**. Below 3 is flat. |
+| Display weight | **400–600**. 700+ only on condensed or a serif display. |
+| Tracking | **−0.02 to −0.06em** on titles ≥ 32px. Same em on every display size. `normal` is undesigned. |
+| Line-height | Display 0.85–1.05. Body 1.50–1.65. Display at 1.5 is slop. |
+| Size steps | **6–9** steps, dense in the middle. Not 3 (12 / 16 / 24). |
+| Color count | **≤ 2** non-neutral. Most sites are 0–1. Brand color may flood if it is the only one. |
+| Families | 2 (variable sans + mono). Editorial may add one serif display. |
+| Duration | Micro 0.15–0.2s / enter 0.4–0.5s / lead 0.55–0.65s |
+| Stagger budget | Letters 15–30ms / blocks 40–100ms. **stagger × count ≤ 400ms** |
+| Scroll-driven | Editorial **≥ 8**. Product **≤ 3**. |
 
-Then read [forbidden.md](forbidden.md). One hit is a fail.
+Pasteable tokens:
 
-**Ship bar:**
+```css
+:root{
+  --t-display: clamp(56px, 7.4vw, 110px);
+  --t-h2:      clamp(38px, 4.2vw, 62px);
+  --t-h3:      clamp(24px, 2.2vw, 34px);
+  --t-lead:    clamp(18px, 1.4vw, 21px);
+  --t-body:    16px;
+  --t-small:   13px;
+  --t-label:   10.5px;
+  --lh-display: 0.9;
+  --lh-title:   1.0;
+  --lh-body:    1.55;
+  --ls-display: -0.045em;
+  --ls-h2:      -0.03em;
+  --ls-label:    0.18em;
+  --dur-fast: 180ms;
+  --dur-mid:  450ms;
+  --dur-slow: 620ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --sp-1: 24px; --sp-2: 64px; --sp-3: 140px; --sp-4: 280px;
+}
+```
 
-- [ ] Four questions confirmed; one of three invented directions picked
-- [ ] Each direction had a filled card (object, atmosphere, transition, surface, composition) before markup
-- [ ] Matching technique file(s) + atmosphere + transition + `motion.md` were read; the rest of `systems/` was not
-- [ ] First viewport is WebGL with physical material and studio light
-- [ ] Studio-object loops: whole object with **mass** (width ≥ 18% short axis), FOV ~32, `z` ~5.2–6.2, canvas CSS = viewport, HUD off the mesh, no stage disk
-- [ ] Pointer / scroll / type changes the volume; the product job hits the mesh
-- [ ] Surface is authored and **readable at idle**, not a vitamin cylinder / crayon / stick
-- [ ] Atmosphere family reads in the first frame (not leftover cream around a tiny toy)
-- [ ] Transition family changes air **and** the object (not a hex swap behind a leftover mesh)
-- [ ] Printed type is glyph-by-glyph if the face is on a canvas
-- [ ] No 2D 工作台 card, no yellow fill button, no 素笺 letter, no 拾贝 centered stack
-- [ ] Not a clone of Earth, crumple-as-the-site, baroque portal, Vercel jacket, cassette, FOLD, or VEIL
-- [ ] Opened in a browser and used, not only screenshotted
-- [ ] No tinted headline word, no em-dash
-- [ ] Mobile keeps the loop
+Editorial: `--t-display` at 6–8× body. Product: clamp display so the ratio stays 4.0–5.1.
 
-If a box cannot be ticked, the page is not done.
+Layout this pass **with motion off**. If the still page is weak, motion multiplies zero.
+
+Need GSAP? Only if A must finish before B, stagger count > 6, you need seek / reverse, or one progress drives many values. Hover / focus / one enter = CSS. Product defaults to **no GSAP** (vercel / linear / superlist measured `ease:` **0** times). Lenis only if the page is > 5 screens and has parallax or a sticky chapter. `pin: true` is dead (28 sites, **0** hits) — use `position: sticky`.
+
+---
+
+## Step 4 — One signature action
+
+One action that belongs to this page. Not a particle field plus a cursor plus a glow.
+
+It is the content's physics. Kill it and the page goes ordinary. One per page.
+
+Directions that work: a material wipe tied to the job, a form that becomes the idea, type that machines itself, a scale jump of one word. Recipes: [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md).
+
+Entry budget, then hand off to that loop: air 0.00–0.20s, title 0.20–0.45s, dek 0.45–0.90s, chrome 0.90–1.40s, signature 1.40s+. Total **≤ 1.8s**.
+
+---
+
+## Step 5 — Run verify
+
+```bash
+node library/06-工具脚本/verify.mjs <your-page>
+```
+
+Twelve items. Fix and re-run. Do not ship on a fail. How to fix each: [library/01-规范/docs/07-verification.md](library/01-规范/docs/07-verification.md).
+
+```
+1.  Console: 0 errors
+2.  Type ratio ≥ 4.0  (Editorial ≥ 5)
+3.  Non-neutral colors ≤ 2
+4.  Display weight ≤ 600
+5.  Display tracking ≤ −0.02em
+6.  Size steps ≥ 5  (aim 6–9)
+7.  Scroll-driven ≥ 4  (Editorial ≥ 8)
+8.  Duration bands 1–6
+9.  prefers-reduced-motion kills animation
+10. 390px: no horizontal overflow
+11. Scroll frame p95 ≤ 20ms
+12. Signature action (human): would this page go ordinary if you swapped it for a fade?
+```
+
+Then open the page. Use it. Narrow to a phone. Read [library/01-规范/docs/05-anti-patterns.md](library/01-规范/docs/05-anti-patterns.md). One hit is a fail.
+
+---
+
+## Immersive depth (upgrade the baseline — do not skip it)
+
+When the regime is **Immersive**, copy `library/02-可运行基线/immersive/index.html` first. Then upgrade that file. Do not open a blank Three.js page.
+
+`systems/*` are the Recent-grade layer. They upgrade the immersive baseline. They do **not** require WebGL on Editorial or Product, and they do not veto those first viewports.
+
+Read only what the upgrade needs:
+
+- [library/01-规范/docs/04-webgl-recipes.md](library/01-规范/docs/04-webgl-recipes.md) — material, light, camera, shader
+- [systems/atmosphere.md](systems/atmosphere.md) — name the air. Haze must eat the limb. Leftover cream is not air.
+- [systems/transition.md](systems/transition.md) — name a real scene change (gate / chapter wipe / dissolve / morph / camera chapter / portal jump). A hex swap behind a leftover mesh is not a transition.
+- [motion.md](motion.md) — pointer / type / scroll on the volume
+- **1–2** `systems/<loop>.md` that match the invented loop ([archetypes.md](archetypes.md))
+
+Invent the object for **this** brief. Do not clone Earth, the Vercel jacket, the baroque sofa, the cassette, FOLD, or VEIL.
+
+Copy these numbers onto the studio-object upgrade:
+
+```js
+camera = new THREE.PerspectiveCamera(32, aspect, 0.1, 40);
+camera.position.set(0, 0.12, 5.5); // ~1.7 mesh. z 8–10 = empty cream
+renderer.setSize(innerWidth, innerHeight); // also sets canvas CSS
+```
+
+Hard upgrades (one line per fail):
+
+1. **Studio camera.** FOV ~32. `z` ~5.2–6.2 on a ~1.7 mesh.
+2. **Canvas CSS = viewport.** A 2× drawing buffer parks the object on the right edge.
+3. **Whole object, studio air.** Colored mesh 25–40% of the short axis. Projected width ≥ 18%. HUD = top corners + a control **below**. A crayon / match / pencil is empty cream.
+4. **Authored surface with mass.** Canvas / shader / vertices the product wrote. A vitamin Capsule / Sphere / Box, a **closed pot**, or a **sticker blot** fails.
+5. **Atmosphere required.** Paper studio / white haze / night void / fogged room / field-as-sky. Haze eats the limb. A peach tile on hard white is INK.
+6. **Transition required.** Air *and* the object change. Duration 0.7–1.4s.
+7. **Night glass.** Thickness + rest yaw ≈ 0.35 + clearcoat. `transmission` ≤ 0.06.
+8. **Dissolve.** Sample bright authored marks. Scatter ≤ 3% of the glyph width.
+9. **Printed type.** Glyph-by-glyph; fallback advance if `measureText` is 0.
+10. **The product job hits the mesh.** A 工作台 card, a textarea, or a yellow fill button is a fail.
+
+---
+
+## Extra bans (do not veto Editorial or Product)
+
+Read [forbidden.md](forbidden.md) before you ship an Immersive upgrade. Crayon, closed pot, sticker blot, peach tile, empty cream, milky plastic, 拾贝 / 素笺 / 回声瓶 / KEPT / FOLD / VEIL remain fails.
+
+Those specimens do **not** make a Product CSS landing illegal. They do **not** make an Editorial 1px-rule page illegal. They ban slop cousins, not the other two regimes.
+
+Also fail (any regime): three equal cards, centered badge + headline + sub + two CTAs, Inter/Roboto/system-ui as the only display, purple-on-white, indigo `#6366f1`, a tinted headline word, an em-dash (`—`) in visible copy, `pin: true` for a horizontal track, Lorem / "Revolutionize your workflow", emoji-as-icon.
+
+---
+
+## Open when a step needs it
+
+SKILL.md runs the five steps. Do not load the rest of the tree on every job.
+
+| When | Open |
+|---|---|
+| First time / why baselines exist | [library/01-规范/docs/00-diagnosis.md](library/01-规范/docs/00-diagnosis.md) |
+| Step 1, regime unclear | [library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01-taxonomy.md) |
+| Step 3, need the measured tables | [library/01-规范/docs/02-aesthetic-fingerprint.md](library/01-规范/docs/02-aesthetic-fingerprint.md) |
+| Step 4, need a motion recipe | [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md) |
+| Immersive WebGL | [library/01-规范/docs/04-webgl-recipes.md](library/01-规范/docs/04-webgl-recipes.md) + 1–2 `systems/<loop>.md` |
+| Before ship, 30-item list | [library/01-规范/docs/05-anti-patterns.md](library/01-规范/docs/05-anti-patterns.md) |
+| A long or messy brief | [library/01-规范/docs/06-build-playbook.md](library/01-规范/docs/06-build-playbook.md) |
+| A verify row failed | [library/01-规范/docs/07-verification.md](library/01-规范/docs/07-verification.md) |
+| Immersive air / scene change | [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), [motion.md](motion.md) |
+| Immersive fail specimens | [forbidden.md](forbidden.md) |
+| Someone else's GSAP | `library/04-逆向数据/snippets/<site>.txt` |
+| Composition check | `library/05-视觉参照/<site>-00.png` and `-45.png` |
+| Raw markup | `library/07-原始HTML/<site>.html` |
+
+Catalog of the packed library: [library/README.md](library/README.md).
 
 ---
 
 ## What this skill is not
 
-- Not a five-template picker. Not permission to copy five HTML files and stop.
-- Not a 2D taste kit. Those recipes produced 拾贝 / 素笺 / 回声瓶. They are gone.
-- Not a license to polish FOLD / VEIL instead of changing this file.
+- Not a blank-file generator. The baseline is the start.
+- Not Immersive-only. Editorial and Product are first-class regimes.
+- Not a five-template picker of Recent HTML. Immersive still invents the object for this brief.
+- Not a license to skip verify.
 - Not a slide engine. For decks, use a slides skill.
-- Not a request to restyle a product surface the user did not name.

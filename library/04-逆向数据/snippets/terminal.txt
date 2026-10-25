@@ -1,0 +1,60 @@
+# terminal — https://terminal-industries.com
+# bundle 821101 bytes
+
+ease 分布: {'expo.inOut': 10, 'custom.fastInOut': 6, 'expo.out': 6, 'power2.out': 5, 'power1.in': 4, 'power1.out': 3, 'power1.inOut': 3, 'power2.inOut': 2, 'none': 1, 'expo': 1}
+scrub 分布: {'!0': 2}
+start 分布: {'top bottom': 3, 'top 85%': 1}
+pin:true 出现 0 次
+
+===== scrollTrigger: =====
+eturn;const r=x(e.scrollTriggerContainer())??o;C(()=>{if(d()){if(s=N.create(o,{type:"chars, lines",charsClass:"--char",linesClass:"--line"}),t=f.gsap.timeline({scrollTrigger:{trigger:r,start:"top 85%",end:"bottom 20%",toggleActions:"play none none reverse"}
+
+===== ScrollTrigger.create( =====
+first","_last",a._sort?"_start":0),dt(c)||(a._recent=c),g||U(a,c),a._ts<0&&R(a,a._tTime),a},ie=function(a,c){return(vt.ScrollTrigger||Z("scrollTrigger",c))&&vt.ScrollTrigger.create(c,a)},de=function(a,c,d,g,b){if(fa(a,c,b),!a._initted)return 1;if(!d&&a._pt&&!l&&(a._dur&&a.vars.lazy!==!1||!a._dur&&a.vars.lazy)&&Pe!==Ln.frame)return me.push(a),a._lazy=[b,g],1}
+
+===== scrub: =====
+()=>{p.value&&f.value&&(f.value.style.height=p.value.offsetHeight*.8+"px",H.refresh())}),L1(a=>{var s;(s=a.conditions)!=null&&s.isLg&&H.create({trigger:f.value,scrub:!0,start:"top bottom",end:"bottom bottom",onUpdate:({progress:r}
+
+&B.value&&(p.value.style.transform=`translate3d(0, ${b1.Lerp(100,1,r)}%, 0)`,B.value.style.opacity=`${b1.Lerp(0,.4,r)}`)}})}),A1(()=>{H.create({trigger:f.value,scrub:!0,start:"top bottom",end:"top top",onUpdate:({progress:a}
+
+===== ease: =====
+ody;for(;c&&c.parentElement;){const x=c.parentElement;for(const $ of x.children)$!==c&&$.nodeType===1&&!$.inert&&($.inert=!0,t.push($));if(x===f)break;c=x}},release:n}}},5996(p,g,o){o.d(g,{d:()=>y});const v=r=>!!r&&typeof r=="object"&&r.inputPrompt===""&&!("_webmcpCallId"in r),y=(r,i,s)=>{if(!v(i))return s();const b=JSON.stringify(i),h=r.get(b);if(h)return h;const w=s();return r.set(b,w),w.then(()=>r.delete(b)),w}}
+
+Y),V=V._next;return C},c.tweenTo=function(g,b){b=b||{};var C=this,P=X(C,g),V=b,q=V.startAt,Y=V.onStart,xe=V.onStartParams,Fe=V.immediateRender,je,ot=qr.to(C,J({ease:b.ease||"none",lazy:!1,immediateRender:!1,time:P,overwrite:"auto",duration:b.duration||Math.abs((P-(q&&"time"in q?q.time:C._time))/C.timeScale())||p,onStart:function(){if(C.pause(),!je){var ut=b.duration||Math.abs((P-(q&&"time"in q?q.time:C._time))/C.timeScale());ot._dur!==ut&&A(ot,ut,0,1).render(ot._time,!0,!0),je=1}Y&&Y.apply(ot,xe||[])}
+
+P._delay=Y=Yt.delay,P._start+=Y,Yt.delay=0),Nt.to(Bt,Yt,sr?sr(Ct,Bt,$t):0),Nt._ease=En.none;Nt.duration()?q=Y=0:P.timeline=0}else if(ot){Se(J(Nt.vars.defaults,{ease:"none"})),Nt._ease=Js(ot.ease||g.ease||"none");var Cr=0,Sr,$i,Ai;if(ge(ot))ot.forEach(function(hi){return Nt.to($t,hi,">")}
+
+===== stagger: =====
+artAt=qr.set(ut,J({data:"isStart",overwrite:!1,parent:Pt,immediateRender:!0,lazy:!ve&&L(V),startAt:null,delay:0,onUpdate:q&&function(){return hr(a,"onUpdate")},stagger:0},C))),a._startAt._dp=0,a._startAt._sat=a,c<0&&(l||!P&&!je)&&a._startAt.revert(tt),P&&ot&&c<=0&&d<=0){c&&(a._zTime=c);return}
+
+alue,{scale:0,transformOrigin:"top right"},{scale:1,ease:"expo.inOut",duration:1.2},"<"),v.fromTo(u.value,{yPercent:100},{yPercent:0,ease:"expo.out",duration:1,stagger:{each:.04,from:"end"}
+
+cent:100},{yPercent:0,ease:"expo.out",duration:1,stagger:{each:.04,from:"end"}},"<0.4"),v.fromTo(l.value,{yPercent:-100},{yPercent:0,ease:"expo.out",duration:1,stagger:{each:.04,from:"end"}
+
+===== timeline({ =====
+,ke=de.yoyo,fe=de.toggleClass,Ye=de.nested,we=de.zIndex,Ze=de.scale,it=de.fade,pt=de.stagger,_t=de.spin,qt=de.prune,jt=("props"in F?F:R).props,It=Pe(F,H),Wt=ne.timeline({delay:j,paused:X,repeat:he,repeatDelay:De,yoyo:ke,data:"isFlip"}
+
+Ar([{direction:Hn.top,notchWidth:.95,offset:0,position:.5,radius:40,size:.75}]),D=ju();return zr(()=>{var S;(S=D.value)==null||S.stop(),hA(()=>{const E=er.gsap.timeline({delay:.2}
+
+();if(!o)return;const r=x(e.scrollTriggerContainer())??o;C(()=>{if(d()){if(s=N.create(o,{type:"chars, lines",charsClass:"--char",linesClass:"--line"}),t=f.gsap.timeline({scrollTrigger:{trigger:r,start:"top 85%",end:"bottom 20%",toggleActions:"play none none reverse"}}
+
+===== gsap.set( =====
+yles=lt&&lt(x,"transform"),(this.rotate=De||De===0)&&(this.rOffset=parseFloat(De)||0,this.radians=!!A.useRadians,this.rProp=A.rotation||"rotation",this.rSet=x._gsap.set(x,this.rProp,this),this.ru=qe(x._gsap.get(x,this.rProp))||0),Array.isArray(he)&&!("closed"in he)&&typeof Ze!="number"){for(_t in Ze)!Ye&&~Oe.indexOf(_t)?Ye=_t:!we&&~Ie.indexOf(_t)&&(we=_t);Ye&&we?j.push(rt(this,Vt(Vt([],he,Ye,0),he,we,1),x,Ye,we,it,A,ke||qe(he[0][Ye]),fe||qe(he[0][we]))):Ye=we=0;for(_t in Ze)_t!==Ye&&_t!==we&&j.push(rt(this,Vt([],he,_t,2),x,_t,0,it,A,qe(he[0][_t])))}
+
+,notchWidth:.95,offset:0,position:.5,radius:40,size:.75}]),y=St(!1),w=gt(()=>f.value?40:20);return t({show:()=>{y.value=!0;const S=er.gsap.timeline();return er.gsap.set(n.value,{autoAlpha:1}
+
+5,radius:40,size:.75}]),y=St(!1),w=gt(()=>f.value?40:20);return t({show:()=>{y.value=!0;const S=er.gsap.timeline();return er.gsap.set(n.value,{autoAlpha:1}),er.gsap.set(s.value,{opacity:0}
+
+===== matchMedia( =====
+c){return c()})},B=function(){var a=Date.now(),c=[];a-Ae>2&&(re("matchMediaInit"),Zs.forEach(function(d){var g=d.queries,b=d.conditions,C,P,V,q;for(P in g)C=Ne.matchMedia(g[P]).matches,C&&(V=1),C!==b[P]&&(b[P]=C,q=1);q&&(d.revert(),V&&c.push(d))}),re("matchMediaRevert"),c.forEach(function(d){return d.onMatch(d,function(g){return d.add(null,g)})}
+
+is.scope),P=C.conditions={},V,q,Y;h&&!C.selector&&(C.selector=h.selector),this.contexts.push(C),g=C.add("onMatch",g),C.queries=d;for(q in d)q==="all"?Y=1:(V=Ne.matchMedia(d[q]),V&&(Zs.indexOf(C)<0&&Zs.push(C),(P[q]=V.matches)&&(Y=1),V.addListener?V.addListener(B):V.addEventListener("change",B)));return Y&&g(C,function(xe){return C.add(null,xe)}
+
+ent,h=l.documentElement,f=l.body,w=[u,l,h,f],s.utils.clamp,S=s.core.context||function(){},m="onpointerenter"in f?"pointer":"mouse",p=ye.isTouch=u.matchMedia&&u.matchMedia("(hover: none), (pointer: coarse)").matches?1:"ontouchstart"in u||navigator.maxTouchPoints>0||navigator.msMaxTouchPoints>0?2:0,D=ye.eventTypes=("ontouchstart"in h?"touchstart,touchmove,touchcancel,touchend":"onpointerdown"in h?"pointerdown,pointermove,pointercancel,pointerup":"mousedown,mousemove,mouseup,mouseup").split(","),setTimeout(function(){return _=0}
+
+===== pin: =====
+",R)},tt=function(R){return Math.round(R*1e4)/1e4||0},$=function(R,U,F){return R.forEach(function(ie){return ie.classList[F](U)})},H={zIndex:1,kill:1,simple:1,spin:1,clearProps:1,targets:1,toggleClass:1,onComplete:1,onUpdate:1,onInterrupt:1,onStart:1,delay:1,repeat:1,repeatDelay:1,yoyo:1,scale:1,fade:1,absolute:1,props:1,onEnter:1,onLeave:1,custom:1,paused:1,nested:1,prune:1,absoluteOnLeave:1},me={zIndex:1,simple:1,clearProps:1,scale:1,absolute:1,fitChild:1,getVars:1,props:1}
+
+===== invalidateOnRefresh =====
+?{trigger:B}:B,yr);var Ee=B,Qe=Ee.onUpdate,Ve=Ee.toggleClass,Gt=Ee.id,dn=Ee.onToggle,xn=Ee.onRefresh,Bn=Ee.scrub,an=Ee.trigger,wt=Ee.pin,fn=Ee.pinSpacing,Ir=Ee.invalidateOnRefresh,gr=Ee.anticipatePin,ti=Ee.onScrubComplete,Rr=Ee.onSnapComplete,vi=Ee.once,An=Ee.snap,cs=Ee.pinReparent,xr=Ee.pinSpacer,bn=Ee.containerAnimation,Mi=Ee.fastScrollEnd,Ui=Ee.preventOverlaps,sn=B.horizontal||B.containerAnimation&&B.horizontal!==!1?ee:se,ui=!Bn&&Bn!==0,yn=Ne(B.scroller||Te),Cs=le.core.getCache(yn),mr=ie(yn),Xr=("pinType"in B?B.pinType:_e(yn,"pinType")||mr&&"fixed")==="fixed",bi=[B.onEnter,B.onLeave,B.onEnterBack,B.onLeaveBack],Un=ui&&B.toggleActions.split(" "),Gr="markers"in B?B.markers:yr.markers,$r=mr?0:parseFloat(gn(yn)["border"+sn.p2+tn])||0,Re=this,cr=B.onRefreshInit&&function(){return B.onRefreshInit(Re)}
+

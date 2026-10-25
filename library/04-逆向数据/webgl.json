@@ -1,0 +1,218 @@
+{
+ "bruno": {
+  "roughness": [
+   [
+    "1",
+    1
+   ]
+  ],
+  "metalness": [
+   [
+    "1",
+    1
+   ]
+  ],
+  "bloom_radius": [
+   [
+    "0.4",
+    1
+   ]
+  ],
+  "toneMapping": [
+   [
+    "toneMapping = e",
+    6
+   ],
+   [
+    "toneMapping = r",
+    4
+   ],
+   [
+    "toneMapping = NoToneMapping",
+    3
+   ]
+  ]
+ },
+ "daybreak": {
+  "bloom_radius": [
+   [
+    "0.375",
+    5
+   ],
+   [
+    "0.25",
+    1
+   ],
+   [
+    "0.75",
+    1
+   ]
+  ]
+ },
+ "family": {
+  "bloom_radius": [
+   [
+    "0.5",
+    6
+   ],
+   [
+    "0.214",
+    2
+   ],
+   [
+    "0.6",
+    1
+   ]
+  ]
+ },
+ "islands": {
+  "dpr_cap": [
+   [
+    "Math.min(window.devicePixelRatio,M)",
+    1
+   ]
+  ],
+  "toneMapping": [
+   [
+    "toneMapping=ei",
+    3
+   ],
+   [
+    "toneMapping=u",
+    2
+   ],
+   [
+    "toneMapping:g",
+    1
+   ]
+  ]
+ },
+ "lando": {
+  "roughness": [
+   [
+    "0.05",
+    12
+   ],
+   [
+    "0",
+    4
+   ],
+   [
+    "1",
+    4
+   ]
+  ],
+  "metalness": [
+   [
+    "1",
+    10
+   ],
+   [
+    "0.9",
+    4
+   ]
+  ],
+  "dpr_cap": [
+   [
+    "Math.min(window.devicePixelRatio,1.25)",
+    8
+   ],
+   [
+    "Math.min(window.devicePixelRatio,2)",
+    8
+   ]
+  ],
+  "toneMapping": [
+   [
+    "toneMapping=q",
+    3
+   ],
+   [
+    "toneMapping:nQ",
+    3
+   ],
+   [
+    "toneMapping=AQ",
+    3
+   ]
+  ]
+ },
+ "locomotive": {
+  "roughness": [
+   [
+    "1",
+    2
+   ]
+  ],
+  "metalness": [
+   [
+    "1",
+    1
+   ],
+   [
+    "0",
+    1
+   ]
+  ],
+  "bloom_radius": [
+   [
+    ".5",
+    1
+   ]
+  ],
+  "dpr_cap": [
+   [
+    "Math.min(window.devicePixelRatio,2)",
+    4
+   ],
+   [
+    "Math.min(e<1024?2:1.5,window.devicePixelRatio)",
+    1
+   ]
+  ],
+  "toneMapping": [
+   [
+    "toneMapping=to",
+    6
+   ],
+   [
+    "toneMapping=o",
+    2
+   ],
+   [
+    "toneMapping=Up",
+    2
+   ]
+  ]
+ },
+ "lusion": {
+  "dpr_cap": [
+   [
+    "Math.min(1.5,browser$1.devicePixelRatio)",
+    1
+   ]
+  ],
+  "toneMapping": [
+   [
+    "toneMapping=NoToneMapping",
+    3
+   ],
+   [
+    "toneMapping=v",
+    1
+   ],
+   [
+    "toneMapping:Je",
+    1
+   ]
+  ]
+ },
+ "waaark": {
+  "bloom_strength": [
+   [
+    ".4",
+    1
+   ]
+  ]
+ }
+}

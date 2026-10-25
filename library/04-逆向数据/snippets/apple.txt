@@ -1,0 +1,20 @@
+# apple — https://www.apple.com
+# bundle 1098297 bytes
+
+ease 分布: {}
+scrub 分布: {}
+start 分布: {'t - 200vh': 2, 'a0t - 200vh': 1, 'a0t - (100vh - 50h)': 1}
+pin:true 出现 0 次
+
+===== ease: =====
+;e<t.BREAKPOINTS.length;e++){let s=t.BREAKPOINTS[e];if(window.matchMedia(s.mediaQuery).matches)return s.name}return this.BREAKPOINTS[0].name},KeyframeDefaults:{ease:1,epsilon:.05,preserveState:!1,easeFunctionString:"linear",easeFunction:"linear",hold:!1,snapAtCreation:!1,toggle:!1,breakpointMask:"SMLX",event:"",disabledWhen:[],cssClass:""},KeyframeTypes:{Interpolation:0,InterpolationForward:1,CSSClass:2,Event:3}
+
+get,a=this.convertSlideIndexToHorizontalPosition(e),o=this._items[this.wrappedIndex(e)],h=this.model.PrefersReducedMotion?.001:this.duration;this.clip=new i(h,{ease:r.fromCSSString(s),prepare:()=>this.trigger(this.model.Events.ITEM_CHANGE_INITIATED,{gallery:this,next:o}
+
+===== matchMedia( =====
+gator:{userAgent:"",platform:"",vendor:""},f={ua:m.userAgent,platform:m.platform,vendor:m.vendor},w={browser:l(c,M=f),os:l(u,M)};var M;function g(){const A=e().matchMedia("(prefers-reduced-motion)");return!(!A||!A.matches)}function b(){const A=e();return!a()&&!A.orientation||w.os.windows}
+
+),n._viewportChangeHandler=this._viewportChangeHandler.bind(this,a),n.viewportQuery.addEventListener("change",n._viewportChangeHandler)}this.retinaQuery=window.matchMedia(s),this.orientationQuery=window.matchMedia(t),this.options.ref._viewportInfo.retina=this.retinaQuery.matches,this.options.ref._viewportInfo.orientation=this.orientationQuery.matches?"portrait":"landscape",this._retinaChangeHandler=this._retinaChangeHandler.bind(this),this._orientationChangeHandler=this._orientationChangeHandler.bind(this),this.retinaQuery.addEventListener("change",this._retinaChangeHandler),this.orientationQuery.addEventListener("change",this._orientationChangeHandler)}},_viewportChangeHandler(e,{matches:t}
+
+angeHandler.bind(this,a),n.viewportQuery.addEventListener("change",n._viewportChangeHandler)}this.retinaQuery=window.matchMedia(s),this.orientationQuery=window.matchMedia(t),this.options.ref._viewportInfo.retina=this.retinaQuery.matches,this.options.ref._viewportInfo.orientation=this.orientationQuery.matches?"portrait":"landscape",this._retinaChangeHandler=this._retinaChangeHandler.bind(this),this._orientationChangeHandler=this._orientationChangeHandler.bind(this),this.retinaQuery.addEventListener("change",this._retinaChangeHandler),this.orientationQuery.addEventListener("change",this._orientationChangeHandler)}},_viewportChangeHandler(e,{matches:t}
+

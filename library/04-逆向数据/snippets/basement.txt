@@ -1,0 +1,18 @@
+# basement — https://basement.studio
+# bundle 755182 bytes
+
+ease 分布: {'string': 1}
+scrub 分布: {}
+start 分布: {'click': 1, 'drag': 1}
+pin:true 出现 0 次
+
+===== ease: =====
+atus,errors:t.errors,did:"number"==typeof t.did||"string"==typeof t.did?`${t.did}`:void 0,duration:t.duration,abnormal_mechanism:t.abnormal_mechanism,attrs:{release:t.release,environment:t.environment,ip_address:t.ipAddress,user_agent:t.userAgent}}}};return t&&ta(n,t),n}function ta(t,e={}
+
+],523378);let eP="_frozenDsc";function eD(t,e){D(t,eP,e)}function eM(t,e){let n=e.getOptions(),{publicKey:r}=e.getDsn()||{},s={environment:n.environment||eR,release:n.release,public_key:r,trace_id:t,org_id:en(e)};return e.emit("createDsc",s),s}function e$(t,e){let n=e.getPropagationContext();return n.dsc||eM(n.traceId,t)}
+
+t,S={...e,event_id:e.event_id||n.event_id||Z(),timestamp:e.timestamp||tn()},y=n.integrations||t.integrations.map(t=>t.name);(function(t,e){let{environment:n,release:r,dist:s,maxValueLength:i}=e;t.environment=t.environment||n||eR,!t.release&&r&&(t.release=r),!t.dist&&s&&(t.dist=s);let a=t.request;a?.url&&i&&(a.url=X(a.url,i)),i&&t.exception?.values?.forEach(t=>{t.value&&(t.value=X(t.value,i))}
+
+===== matchMedia( =====
+ction uk(e,n,t){switch(e.tag){case 26:ub(e,n,t),e.flags&uy&&(null!==e.memoizedState?function(e,n,t,r){if("stylesheet"===t.type&&("string"!=typeof r.media||!1!==matchMedia(r.media).matches)&&0==(4&t.state.loading)){if(null===t.instance){var l=fr(r.href),a=n.querySelector(fl(l));if(a){null!==(n=a._p)&&"object"==typeof n&&"function"==typeof n.then&&(e.count++,e=fw.bind(e),n.then(e,e)),t.state.loading|=4,t.instance=a,e5(a);return}a=n.ownerDocument||n,r=fa(r),(l=c8.get(l))&&fc(r,l),e5(a=a.createElement("link"));var o=a;o._p=new Promise(function(e,n){o.onload=e,o.onerror=n}),cu(a,"link",r),t.instance=a}null===e.stylesheets&&(e.stylesheets=new Map),e.stylesheets.set(t,n),(n=t.state.preload)&&0==(3&t.state.loading)&&(e.count++,t=fw.bind(e),n.addEventListener("load",t),n.addEventListener("error",t))}
+

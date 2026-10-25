@@ -1,0 +1,18 @@
+# mercury — https://mercury.com
+# bundle 855628 bytes
+
+ease 分布: {'string': 1}
+scrub 分布: {}
+start 分布: {'click': 1, 'drag': 1}
+pin:true 出现 0 次
+
+===== ease: =====
+atus,errors:t.errors,did:"number"==typeof t.did||"string"==typeof t.did?`${t.did}`:void 0,duration:t.duration,abnormal_mechanism:t.abnormal_mechanism,attrs:{release:t.release,environment:t.environment,ip_address:t.ipAddress,user_agent:t.userAgent}}}};return t&&o(r,t),r},"d",0,o],341041);var u=t.i(272598),c=t.i(453288);try{var d="u">typeof window?window:t.g;d._sentryModuleMetadata=d._sentryModuleMetadata||{},d._sentryModuleMetadata[(new d.Error).stack]=Object.assign({},d._sentryModuleMetadata[(new d.Error).stack],{"_sentryBundlerPluginAppKey:mercury-fem":!0})}
+
+vent_id:s.event_id||o.event_id||(0,M.c)(),timestamp:s.timestamp||(0,P.i)()},I=o.integrations||t.integrations.map(t=>t.name);(function(t,e){let{environment:r,release:n,dist:a,maxValueLength:s}=e;t.environment=t.environment||r||c.f,!t.release&&n&&(t.release=n),!t.dist&&a&&(t.dist=a);let i=t.request;i?.url&&s&&(i.url=(0,A.k)(i.url,s)),s&&t.exception?.values?.forEach(t=>{t.value&&(t.value=(0,A.k)(t.value,s))}
+
+ginAppKey:mercury-fem":!0})}catch(t){}let _="_frozenDsc";function g(t,r){let n=r.getOptions(),{publicKey:a}=r.getDsn()||{},i={environment:n.environment||e.f,release:n.release,public_key:a,trace_id:t,org_id:(0,s.T)(r)};return r.emit("createDsc",i),i}function h(t,e){let r=e.getPropagationContext();return r.dsc||g(r.traceId,t)}
+
+===== matchMedia( =====
+ction uC(e,n,t){switch(e.tag){case 26:uN(e,n,t),e.flags&ux&&(null!==e.memoizedState?function(e,n,t,r){if("stylesheet"===t.type&&("string"!=typeof r.media||!1!==matchMedia(r.media).matches)&&0==(4&t.state.loading)){if(null===t.instance){var l=fm(r.href),a=n.querySelector(fh(l));if(a){null!==(n=a._p)&&"object"==typeof n&&"function"==typeof n.then&&(e.count++,e=fO.bind(e),n.then(e,e)),t.state.loading|=4,t.instance=a,ne(a);return}a=n.ownerDocument||n,r=fg(r),(l=fi.get(l))&&fk(r,l),ne(a=a.createElement("link"));var o=a;o._p=new Promise(function(e,n){o.onload=e,o.onerror=n}),cm(a,"link",r),t.instance=a}null===e.stylesheets&&(e.stylesheets=new Map),e.stylesheets.set(t,n),(n=t.state.preload)&&0==(3&t.state.loading)&&(e.count++,t=fO.bind(e),n.addEventListener("load",t),n.addEventListener("error",t))}
+
