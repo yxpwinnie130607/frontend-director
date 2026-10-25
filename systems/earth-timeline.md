@@ -7,8 +7,8 @@
 ## Composition (hard)
 
 - Whole object visible. Occupies 25–40% of the short axis. Air on every side.
-- FOV ≤ 28, camera pulled back (`z` ≈ 8–10).
-- HUD: name top-left. Caption under the object. Tick slider **below**. Nothing on the mesh.
+- FOV 30–34, camera `z` ≈ 5.2–6.2 on a ~1.7-wide mesh. `z` 8–10 on a small mesh paints empty cream. Fail.
+- HUD: name top-left. Whisper top-right. Tick slider **below**. Nothing on the mesh. No visible gray stage disk.
 
 ## 质感
 

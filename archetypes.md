@@ -16,6 +16,8 @@ These families are how the Recent bar *moves*. They are not a closed catalog. Do
 
 Invent the object for this product. A writing tool might be a vessel, a sheet, a ribbon of type, a room of drafts — not a planet unless Earth is the metaphor. The surface must be authored.
 
+After you invent the object, name **atmosphere** (paper / night / haze / field) and **transition** (morph / dissolve / camera jump / world swap / rewrite). Read [systems/atmosphere.md](systems/atmosphere.md) and [systems/transition.md](systems/transition.md). A cream crumple slider is not a complete direction.
+
 ## Do not
 
 - Preview a dark card + yellow button (回声瓶).

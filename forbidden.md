@@ -19,7 +19,7 @@ Dark rounded 工作台 card. Textarea. Yellow fill button 「投入瓶中」. Ou
 Dark studio. Default `CapsuleGeometry` + torus. `material.color.lerp`. A slider that only changes roughness. Type drops a fading plane. It is 3D and it orbits. **It is still a Three.js vitamin with a paint job.** No authored surface, no designed silhouette. Fail.
 
 ### FOLD
-Cousins, all fail: (1) sheet cropped or parked on the right edge (canvas CSS 2× viewport); (2) HUD on the mesh (FOLDO, PRINTT); (3) first frame is **empty cream** with only a caption — camera too far or WebGL died; (4) a visible **gray stage disk**; (5) crumple is a clay blob or a bent card, not a paper wad with creases. **The first frame must show a colored volume 25–40% of the short axis. The crumple must be a wad.**
+Cousins, all fail: (1) sheet cropped or parked on the right edge (canvas CSS 2× viewport); (2) HUD on the mesh (FOLDO, PRINTT); (3) first frame is **empty cream** with only a caption — camera too far or WebGL died; (4) a visible **gray stage disk**; (5) crumple is a clay blob or a bent card, not a paper wad with creases; (6) a paper slider in leftover cream with **no designed air and no world change**, sold as the whole site. **The first frame must show a colored volume 25–40% of the short axis. Atmosphere and a transition are required. A crumple-only page is not the bar.**
 
 ## Composition law (hard)
 

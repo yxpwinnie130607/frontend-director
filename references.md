@@ -12,7 +12,11 @@ Read this in Phase 2. After every build, compare the first viewport to the laws 
 
 **动效 (motion).** The *event* is physical. A slider changes the volume. A sheet becomes a wad. You jump a room. Half a product dissolves into a field. Idle is breath or slow spin, not a fade-up. If pointer, scroll, and type do not change the volume, it is still.
 
-**炫酷 (wow).** Restraint that makes you lean in. One complete object (or a room you are inside). Empty studio. Tiny chrome. The first frame should make a hand move toward the control. Cropped posters, overlapping HUD, and 2D cards kill the wow.
+**炫酷 (wow).** Restraint that makes you lean in. One complete object (or a room you are inside). Designed air. Tiny chrome. The first frame should make a hand move toward the control. Cropped posters, overlapping HUD, and 2D cards kill the wow.
+
+**背景 (atmosphere).** The air is a choice: paper studio, night void, haze room, or a living field. Augen / Podium sit in a designed dark. Earth / Crumple sit in designed white. Astro Dither *is* a field. Leftover CSS cream or a gray stage disk is not atmosphere.
+
+**转场 (transition).** Send / enter / generate changes the world: sheet→wad, object→field, camera jump, room swap. Shopify Editions and Gaussian portals move you. A fade on `#app` is not a transition.
 
 ---
 
@@ -60,6 +64,18 @@ Read this in Phase 2. After every build, compare the first viewport to the laws 
 
 Also on that reel (steal the *feel*): crumpled-paper still life (three wads on cream), magnetic phone UI, CRT with a 3D burst, Bloom-class glass flower, animated sphere clusters.
 
+More Recent posts to steal *air and change* from (still not a catalog; do not clone):
+
+| Post | Live | Steal |
+|---|---|---|
+| Augen | https://augen.pro | Night void, one volume, tiny chrome |
+| Podium | https://podium.global | Designed studio, product as the only object |
+| Astro Dither | https://astrodither.robertborghesi.is | Background *is* the technique (dither field) |
+| Nothing to Watch | https://nothing-to-watch.port80.ch | A gate, then a world; not a SaaS stack |
+| Interfere | https://recent.design/i/mysyrbt-interfere | Interference as material, not a card |
+| Recursive surface erosion | https://recent.design/i/vuzcu2u-recursive-surface-erosion | Surface as a living process |
+| Shopify Editions | https://www.shopify.com/editions/spring2026 | Campaign 3D + camera as you move |
+
 ---
 
 ## Extra ceiling families (still not a picker)
@@ -93,5 +109,7 @@ If the five are not the right metaphor, these loops are the same bar:
 - **Studio composition (Earth / Crumple):** object occupies roughly **25–40%** of the short viewport axis. ≥ 18% empty studio on every side. HUD = top-corner whispers + a slider **below** the object. Cropped poster = FOLD = fail. Canvas CSS must match the viewport (`width:100%; height:100%` + `setSize` updating style). A 2× buffer with unlocked CSS parks the mesh on the right edge.
 - **Authored surface:** canvas / shader / vertices the product wrote. Capsule + `color.lerp` = KEPT = fail.
 - **Material event:** crumple, dissolve, jump, or surface rewrite. Orbit-only is not enough.
+- **Atmosphere + transition:** the first frame names the air. Send / enter / generate changes the world. A cream crumple slider is not a complete site.
+- **Atmosphere + transition:** the first frame names the air. Send / enter / generate changes the world. A cream crumple slider is not a complete site.
 - Do not ship Earth / jacket / sofa / cassette because the files exist.
 - A writing tool is not a planet unless that metaphor fits.

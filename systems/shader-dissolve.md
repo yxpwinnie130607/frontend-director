@@ -81,6 +81,7 @@ const attr = geo.attributes.position;
 - Pointer X (or hover) dissolves the object into living points. Points keep moving.
 - Black studio. Type is huge and quiet, not a card.
 - The silhouette should read as *this* product (draw it, or cluster the points into a bottle / sheet / mark).
+- After the dissolve, the field is still *this* object: a sheet-shaped cloud, a word as a constellation. A generic starfield with no silhouette is a fail (VEIL v1).
 
 ## Fail
 

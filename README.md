@@ -11,7 +11,7 @@ Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**.
 2. Invents **three original 3D first screens** for this product. Each one hits the bar: WebGL volume, physical light, pointer / scroll / type changes the volume, the product job happens to the mesh. A 2D card fails.
 3. You pick one. Only then does it build the rest of that direction.
-4. Technique files (`earth-timeline`, `crumple`, `portal-room`, `shader-dissolve`, `spatial-deck`, plus `volume-object` / `volume-field` / `volume-world`) are a library. The model reads at most the 1–2 that match the invented loop.
+4. Technique files (`earth-timeline`, `crumple`, `portal-room`, `shader-dissolve`, `spatial-deck`, plus `volume-object` / `volume-field` / `volume-world`) are a library. The model reads at most the 1–2 that match the invented loop, and **always** reads atmosphere + transition + motion. A crumple slider in leftover cream is not the bar.
 
 ## Install
 

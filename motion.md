@@ -55,6 +55,10 @@ onScroll();
 
 Bind the progress to the **mesh** (rotate, unfold, dissolve). A 2D clip-path poster is not enough.
 
+## 5. Transition (required)
+
+Send / enter / generate must change more than a label. Mix at least two of: vertex or point field, camera `z` / look-at, fog density, authored map. See [systems/transition.md](systems/transition.md). `opacity` on a wrapper is a fail.
+
 ## 4. Allowed vs fail
 
 | Use | Fail |

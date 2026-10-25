@@ -19,7 +19,8 @@
 
 - Authored canvas: dye, fiber grain, uneven color, printed type, one small mark.
 - Paper is matte (`roughness` ~ 0.8, sheen). Not a flat Plane + solid fill.
-- Crumpled state is an **irregular wad** (deep folds, warped type), not a wrinkled plane that still fills the frame, not a smooth sphere, and **not a spiky sea-urchin**. Radius of the wad stays in a tight band (about ±25%). If fold noise subtracts so hard that `r` goes near 0, the silhouette explodes into spikes. Fail.
+- Crumpled state is crushed **paper**, not a ball. Fold-reflect the sheet across 7–10 planes (`if (dot(p,n) > d) p -= n * side * amt`), then crush toward the centroid. A lon/lat sphere with sine lumps is a dumpling. A clay blob, faceted crystal, or sea-urchin is a fail. If a vertex collapses to the origin, spikes. Fail.
+- Printed type keeps word gaps. Offscreen canvas `measureText` often returns 0 before the face binds. Load the face (`document.fonts.load`), then draw **glyph by glyph** with a fallback advance (`w > 2 ? w : 40`) and a 28–36px word gap. `fillText(wholeLine)` collapsing to "Comebackbeforethe" is a fail.
 
 ## Markup (scale is the point)
 
@@ -47,12 +48,13 @@
 Camera and mesh (copy the numbers; this is the air):
 
 ```js
-const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 40);
-camera.position.set(0, 0.05, 9.4); // pull back. If the sheet fills the frame, increase z.
+const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50);
+camera.position.set(0, 0.15, 5.6); // close enough that the dye is readable. z > 8 on a 1.4 sheet = empty cream frame. Fail.
 
-const geo = new THREE.PlaneGeometry(1.42, 1.86, 72, 96); // SMALL sheet
-// crumpled[] = wrap the sheet onto a ball (lon/lat), then lump. Do not only add z to a plane: that stays a bent card.
-// radius ~ 0.55–0.8; clamp. mix vertices; wad must stay fully visible
+const geo = new THREE.PlaneGeometry(1.72, 2.26, 96, 128);
+// crumpled[] = wrap the sheet onto a ball (lon/lat), then cut ridges with fold planes.
+// Do not only add z to a plane (bent card). Do not only modulate radius with sine (clay blob / low-poly crystal).
+// radius ~ 0.5–0.85; clamp. First frame: colored mesh is 25–40% of the short axis.
 ```
 
 ## Must
