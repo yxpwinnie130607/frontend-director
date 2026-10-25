@@ -31,7 +31,7 @@ tiny name, top left                    whisper, top right
 ## 质感
 
 Authored surface: a canvas the product wrote, a shader field, or vertices that crumple.  
-A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass needs **thickness**: a thin box, authored face, dark edges, rim light that catches. Face `envMapIntensity` ≤ 0.12 at night or RoomEnvironment washes the dye to pastel. The idle pose must show an edge (rest yaw ≈ 0.35), not a dead-on card. Face roughness ≥ 0.28 with no specular is a **brick**. Oil the face: roughness ≈ 0.1, clearcoat, or a painted streak. You should want to pick it up.  
+A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass needs **thickness**: a thin box, authored face, dark edges, rim light that catches. Face `envMapIntensity` ≤ 0.12 at night or RoomEnvironment washes the dye to pastel. The idle pose must show an edge (rest yaw ≈ 0.35), not a dead-on card. Face roughness ≥ 0.28 with no specular is a **brick**. Oil the face: roughness ≈ 0.1, clearcoat, or a painted streak. Glass also wants `ior` ≈ 1.5 and a little `transmission` (0.1–0.2), not a plastic tile. Printed type is drawn glyph-by-glyph with a 50–70px word gap. Collapsed "Leavethe lighton" is a fail. You should want to pick it up.  
 `CapsuleGeometry` / smooth `SphereGeometry` / `BoxGeometry` + `material.color.lerp` is a vitamin. Fail.
 
 ## Renderer contract
