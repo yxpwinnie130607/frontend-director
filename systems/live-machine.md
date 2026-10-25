@@ -1,9 +1,13 @@
 # live-machine
 
-Recent template: **Displace** (https://displace.agency, on recent.design). The homepage is a machine you use, not a poster you read.
+Do **not** use this as a default. Default is `volume-object`. This file is only if the user asked for desktop chrome *on top of* a 3D studio.
 
-**Use:** any tool, virtual product, 文案 / generate / write / edit / clip site. Default for "做一个产品网站".  
-**Never:** a long essay with no product.
+If you build a dark card + textarea + yellow button, you have failed. That is 回声瓶. Read `volume-object.md` instead.
+
+Recent template: **Displace** plus a Recent glass/object hero.
+
+**Use:** only when they named a desktop / window UI *and* a volume.  
+**Never:** as the only first viewport for a virtual product.
 
 The first viewport *is* the product running. Headline is secondary. A letter about the product, a fake Mac window of gray bars, or a dead list: fail.
 

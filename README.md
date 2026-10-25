@@ -2,16 +2,16 @@
 
 Create highly interactive websites using a coding agent's frontend skills.
 
-The templates are **Recent websites** ([recent.design](https://recent.design), formerly Godly): pages you can use, not posters you read. This skill ships **live systems** — `live-machine`, `kinetic-scroll`, `pointer-world` — with fonts, tokens, a first-viewport skeleton, and a required pointer / scroll / type loop. A still landing with nice type is the same as no skill.
+The templates are **Recent** ([recent.design](https://recent.design)): lit 3D objects and WebGL websites. This skill ships **volume systems** — `volume-object`, `volume-field`, `kinetic-scroll` — a Three.js studio you can use. A dark form with a yellow button is the same as no skill.
 
 Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
 1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**.
-2. For a product / 文案 / generate brief, builds **three live first screens**: `live-machine`, `kinetic-scroll`, `pointer-world`.
+2. For a product / 文案 / generate brief, builds **three 3D first screens**: `volume-object`, `volume-field`, `kinetic-scroll`.
 3. You pick one. Only then does it build the rest of that system.
-4. Pointer, scroll, or type must change the first viewport. A letter, a feature table, or a dead list fails.
+4. The first viewport is a WebGL studio. Pointer orbits. The product job hits the mesh. A 2D card fails.
 
 A clip / Sunday / 摘录 product keeps `live-machine` and adds `ritual-object` as one of the three.
 

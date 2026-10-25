@@ -6,7 +6,7 @@ Use this after the design read. Pick the row that matches the brief. The hard la
 
 **Audience:** buyers who already know the category. They need to feel the product, not be told it is "intelligent."
 
-**May go hard:** `interaction` first. The page is a Recent website: you use the product in the first viewport (Displace / Linear), or scroll puppets the room, or the pointer is the light. Type can be large, but a still headline is not the event.
+**May go hard:** `volume` first. WebGL studio, one physical object, pointer orbit, the job happens to the mesh. Recent homepage is the material. Recent Web is the motion.
 
 **Must hold back:** invented illustration, bento-of-everything, three-tier pricing as the visual climax, logo walls inside the hero, a letter about the product, a fake window of gray bars.
 

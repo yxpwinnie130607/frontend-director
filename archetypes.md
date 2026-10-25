@@ -1,35 +1,29 @@
-# Index — pick three live systems, then read those files
+# Index — pick three 3D systems, then read those files
 
 Do not design from this table. After you pick ids, read those `systems/<id>.md` files and `motion.md`.
 
-## Default three (product, virtual product, 文案, generate, any tool)
+## Default three (product, virtual product, 文案, generate, 回声瓶, any tool)
 
 | id | Recent template | the loop |
 |---|---|---|
-| `live-machine` | Displace-class: homepage is a desktop you use | Type + generate. Pointer shifts the stage. |
-| `kinetic-scroll` | Recent Web, scrolling animation | Scroll puppets type and a usable layer. |
-| `pointer-world` | Recent Web, interactive / transitions | Cursor is the light. Object is magnetic and usable. |
+| `volume-object` | Homepage objects, Liquid Glass, Glass Website, crumpled paper | One lit mesh you use. Pointer orbits. |
+| `volume-field` | Bloom, Sphere Clusters, Earth, Black Hole, Koi, WebGL Portfolio | A volume you move through. Click changes the field. |
+| `kinetic-scroll` | Ice Fracture, Calendly pin, scroll WebGL | Scroll puppets a 3D object through chapters. |
 
-For those briefs, **always preview these three**. Do not replace them with still editorial systems.
+For those briefs, **always preview these three**. All three are WebGL. A 2D form is not a preview.
 
 ## Only if the brief is not a product
 
 | id | kind | pick when |
 |---|---|---|
-| `one-world` | brand / studio | First minute is one room and a door |
-| `ritual-object` | clip / Sunday / 摘录 | Tray you drop things on (must still move) |
-| `type-bleed` | agency | The name is the building (must still react) |
-| `work-sequence` | studio portfolio | Work you can drag / key through |
-| `product-stage-night` | pro console | Working night UI (must also lerp / write) |
-| `product-stage-day` | friendly pro | Working day UI (must also lerp / write) |
-| `person-essay` | personal | Words are controls |
-| `empty-field` | personal | Almost nothing, but the island is a toy |
-| `object-letter` | hardware | Letter + pictures you can advance |
-| `editorial-essay` | long read | Reading, plus one live figure |
-| `recent-overflow` | any | Nothing above fits. Open recent.design Web, one *website* only |
+| `one-world` | brand / studio | One room and a door — still 3D |
+| `live-machine` | last resort | Only if they asked for a 2D tool chrome *and* a volume |
+| `ritual-object` | clip / Sunday | Tray — must sit in the volume-object studio |
+| `pointer-world` | campaign | Cursor light over a 3D field |
+| `recent-overflow` | any | Open recent.design, one volumetric post only |
 
 ## Do not
 
-- Preview `object-letter` or `editorial-essay` for a virtual product.
-- Preview three still systems.
-- Open Recent and copy a 3D flower, torus, or poster. Filter **Web**. Steal the loop.
+- Preview a dark card + yellow button.
+- Preview three 2D systems.
+- Clone Recent's flower or torus mesh. Steal the studio.

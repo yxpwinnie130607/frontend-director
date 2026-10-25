@@ -1,6 +1,8 @@
 # Motion — the live engine
 
-Include this engine in every preview and every build. A page that only fades in on load has failed.
+Include this engine in every preview and every build. A page that only fades in on load has failed. A 2D card that writes text has also failed: the first viewport must be the Three.js studio in `systems/volume-object.md`.
+
+Copy that file's renderer (ACES, shadows, RoomEnvironment, pointer orbit) before you add 2D HUD.
 
 `prefers-reduced-motion: reduce` keeps the *job* (type, generate, add, open) and drops lerp / pin / custom cursor.
 

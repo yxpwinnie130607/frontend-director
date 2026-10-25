@@ -50,6 +50,8 @@ sticky 100vh
   that second layer is usable (type, generate, or drag) once it is in
 ```
 
+The pinned layer is a **WebGL object** (copy the studio renderer from `volume-object`). Scroll drives the mesh (rotate, explode, fill, unfold). A 2D type poster with clip-path only is not enough.
+
 The first screen on load already moves if you nudge the wheel. If the user must scroll two pages before anything happens: fail.
 
 ## Required interaction

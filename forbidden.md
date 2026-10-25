@@ -2,6 +2,10 @@
 
 If a first viewport could be swapped onto another company by changing three nouns, it is slop.
 
+## Specimen D — flat live form (this skill, 回声瓶)
+
+A "usable" product that is still a 2D card. Black page. Headline. Dark rounded panel. Textarea. Yellow fill button 「投入瓶中」. Output as body text. Pointer does not orbit a volume. No glass, no shadow, no studio. **This is live-machine without Recent.** Fail. Ship `volume-object`.
+
 ## Specimen C — still product (this skill, 素笺)
 
 A writing tool sold as a static landing. Three cousins, all fail:
@@ -50,6 +54,7 @@ Hit any one of these and the page is not done.
 - "Now in beta" / "V0.6" / "Invite-only" eyebrows unless the brief is actually a launch.
 - Div-built fake dashboards, fake terminals, fake task lists, fake Mac windows of gray bars.
 - A letter about the product instead of the product.
+- Dark rounded "工作台" card + textarea + yellow fill button (回声瓶).
 - Feature rows with a hairline under each claim.
 - "Scroll to explore" as decoration.
 

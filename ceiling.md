@@ -4,7 +4,7 @@ These were read on the live web, not from memory of "premium SaaS." Steal courag
 
 The working picker is [archetypes.md](archetypes.md) — fourteen directions, pick one. This file is the longer reading for those sites.
 
-The living ceiling is **Godly, now Recent**: https://recent.design (https://godly.website redirects here). Filter **Web** / open the Websites entries. Those sites are the templates for this skill: interactive desktops, scroll puppets, pointer worlds. Do not use the homepage's 3D stills and posters as website templates.
+The living ceiling is **Godly, now Recent**: https://recent.design. The homepage masonry (torus, flower, earth, glass, ice, paper) **is** the visual template: studio light, physical material, one object, depth. The Web filter adds motion (Liquid Glass, Koi, Black Hole, WebGL Portfolio). Use both. Do not flatten them into a form.
 
 ---
 
