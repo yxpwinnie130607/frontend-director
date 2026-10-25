@@ -103,7 +103,7 @@ Editorial + Immersive may stack (editorial skeleton, 3D vision). **Product does 
 | Radius | 0–8px | — | 10–16px (buttons pill) |
 | Depth | **1px rule, 0 shadow** | canvas depth | **soft shadow, 0 border** |
 | Motion | ScrollTrigger + scrub | per-frame rAF | CSS transition |
-| GSAP | high | mid (type layer only) | **almost never** |
+| GSAP | high | mid (type layer only) | **one scene max** — a signature, never every section |
 
 Purpose → regime (defaults, not a veto):
 
@@ -160,7 +160,7 @@ Numbers are from 28 live sites ([library/01-规范/docs/02-aesthetic-fingerprint
 | Families | 2 (variable sans + mono). Editorial may add one serif display. |
 | Duration | Micro 0.15–0.2s / enter 0.4–0.5s / lead 0.55–0.65s |
 | Stagger budget | Letters 15–30ms / blocks 40–100ms. **stagger × count ≤ 400ms** |
-| Scroll-driven | Editorial **≥ 8**. Product **≤ 3**. |
+| Scroll-driven | Editorial **≥ 8**. Product **≤ 3 sections** (elements within them are not capped). |
 
 Pasteable tokens:
 
@@ -202,6 +202,8 @@ One action that belongs to this page. Not a particle field plus a cursor plus a 
 It is the content's physics. Kill it and the page goes ordinary. One per page.
 
 **Before inventing one, open [library/08-动效库](library/08-动效库/README.md).** Every entry there is an action reverse-engineered from a live site: original timing numbers, the shader or tween verbatim, a single-file reproduction that runs on open, and the failure conditions. Take the closest one and swap the assets — do not re-derive a wipe from first principles. If nothing in the library fits the content, then invent, and add what you built back as the next entry.
+
+**If the action is scroll-driven, read [systems/gsap-lenis.md](systems/gsap-lenis.md) first.** It carries the single-clock wiring (`lenis.on('scroll', ScrollTrigger.update)` + `gsap.ticker.add` + `lagSmoothing(0)`), the pin/scrub numbers that measured at 17ms p95, and the three wiring bugs that make a correct implementation look broken — including the one where GSAP reads a CSS `translateY(100%)` as `y: 68px` and your `yPercent: 0` tween does nothing at all.
 
 Directions that work: a material wipe tied to the job, a form that becomes the idea, type that machines itself, a scale jump of one word. Recipes: [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md).
 

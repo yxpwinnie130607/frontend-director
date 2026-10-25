@@ -338,8 +338,12 @@ const rm = await page.evaluate(() => {
 await browser.close();
 
 /* ---------------- 评分 ---------------- */
-const isEditorial = d.ratio >= 5 && d.borders > d.shadows;
-const isProduct = d.ratio >= 3.8 && d.ratio <= 5.4 && d.shadows >= d.borders;
+/* 结构判定：先看"用什么分隔内容"（线 vs 阴影），再看字号比。
+   上限放到 6.5：低密度产品页（一屏一个念头、大字、仍用卡片和柔阴影）
+   会读到 5.5–6，卡在 5.4 会把一份正常的产品页判成"自定义"。
+   判定只影响这一行的标签，不影响任何一项的通过与否。 */
+const isEditorial = d.ratio >= 5 && d.borders >= d.shadows;
+const isProduct = d.shadows > d.borders && d.ratio >= 3.8 && d.ratio <= 6.5;
 
 /* 中文 / 西文两套判据
    中文：字距 −0.02…+0.05em（可 normal）；大标题行高 1.0–1.5
