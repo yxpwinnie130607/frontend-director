@@ -1,57 +1,45 @@
 # Motion — the live engine
 
-Include this engine in every preview and every build. A page that only fades in on load has failed. A 2D card that writes text has also failed: the first viewport must be the Three.js studio in `systems/volume-object.md`.
+Include this engine in every preview and every build. A page that only fades in on load has failed. A 2D card that writes text has also failed.
 
-Copy that file's renderer (ACES, shadows, RoomEnvironment, pointer orbit) before you add 2D HUD.
+The first viewport is a Three.js studio. Copy the renderer (ACES, shadows, pointer orbit) from the 1–2 technique files you loaded. HUD is a whisper: top corners + a control **below** the object. Never put type on top of the mesh.
 
-`prefers-reduced-motion: reduce` keeps the *job* (type, generate, add, open) and drops lerp / pin / custom cursor.
+`prefers-reduced-motion: reduce` keeps the *job* (type, generate, crumple, jump) and slows the orbit.
 
-## 1. Pointer lerp (required unless kinetic-scroll is the only loop)
+## 1. Pointer orbit (required unless you are inside a room that looks)
 
 ```js
-let mx = 0.5, my = 0.5, cx = 0.5, cy = 0.5;
-window.addEventListener("pointermove", (e) => {
-  mx = e.clientX / innerWidth;
-  my = e.clientY / innerHeight;
+let mx = 0, my = 0, cx = 0, cy = 0;
+addEventListener("pointermove", (e) => {
+  mx = e.clientX / innerWidth - 0.5;
+  my = e.clientY / innerHeight - 0.5;
 });
 (function tick() {
-  cx += (mx - cx) * 0.08;
-  cy += (my - cy) * 0.08;
-  document.documentElement.style.setProperty("--px", cx.toFixed(4));
-  document.documentElement.style.setProperty("--py", cy.toFixed(4));
+  cx += (mx - cx) * 0.06;
+  cy += (my - cy) * 0.06;
+  root.rotation.y = cx * 0.7;
+  root.rotation.x = cy * 0.28;
   requestAnimationFrame(tick);
 })();
 ```
 
-```css
-.stage {
-  transform: translate3d(calc((var(--px) - 0.5) * 24px), calc((var(--py) - 0.5) * 16px), 0);
-}
-.spot {
-  background: radial-gradient(
-    420px circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
-    rgba(255,255,255,0.16),
-    transparent 55%
-  );
-}
-```
+Orbit the **volume**. Do not translate a 2D `.stage` card. Do not put a custom cursor on a still manifesto.
 
-## 2. Writer (required for generate / 文案 / write tools)
+## 2. Type feeds the mesh (required for generate / 文案 / write tools)
+
+Type reprints, stamps, or dissolves the **surface**. Never dump output into a textarea under a yellow button.
 
 ```js
-function writeOut(el, text, ms = 12) {
-  el.textContent = "";
-  let i = 0;
-  const id = setInterval(() => {
-    el.textContent = text.slice(0, ++i);
-    if (i >= text.length) clearInterval(id);
-  }, ms);
+function reprint(text) {
+  mat.map.dispose();
+  mat.map = paintSheet(text); // canvas the product wrote
+  mat.needsUpdate = true;
 }
 ```
 
-Never dump the full output in one frame. Never show gray bars instead of text.
+Never show gray bars instead of text. Never overlap the reprint field with the object.
 
-## 3. Scroll progress (required for kinetic-scroll)
+## 3. Scroll progress (only if kinetic-scroll is the loop)
 
 ```js
 const pin = document.querySelector("[data-pin]");
@@ -65,43 +53,22 @@ addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 ```
 
-Bind 3 properties to `--progress`. Example:
+Bind the progress to the **mesh** (rotate, unfold, dissolve). A 2D clip-path poster is not enough.
 
-```css
-.word {
-  transform: scale(calc(1.15 - var(--progress) * 0.35));
-  clip-path: inset(0 0 calc(var(--progress) * 40%) 0);
-}
-.panel { transform: translateY(calc((1 - var(--progress)) * 40vh)); }
-```
-
-## 4. Magnetic control
-
-```js
-const btn = document.querySelector("[data-magnet]");
-btn.addEventListener("pointermove", (e) => {
-  const r = btn.getBoundingClientRect();
-  const x = e.clientX - (r.left + r.width / 2);
-  const y = e.clientY - (r.top + r.height / 2);
-  btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-});
-btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
-```
-
-## 5. Allowed vs fail
+## 4. Allowed vs fail
 
 | Use | Fail |
 |---|---|
-| One continuous loop (pointer or scroll) plus one job (type/generate/add) | Fade-up on every block |
-| Spring on the object you just used | Infinite loops on informational cards |
-| Chapter pin that changes 3 properties | "Scroll to explore" on a still hero |
-| Writer for output | Gray bars, fake window, dead list |
+| Pointer orbits a whole object with air around it | Fade-up on every block |
+| Slider / wheel changes the volume | HUD colliding with the mesh (FOLD) |
+| Type reprints the authored surface | Textarea + yellow fill (回声瓶) |
+| Idle breath or slow spin | Infinite loops on informational cards |
+| Chapter pin that drives 3 mesh properties | "Scroll to explore" on a still hero |
 
-Animate only `transform` and `opacity` (plus `clip-path` for kinetic-scroll). Never `top`, `left`, `width`, `height`.
+Animate mesh transforms and vertex mix. Never `top`, `left`, `width`, `height` on the hero.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  .stage, .word, .panel, [data-magnet] { transform: none !important; }
-  .spot { display: none; }
+  /* keep the job; slow the orbit in JS */
 }
 ```

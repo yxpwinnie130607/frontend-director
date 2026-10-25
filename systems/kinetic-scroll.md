@@ -57,7 +57,7 @@ The first screen on load already moves if you nudge the wheel. If the user must 
 ## Required interaction
 
 1. Include scroll progress from [motion.md](../motion.md). Bind at least **three** properties to `--progress` (example: type `scale`, type `clip-path`, panel `translateY`).
-2. At progress > 0.4 the product layer is interactive: type, generate, or drag. Same law as `live-machine` once the layer is in.
+2. At progress > 0.4 the product job hits the **mesh** (type reprints, unfold, dissolve). A 2D textarea is a fail.
 3. A thin progress hairline tracks `--progress`.
 4. `prefers-reduced-motion`: keep the product layer visible and usable; skip the pin.
 

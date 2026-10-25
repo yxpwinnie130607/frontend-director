@@ -56,7 +56,7 @@ The agent should confirm the four questions, invent three usable first screens f
 | File | Role |
 |---|---|
 | `SKILL.md` | Director: phases, hard rules, look |
-| `references.md` | The Recent bar: five loops as ceiling, not a catalog |
+| `references.md` | The Recent bar: 质感 / 动效 / 炫酷, five loops as ceiling, not a catalog |
 | `archetypes.md` | Loop families. Invent, then read matching techniques |
 | `systems/` | Technique recipes for those families |
 | `motion.md` | Motion after a direction is chosen |

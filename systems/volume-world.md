@@ -2,7 +2,7 @@
 
 Recent template from the reel: **Gaussian Splat Portal Jumping** and **WebGL 作品集** (Three.js, dark space, cassette / project cards you fly through).
 
-**Use:** brand, campaign, portfolio, or a product that is a *place* (回声瓶 as a room, not a form). One of the three default previews.  
+**Use:** brand, campaign, portfolio, or a product that is a *place* (a room, not a form).  
 **Never:** a 2D card on black.
 
 The first viewport is a **space you are inside**. Camera in the room. Objects have scale. A HUD may whisper at the edge. The room is the product.

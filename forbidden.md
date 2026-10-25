@@ -2,104 +2,57 @@
 
 If a first viewport could be swapped onto another company by changing three nouns, it is slop.
 
-## Specimen D — flat live form (this skill, 回声瓶)
+These five sites were produced by this skill. They are **fail specimens**. If your page looks like any of them, rebuild. Do not "fix" them by shipping the next cousin.
 
-A "usable" product that is still a 2D card. Black page. Headline. Dark rounded panel. Textarea. Yellow fill button 「投入瓶中」. Output as body text. Pointer does not orbit a volume. No glass, no shadow, no studio. **This is live-machine without Recent.** Fail. Ship `volume-object`.
+## Specimens this skill already shipped
 
-## Specimen C — still product (this skill, 素笺)
+### 拾贝
+Centered SaaS. One headline word tinted teal (沉底). Dead product card under a rules list. Em-dash in the body. You cannot paste a clip. **The SaaS average with better copy.** Fail.
 
-A writing tool sold as a static landing. Three cousins, all fail:
+### 素箋
+A letter about the product ("你好，这是一封关于素笺的信"). Fake Mac window + gray bars. Hairline feature rows (无账号 / 行距 / 导出). Dead draft list. Yellow CTA that does not write. **A quiet letter is not the product.** Fail.
 
-- A letter ("你好，这是一封关于素笺的信") plus a fake window of gray bars and "上一张 / 下一张".
-- A beige type poster and four hairline feature rows (无账号 / 行距 / 导出 / 买断).
-- A black page, yellow "开始写一页" that does not write, and a dead draft list.
+### 回声瓶
+Dark rounded 工作台 card. Textarea. Yellow fill button 「投入瓶中」. Output as body text. Pointer does not orbit a volume. **A live 2D form is the same as no skill.** Fail.
 
-You cannot type. Nothing follows the pointer. Scroll does not change a property. **This is the same as no skill.** If the brief is a tool, ship `live-machine`, not a letter.
+### KEPT
+Dark studio. Default `CapsuleGeometry` + torus. `material.color.lerp`. A slider that only changes roughness. Type drops a fading plane. It is 3D and it orbits. **It is still a Three.js vitamin with a paint job.** No authored surface, no designed silhouette. Fail.
 
-## Specimen A — quiet slop (this skill, first version)
+### FOLD
+A sheet cropped so it fills the frame, or parked on the **right edge** because the canvas CSS was 2× the viewport (`setPixelRatio` without locking `width:100%`). HUD overlapping the mesh (FOLDO, PRINTT, words running together). A crumple that becomes a **spiky sea-urchin** (vertex noise inverted the wad) instead of a pick-up-able paper ball. Looks like a 2D poster or a burst, not Earth Timeline / Crumple. **If the object is larger than the studio air, not centered, or the crumple is not a wad, fail.**
 
-A weekly-return clip product (「拾贝」) built with judgment and no recipe. White void. Centered Newsreader-like headline. **One word tinted teal** (沉底). Pill nav + pill CTA. A dead product card under "先看看它的三条规矩." An em-dash in the body. You cannot paste a link into the tray.
+## Composition law (hard)
 
-This is worse than no skill: it is the SaaS average with better copy. **Any cousin fails.** Especially: tinted headline word, centered stack, tray you cannot use.
+For object + control and material-transform first viewports (Earth Timeline, Crumple):
 
-If the brief is a clip / Sunday / 摘录 product, preview `live-machine` and `ritual-object`. Not a still letter.
+1. The first frame shows the **whole object** with studio air around it.
+2. The object is **smaller than the viewport**. Lots of empty studio. Chrome is tiny.
+3. HUD lives in the **top corners** and a **slider below the object**. It never covers the mesh.
+4. If the mesh is cropped by the HUD, or the poster fills the frame like a 2D image, fail.
 
-## Specimen B — loud slop
+Rooms you enter, shader fields, and spatial decks have their own scale. They still do not put a 工作台 card over the volume.
 
-**https://smart-email-nexus.lovable.app** — Lovable-generated "AI email assistant." Textbook.
+## Loud slop (not this skill, still fail)
 
-## The specimen, beat by beat
-
-- Floating pill nav with a purple dash and five icon+label items.
-- Eyebrow pill: "AI-Powered Email Assistant."
-- Centered headline, one word in purple: "Transform Your Inbox with **Intelligence**."
-- Subcopy that fits any product: "Handle emails faster, smarter… Save hours every week."
-- Two CTAs: filled "Start Free Trial" + ghost "Watch Demo."
-- Soft purple cloud behind the hero.
-- Next section title: "Features that set us apart."
-- Four identical white cards, each a pastel icon circle + generic claim (inbox, replies, security, scheduling).
-- Later: "Trusted by industry leaders," "Sarah Chen, CEO, TechFlow," three-tier pricing, four-column footer.
-
-This is not "a bit generic." It is the model's average landing page. Do not ship any cousin of it.
+**https://smart-email-nexus.lovable.app** — purple pill nav, tinted "Intelligence," two CTAs, four icon cards, "Sarah Chen, CEO." Do not ship any cousin.
 
 ## Patterns that fail this skill
 
-Hit any one of these and the page is not done.
+Hit any one and the page is not done.
 
-### Hero
-
-- Centered stack: pill badge, big headline, vague subhead, two CTAs, `max-w-3xl`.
-- Purple-to-blue gradient, indigo glow, or a blurred orb behind glass.
-- Gradient text on the words "AI," "Intelligence," or "Future."
-- "Now in beta" / "V0.6" / "Invite-only" eyebrows unless the brief is actually a launch.
-- Div-built fake dashboards, fake terminals, fake task lists, fake Mac windows of gray bars.
+- Centered badge + headline + sub + two CTAs (`max-w-3xl`).
+- One headline word in a second color. Em-dash as flourish.
+- Fake Mac / browser chrome, gray placeholder bars, dead lists.
 - A letter about the product instead of the product.
-- Dark rounded "工作台" card + textarea + yellow fill button (回声瓶).
+- Dark rounded 工作台 card + textarea + yellow fill button.
 - Feature rows with a hairline under each claim.
-- "Scroll to explore" as decoration.
-
-### Sections
-
-- Three or four equal feature cards with icon-in-rounded-square.
-- "Features that set us apart" and its cousins ("Everything you need to…").
-- Zigzag image/text more than twice in a row.
-- Eyebrow over every section (`uppercase tracking-[0.2em]`).
-- Bento where every cell wants to be the hero.
-- Logo wall of companies the product has no relationship with.
-- Testimonials named Jane Doe / Sarah Chen / John D., CEO at Acme.
-- Three-tier pricing as the visual climax, middle plan "Most Popular."
-
-### Type and color
-
-- Inter / Roboto / Open Sans / system-ui as the only voice, unless the brief is a public-sector or Linear-quiet product *and* you can say why.
-- One radius on every object (`rounded-2xl` buttons, cards, images, inputs).
-- Beige paper + brass/clay/oxblood as the default "premium" palette.
-- The second slop, after someone said "don't look AI": cream + terracotta, numbered `01 / 02 / 03` sections, one acid-green word, all-caps mono labels.
-
-### Motion
-
-- A still first viewport. If pointer, scroll, and type do nothing, the page has failed.
-- Fade-up on every block, staggered 100ms, for no reason.
-- Infinite loops on informational cards.
-- Scroll hijack that does not change a chapter.
-- Custom cursors with nothing to do.
-
-### Copy
-
-- Elevate, seamless, unleash, next-gen, revolutionize, transform your, unlock the power of, game-changer.
-- Headlines that do not name the thing.
-- Em-dash as a design flourish.
-
-## Wrong-hard (the other fail)
-
-These look expensive and still fail:
-
-- Agency costume on a settings page.
-- WebGL plus marquee plus bento plus stacked cards on one marketing page.
-- A student portfolio that looks like a London studio reel.
-- Glass on every surface.
-- A theme flip mid-page that is not a chapter door (Offer Studio's burst-to-white is a door; cream-then-black-then-cream is noise).
+- Default Capsule / Sphere / Box + `color.lerp` (vitamin mesh).
+- Cropped hero mesh. HUD colliding with type on the object.
+- Inter / Roboto / system-ui as the only display voice.
+- Elevate / seamless / unleash / transform your / unlock the power of.
 
 ## Fast test
 
-Cover the logo. If you cannot tell what the company is, or whose site it is, rewrite the first viewport before you add another section.
+Cover the logo. If you cannot tell what the company is, rewrite the first viewport.
+
+Does the first screenshot look like Earth or Crumple (one complete object, air around it) or like a cropped poster / a form / a vitamin? If the latter, rebuild.
