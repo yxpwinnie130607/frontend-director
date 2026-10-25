@@ -1,13 +1,13 @@
 ---
 name: frontend-director
-description: Create beautiful websites and interfaces using a coding agent's frontend skills. Matches a brief to one executable visual system (tokens, type, first-viewport skeleton, working interaction) and builds inside it. Use when building landing pages, portfolios, brand sites, or marketing sites. Not for dashboards, settings, or tables unless the user names that surface.
+description: Create beautiful websites and interfaces using a coding agent's frontend skills. Confirms purpose, length, content, and density, then shows three interactive first-viewport directions. After the user picks one, builds that system only. Use when building landing pages, portfolios, brand sites, or marketing sites.
 ---
 
 # Frontend Director
 
 A coding-agent skill for websites. The model already knows CSS. Without a **loaded visual system**, it emits quieter slop: white page, centered headline, one tinted word, a pill CTA, a card. That is how 「拾贝」failed. This skill exists so that cannot happen again.
 
-**Zara's frontend-slides works because it ships recipes, not vibes.** Same here. Pick one system. Copy its tokens. Build its first viewport. Make the object work.
+**Zara's frontend-slides works because it asks four things, shows three directions, then builds one.** Same here. Confirm the brief. Preview three interactive first viewports. Build only the one they pick. That is how you stop wasting tokens and stop shipping the average page.
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
@@ -38,14 +38,15 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 ## Hard rules (non-negotiable)
 
-1. **Load a system before any markup.** If you have not read `systems/<id>.md`, you are not designing. You are guessing.
-2. **Copy the system's `:root` and font `<link>`s.** Do not "interpret" them into Tailwind defaults.
-3. **First viewport follows the system's skeleton.** If the skeleton is split, do not center. If the skeleton is an object, the object is on screen without scrolling.
-4. **Product / consumer / ritual tools must be interactive in the first viewport.** Paste, type, drop, toggle, or add — and the object responds. A screenshot of a product is a fail for these kinds. A muted card under a headline is a fail.
-5. **One system per page.** Do not blend night Linear with editorial serif with a teal word.
-6. **"Quiet" is not "generic SaaS."** Quiet means one material, one type, one object. It still has a room and a working thing.
-7. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
-8. **No em-dash (`—`) in visible copy.**
+1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three first-viewport previews. Phase 3 is the site.
+2. **Load a system before any markup.** If you have not read `systems/<id>.md`, you are not designing. You are guessing.
+3. **Copy the system's `:root` and font `<link>`s.** Do not "interpret" them into Tailwind defaults.
+4. **First viewport follows the system's skeleton.** If the skeleton is split, do not center. If the skeleton is an object, the object is on screen without scrolling.
+5. **Product / consumer / ritual tools must be interactive in the first viewport.** Paste, type, drop, toggle, or add — and the object responds. A screenshot of a product is a fail for these kinds. A muted card under a headline is a fail.
+6. **One system per page.** Do not blend night Linear with editorial serif with a teal word.
+7. **"Quiet" is not "generic SaaS."** Quiet means one material, one type, one object. It still has a room and a working thing.
+8. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
+9. **No em-dash (`—`) in visible copy.**
 
 ---
 
@@ -57,39 +58,87 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 ---
 
-## Phase 1 — Read, then pick
+## Phase 1 — Confirm the brief (four questions)
 
-Write one line:
+Infer from what they already said. Then **ask all four together** so they can correct you. Use a structured-question UI if the environment has one. Otherwise one compact message, numbered.
 
-> Reading this as: **\<page kind>** for **\<audience>**, energy **\<quiet|restrained|hard>**, system = **\<id>**.
+Do not skip this unless they said "直接做 / just build / no questions."
 
-Then open [archetypes.md](archetypes.md). Pick **exactly one** id. Say:
+**Question 1 — Purpose** (header: "Purpose")  
+What is this site for?
 
-> Executing **\<id>** because \<one reason>.
+- Product marketing / landing
+- Personal or applicant portfolio
+- Brand / studio / campaign
+- Commerce / object story
+- Editorial / essay
+- Community / education
 
-If the brief is a weekly/daily habit product, a clipping box, a tray, a journal, a "come back later" tool — pick `ritual-object`. Do not pick `product-stage-day`. That is how 拾贝 became a SaaS template.
+**Question 2 — Length** (header: "Length")  
+How much site?
 
-If the brief forks, ask **one** question. Otherwise proceed.
+- Single screen (one viewport)
+- Short landing (about 4–6 sections)
+- Long narrative (8+ sections or scroll chapters)
+- Multi-page (home plus 2–3 inner pages)
+
+**Question 3 — Content** (header: "Content")  
+Do they have copy and assets?
+
+- All content ready (they will paste it)
+- Rough notes
+- Topic only (you draft copy, mark it as draft)
+
+**Question 4 — Density** (header: "Density")  
+How should it feel?
+
+- Low / cinematic — one idea per viewport, air, chapter changes
+- High / reading-first — more self-contained, denser, still designed
+
+Prefill your inferred answers in the question labels so they can tap to confirm. Example: *"Purpose (reading this as: product marketing for a weekly clip tray)."*
+
+If they pick "All content ready," ask them to paste it in the same turn.  
+If they send images, scan them before Phase 2; usable images shape the outline.
+
+Remember density. It changes type scale, section count, and whether the first viewport is a room or a packed stage.
+
+Clip / Sunday / 摘录 / 稍后再看 briefs default Purpose to product marketing and should later preview `ritual-object` as one of the three directions.
 
 ---
 
-## Phase 2 — Load the recipe
+## Phase 2 — Three interactive directions (not three sites)
 
-Read `systems/<id>.md` in full. Do not skim.
+Show, don't tell. Most people cannot name a vibe. They can pick a room they can click.
 
-From that file, take:
+1. Open [archetypes.md](archetypes.md) only. From Purpose + Density, shortlist **three different** system ids. Typical mix: one safe, one bold, one wildcard that fits this brief. Clip/journal briefs must include `ritual-object`.
+2. Read **only those three** `systems/<id>.md` files. Do not read the others. Do not read [ceiling.md](ceiling.md) yet.
+3. Build **three first-viewport previews** — self-contained HTML (or three tiny routes). Each preview:
+   - Uses that system's fonts, `:root`, and skeleton
+   - Is interactive (the required interaction works)
+   - Uses the user's real product name and copy, not "Style A"
+   - Is one viewport tall. No full landing, no extra sections
+4. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three.
+5. In the chat, name them for the user only (not on the page): Direction A: `ritual-object` / B: … / C: …
 
-1. Font links
-2. `:root` tokens
-3. First-viewport skeleton
-4. Required interaction (implement it, do not fake it)
-5. What the rest of the page is allowed to do
+**Preview authenticity (non-negotiable):**
 
-If the system says to read [motion.md](motion.md), do it now. Otherwise skip.
+- Looks like the real first screen of their site
+- No "preview", "option A", "safe", "bold", file names, or system ids on the page
+- No tinted headline word, no em-dash
+
+Ask (header: "Direction"): which one? A / B / C / mix (then ask what to mix).
+
+**Stop.** Do not generate the rest of the site. This is the token save.
 
 ---
 
-## Phase 3 — Build
+## Phase 3 — Build only the one they picked
+
+Read `systems/<id>.md` again if you need the "rest of page" rules. Read [motion.md](motion.md) if that system calls for motion. Read [forbidden.md](forbidden.md) before you call it done.
+
+From the chosen file, take fonts, `:root`, first-viewport skeleton (you already have it), required interaction, and what the rest of the page may do.
+
+Length from Phase 1 sets section count. Density sets type scale and air. Content from Phase 1 is the copy. Do not invent a second system.
 
 Default stack: one HTML file, or a single Next/React page, with CSS variables from the system. Interaction in a small client island.
 
@@ -120,6 +169,7 @@ Then read [forbidden.md](forbidden.md). One hit is a fail.
 
 **Ship bar:**
 
+- [ ] Four questions confirmed; one of three directions picked
 - [ ] System id named; `systems/<id>.md` was read
 - [ ] Tokens and fonts are the system's, not defaults
 - [ ] First viewport matches the skeleton

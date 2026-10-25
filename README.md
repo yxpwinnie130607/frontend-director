@@ -8,13 +8,12 @@ Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
-1. Reads the brief.
-2. Picks **exactly one** id from `archetypes.md`.
-3. Loads `systems/<id>.md` in full (tokens, type, skeleton, required JS).
-4. Builds that room. The primary object works (paste, add, toggle, open).
-5. Opens the page. Fails on a forbidden pattern.
+1. Infers the brief, then confirms four things at once: **Purpose, Length, Content, Density**.
+2. Builds **three interactive first-viewport directions** (not three full sites).
+3. You pick one. Only then does it load that system's full recipe and build the site.
+4. The primary object works (paste, add, toggle, open). It opens the page and fails on a forbidden pattern.
 
-A clip / Sunday / 摘录 product uses `ritual-object`, not a centered SaaS hero.
+A clip / Sunday / 摘录 product always includes `ritual-object` as one of the three directions.
 
 ## Install
 
@@ -52,7 +51,7 @@ A personal portfolio for a designer who writes. Quiet.
 A studio site. One idea, taken all the way.
 ```
 
-The agent should answer with a one-line design read and `Executing <id> because …` before it writes code.
+The agent should confirm the four questions, then open three clickable first screens, then build only the one you pick.
 
 ## Files
 
