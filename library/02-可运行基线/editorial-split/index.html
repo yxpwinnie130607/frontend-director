@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editorial / Split — 非对称分栏基线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BASELINE · Editorial / Family 3 「Asymmetric split」为主体
+   ------------------------------------------------------------
+   一个「分栏」家族其实有四种不同骨架，全在这页里：
+     A 左图咬左边界  + 右窄栏文字      1.45 : .8
+     B 右图咬右边界  + 左窄栏文字      .8 : 1.45
+     C 图全出血      + 图上角标
+     D 两个窄栏 + 中间留空（12 栏的 2–5 / 8–11）
+   只用一种 = 页面变成同一段复制三遍。交替才是这个家族。
+   移植：每个 <section class="sp-*"> 自包含。
+   ============================================================ */
+:root{
+  --paper:#f3efe6;
+  --ink:#191712;
+  --ink-70:rgba(25,23,18,.66);
+  --ink-42:rgba(25,23,18,.42);
+  --line:rgba(25,23,18,.14);
+  --line-2:rgba(25,23,18,.36);
+  --clay:#9c4a24;
+
+  --sans:"Helvetica Neue","Inter",-apple-system,"PingFang SC","Segoe UI",Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style","Songti SC",Georgia,serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-h1:clamp(44px,5.4vw,78px);
+  --t-h2:clamp(38px,4.8vw,76px);
+  --t-lead:clamp(17px,1.5vw,22px);
+  --t-body:16px;
+  --t-small:13.5px;
+  --t-label:10.5px;
+
+  --edge:clamp(20px,4.4vw,76px);
+  --sp-1:clamp(24px,3.2vh,40px);
+  --sp-2:clamp(60px,8.5vh,116px);
+  --sp-3:clamp(104px,15vh,196px);
+
+  --dur-fast:180ms;
+  --dur-mid:480ms;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--clay);color:#fff}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+
+/* ---------- 顶栏 ---------- */
+.bar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:20px var(--edge);mix-blend-mode:multiply;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-70);
+}
+.bar b{font-family:var(--serif);font-size:17px;font-weight:400;letter-spacing:.02em;
+  text-transform:none}
+
+/* ============================================================
+   S1 开场：不是海报，是一句交代 + 一条线
+   ============================================================ */
+.open{
+  min-height:58svh;padding:calc(var(--edge) + 72px) var(--edge) var(--sp-1);
+  display:grid;grid-template-columns:1fr minmax(0,34ch);
+  gap:clamp(24px,6vw,90px);align-items:end;
+}
+.open h1{
+  margin:0;font-family:var(--serif);font-weight:400;
+  font-size:var(--t-h1);line-height:1.12;letter-spacing:-.005em;
+  max-width:13em;text-wrap:balance;
+}
+.open h1 em{font-style:italic;color:var(--clay)}
+.open .note{
+  margin:0;color:var(--ink-70);font-size:var(--t-lead);line-height:1.5;
+  padding-bottom:6px;
+}
+.open .note b{color:var(--ink);font-weight:500}
+.open-foot{
+  grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;
+  margin-top:var(--sp-2);padding-top:12px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-42);
+}
+
+/* ============================================================
+   图：SVG 生成，veil 从上盖下来（签名动作 Image wipe）
+   ============================================================ */
+.fig{position:relative;overflow:hidden;background:#ded6c6;isolation:isolate}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.fig .veil{position:absolute;inset:0;z-index:3;background:var(--clay);
+  transform-origin:top;will-change:transform}
+.fig .tag{
+  position:absolute;left:14px;bottom:12px;z-index:4;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.92);mix-blend-mode:difference;
+}
+
+/* ============================================================
+   A 左图咬边 + 右窄栏   1.45 : .8
+   ============================================================ */
+.sp-a{
+  padding:var(--sp-3) var(--edge);
+  display:grid;grid-template-columns:1.45fr .8fr;
+  gap:clamp(24px,4.5vw,72px);align-items:start;
+}
+.sp-a .fig{aspect-ratio:4/3;margin-left:calc(var(--edge) * -1)}
+.sp-a .copy{padding-top:clamp(0px,3.4vh,40px)}
+
+/* ============================================================
+   B 右图咬边 + 左窄栏   .8 : 1.45   （镜像，不是同一段的 justify）
+   ============================================================ */
+.sp-b{
+  padding:var(--sp-3) var(--edge);
+  display:grid;grid-template-columns:.8fr 1.45fr;
+  gap:clamp(24px,4.5vw,72px);align-items:start;
+  border-top:1px solid var(--line);
+}
+.sp-b .fig{aspect-ratio:5/4;margin-right:calc(var(--edge) * -1);order:2}
+.sp-b .copy{order:1;padding-top:clamp(0px,6vh,72px)}
+
+/* ---------- 共用的窄栏文字 ---------- */
+.copy h2{
+  margin:0 0 var(--sp-1);font-family:var(--serif);font-weight:400;
+  font-size:var(--t-h2);line-height:1.14;letter-spacing:-.005em;
+}
+.copy h2 em{font-style:italic;color:var(--clay)}
+.copy p{margin:0 0 16px;color:var(--ink-70);max-width:36ch;text-wrap:pretty}
+.copy p strong{color:var(--ink);font-weight:500}
+.kv{list-style:none;margin:var(--sp-2) 0 0;padding:0;
+  display:grid;grid-template-columns:auto 1fr;gap:9px 22px;font-size:var(--t-small)}
+.kv dt{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-42);padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+
+/* ============================================================
+   C 图全出血 + 图上角标
+   ============================================================ */
+.sp-c{padding:0 var(--edge)}
+.sp-c .fig{
+  aspect-ratio:21/9;
+  margin-inline:calc(var(--edge) * -1);
+}
+.sp-c .meta{
+  display:flex;justify-content:space-between;gap:20px;
+  padding:12px 0 var(--sp-2);
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-42);
+}
+
+/* ============================================================
+   D 双窄栏 + 中间留空（12 栏里的 2–5 / 8–11）
+   ============================================================ */
+.sp-d{
+  padding:var(--sp-3) var(--edge);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  column-gap:clamp(0px,1vw,16px);align-items:start;
+  border-top:1px solid var(--line);
+}
+.sp-d .col-l{grid-column:2 / span 4}
+.sp-d .col-r{grid-column:8 / span 4}
+.sp-d .col-l h3,.sp-d .col-r h3{
+  margin:0 0 14px;font-family:var(--mono);font-weight:400;
+  font-size:var(--t-label);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-42);
+}
+.sp-d .col-l p{margin:0 0 14px;font-size:var(--t-body);line-height:1.68;color:var(--ink-70)}
+.sp-d .col-l p:first-of-type{
+  font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);
+  line-height:1.3;color:var(--ink);letter-spacing:-.004em;margin-bottom:22px;
+}
+.sp-d .col-r ol{list-style:none;margin:0;padding:0}
+.sp-d .col-r li{border-top:1px solid var(--line);padding:13px 0;
+  display:flex;justify-content:space-between;gap:14px;font-size:var(--t-small)}
+.sp-d .col-r li span:first-child{color:var(--ink-70)}
+.sp-d .col-r li b{font-family:var(--mono);font-weight:400;
+  font-size:var(--t-label);letter-spacing:.12em;color:var(--ink-42);
+  font-variant-numeric:tabular-nums;padding-top:2px}
+
+/* ---------- foot ---------- */
+.foot{padding:var(--sp-1) var(--edge) 26px;border-top:1px solid var(--line-2);
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-42)}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:900px){
+  .open{grid-template-columns:1fr;gap:var(--sp-1);min-height:auto;
+    padding-top:calc(var(--edge) + 84px)}
+  .sp-a,.sp-b{grid-template-columns:1fr;gap:var(--sp-1)}
+  .sp-a .fig{margin-left:calc(var(--edge) * -1);margin-right:calc(var(--edge) * -1);
+    aspect-ratio:4/3;order:-1}
+  .sp-b .fig{margin-right:calc(var(--edge) * -1);margin-left:calc(var(--edge) * -1);
+    aspect-ratio:5/4;order:-1}
+  .sp-c .fig{aspect-ratio:4/3}
+  .sp-d{grid-template-columns:1fr;row-gap:var(--sp-2)}
+  .sp-d .col-l,.sp-d .col-r{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .fig .veil{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <b>埴 HANI</b>
+  <span>Ceramics / 器物</span>
+</header>
+
+<main>
+
+  <!-- ==================== S1 开场 ==================== -->
+  <section class="open">
+    <h1>泥在手里<br>转<b>三百圈</b>，<br><em>才有一个圆</em>。</h1>
+    <p class="note">我们做日常用的器物。<b>不上釉的地方留着指纹</b>，
+       该厚的地方厚一点，该歪的地方歪一点。</p>
+    <div class="open-foot">
+      <span>Est. 2014 — 景德镇</span>
+      <span>Six firings a year</span>
+    </div>
+  </section>
+
+  <!-- ==================== A 左图咬边 ==================== -->
+  <section class="sp-a">
+    <figure class="fig" data-fig="1">
+      <div class="veil"></div>
+      <span class="tag">Fig. 01 — 拉坯</span>
+    </figure>
+    <div class="copy">
+      <h2>先让土<br>自己<em>站住</em>。</h2>
+      <p>拉坯不是把泥捏成形状，是把多余的泥去掉。
+         <strong>手只负责停</strong>，圆是转盘给的。</p>
+      <p>一个碗的壁厚差 1.5mm 就会在窑里裂开。所以我们慢，
+         一天只做十二个。</p>
+      <dl class="kv">
+        <dt>Clay</dt><dd>本地高岭 + 15% 熟料</dd>
+        <dt>Wall</dt><dd>3.2mm ± 0.4</dd>
+        <dt>Rate</dt><dd>12 件 / 日</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==================== B 右图咬边（镜像） ==================== -->
+  <section class="sp-b">
+    <figure class="fig" data-fig="2">
+      <div class="veil"></div>
+      <span class="tag">Fig. 02 — 施釉</span>
+    </figure>
+    <div class="copy">
+      <h2>釉是<em>慢的</em>，<br>它自己会走。</h2>
+      <p>浸三秒，提起来，等它流。流到哪儿不由你定，
+         由重力、由坯体的吸水率、由那天屋子里的湿度定。</p>
+      <p><strong>我们能控制的只有三样</strong>：釉的浓度、浸的时间、和放它的角度。</p>
+      <dl class="kv">
+        <dt>Dip</dt><dd>3.0s / 单次</dd>
+        <dt>Glaze</dt><dd>灰釉 · 1280℃</dd>
+        <dt>Variance</dt><dd>± 4% 流挂</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==================== C 全出血 ==================== -->
+  <section class="sp-c">
+    <figure class="fig" data-fig="3">
+      <div class="veil"></div>
+      <span class="tag">Fig. 03 — 窑位 · 第 4 排</span>
+    </figure>
+    <div class="meta">
+      <span>1280℃ · 还原焰 · 14h 升温 / 9h 降温</span>
+      <span>Six firings a year →</span>
+    </div>
+  </section>
+
+  <!-- ==================== D 双窄栏夹空 ==================== -->
+  <section class="sp-d">
+    <div class="col-l">
+      <h3>关于这批</h3>
+      <p>一批八十件，能留下的是五十上下。</p>
+      <p>剩下的不是废品，是<strong>记录</strong>——哪一层窑位、哪一个角度、
+         哪一次釉厚了。我们把它们编号留着，下次不再犯。</p>
+      <p>所以你买到的那只碗，背后有三十只没出来的。</p>
+    </div>
+    <div class="col-r">
+      <h3>规格</h3>
+      <ol>
+        <li><span>口径</span><b>142 mm</b></li>
+        <li><span>高</span><b>58 mm</b></li>
+        <li><span>容量</span><b>320 ml</b></li>
+        <li><span>重量</span><b>268 g</b></li>
+        <li><span>烧成</span><b>1280 ℃</b></li>
+        <li><span>批次</span><b>2026-A</b></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>© 2026 埴 HANI — 景德镇</span>
+  <a href="mailto:studio@hani.clay">studio@hani.clay</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ============================================================
+   0. 图：三种构成，零外链
+   ============================================================ */
+(function paint(){
+  const art = {
+    /* 1 器形剖面：堆叠椭圆 */
+    1:`<svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <rect width="800" height="600" fill="#ded6c6"/>
+        <g fill="none" stroke="#8c8574" stroke-opacity=".55">
+          ${Array.from({length:22},(_,k)=>{
+            const t=k/21, w=120+330*Math.sin(t*Math.PI*.92), y=80+t*440;
+            return `<ellipse cx="${300+w*.06}" cy="${y.toFixed(0)}" rx="${(w/2).toFixed(0)}" ry="${(14+26*Math.sin(t*Math.PI)).toFixed(1)}"/>`;
+          }).join('')}
+        </g>
+        <path d="M170 96 Q300 40 430 96 L430 96 Q300 128 170 96 Z" fill="#9c4a24" opacity=".9"/>
+        <rect x="640" y="0" width="160" height="600" fill="#191712" opacity=".07"/>
+        <path d="M0 520 H800" stroke="#191712" stroke-opacity=".3"/>
+      </svg>`,
+    /* 2 釉面：流挂的竖条 */
+    2:`<svg viewBox="0 0 800 640" preserveAspectRatio="xMidYMid slice">
+        <rect width="800" height="640" fill="#e7dfd0"/>
+        <defs>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9c4a24" stop-opacity=".92"/>
+            <stop offset="1" stop-color="#9c4a24" stop-opacity=".06"/>
+          </linearGradient>
+        </defs>
+        ${Array.from({length:34},(_,k)=>{
+          const w=6+Math.abs(Math.sin(k*1.7))*26;
+          const h=260+Math.abs(Math.cos(k*.8))*340;
+          return `<rect x="${k*24-8}" y="0" width="${w.toFixed(1)}" height="${h.toFixed(0)}" fill="url(#g2)"/>`;
+        }).join('')}
+        <path d="M0 470 Q400 430 800 490 L800 640 L0 640 Z" fill="#191712" opacity=".82"/>
+        <circle cx="560" cy="150" r="96" fill="none" stroke="#f3efe6" stroke-opacity=".3"/>
+      </svg>`,
+    /* 3 窑：斜线 + 炉口光 */
+    3:`<svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+        <rect width="1600" height="700" fill="#17140f"/>
+        ${Array.from({length:64},(_,k)=>`<line x1="${-400+k*38}" y1="700" x2="${100+k*38}" y2="0"
+          stroke="#c98a4e" stroke-opacity="${(0.04+0.34*Math.abs(Math.sin(k*.24))).toFixed(2)}" stroke-width="2"/>`).join('')}
+        <ellipse cx="1180" cy="330" rx="150" ry="150" fill="#e0742c" opacity=".22"/>
+        <ellipse cx="1180" cy="330" rx="76" ry="76" fill="#f0c08a" opacity=".5"/>
+        <rect x="0" y="330" width="1600" height="2" fill="#f3efe6" opacity=".18"/>
+        <rect x="232" y="120" width="2" height="460" fill="#f3efe6" opacity=".12"/>
+        <rect x="664" y="120" width="2" height="460" fill="#f3efe6" opacity=".12"/>
+      </svg>`,
+  };
+
+  document.querySelectorAll('[data-fig]').forEach((fig)=>{
+    const key = fig.dataset.fig;
+    const svg = art[key];
+    if (!svg) return;
+    fig.insertAdjacentHTML('afterbegin', svg);
+  });
+})();
+
+/* ============================================================
+   1. 单时钟
+   ============================================================ */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+gsap.registerPlugin(ScrollTrigger);
+
+if (window.Lenis && !reduced){
+  const lenis = new Lenis({
+    lerp: 0.1, smoothWheel: true, touchMultiplier: 1.25,
+    wrapper: document.documentElement, content: document.body,
+  });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t)=> lenis.raf(t * 1000), false, true);
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* ============================================================
+   2. 进场：标题按行落下，交代句晚 0.2
+   ============================================================ */
+if (!reduced){
+  gsap.fromTo('.open h1', { y: 18, opacity: 0 },
+    { y: 0, opacity: 1, duration: .8, ease: 'expo.out' });
+  gsap.fromTo('.open .note, .open-foot', { y: 12, opacity: 0 },
+    { y: 0, opacity: 1, duration: .6, ease: 'power2.out', stagger: .12, delay: .2 });
+}
+
+/* ============================================================
+   3. 签名动作：图上那层陶土色从上方抹掉（scrub，跟手）
+      全页只有这一个动作 —— 不要在每段加不同的特效
+   ============================================================ */
+if (!reduced){
+  gsap.utils.toArray('.fig .veil').forEach((veil)=>{
+    const fig = veil.parentElement;
+    gsap.fromTo(veil, { scaleY: 1 }, {
+      scaleY: 0, ease: 'none',
+      scrollTrigger: { trigger: fig, start: 'top 92%', end: 'bottom 58%', scrub: 0.7 },
+    });
+  });
+}
+
+/* ============================================================
+   4. 文字：只在两处做位移 —— 窄栏段落与规格表
+   ============================================================ */
+if (!reduced){
+  gsap.utils.toArray('.copy p, .copy .kv, .sp-d .col-l p, .sp-d .col-r li')
+    .forEach((el)=>{
+      gsap.fromTo(el, { y: 16, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .55, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 93%', once: true },
+      });
+    });
+}
+
+/* ============================================================
+   5. 全出血图：微微放大（1.06 → 1），让 bleed 有理由
+   ============================================================ */
+if (!reduced){
+  gsap.fromTo('.sp-c .fig svg', { scale: 1.06 }, {
+    scale: 1, ease: 'none',
+    scrollTrigger: { trigger: '.sp-c', start: 'top bottom', end: 'bottom top', scrub: true },
+  });
+}
+
+/* ============================================================
+   6. 刷新
+   ============================================================ */
+if (document.fonts) document.fonts.ready.then(()=> setTimeout(()=> ScrollTrigger.refresh(), 180));
+let rt;
+addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=> ScrollTrigger.refresh(), 220); }, { passive:true });
+</script>
+</body>
+</html>

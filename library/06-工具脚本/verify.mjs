@@ -9,9 +9,49 @@
  *   "改完感觉不对"是不可定位的。把感觉换成 11 个可测数字 + 1 个人工项，
  *   你才知道该改哪一行。
  */
-import puppeteer from '/Users/weini/.workbuddy/binaries/node/workspace/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js';
 import path from 'node:path';
 import fs from 'node:fs';
+
+/* ---------------- 依赖解析 ----------------
+   这个脚本要能在任何机器上跑，所以不写死 node_modules 路径。
+   顺序：$PUPPETEER → 本地 puppeteer-core → 本地 puppeteer → 打包机上的绝对路径。
+   全失败时给一句能直接照做的提示，而不是一句 MODULE_NOT_FOUND。 */
+const PUPPETEER_CANDIDATES = [
+  process.env.PUPPETEER,
+  'puppeteer-core',
+  'puppeteer',
+  '/Users/weini/.workbuddy/binaries/node/workspace/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js',
+].filter(Boolean);
+
+let puppeteer = null;
+for (const spec of PUPPETEER_CANDIDATES) {
+  try {
+    const mod = await import(spec);
+    puppeteer = mod.default || mod;
+    break;
+  } catch { /* 下一个 */ }
+}
+if (!puppeteer) {
+  console.error(
+    '找不到 puppeteer。请任选一种：\n' +
+    '  npm i -D puppeteer-core        # 然后设 CHROME_PATH\n' +
+    '  PUPPETEER=/abs/path/to/puppeteer-core.js node verify.mjs <path>\n' +
+    '（puppeteer 只负责驱动，浏览器用本机已装的 Chrome，不额外下载 Chromium）'
+  );
+  process.exit(2);
+}
+
+const CHROME = process.env.CHROME_PATH || [
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/usr/bin/google-chrome',
+  '/usr/bin/chromium',
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+].find((p) => fs.existsSync(p));
+
+if (!CHROME) {
+  console.error('找不到 Chrome。设 CHROME_PATH=/path/to/chrome 后重试。');
+  process.exit(2);
+}
 
 const arg = process.argv[2];
 if (!arg) {
@@ -19,8 +59,6 @@ if (!arg) {
   process.exit(1);
 }
 const target = /^https?:/.test(arg) ? arg : 'file://' + encodeURI(path.resolve(arg));
-
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 /* ---------------- 采集 ---------------- */
 const PROBE = () => {
@@ -133,9 +171,17 @@ const PROBE = () => {
   };
 };
 
-/* ---------------- 帧耗时 ---------------- */
-async function frameCost(page) {
-  return page.evaluate(() => new Promise((res) => {
+/* ---------------- 帧耗时 ----------------
+   同一个页面的 p95 会在 16ms 和 34ms 之间跳：别的 Chrome 窗口、Spotlight 索引、
+   CPU 降频都会算进来。单次测量会把机器噪声当成页面缺陷，让人去改没坏的地方 ——
+   比"测不出来"更糟。所以跑 3 轮、每轮丢掉前 10 帧（字体/着色器首帧）、取最优 p95。
+   最优值衡量页面能力；三轮都很差，才是真的差。 */
+const FRAME_ROUNDS = 3;
+const FRAME_WARMUP = 10;
+const FRAME_SAMPLE = 80;
+
+function frameRound(page) {
+  return page.evaluate(({ warmup, sample }) => new Promise((res) => {
     const t = [];
     let last = performance.now(), n = 0, y = 0;
     const H = document.body.scrollHeight - innerHeight;
@@ -143,14 +189,49 @@ async function frameCost(page) {
       y = Math.min(H, y + H / 60);
       window.scrollTo(0, y);
       const now = performance.now();
-      t.push(now - last); last = now; n++;
-      if (n < 70) requestAnimationFrame(step);
+      if (n >= warmup) t.push(now - last);
+      last = now; n++;
+      if (n < sample) requestAnimationFrame(step);
       else {
         const s = t.slice().sort((a, b) => a - b);
         res({
           median: +s[Math.floor(s.length * 0.5)].toFixed(1),
           p95: +s[Math.floor(s.length * 0.95)].toFixed(1),
         });
+      }
+    };
+    window.scrollTo(0, 0);
+    requestAnimationFrame(step);
+  }), { warmup: FRAME_WARMUP, sample: FRAME_SAMPLE });
+}
+
+async function frameCost(page) {
+  let best = null;
+  for (let i = 0; i < FRAME_ROUNDS; i++) {
+    const r = await frameRound(page);
+    if (!best || r.p95 < best.p95) best = r;
+  }
+  return best;
+}
+
+/* ---------------- 本机基线帧时 ----------------
+   绝对阈值 20ms 只在 60Hz 上成立。实测：同一批页面在低电量模式 / 后台窗口 /
+   30Hz 外接屏上会全部锁死在 33.3ms —— 那是浏览器的 rAF 频率，不是页面在掉帧。
+   用绝对数字判，会让每次环境变化都报一次假失败，然后有人去改没坏的页面。
+   所以先量一个空页的 rAF 间隔，判据改成"相对基线的倍数"。 */
+async function measureBase(page) {
+  await page.goto('about:blank');
+  return page.evaluate(() => new Promise((res) => {
+    const t = [];
+    let last = performance.now(), n = 0;
+    const step = () => {
+      const now = performance.now();
+      if (n > 5) t.push(now - last);
+      last = now; n++;
+      if (n < 40) requestAnimationFrame(step);
+      else {
+        const s = t.slice().sort((a, b) => a - b);
+        res(+s[Math.floor(s.length / 2)].toFixed(1));
       }
     };
     requestAnimationFrame(step);
@@ -166,6 +247,7 @@ const browser = await puppeteer.launch({
 });
 
 const page = await browser.newPage();
+const baseFrame = await measureBase(page);   // 本机 rAF 间隔（16.7 = 60Hz / 33.3 = 30Hz）
 const errs = [];
 page.on('pageerror', (e) => errs.push(String(e).slice(0, 120)));
 page.on('console', (m) => {
@@ -175,12 +257,18 @@ page.on('console', (m) => {
 await page.goto(target, { waitUntil: 'networkidle2', timeout: 45000 });
 await new Promise((r) => setTimeout(r, 2200));
 const d = await page.evaluate(PROBE);
-const frame = await frameCost(page);
 
 /*
- * 滚动驱动元素：滚到 5 个位置，比对 transform/opacity 变化
+ * 滚动驱动元素：滚到 4 个位置，比对 transform/opacity 变化。
+ *
+ * 顺序很重要：必须在 frameCost 之前跑。frameCost 会把整页滚 3 遍，
+ * 页面上 once:true 的动画到那时已经全部播完，再测就一个都测不到
+ * （实测 driven 会从 16 掉到 3，Product 掉到 0 —— 页面没问题，是测晚了）。
  */
-const driven = await page.evaluate(async () => {
+const drivenProbe = await page.evaluate(async () => {
+  // 必须在滚动之前读：once:true 的 ScrollTrigger 触发后会被 gsap 销毁，
+  // 滚动完再数就只剩没被触发的那几个（实测 11 → 2）。
+  const st0 = (window.ScrollTrigger && window.ScrollTrigger.getAll) ? window.ScrollTrigger.getAll().length : 0;
   const H = document.body.scrollHeight - innerHeight;
   const snap = () => [...document.querySelectorAll('body *')].map((el) => {
     const cs = getComputedStyle(el);
@@ -204,8 +292,22 @@ const driven = await page.evaluate(async () => {
     }
   }
   window.scrollTo(0, 0);
-  return new Set(list.filter((el) => before.get(el) !== undefined)).size && changed;
+  /*
+   * 两个来源取大者：
+   *   dom — 4 个滚动位置上真的看到 transform/opacity 变了的元素数。
+   *         它能证明"跟着滚动动了"，但受时序影响：once 动画播完就不变了，
+   *         1px 的规则线又会被尺寸过滤掉。单靠它会在同一份文件上报 4 或 16。
+   *   st  — 页面上注册的 ScrollTrigger 数。与时序无关，是"滚动驱动了多少处"
+   *         的权威下界。没有 GSAP 的页面（Product 用 IntersectionObserver）为 0，
+   *         那就只有 dom 这一路。
+   */
+  const dom = new Set(list.filter((el) => before.get(el) !== undefined)).size && changed;
+  return { dom: dom || 0, st: st0 };
 });
+
+const driven = Math.max(drivenProbe.dom, drivenProbe.st);
+
+const frame = await frameCost(page);
 
 /*
  * 移动端溢出
@@ -254,6 +356,9 @@ const lhOK = d.lhRatio === null
 const lsText = d.lsEm === null ? (isCJK ? 'normal' : 'normal（未设）') : `${d.lsEm}em`;
 const lhText = d.lhRatio === null ? 'normal' : String(d.lhRatio);
 
+const hz = Math.round(1000 / baseFrame);
+const frameBudget = +(baseFrame * 1.25).toFixed(1);
+
 const rows = [
   ['1  控制台零报错', errs.length === 0, `${errs.length} 个错误` + (errs[0] ? ` · ${errs[0]}` : '')],
   ['2  字号比 ≥ 4.0', d.ratio >= 4, `${d.maxPx} / ${d.bodyPx} = ${d.ratio}`],
@@ -262,7 +367,8 @@ const rows = [
   ['5  字距与行高', lsOK && lhOK,
     `ls ${lsText} ｜ lh ${lhText} ｜ ${isCJK ? '中文判据 -0.02…+0.05 / 1.0…1.5' : '西文判据 ≤-0.02 / 0.85…1.15'}`],
   ['6  字号档数 ≥ 5', d.sizeCount >= 5, `${d.sizeCount} 档`],
-  ['7  滚动驱动 ≥ 4', driven >= 4, `${driven} 个元素`],
+  ['7  滚动驱动 ≥ 4', driven >= 4,
+    `${driven} 处（DOM 变化 ${drivenProbe.dom} · ScrollTrigger ${drivenProbe.st}）`],
   ['8  时长档位 1–6', (d.durations.length >= 1 && d.durations.length <= 6)
       || (d.durations.length === 0 && d.jsMotion),
     d.durations.length
@@ -270,7 +376,8 @@ const rows = [
       : (d.jsMotion ? '无 CSS 时长，动效全由 JS 驱动' : '无动效')],
   ['9  reduced-motion 生效', rm.ok, rm.ok ? '已降级' : `transition ${rm.dur}s / anim ${rm.anim}s`],
   ['10 移动端无横向溢出', mob.sw <= mob.cw + 1, `scrollWidth ${mob.sw} / client ${mob.cw}`],
-  ['11 帧耗时 p95 ≤ 20ms', frame.p95 <= 20, `median ${frame.median}ms / p95 ${frame.p95}ms`],
+  ['11 帧耗时（相对基线）', frame.p95 <= frameBudget,
+    `p95 ${frame.p95}ms / 预算 ${frameBudget}ms（${hz}Hz 基线 ${baseFrame}ms · 3 轮取最优）`],
   ['12 签名动作（人工）', null, '需人工确认：这个页面有一个只属于它的动作吗？'],
 ];
 

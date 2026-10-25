@@ -117,15 +117,29 @@ A Product first viewport that is CSS + IntersectionObserver is legal. An Editori
 
 **If the regime is Editorial, read [systems/editorial.md](systems/editorial.md) before Step 2.** The baseline is one composition; a site is three to five compositions alternated. `systems/` had eleven files for 3D loops and none for type, which is why Editorial pages made with this skill read as "the baseline with new nouns".
 
+**Editorial ships four runnable baselines, one per layout family.** Pick by the shape of the content, not by habit — `editorial/` is the *default*, and defaulting to it is exactly how the "poster with new nouns" failure is produced. All four pass 12/12.
+
+| Baseline | Skeleton it proves | Copy it when |
+|---|---|---|
+| `editorial/` | poster flush → split → index → dark horizontal → quote | the site opens on one sentence and has a work list |
+| `editorial-index/` | head strip → single-column index → hover preview → kinetic → two-column appendix | there are ≥ 6 discrete items and **no** hero statement |
+| `editorial-split/` | split-left → split-right (mirrored) → full bleed → two narrow columns | one object/process is argued at a time, image-led |
+| `editorial-band/` | dark band with 4 integers → three-column explainer → parameter table → kinetic → tail | you have real numbers and they are the argument |
+
+**Do not copy one of these and change the nouns.** Copy two, and take a *different family* from each. The archive of compositions is the point: a page is 3–5 different skeletons in sequence, and `systems/editorial.md` lists the fail condition if two adjacent sections share one.
+
 ---
 
 ## Step 2 — Copy the baseline
 
 ```bash
 cp "library/02-可运行基线/<regime>/index.html" ./index.html
+# Editorial: <regime> may be editorial | editorial-index | editorial-split | editorial-band
 ```
 
 Then only: drop unused sections, swap in real copy, retoken color. **Do not rewrite the structure.** The baseline *is* the grid (flush type, 1px rules, sticky track / lightbox / product stack). Re-organizing it returns the three-card template.
+
+**Editorial exception — the one place you do extend the skeleton.** The regime is defined by *alternating* families, so after copying you may lift a section out of a second baseline (`editorial-split`, `editorial-band`, `editorial-index`) and splice it in, keeping its own classes. That is not re-organising; it is the composition the regime requires. Splice whole `<section>` blocks, never re-inline the CSS — each baseline's block is self-contained against `:root` and does not depend on its neighbours. Two adjacent sections must never share a family.
 
 React / Next: take components from [library/03-React组件库](library/03-React组件库) (`SmoothScroll`, `MaskReveal`, `HorizontalTrack`, `Parallax`, `Magnetic`, `Marquee`, `StaggerGrid`, `PinScene`, `VelocitySkew`). Do not restage those effects from scratch.
 
@@ -283,6 +297,7 @@ SKILL.md runs the five steps. Do not load the rest of the tree on every job.
 | First time / why baselines exist | [library/01-规范/docs/00-diagnosis.md](library/01-规范/docs/00-diagnosis.md) |
 | Step 1, regime unclear | [library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01-taxonomy.md) |
 | **Editorial: how to compose sections** | **[systems/editorial.md](systems/editorial.md)** — 5 layout families, fail conditions |
+| **Editorial: a second skeleton to splice** | `library/02-可运行基线/editorial-{index,split,band}/index.html` — one family each, self-contained sections |
 | **Chinese headline / CJK type** | **[systems/cjk-type.md](systems/cjk-type.md)** — tracking, line-height, punctuation, breaking |
 | Step 3, need the measured tables | [library/01-规范/docs/02-aesthetic-fingerprint.md](library/01-规范/docs/02-aesthetic-fingerprint.md) |
 | Step 4, need a motion recipe | [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md) |

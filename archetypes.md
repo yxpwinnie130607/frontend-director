@@ -18,6 +18,24 @@ Invent the object for this product. A writing tool might be a vessel, a sheet, a
 
 After you invent the object, name **atmosphere** (paper studio / white haze / night void / fogged room / field-as-sky) and **transition** (gate / chapter wipe / dissolve / morph / camera chapter / portal jump). Read [systems/atmosphere.md](systems/atmosphere.md) and [systems/transition.md](systems/transition.md). A cream crumple slider is not a complete direction.
 
+## When there is no mesh — Editorial composition families
+
+Editorial has no object to loop, so its archetype is not a *thing* but a **layout family**, and the
+unit of choice is the **sequence**, never the single section. Five families, with numbers and fail
+conditions in [systems/editorial.md](systems/editorial.md):
+
+| Family | The move | Runnable baseline |
+|---|---|---|
+| 1 Poster flush | one sentence owns 55–70vh; everything else is a 10.5px caption | `editorial/` `.hero` |
+| 2 Editorial index | full-bleed 1px rows, no cards, hover preview replaces thumbnails | `editorial-index/` `.idx` + `.appendix` |
+| 3 Asymmetric split | image bleeds one edge, 1.45 : 0.8, never 1:1 — left, right, full, and two-narrow variants | `editorial-split/` `.sp-a` … `.sp-d` |
+| 4 Data band | 3–4 integers, solid ink band, once per page | `editorial-band/` `.band` |
+| 5 Kinetic type | one word at 180–320px, cropped is legal, once per page | `editorial-band/` `.kinetic` |
+
+A page picks three to five of these and alternates loud with quiet. **The families are the
+archetypes.** Choosing one and repeating it with new nouns is the Editorial equivalent of previewing
+the same three 3D ids on every brief — same failure, different layer.
+
 ## Do not
 
 - Preview a dark card + yellow button (回声瓶).
@@ -30,3 +48,8 @@ After you invent the object, name **atmosphere** (paper studio / white haze / ni
 - Tell the user to pick from Earth / crumple / portal / jacket / cassette.
 - Clone Recent's jacket, sofa, cassette, or Earth map.
 - Shortlist three named template ids and copy those HTML files.
+- Treat Editorial as this table with the mesh deleted. It has its own five families.
+- Run the same Editorial family twice in a row, however different the copy.
+- Use Family 4 (band) or Family 5 (kinetic) more than once per page.
+- Copy `editorial/` for an Editorial brief without first checking whether `editorial-index` or
+  `editorial-split` fits the content better. The default is a habit, not a decision.

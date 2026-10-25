@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editorial / Band — 数据带基线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BASELINE · Editorial / Family 4 「Data band」为主体
+   ------------------------------------------------------------
+   骨架：深色 band（4 个整数）→ 三列解释 → 明细表 → kinetic 一句 → 收尾
+   纪律：
+     · band 全页只出现一次。两次就成了模板。
+     · 数字必须是整数，不能是 99.9% / 10x / 100+。
+     · band 之后必须立刻解释这些数字是谁的，否则横幅没有意义。
+   移植：<section class="band"> 自包含，只依赖 :root token。
+   ============================================================ */
+:root{
+  --paper:#efece2;
+  --paper-2:#e6e2d5;
+  --ink:#131210;
+  --ink-70:rgba(19,18,16,.66);
+  --ink-42:rgba(19,18,16,.4);
+  --line:rgba(19,18,16,.13);
+  --line-2:rgba(19,18,16,.34);
+  --dark:#101010;
+  --paper-on-dark:rgba(239,236,226,.94);
+  --paper-dim:rgba(239,236,226,.44);
+  --accent:#e0582b;
+
+  --sans:"Helvetica Neue","Inter",-apple-system,"PingFang SC","Segoe UI",Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style","Songti SC",Georgia,serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-kinetic:clamp(74px,13.2vw,204px);
+  --t-h2:clamp(30px,3.5vw,52px);
+  --t-statement:clamp(22px,2.5vw,34px);
+  --t-lead:clamp(17px,1.45vw,21px);
+  --t-body:16px;
+  --t-small:13.5px;
+  --t-label:10.5px;
+
+  --edge:clamp(20px,4.2vw,72px);
+  --sp-1:clamp(24px,3.2vh,40px);
+  --sp-2:clamp(60px,9vh,120px);
+  --sp-3:clamp(108px,16vh,210px);
+
+  --dur-fast:180ms;
+  --dur-mid:460ms;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+
+/* ---------- 顶栏：跟随深浅段落换色 ---------- */
+.bar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:20px var(--edge);
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--paper-dim);
+  transition:color var(--dur-mid) var(--ease-out);
+  mix-blend-mode:difference;
+}
+.bar b{font-family:var(--serif);font-weight:400;font-size:17px;
+  letter-spacing:.02em;text-transform:none;color:var(--paper-on-dark)}
+
+/* ============================================================
+   S1 BAND —— 全页唯一一次
+   ============================================================ */
+.band{
+  background:var(--dark);color:var(--paper-on-dark);
+  min-height:78svh;                    /* editorial.md 规定 60–80vh，不要超过 */
+  display:grid;grid-template-rows:1fr auto;
+  padding:calc(var(--edge) + 76px) var(--edge) var(--sp-1);
+}
+.band-top{display:flex;justify-content:space-between;gap:20px;align-items:baseline;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--paper-dim)}
+.band-body{
+  display:grid;grid-template-columns:1fr auto;
+  gap:clamp(32px,6vw,96px);align-items:end;
+  padding-top:var(--sp-2);
+}
+.band-quote{
+  margin:0;font-family:var(--serif);font-weight:400;
+  font-size:var(--t-statement);line-height:1.26;letter-spacing:-.004em;
+  max-width:19ch;text-wrap:balance;
+}
+.band-quote em{font-style:italic;color:var(--accent)}
+.band-quote .mask{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.band-quote .mask>span{display:block;will-change:transform}
+
+.nums{display:flex;gap:clamp(24px,4vw,64px);align-items:flex-end}
+.num{min-width:0}
+.num .v{
+  display:block;font-family:var(--mono);font-weight:400;
+  font-size:clamp(34px,4vw,56px);line-height:1;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+  color:var(--accent);
+}
+.num .v i{font-style:normal;font-size:.42em;margin-left:.14em;color:var(--paper-on-dark)}
+.num .k{
+  display:block;margin-top:12px;font-family:var(--mono);
+  font-size:var(--t-label);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper-dim);white-space:nowrap;
+}
+.band-foot{
+  display:flex;justify-content:space-between;gap:20px;
+  border-top:1px solid rgba(239,236,226,.16);padding-top:12px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--paper-dim);
+}
+
+/* ============================================================
+   S2 三列解释 —— band 之后必须先回答"这些数字是谁的"
+   ============================================================ */
+.why{
+  padding:var(--sp-3) var(--edge) var(--sp-2);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0 clamp(24px,4vw,64px);border-top:1px solid var(--line-2);
+  margin-top:0;
+}
+.why .cell{padding-top:var(--sp-1);border-top:1px solid var(--line)}
+.why .cell:first-child{border-top:none;padding-top:0}
+.why h3{
+  margin:0 0 16px;font-family:var(--mono);font-weight:400;
+  font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-42);
+}
+.why .lead{
+  margin:0 0 14px;font-family:var(--serif);font-weight:400;
+  font-size:var(--t-h2);line-height:1.2;letter-spacing:-.004em;max-width:11em;
+}
+.why p{margin:0;font-size:var(--t-small);line-height:1.68;color:var(--ink-70);max-width:34ch}
+.why p+p{margin-top:10px}
+
+/* ============================================================
+   S3 明细表 —— 横向，和 band 的数字一一对应但骨架不同
+   ============================================================ */
+.log{
+  padding:0 var(--edge) var(--sp-3);
+}
+.log h3{
+  margin:0 0 var(--sp-1);font-family:var(--mono);font-weight:400;
+  font-size:var(--t-label);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-42);
+}
+.log table{width:100%;border-collapse:collapse;table-layout:fixed}
+.log th,.log td{
+  text-align:left;padding:14px 0;border-top:1px solid var(--line);
+  font-size:var(--t-small);vertical-align:baseline;
+}
+.log thead th{
+  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-weight:400;font-size:var(--t-label);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-42);
+  padding:10px 0;
+}
+.log td:first-child{font-family:var(--mono);font-size:var(--t-label);
+  letter-spacing:.1em;color:var(--ink-42);width:76px;font-variant-numeric:tabular-nums}
+.log td.hit{color:var(--accent);font-weight:500}
+.log tr{transition:background var(--dur-fast) linear}
+.log tbody tr:hover{background:rgba(19,18,16,.035)}
+.log col.c1{width:76px}
+.log col.c2{width:34%}
+
+/* ============================================================
+   S4 KINETIC —— 全页唯一一处 200px 字号
+   ============================================================ */
+.kinetic{
+  background:var(--paper-2);
+  padding:var(--sp-3) 0;overflow:hidden;
+  border-top:1px solid var(--line);
+}
+.kinetic h2{
+  margin:0;padding:0 var(--edge);
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--t-kinetic);line-height:1.08;letter-spacing:-.005em;
+  white-space:nowrap;
+}
+.kinetic h2 em{font-style:italic;color:var(--accent)}
+.mask{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.mask>span{display:block;will-change:transform}
+.kinetic .cap{
+  margin:var(--sp-1) 0 0;padding:0 var(--edge);
+  display:flex;justify-content:space-between;gap:20px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-42);
+}
+
+/* ============================================================
+   S5 收尾：短深色条，不是第二个 band
+   ============================================================ */
+.tail{
+  background:var(--dark);color:var(--paper-on-dark);
+  padding:clamp(48px,7vh,88px) var(--edge);
+  display:grid;grid-template-columns:1fr auto;gap:clamp(20px,4vw,60px);
+  align-items:end;
+}
+.tail p{margin:0;font-size:var(--t-lead);line-height:1.45;color:var(--paper-dim);max-width:30ch}
+.tail p b{color:var(--paper-on-dark);font-weight:500}
+.tail a{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--paper-on-dark);
+  border-bottom:1px solid rgba(239,236,226,.3);padding-bottom:4px;
+  transition:border-color var(--dur-fast) linear;
+}
+.tail a:hover{border-color:var(--accent)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:900px){
+  .band-body{grid-template-columns:1fr;gap:var(--sp-2);align-items:start}
+  .nums{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px}
+  .why{grid-template-columns:1fr;row-gap:var(--sp-1)}
+  .why .cell{border-top:1px solid var(--line);padding-top:var(--sp-1)}
+  .why .cell:first-child{padding-top:0}
+  .log table{display:block;overflow-x:auto}
+  .log col.c2{width:auto}
+  .kinetic h2{white-space:normal;font-size:clamp(44px,12vw,86px)}
+  .tail{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .mask>span{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <b>釉记</b>
+  <span>Report 2026-A</span>
+</header>
+
+<main>
+
+  <!-- ==================== S1 BAND（唯一一次） ==================== -->
+  <section class="band">
+    <div class="band-top">
+      <span>Firing log / 1280 ℃ reduction</span>
+      <span>2024—2026</span>
+    </div>
+
+    <div class="band-body">
+      <blockquote class="band-quote">
+        <span class="mask"><span>不是给你</span></span>
+        <span class="mask"><span>配方，</span></span>
+        <span class="mask"><span>是给你<em>四十二次坏掉</em>的记录。</span></span>
+      </blockquote>
+
+      <div class="nums">
+        <div class="num">
+          <span class="v" data-count="1280">1280<i>℃</i></span>
+          <span class="k">烧成温度</span>
+        </div>
+        <div class="num">
+          <span class="v" data-count="42">42<i>次</i></span>
+          <span class="k">整窑试验</span>
+        </div>
+        <div class="num">
+          <span class="v" data-count="9">9<i>h</i></span>
+          <span class="k">降温时长</span>
+        </div>
+        <div class="num">
+          <span class="v" data-count="3.1" data-dec="1">3.1<i>mm</i></span>
+          <span class="k">平均壁厚</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="band-foot">
+      <span>四十二窑 · 一级品率 31%</span>
+      <span>Scroll ↓</span>
+    </div>
+  </section>
+
+  <!-- ==================== S2 三列解释 ==================== -->
+  <section class="why">
+    <div class="cell">
+      <h3>01 — 1280 ℃</h3>
+      <p class="lead">再高二十度，釉就流到脚上。</p>
+      <p>还原焰在 1000℃ 之后才开始吃氧。这个区间里，我们把风门收掉三分之一，
+         让窑里剩下来的氧不够烧完所有的碳。</p>
+      <p>结果就是那层灰里带青的颜色。它不稳定，也不可能稳定。</p>
+    </div>
+    <div class="cell">
+      <h3>02 — 42 次</h3>
+      <p class="lead">四十二窑里，只有九窑值得发出去。</p>
+      <p>裂、缩釉、起泡、偏色。每一次都记：窑位、室温、釉厚、坯体含水率。
+         记录比配方有用。</p>
+      <p>这份报告里能查到的，是那三十三次失败的具体参数。</p>
+    </div>
+    <div class="cell">
+      <h3>03 — 9 小时</h3>
+      <p class="lead">降温比升温难。</p>
+      <p>600℃ 到 300℃ 之间是石英转变区。快一点，坯体内部就攒应力，
+         出窑三天后才炸。</p>
+      <p>所以那九个小时里，窑门一次都不开。</p>
+    </div>
+  </section>
+
+  <!-- ==================== S3 明细表 ==================== -->
+  <section class="log">
+    <h3>最近六窑 · 关键参数</h3>
+    <table>
+      <colgroup><col class="c1"><col class="c2"><col><col><col></colgroup>
+      <thead>
+        <tr><th>Batch</th><th>结果</th><th>釉厚</th><th>含水率</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>037</td><td class="hit">发出去 · 11 件</td><td>0.82 mm</td><td>6.1%</td><td>窑位中段，最稳的一窑</td></tr>
+        <tr><td>038</td><td>整窑缩釉</td><td>1.24 mm</td><td>6.4%</td><td>釉太厚，底部先裂</td></tr>
+        <tr><td>039</td><td>起泡 8 件</td><td>0.94 mm</td><td>7.2%</td><td>坯体没干透</td></tr>
+        <tr><td>040</td><td class="hit">发出去 · 6 件</td><td>0.88 mm</td><td>5.9%</td><td>降温延长到 10h</td></tr>
+        <tr><td>041</td><td>偏色，内部使用</td><td>0.91 mm</td><td>6.0%</td><td>风门开早了</td></tr>
+        <tr><td>042</td><td class="hit">发出去 · 14 件</td><td>0.86 mm</td><td>5.8%</td><td>目前最好的一窑</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ==================== S4 KINETIC（唯一一处） ==================== -->
+  <section class="kinetic">
+    <h2>
+      <span class="mask"><span>坏<em>四十二</em>次，</span></span>
+      <span class="mask"><span>才留<em>九</em>窑。</span></span>
+    </h2>
+    <div class="cap">
+      <span>Working rule</span>
+      <span>— 釉记, 2026</span>
+    </div>
+  </section>
+
+  <!-- ==================== S5 收尾 ==================== -->
+  <section class="tail">
+    <p>完整报告（含 42 窑的窑位图与失败照片）以 PDF 形式提供，<b>不公开在线</b>。</p>
+    <a href="mailto:log@youji.studio">索取 2026-A 报告 →</a>
+  </section>
+
+</main>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ============================================================
+   1. 单时钟
+   ============================================================ */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+gsap.registerPlugin(ScrollTrigger);
+
+if (window.Lenis && !reduced){
+  const lenis = new Lenis({
+    lerp: 0.1, smoothWheel: true, touchMultiplier: 1.25,
+    wrapper: document.documentElement, content: document.body,
+  });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t)=> lenis.raf(t * 1000), false, true);
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* ============================================================
+   2. 签名动作：数字在 band 进入时从 0 走到目标值
+      只此一个动作。不要在别处再加计数 / 写字 / 描边
+   ============================================================ */
+const counters = [...document.querySelectorAll('[data-count]')];
+
+if (!reduced){
+  counters.forEach((el)=>{
+    const to = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.dec || '0', 10);
+    const unit = el.querySelector('i')?.outerHTML || '';
+    const obj = { v: 0 };
+    el.innerHTML = (dec ? (0).toFixed(dec) : '0') + unit;
+
+    ScrollTrigger.create({
+      trigger: el, start: 'top 88%', once: true,
+      onEnter: ()=> gsap.to(obj, {
+        v: to, duration: 0.95, ease: 'power2.out',
+        onUpdate: ()=>{
+          const n = dec ? obj.v.toFixed(dec) : Math.round(obj.v);
+          el.innerHTML = n + unit;
+        },
+        onComplete: ()=>{ el.innerHTML = (dec ? to.toFixed(dec) : to) + unit; },
+      }),
+    });
+  });
+}
+
+/* ============================================================
+   3. band 陈述句：三行依次掀上来
+   ============================================================ */
+if (!reduced){
+  gsap.set('.band-quote .mask > span', { yPercent: 110 });
+  gsap.to('.band-quote .mask > span', {
+    yPercent: 0, duration: 0.78, ease: 'expo.out', stagger: 0.085, delay: 0.1,
+  });
+  gsap.fromTo('.band-top, .band-foot', { opacity: 0 },
+    { opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.1, delay: 0.3 });
+  gsap.fromTo('.num', { opacity: 0, y: 14 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.07, delay: 0.35 });
+}
+
+/* ============================================================
+   4. 三列解释 + 明细行：滚动进入
+   ============================================================ */
+if (!reduced){
+  gsap.utils.toArray('.why .cell').forEach((cell, i)=>{
+    gsap.fromTo(cell, { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: cell, start: 'top 88%', once: true },
+    });
+  });
+  gsap.fromTo('.log tbody tr', { opacity: 0 }, {
+    opacity: 1, duration: 0.45, ease: 'power1.out', stagger: 0.05,
+    scrollTrigger: { trigger: '.log', start: 'top 82%', once: true },
+  });
+}
+
+/* ============================================================
+   5. kinetic：逐行掀字，最后一行迟 0.08
+   ============================================================ */
+if (!reduced){
+  gsap.set('.kinetic .mask > span', { yPercent: 112 });
+  gsap.to('.kinetic .mask > span', {
+    yPercent: 0, duration: 0.74, ease: 'expo.out', stagger: 0.08,
+    scrollTrigger: { trigger: '.kinetic', start: 'top 74%',
+      toggleActions: 'play none none reverse' },
+  });
+}
+
+/* ============================================================
+   6. 刷新
+   ============================================================ */
+if (document.fonts) document.fonts.ready.then(()=> setTimeout(()=> ScrollTrigger.refresh(), 180));
+let rt;
+addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=> ScrollTrigger.refresh(), 220); }, { passive:true });
+</script>
+</body>
+</html>

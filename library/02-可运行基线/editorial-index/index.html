@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editorial / Index — 目录型基线</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BASELINE · Editorial / Family 2 「Editorial index」为主体
+   ------------------------------------------------------------
+   骨架：head band → 单列索引 → hover 大图 → kinetic 一行 → 双列附录 → foot
+   没有海报首屏。这是这个家族最重要的一点：
+   **目录页的第一个视口就是目录**，不是一句大字。
+   移植：<section class="idx">…</section> 可整段拿走，
+        只依赖 :root 的 token，不依赖本页任何其他类。
+   ============================================================ */
+:root{
+  --paper:#f4f2ec;
+  --ink:#12120e;
+  --ink-70:rgba(18,18,14,.68);
+  --ink-45:rgba(18,18,14,.45);
+  --line:rgba(18,18,14,.15);
+  --line-2:rgba(18,18,14,.38);
+  --accent:#c8401a;
+
+  --sans:"Helvetica Neue","Inter",-apple-system,"PingFang SC","Segoe UI",Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style","Songti SC",Georgia,serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-big:clamp(78px,15.5vw,232px);
+  --t-name:clamp(21px,2.35vw,30px);
+  --t-lede:clamp(17px,1.4vw,20px);
+  --t-body:16px;
+  --t-small:13px;
+  --t-label:10.5px;
+
+  --edge:clamp(20px,4.2vw,72px);
+  --sp-1:clamp(26px,3.4vh,44px);
+  --sp-2:clamp(64px,9vh,120px);
+  --sp-3:clamp(120px,17vh,220px);
+
+  --dur-fast:180ms;
+  --dur-mid:450ms;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+
+/* ---------- 顶栏：一行 mono，无背景无阴影 ---------- */
+.bar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:20px var(--edge);
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-70);
+  mix-blend-mode:multiply;
+}
+.bar b{font-weight:600;letter-spacing:-.01em;font-size:13px;
+  font-family:var(--sans);text-transform:none}
+
+/* ============================================================
+   S1 head band —— 46vh，只放行信息，不放海报
+   ============================================================ */
+.head{
+  min-height:46svh;padding:calc(var(--edge) + 68px) var(--edge) var(--sp-1);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:var(--sp-1);
+}
+.head-rule{height:1px;background:var(--line-2);transform-origin:left;will-change:transform}
+.head-mid{display:grid;grid-template-columns:1fr minmax(0,30ch);gap:clamp(20px,4vw,64px);align-items:end}
+.head-mid p{
+  margin:0;font-size:var(--t-lede);line-height:1.46;color:var(--ink-70);
+  max-width:30ch;text-wrap:pretty;
+}
+.head-mid p b{color:var(--ink);font-weight:500}
+.head-top{
+  display:flex;justify-content:space-between;gap:20px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* ============================================================
+   S2 主索引 —— 1px 线，8 行，无卡片
+   ============================================================ */
+.idx{padding:0 var(--edge) var(--sp-2)}
+.idx-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-2)}
+.idx-row{position:relative}
+.idx-row>b{position:absolute;left:0;right:0;top:0;height:1px;
+  background:var(--line);transform:scaleX(0);transform-origin:left;will-change:transform}
+.idx-row a{
+  display:grid;grid-template-columns:clamp(44px,5vw,80px) 1fr auto auto;
+  gap:clamp(12px,2vw,26px);align-items:baseline;
+  padding:calc(clamp(22px,3.1vw,32px)) 0;
+  transition:padding-left var(--dur-mid) var(--ease-out);
+}
+.idx-row a:hover{padding-left:16px}
+.idx-row .no{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.12em;
+  color:var(--ink-45);font-variant-numeric:tabular-nums}
+.idx-row .name{
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--t-name);line-height:1.12;letter-spacing:-.006em;
+  transition:color var(--dur-fast) var(--ease-out);
+}
+.idx-row .name i{font-style:italic;color:var(--ink-45);font-size:.72em;letter-spacing:0;
+  transition:color var(--dur-fast) var(--ease-out)}
+.idx-row a:hover .name{color:var(--accent)}
+.idx-row a:hover .name i{color:var(--accent)}
+.idx-row .cat{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-45)}
+.idx-row .yr{font-family:var(--mono);font-size:var(--t-small);color:var(--ink-70);
+  font-variant-numeric:tabular-nums}
+
+/* ---------- hover 大图：跟随指针，不是卡片缩略图 ---------- */
+.peek{
+  position:fixed;z-index:40;width:clamp(260px,30vw,430px);height:clamp(190px,21vw,310px);
+  left:0;top:0;pointer-events:none;overflow:hidden;
+  opacity:0;transform:translate(-50%,-50%) scale(.96);
+  transition:opacity 260ms var(--ease-out),transform 340ms var(--ease-out);
+  will-change:transform,opacity;
+}
+.peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.peek svg{position:absolute;inset:0;width:100%;height:100%;opacity:0;
+  transition:opacity 260ms var(--ease-out)}
+.peek svg.on{opacity:1}
+.peek .cap{position:absolute;left:12px;bottom:10px;z-index:2;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);mix-blend-mode:difference}
+
+/* ============================================================
+   S3 kinetic —— 一行字，边缘裁切，全页只此一处
+   ============================================================ */
+.kinetic{padding:var(--sp-3) 0;overflow:hidden;border-top:1px solid var(--line)}
+.kinetic h2{
+  margin:0;padding:0 var(--edge);
+  font-family:var(--serif);font-weight:400;
+  font-size:var(--t-big);line-height:1.06;letter-spacing:-.005em;
+  white-space:nowrap;
+}
+.kinetic h2 em{font-style:italic;color:var(--accent)}
+.mask{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.mask>span{display:block;will-change:transform}
+.kinetic .sub{
+  margin:var(--sp-1) 0 0;padding:0 var(--edge);
+  display:flex;justify-content:space-between;gap:20px;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* ============================================================
+   S4 双列附录 —— 和第二屏是不同骨架：无年份、有注释、密
+   ============================================================ */
+.appendix{padding:0 var(--edge) var(--sp-2);border-top:1px solid var(--line-2);
+  padding-top:var(--sp-1)}
+.appendix h3{
+  margin:0 0 var(--sp-1);font-family:var(--mono);font-weight:400;
+  font-size:var(--t-label);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45);
+}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,80px)}
+.col{list-style:none;margin:0;padding:0}
+.col li{border-bottom:1px solid var(--line)}
+.col a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:14px 0;transition:color var(--dur-fast) var(--ease-out)}
+.col .t{font-size:var(--t-small);line-height:1.3}
+.col a:hover .t{color:var(--accent)}
+.col .n{font-family:var(--mono);font-size:var(--t-label);letter-spacing:.1em;
+  color:var(--ink-45);font-variant-numeric:tabular-nums;flex:0 0 auto}
+
+/* ---------- foot ---------- */
+.foot{padding:var(--sp-1) var(--edge) 26px;display:grid;
+  grid-template-columns:1fr auto;gap:20px;align-items:end;
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-45);border-top:1px solid var(--line)}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:820px){
+  .head-mid{grid-template-columns:1fr;gap:var(--sp-1)}
+  .idx-row a{grid-template-columns:38px 1fr auto;gap:12px}
+  .idx-row .cat{display:none}
+  .peek{display:none}
+  .cols{grid-template-columns:1fr}
+  .kinetic h2{white-space:normal;font-size:clamp(46px,13vw,92px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .mask>span{transform:none!important}
+  .idx-row>b{transform:none!important}
+  .head-rule{transform:none!important}
+  .peek{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <b>Fold Studio</b>
+  <span>Index / 2016—26</span>
+</header>
+
+<main>
+
+  <!-- ==================== S1 行信息 ==================== -->
+  <section class="head">
+    <div class="head-top">
+      <span>Selected entries</span>
+      <span>Ordered by year, newest first</span>
+    </div>
+    <div class="head-rule"></div>
+    <div class="head-mid">
+      <p>我们把做过的项目排成一张表。<br>
+         <b>八个名字，八个年份</b>，没有缩略图墙。
+         想看清一个，指针停在它上面。</p>
+    </div>
+  </section>
+
+  <!-- ==================== S2 主索引 ==================== -->
+  <section class="idx" aria-label="项目索引">
+    <ul class="idx-list">
+      <li class="idx-row"><b></b><a href="#" data-peek="0" data-cap="Helio — Product film">
+        <span class="no">01</span>
+        <span class="name">Helio <i>产品影像</i></span>
+        <span class="cat">Direction</span><span class="yr">2026</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="1" data-cap="Kite — Editorial site">
+        <span class="no">02</span>
+        <span class="name">Kite <i>编辑型官网</i></span>
+        <span class="cat">Web</span><span class="yr">2025</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="2" data-cap="Noon — Brand remade">
+        <span class="no">03</span>
+        <span class="name">Noon <i>品牌重制</i></span>
+        <span class="cat">Identity</span><span class="yr">2025</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="0" data-cap="Slate — Installation">
+        <span class="no">04</span>
+        <span class="name">Slate <i>交互装置</i></span>
+        <span class="cat">Installation</span><span class="yr">2024</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="1" data-cap="Mono — Type system">
+        <span class="no">05</span>
+        <span class="name">Mono <i>字体系统</i></span>
+        <span class="cat">Type</span><span class="yr">2024</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="2" data-cap="Ridge — Archive">
+        <span class="no">06</span>
+        <span class="name">Ridge <i>数字档案</i></span>
+        <span class="cat">Archive</span><span class="yr">2023</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="0" data-cap="Ash — Packaging">
+        <span class="no">07</span>
+        <span class="name">Ash <i>包装系列</i></span>
+        <span class="cat">Packaging</span><span class="yr">2022</span></a></li>
+      <li class="idx-row"><b></b><a href="#" data-peek="1" data-cap="Vent — Signage">
+        <span class="no">08</span>
+        <span class="name">Vent <i>导视系统</i></span>
+        <span class="cat">Signage</span><span class="yr">2021</span></a></li>
+    </ul>
+  </section>
+
+  <div class="peek" id="peek" aria-hidden="true"><span class="cap" id="cap"></span></div>
+
+  <!-- ==================== S3 一行字 ==================== -->
+  <section class="kinetic">
+    <h2>
+      <span class="mask"><span>一次，</span></span>
+      <span class="mask"><span>只做<em>一件</em>。</span></span>
+    </h2>
+    <div class="sub">
+      <span>Working principle</span>
+      <span>— since 2016</span>
+    </div>
+  </section>
+
+  <!-- ==================== S4 双列附录 ==================== -->
+  <section class="appendix">
+    <h3>Also on file</h3>
+    <div class="cols">
+      <ul class="col">
+        <li><a href="#"><span class="t">Fold — 空间改造</span><span class="n">09</span></a></li>
+        <li><a href="#"><span class="t">Tide — 影像散文</span><span class="n">10</span></a></li>
+        <li><a href="#"><span class="t">Sill — 家具系列</span><span class="n">11</span></a></li>
+        <li><a href="#"><span class="t">Pin — 索引网站</span><span class="n">12</span></a></li>
+      </ul>
+      <ul class="col">
+        <li><a href="#"><span class="t">Kern — 排版手册</span><span class="n">13</span></a></li>
+        <li><a href="#"><span class="t">Hollow — 展览视觉</span><span class="n">14</span></a></li>
+        <li><a href="#"><span class="t">Grain — 纸张样品</span><span class="n">15</span></a></li>
+        <li><a href="#"><span class="t">Vein — 材料研究</span><span class="n">16</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>© 2026 Fold Studio — 北京</span>
+  <a href="mailto:hi@fold.studio">hi@fold.studio</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ============================================================
+   0. hover 大图：三张抽象构成，零外链
+   ============================================================ */
+(function paint(){
+  const art = [
+    /* A 横向光带 */
+    `<svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice">
+      <rect width="600" height="440" fill="#16160f"/>
+      ${Array.from({length:26},(_,k)=>{
+        const h=4+Math.abs(Math.sin(k*.42))*22;
+        return `<rect x="0" y="${k*17+8}" width="600" height="${h.toFixed(1)}"
+          fill="${k%7===0?'#c8401a':'#cfc8b6'}" opacity="${(0.05+0.55*Math.abs(Math.cos(k*.31))).toFixed(2)}"/>`;
+      }).join('')}
+      <circle cx="430" cy="150" r="86" fill="none" stroke="#f4f2ec" stroke-opacity=".22"/>
+    </svg>`,
+    /* B 密度点阵 */
+    `<svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice">
+      <rect width="600" height="440" fill="#e9e5d9"/>
+      <g fill="#16160f">
+        ${Array.from({length:19},(_,y)=>Array.from({length:26},(_,x)=>{
+          const d=Math.hypot((x-13)/13,(y-9)/9);
+          const r=(0.9+3.4*Math.max(0,1-d)).toFixed(2);
+          return `<circle cx="${18+x*22.4}" cy="${16+y*22.4}" r="${r}"
+            opacity="${(0.12+0.62*Math.max(0,1-d)).toFixed(2)}"/>`;
+        }).join('')).join('')}
+      </g>
+      <rect x="0" y="404" width="600" height="3" fill="#c8401a"/>
+    </svg>`,
+    /* C 裁切圆 + 竖条 */
+    `<svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice">
+      <rect width="600" height="440" fill="#1b1a14"/>
+      <circle cx="300" cy="210" r="168" fill="#c8401a" opacity=".92"/>
+      <circle cx="300" cy="210" r="92" fill="#1b1a14"/>
+      ${Array.from({length:9},(_,k)=>`<rect x="${k*70+16}" y="0" width="2" height="440"
+        fill="#f4f2ec" opacity=".14"/>`).join('')}
+      <path d="M0 352 H600" stroke="#f4f2ec" stroke-opacity=".34"/>
+    </svg>`,
+  ];
+
+  const box = document.getElementById('peek');
+  if (!box) return;
+  art.forEach((s)=>{
+    const holder = document.createElement('div');
+    holder.innerHTML = s;
+    const svg = holder.firstElementChild;
+    box.insertBefore(svg, box.firstChild);
+  });
+})();
+
+/* ============================================================
+   1. 单时钟：Lenis 挂 gsap.ticker（prioritize）
+   ============================================================ */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+gsap.registerPlugin(ScrollTrigger);
+
+let lenis = null;
+if (window.Lenis && !reduced){
+  lenis = new Lenis({
+    lerp: 0.1, smoothWheel: true, touchMultiplier: 1.25,
+    wrapper: document.documentElement, content: document.body,
+  });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t)=> lenis.raf(t * 1000), false, true);
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* ============================================================
+   2. 进场：线条先立，字后到
+   ============================================================ */
+if (!reduced){
+  gsap.fromTo('.head-rule', { scaleX: 0 }, { scaleX: 1, duration: .9, ease: 'power3.inOut' });
+  gsap.fromTo('.head-top, .head-mid p',
+    { opacity: 0, y: 12 },
+    { opacity: 1, y: 0, duration: .6, ease: 'power2.out', stagger: .09, delay: .12 });
+}
+
+/* ============================================================
+   3. 索引：每行规则线绘制（8 个滚动驱动点）
+   ============================================================ */
+if (!reduced){
+  gsap.utils.toArray('.idx-row > b').forEach((line)=>{
+    gsap.fromTo(line, { scaleX: 0 }, {
+      scaleX: 1, duration: .85, ease: 'power2.out',
+      scrollTrigger: { trigger: line.parentElement, start: 'top 94%', once: true },
+    });
+  });
+}
+
+/* ============================================================
+   4. kinetic：逐行掀字，最后一行迟 0.08
+   ============================================================ */
+if (!reduced){
+  gsap.set('.kinetic .mask > span', { yPercent: 112 });
+  gsap.to('.kinetic .mask > span', {
+    yPercent: 0, duration: .72, ease: 'expo.out', stagger: .08,
+    scrollTrigger: { trigger: '.kinetic', start: 'top 72%',
+      toggleActions: 'play none none reverse' },
+  });
+}
+
+/* ============================================================
+   5. 附录：标题先到，条目分两批 —— 让页面尾部也有驱动力
+   ============================================================ */
+if (!reduced){
+  gsap.fromTo('.appendix h3, .appendix .col li',
+    { opacity: 0, y: 10 },
+    { opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .035,
+      scrollTrigger: { trigger: '.appendix', start: 'top 82%', once: true } });
+}
+
+/* ============================================================
+   6. hover 预览跟随
+   ============================================================ */
+(function peek(){
+  const box = document.getElementById('peek');
+  const cap = document.getElementById('cap');
+  if (!box || reduced || !matchMedia('(pointer:fine)').matches) return;
+  const svgs = [...box.querySelectorAll('svg')];
+  let x=0, y=0, tx=0, ty=0, on=false, idx=0;
+
+  gsap.ticker.add(()=>{
+    if (!on) return;
+    x += (tx - x) * .17; y += (ty - y) * .17;
+    box.style.left = x + 'px'; box.style.top = y + 'px';
+  });
+
+  document.querySelectorAll('[data-peek]').forEach((a)=>{
+    a.addEventListener('pointerenter', (e)=>{
+      x = tx = e.clientX + 120; y = ty = e.clientY - 10;
+      box.style.left = x + 'px'; box.style.top = y + 'px';
+      idx = parseInt(a.dataset.peek, 10) || 0;
+      svgs.forEach((s,i)=> s.classList.toggle('on', i === idx));
+      if (cap) cap.textContent = a.dataset.cap || '';
+      on = true; box.classList.add('on');
+    });
+    a.addEventListener('pointerleave', ()=>{ on = false; box.classList.remove('on'); });
+  });
+  addEventListener('pointermove', (e)=>{ tx = e.clientX + 120; ty = e.clientY - 10; }, { passive:true });
+})();
+
+/* ============================================================
+   7. 字体就绪后刷一次触发点
+   ============================================================ */
+if (document.fonts) document.fonts.ready.then(()=> setTimeout(()=> ScrollTrigger.refresh(), 180));
+let rt;
+addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=> ScrollTrigger.refresh(), 220); }, { passive:true });
+</script>
+</body>
+</html>

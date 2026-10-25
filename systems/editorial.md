@@ -1,12 +1,22 @@
 # editorial
 
 > Technique for the **Editorial regime** — the one with no mesh.
-> `systems/` has eleven files for 3D loops and until now zero for type. That is why an Editorial page
-> made with this skill still looks like the baseline with new nouns: there is nothing telling you
-> how to **re-compose** the skeleton for different content.
+> `systems/` has eleven files for 3D loops and this one for type. That asymmetry is why an Editorial
+> page made with this skill still looks like the baseline with new nouns: there is nothing telling
+> you how to **re-compose** the skeleton for different content.
 >
-> Read this before you touch `02-可运行基线/editorial/index.html`. The baseline is one composition.
-> A site is three to five of them, alternated.
+> Read this, then copy **two different baselines** from `library/02-可运行基线/` — each one is a
+> single family, built to be spliced as a whole `<section>`, not read as a whole page:
+>
+> | Baseline | Family it is |
+> |---|---|
+> | `editorial/index.html` | 1 poster + 3 split + 2 index + 4 band (mixed, the default page) |
+> | `editorial-index/index.html` | 2 index — no hero at all, first viewport is the list |
+> | `editorial-split/index.html` | 3 split — left bleed, right bleed, full bleed, two narrow columns |
+> | `editorial-band/index.html` | 4 band + 5 kinetic — integers, explainer, table, one 190px line |
+>
+> A site is three to five of these alternated. Copying one and swapping nouns is the failure this
+> file exists to prevent.
 
 ---
 
@@ -56,6 +66,7 @@ One headline owns 55–70% of the viewport height. Everything else is a caption 
 | Empty space | ≥ 30% of the viewport, in **one** block — not spread evenly |
 
 **Use when:** the product is one object, one sentence carries the brand, or the page opens a story.
+**Runnable:** `library/02-可运行基线/editorial/index.html` → `.hero`.
 **Fail if:** the headline touches both edges with < 4vw of margin (no air); there is a second
 paragraph competing with the headline; or the only "design" is the type being large.
 
@@ -85,6 +96,8 @@ A list of items on a 1px grid. No cards. Hover shows a preview.
 | Count | 4–8 rows. More than 8 belongs on a separate work page |
 
 **Use when:** there are ≥ 4 discrete items (projects, articles, objects, features).
+**Runnable:** `library/02-可运行基线/editorial-index/index.html` → the whole page; `.idx` for the
+single-column list, `.appendix` + `.cols` for the two-column variant. Both are splicable.
 **Fail if:** the rows become cards; the rules are 1px but not full-bleed; or every row has an image
 thumbnail always visible (that is a card grid with extra steps).
 
@@ -115,6 +128,9 @@ Image bleeds off one edge; text sits in a narrow column on the other. Ratios are
 | Caption | Below the image, mono 9.5px, `Fig. 01 — name`. Never inside the image |
 
 **Use when:** one image carries one argument (a product, a material, a process step).
+**Runnable:** `library/02-可运行基线/editorial-split/index.html` → `.sp-a` (left bleed),
+`.sp-b` (right bleed, mirrored), `.sp-c` (full bleed 21:9), `.sp-d` (two narrow columns with the
+middle 3 columns empty). Four sections, one page: that is how this family is meant to alternate.
 **Fail if:** the image and text are equal width; the image is inset (does not bleed); or the text
 column runs wider than 40ch — a 700px text column on a 1.45fr track is the giveaway.
 
@@ -143,6 +159,8 @@ A full-bleed dark band. Three or four numbers, no chart.
 | Layout | Numbers right, statement left, aligned to **baseline of the last line** |
 
 **Use when:** you have three real numbers. Not adjectives ("fast", "reliable") — integers.
+**Runnable:** `library/02-可运行基线/editorial-band/index.html` → `.band` (the band),
+`.why` (the three-column explainer that must follow it), `.log` (the parameter table).
 **Fail if:** the numbers are `99.9%` / `10x` / `100+`; there are more than 4; or the band uses a
 gradient instead of a solid.
 
@@ -169,6 +187,9 @@ Type is the only object. One word machined, or a paragraph that reveals per line
 | Pairing | Follow it with the quietest family (index or split) |
 
 **Use when:** there is one word worth 280px (a product name, a single verb, a refusal).
+**Runnable:** `library/02-可运行基线/editorial-band/index.html` → `.kinetic` (190px, dark-on-paper)
+and `editorial-index/index.html` → `.kinetic` (223px, nowrap, edge-cropped). Two treatments, same
+family — the difference is whether you crop or not.
 **Fail if:** it sits in the middle of the page with nothing before it; or it animates on every
 scroll (once, on enter, with `toggleActions: play none none reverse`).
 
@@ -219,5 +240,17 @@ Pick **one**. A page with all five is a page with none.
 ---
 
 *Companion: `systems/cjk-type.md` for Chinese headlines (tracking and line-height differ from the
-Latin numbers in `docs/02`). Baseline: `library/02-可运行基线/editorial/index.html` is Family 1 +
-Family 3 + Family 2 + Family 4 in that order — read it as a **sequence**, not as a single layout.*
+Latin numbers in `docs/02`).*
+
+*The four baselines, read as **sequences**, never as single layouts:*
+
+| File | Sequence |
+|---|---|
+| `editorial/index.html` | 1 → 3 → 2 → (dark sticky track) → 5-ish quote |
+| `editorial-index/index.html` | head strip → 2 → 2-two-column → 5 → foot |
+| `editorial-split/index.html` | open → 3a → 3b → 3c → 3d |
+| `editorial-band/index.html` | 4 → explainer → table → 5 → tail |
+
+*All four pass the 12-item verify. Verify them yourself with
+`node library/06-工具脚本/verify.mjs library/02-可运行基线/<name>/index.html` before you splice —
+if a number moved, the splice is what moved it.*
