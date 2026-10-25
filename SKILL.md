@@ -89,7 +89,7 @@ Decision tree ([library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01
    yes → Immersive     library/02-可运行基线/immersive/
    no  ↓
 2. Remember a brand / a person, or click a button?
-   remember → Editorial    library/02-可运行基线/editorial/
+   remember → Editorial    library/02-可运行基线/editorial/ + systems/editorial.md
    click    ↓
 3. Features, CTA, conversion?
    yes → Product       library/02-可运行基线/product/
@@ -113,6 +113,10 @@ Purpose → regime (defaults, not a veto):
 
 A Product first viewport that is CSS + IntersectionObserver is legal. An Editorial first viewport that is flush type and 1px rules is legal. `systems/*` do not forbid those.
 
+**If the headline is Chinese, read [systems/cjk-type.md](systems/cjk-type.md) before Step 3.** Every number in the fingerprint table below was measured on Latin sites. Two of them invert on CJK: tracking must go to ~0 (negative makes Hanzi collide) and display line-height must go to 1.05–1.30 (Hanzi fill the em box). Pasting the Latin values onto a 120px Chinese headline produces a black bar.
+
+**If the regime is Editorial, read [systems/editorial.md](systems/editorial.md) before Step 2.** The baseline is one composition; a site is three to five compositions alternated. `systems/` had eleven files for 3D loops and none for type, which is why Editorial pages made with this skill read as "the baseline with new nouns".
+
 ---
 
 ## Step 2 — Copy the baseline
@@ -135,8 +139,8 @@ Numbers are from 28 live sites ([library/01-规范/docs/02-aesthetic-fingerprint
 |---|---|
 | Type ratio | Editorial **≥ 5** (aim 6–8). Product **4.0–5.1**. Below 3 is flat. |
 | Display weight | **400–600**. 700+ only on condensed or a serif display. |
-| Tracking | **−0.02 to −0.06em** on titles ≥ 32px. Same em on every display size. `normal` is undesigned. |
-| Line-height | Display 0.85–1.05. Body 1.50–1.65. Display at 1.5 is slop. |
+| Tracking | **−0.02 to −0.06em** on titles ≥ 32px. Same em on every display size. `normal` is undesigned. **CJK: −0.01 to +0.02em — never negative, strokes collide.** |
+| Line-height | Display 0.85–1.05. Body 1.50–1.65. Display at 1.5 is slop. **CJK display 1.05–1.30, body 1.7–1.9.** |
 | Size steps | **6–9** steps, dense in the middle. Not 3 (12 / 16 / 24). |
 | Color count | **≤ 2** non-neutral. Most sites are 0–1. Brand color may flood if it is the only one. |
 | Families | 2 (variable sans + mono). Editorial may add one serif display. |
@@ -196,6 +200,11 @@ node library/06-工具脚本/verify.mjs <your-page>
 ```
 
 Twelve items. Fix and re-run. Do not ship on a fail. How to fix each: [library/01-规范/docs/07-verification.md](library/01-规范/docs/07-verification.md).
+
+Item 5 reads the headline, counts CJK characters, and switches criteria by language: Latin needs
+tracking ≤ −0.02em and line-height 0.85–1.15; CJK needs tracking −0.02…+0.05em (or `normal`) and
+line-height 1.0–1.5. If a Chinese page "fails" item 5, check that the headline is not carrying a
+Latin tracking value.
 
 ```
 1.  Console: 0 errors
@@ -273,6 +282,8 @@ SKILL.md runs the five steps. Do not load the rest of the tree on every job.
 |---|---|
 | First time / why baselines exist | [library/01-规范/docs/00-diagnosis.md](library/01-规范/docs/00-diagnosis.md) |
 | Step 1, regime unclear | [library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01-taxonomy.md) |
+| **Editorial: how to compose sections** | **[systems/editorial.md](systems/editorial.md)** — 5 layout families, fail conditions |
+| **Chinese headline / CJK type** | **[systems/cjk-type.md](systems/cjk-type.md)** — tracking, line-height, punctuation, breaking |
 | Step 3, need the measured tables | [library/01-规范/docs/02-aesthetic-fingerprint.md](library/01-规范/docs/02-aesthetic-fingerprint.md) |
 | Step 4, need a motion recipe | [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md) |
 | Immersive WebGL | [library/01-规范/docs/04-webgl-recipes.md](library/01-规范/docs/04-webgl-recipes.md) + 1–2 `systems/<loop>.md` |

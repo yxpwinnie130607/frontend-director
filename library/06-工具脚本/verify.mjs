@@ -99,17 +99,34 @@ const PROBE = () => {
   const lsEm = (ls && ls !== 'normal' && maxPx)
     ? +(parseFloat(ls) / maxPx).toFixed(4) : null;
 
+  // 行高按字号归一（normal 视为未设）
+  const lhRatio = (maxCS && maxCS.lineHeight !== 'normal' && maxPx)
+    ? +(parseFloat(maxCS.lineHeight) / maxPx).toFixed(3) : null;
+
+  // 语言判定：取最大字号元素的文本，算 CJK 字符占比。
+  // 中文与西文的排版判据不同 —— 中文不能设负字距（会粘连），
+  // 大标题行高也不能低于 1.0（汉字字面框比字母满）。用同一套数字
+  // 会把合格的中文页面判成失败。
+  const maxText = maxEl ? (maxEl.innerText || maxEl.textContent || '') : '';
+  const solid = maxText.replace(/\s/g, '');
+  const cjkCount = (solid.match(/[\u3400-\u9fff\u3000-\u303f\uff00-\uffef]/g) || []).length;
+  const cjkRatio = solid.length ? +(cjkCount / solid.length).toFixed(2) : 0;
+
   return {
     nEl, maxPx, bodyPx,
     ratio: +(maxPx / bodyPx).toFixed(2),
     weight: maxCS ? maxCS.fontWeight : null,
-    lsEm,
+    lsEm, lhRatio, cjkRatio,
     sizeCount: sizes.size,
     accentCount: accent.length,
     accents: accent.slice(0, 4),
     borders, shadows,
     durations: durs.slice(0, 14),
     eases: [...eases].slice(0, 8),
+    // 是否由 JS 驱动动效（GSAP / three / canvas）。全 JS 的页面没有
+    // CSS transition，第 8 项不能因此判失败。
+    jsMotion: !!(window.gsap || window.ScrollTrigger || window.THREE ||
+                 document.querySelectorAll('canvas').length > 0),
     height: document.body.scrollHeight,
     canvas: document.querySelectorAll('canvas').length,
     masks: document.querySelectorAll('.mask > span').length,
@@ -222,15 +239,35 @@ await browser.close();
 const isEditorial = d.ratio >= 5 && d.borders > d.shadows;
 const isProduct = d.ratio >= 3.8 && d.ratio <= 5.4 && d.shadows >= d.borders;
 
+/* 中文 / 西文两套判据
+   中文：字距 −0.02…+0.05em（可 normal）；大标题行高 1.0–1.5
+   西文：字距 ≤ −0.02em（必须设）；大标题行高 0.85–1.15           */
+const isCJK = d.cjkRatio >= 0.3;
+const lsOK = isCJK
+  ? (d.lsEm === null || (d.lsEm >= -0.02 && d.lsEm <= 0.05))
+  : (d.lsEm !== null && d.lsEm <= -0.02);
+const lhOK = d.lhRatio === null
+  ? true
+  : (isCJK ? (d.lhRatio >= 1.0 && d.lhRatio <= 1.5)
+           : (d.lhRatio >= 0.85 && d.lhRatio <= 1.15));
+
+const lsText = d.lsEm === null ? (isCJK ? 'normal' : 'normal（未设）') : `${d.lsEm}em`;
+const lhText = d.lhRatio === null ? 'normal' : String(d.lhRatio);
+
 const rows = [
   ['1  控制台零报错', errs.length === 0, `${errs.length} 个错误` + (errs[0] ? ` · ${errs[0]}` : '')],
   ['2  字号比 ≥ 4.0', d.ratio >= 4, `${d.maxPx} / ${d.bodyPx} = ${d.ratio}`],
   ['3  非中性色 ≤ 2', d.accentCount <= 2, `${d.accentCount} 个 ${d.accents.join(' ')}`],
   ['4  大标题字重 ≤ 600', +d.weight <= 600, `w${d.weight}`],
-  ['5  大标题字距 ≤ -0.02em', d.lsEm !== null && d.lsEm <= -0.02, d.lsEm === null ? 'normal（未设）' : `${d.lsEm}em`],
+  ['5  字距与行高', lsOK && lhOK,
+    `ls ${lsText} ｜ lh ${lhText} ｜ ${isCJK ? '中文判据 -0.02…+0.05 / 1.0…1.5' : '西文判据 ≤-0.02 / 0.85…1.15'}`],
   ['6  字号档数 ≥ 5', d.sizeCount >= 5, `${d.sizeCount} 档`],
   ['7  滚动驱动 ≥ 4', driven >= 4, `${driven} 个元素`],
-  ['8  时长档位 1–6', d.durations.length >= 1 && d.durations.length <= 6, `${d.durations.length} 种 ${d.durations.slice(0,6).join(' ')}`],
+  ['8  时长档位 1–6', (d.durations.length >= 1 && d.durations.length <= 6)
+      || (d.durations.length === 0 && d.jsMotion),
+    d.durations.length
+      ? `${d.durations.length} 种 ${d.durations.slice(0,6).join(' ')}`
+      : (d.jsMotion ? '无 CSS 时长，动效全由 JS 驱动' : '无动效')],
   ['9  reduced-motion 生效', rm.ok, rm.ok ? '已降级' : `transition ${rm.dur}s / anim ${rm.anim}s`],
   ['10 移动端无横向溢出', mob.sw <= mob.cw + 1, `scrollWidth ${mob.sw} / client ${mob.cw}`],
   ['11 帧耗时 p95 ≤ 20ms', frame.p95 <= 20, `median ${frame.median}ms / p95 ${frame.p95}ms`],
@@ -250,6 +287,7 @@ for (const [name, ok, detail] of rows) {
 console.log('─'.repeat(74));
 console.log(`  自测通过 ${pass}/${total}　` +
   `结构：${isEditorial ? '编辑型' : isProduct ? '产品型' : '自定义'}　` +
+  `语言：${isCJK ? '中文' : '西文'}（CJK ${d.cjkRatio}）　` +
   `画布 ${d.canvas}　遮罩 ${d.masks}　页高 ${d.height}px`);
 console.log('─'.repeat(74) + '\n');
 

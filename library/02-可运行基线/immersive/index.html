@@ -105,7 +105,9 @@ main{position:relative;z-index:4}
 }
 .panel h1,.panel h2{
   margin:0 0 24px;font-weight:400;
-  font-size:var(--t-display);line-height:1.02;letter-spacing:-.035em;
+  font-size:var(--t-display);
+  /* 中文标题：字距接近 0，行高 ≥1.1（汉字字面框满，负字距会粘连） */
+  line-height:1.14;letter-spacing:-.005em;
 }
 .panel h1 em,.panel h2 em{font-style:normal;color:var(--accent)}
 .panel p{margin:0;color:var(--ink-60);max-width:36ch}
