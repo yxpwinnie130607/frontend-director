@@ -61,7 +61,7 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 9. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
 10. **No em-dash (`—`) in visible copy.**
 11. **Do not ship a still page, and do not ship a flat live form.** Restrained means one material in a studio. It is still 3D.
-12. **Decide atmosphere and transition before markup.** Name the air (paper studio / night void / haze room / living field) and the scene change (morph / dissolve / camera jump / world swap / surface rewrite). A white-void crumple slider with no designed air and no world change is not the bar.
+12. **Decide atmosphere and transition before markup.** Name the air (paper studio / white haze / night void / haze room / living field) and the scene change (morph / dissolve / camera jump / gate / chapter wipe / world swap / surface rewrite). A white-void crumple slider with no designed air and no world change is not the bar.
 
 ---
 

@@ -68,13 +68,15 @@ More Recent posts to steal *air and change* from (still not a catalog; do not cl
 
 | Post | Live | Steal |
 |---|---|---|
-| Augen | https://augen.pro | Night void, one volume, tiny chrome |
-| Podium | https://podium.global | Designed studio, product as the only object |
-| Astro Dither | https://astrodither.robertborghesi.is | Background *is* the technique (dither field) |
-| Nothing to Watch | https://nothing-to-watch.port80.ch | A gate, then a world; not a SaaS stack |
-| Interfere | https://recent.design/i/mysyrbt-interfere | Interference as material, not a card |
-| Recursive surface erosion | https://recent.design/i/vuzcu2u-recursive-surface-erosion | Surface as a living process |
-| Shopify Editions | https://www.shopify.com/editions/spring2026 | Campaign 3D + camera as you move |
+| Augen | https://augen.pro | White haze still-life. Rim light. Falloff *is* the studio. |
+| Podium | https://podium.global | White void. Metaball / blob as a mask. Chapter wipes. |
+| Astro Dither | https://astrodither.robertborghesi.is | Background *is* the technique (dither + fluid). Click to enter. |
+| Nothing to Watch | https://nothing-to-watch.port80.ch | Black-void **gate**, then a spinning world. Click-to-enter is the transition. |
+| Recursive surface erosion | https://recent.design/i/vuzcu2u-recursive-surface-erosion | Particle sphere that morphs / erodes. Keep the silhouette. |
+| Shopify Editions | https://www.shopify.com/editions/spring2026 | Camera move *is* the chapter. |
+| Becane Paris | https://www.becaneparis.com | Scroll drives a product volume. |
+
+**Not the bar:** Interfere (https://interfere.com) is polished 2D SaaS. Avara is character / Lottie, not a WebGL studio. Do not treat them as ceiling.
 
 ---
 
@@ -85,8 +87,10 @@ If the five are not the right metaphor, these loops are the same bar:
 | Family | What to steal | Technique |
 |---|---|---|
 | Glass still-life | One authored glass / ice object, studio light, idle breath (Bloom / Liquid Glass) | `volume-object` |
+| White haze still-life | Rim-lit object, falloff is the studio (Augen) | `atmosphere`, `volume-object` |
 | Cluster field | Many lit spheres or points as a living volume you can stir | `volume-field` |
-| Kinetic chapter | Scroll drives a **mesh** (unfold, explode, dissolve), not a 2D clip-path poster | `kinetic-scroll` |
+| Kinetic chapter | Scroll drives a **mesh** (unfold, explode, dissolve), not a 2D clip-path poster | `kinetic-scroll`, `transition` |
+| Gate then world | Designed void + one control; click builds the volume (Nothing to Watch) | `transition` |
 
 ---
 

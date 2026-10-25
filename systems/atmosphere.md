@@ -2,7 +2,7 @@
 
 > Required for every preview and every build, with [motion.md](../motion.md). The background is a designed world, not leftover CSS.
 
-**Ceiling:** Earth / Crumple white studio; Augen / Podium dark void; Vercel shader black; Gaussian room with haze; Astro Dither a living field. Steal the *kind* of air. Do not clone those sites.
+**Ceiling:** Earth / Crumple / Podium white studio; Augen white haze (falloff is the studio); Vercel / Nothing-to-Watch black; Gaussian room with depth haze; Astro Dither a living field. Steal the *kind* of air. Do not clone those sites.
 
 A cream `body` behind a far camera is how FOLD painted an empty frame. A gray `Mesh` floor is how FOLD grew a stage disk. Both fail.
 
@@ -12,7 +12,8 @@ Pick **one** atmosphere and keep it for the page:
 
 | Kind | When | How |
 |---|---|---|
-| White / paper studio | One object + control, material transform | `scene.background` = paper (`#f3f0e8` / `#f6f3ec`). Soft contact ellipse only. **No floor mesh.** Fog off or hairline. |
+| White / paper studio | One object + control, material transform, Podium-class | `scene.background` = paper (`#f3f0e8` / `#f6f3ec`). Soft contact ellipse only. **No floor mesh.** Fog off or hairline. |
+| White haze | Still-life / rim-lit object (Augen) | Same pale ground, **FogExp2 in the ground hue**, key + rim. Falloff makes the studio. No gray disk. |
 | Night void | Field / dissolve, spatial deck, glass still-life | `scene.background` = near-black (`#07080c`–`#0b0d12`). `FogExp2` or linear fog in the same hue. Dust points. No gray disk. |
 | Haze room | You are inside | Fog + light falloff + a receiving floor that is *architecture*, not a studio puck. |
 | Living field | The world *is* the shader | Background is the field (points, dither, erosion). CSS color only matches the clear color. |

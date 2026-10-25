@@ -15,6 +15,8 @@ Pick **one** transition bound to the product job:
 | Material morph | Sheet → wad, peel, melt | Vertex mix. Whole object stays visible. |
 | Dissolve to field | Object eaten by living points | Pointer, send, or generate drives mix. Points keep moving. |
 | Camera jump | You enter / leave / approach | Dolly, look-at, or cut. Fog density can pulse. Not `opacity` on `#app`. |
+| Gate | Click / type to enter (Nothing to Watch, Astro Dither) | First frame is a designed void + one control. The click **builds the world** (sphere, field, room). Not a 2D splash. |
+| Chapter wipe | Scroll is the scene change (Podium, Shopify, Becane) | Camera + mesh + lights move together. Lenis-style pin. A CSS wipe over photos is a fail unless a volume is the mask (metaball). |
 | World swap | Room A → room B | Portal, door, send. Swap lights + fog + meshes together. |
 | Surface rewrite | Same volume, new skin | Slider / type swaps the authored map. |
 

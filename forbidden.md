@@ -36,6 +36,8 @@ Rooms you enter, shader fields, and spatial decks have their own scale. They sti
 
 **https://smart-email-nexus.lovable.app** — purple pill nav, tinted "Intelligence," two CTAs, four icon cards, "Sarah Chen, CEO." Do not ship any cousin.
 
+**https://interfere.com** — on Recent, still a polished 2D SaaS (gradients, mockups). Featured ≠ ceiling for this skill.
+
 ## Patterns that fail this skill
 
 Hit any one and the page is not done.
