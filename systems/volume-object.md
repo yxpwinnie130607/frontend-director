@@ -27,7 +27,8 @@ tiny name, top left                    whisper, top right
 - HUD: top corners + slider **below**. Input never sits on the mesh. A top-right whisper that crops to one letter is a fail.
 - No visible stage disk. Soft contact shadow only.
 - Object height in NDC: roughly 0.25–0.4 of the short axis. **Projected width ≥ 0.18 of the short axis.** A match / pencil / crayon that is 30% tall and 2% wide is STRIKE. Fail.
-- The idle screenshot must show a **readable face** (type, continents, dye). Invisible grain on a thin shaft is not authored.
+- The idle screenshot must show a **readable face** (type, continents, dye). Invisible grain on a thin shaft is not authored. A lathe bowl whose profile never returns down the inner wall is a **closed pot** (CHIME): you cannot see the inscription. Fail.
+- Do not put a second `CircleGeometry` under the object. It reads as a plate / stage disk (CHIME).
 
 ## 质感
 
@@ -59,5 +60,6 @@ camera.position.set(0, 0.12, 5.5);
 - ≥ 70% viewport coverage. That rule produced cropped FOLD. Dead.
 - Glass vessel / clay orb / torus as a **default** silhouette (an authored bronze bowl with a readable inner face is not a default torus).
 - Match / pencil / crayon / nail / stick / capsule-on-end as the hero (STRIKE).
+- Closed lathe pot / IKEA bowl that hides the inner face (CHIME).
 - Overlay a headline on the object.
 - Dark 工作台 card, yellow fill button.

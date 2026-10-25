@@ -54,6 +54,7 @@ A white-void sheet + tick slider, even with correct composition, is **not** a co
 - Orbit-only.
 - Slider wrinkles a plane and stops (FOLD, even when the wad is good).
 - Background hex swap while the mesh stays the same (STRIKE).
+- Hex swap + a rim wobble with no readable field (CHIME).
 - `renderer.domElement.style.opacity` as the transition.
 - Clone Podium's blob, Astro Dither's hand, or Shopify's edition camera path.
 - Two climaxes stacked (dissolve **and** portal **and** wipe).

@@ -27,6 +27,9 @@ Lessons already paid for. Do not rediscover them by polishing the glass card. Fa
 ### STRIKE
 A brown `CylinderGeometry` shaft + orange lathe head in leftover cream. Canvas "wood" that reads as a flat crayon. Inscribed type invisible at idle. After the event: the cream becomes black, the crayon stays, two beige blobs appear on the stick. HUD whisper crops to a single letter. **A toy stick is KEPT. Height 25–40% with width ~2% is empty cream. A background hex swap is not a transition. Two blobs are not a dissolve.** Fail. Do not ship a match, pencil, nail, crayon, or capsule-on-end as the hero.
 
+### CHIME
+A smooth lathe pot on leftover cream. The profile never returns down the inner wall, so the well is closed and the inscribed line is invisible. A second `CircleGeometry` under the mesh reads as a **plate / stage-disk cousin**. After the event: cream becomes black, the rim wobbles, no word constellation. **Mass without a readable face is still KEPT. A closed pot is not a singing bowl. A plate under the object is a stage disk.** Fail.
+
 ## Composition law (hard)
 
 For object + control and material-transform first viewports:
@@ -61,6 +64,8 @@ Hit any one and the page is not done.
 - Match / pencil / nail / stick / crayon as the hero (no mass).
 - Background hex swap while the mesh stays the same (not a transition).
 - Dissolve that reads as two blobs or a cotton ball.
+- Closed lathe / pot that hides the inscribed face (CHIME).
+- A second disk under the mesh that reads as a plate (stage-disk cousin).
 - Camera `z` 8–10 on a ~1.7 mesh (empty cream).
 - Canvas CSS 2× viewport (object on the right edge).
 - Cropped hero mesh. HUD colliding with type on the object.

@@ -32,7 +32,7 @@ Read [forbidden.md](forbidden.md) before shipping. Open [references.md](referenc
 4. **Canvas CSS = viewport.** `#stage { inset:0; width:100%; height:100%; display:block }`. `setSize(innerWidth, innerHeight)` must update style. A 2× drawing buffer with unlocked CSS **parks the object on the right edge**. Fail.
 5. **Whole object, studio air.** Colored mesh occupies 25–40% of the short axis, centered, air on every side. **Projected width ≥ 18% of the short axis.** A match / pencil / crayon / nail / stick that is 30% tall and 2% wide is empty cream (STRIKE). HUD = top corners + a control **below** the object. HUD never sits on the mesh.
 6. **No gray stage disk.** Soft elliptical contact only. A `CircleGeometry` floor is allowed only when the loop is a room you are inside.
-7. **Authored surface with mass.** Canvas / shader / vertices the product wrote, on a silhouette you could name. `Capsule` / smooth `Sphere` / `Box` / `Cylinder` + a sphere head is a vitamin (KEPT / STRIKE) even with a wood map. If a stranger says "that is a Three.js cylinder," fail. **Idle marks must read:** type, continents, or dye must be readable in the first screenshot. Invisible grain on a thin shaft is not authored.
+7. **Authored surface with mass.** Canvas / shader / vertices the product wrote, on a silhouette you could name. `Capsule` / smooth `Sphere` / `Box` / `Cylinder` + a sphere head is a vitamin (KEPT / STRIKE) even with a wood map. A smooth lathe pot that hides its inner face is a **closed pot** (CHIME). If a stranger says "that is a Three.js cylinder" or "that is an IKEA bowl," fail. **Idle marks must read:** you must see the inscribed line in the first screenshot. A second disk under the mesh that reads as a plate is a stage disk.
 8. **Atmosphere is required.** Name one family before markup: paper studio / white haze / night void / fogged room / field-as-sky. Leftover CSS cream is not air. **Augen is white haze still-life, not a night void.** Interfere is 2D SaaS, not the bar.
 9. **Transition is required.** Name one family before markup: **gate / chapter wipe / dissolve / morph / camera chapter / portal jump**. A crumple slider is a material event, not the site. **Painting the void a new hex behind a leftover crayon is not a transition** (STRIKE). Air *and* the object must change.
 10. **Night glass.** Thickness (thin box, not a mapped plane) + rest yaw ≈ 0.35 + specular / clearcoat. `transmission` on a mapped night face washes to **milky plastic**. Prefer clearcoat; if you transmit, stay ≤ 0.06 and keep the first frame ink-dark.
@@ -196,7 +196,7 @@ Default stack: one HTML file with a Three.js importmap. HUD is a whisper over th
 - Fake browser chrome / gray placeholder bars
 - Feature rows with a line under each claim
 - Lucide icons in rounded squares
-- An unlit cube or a vitamin Capsule / Sphere / Box
+- An unlit cube or a vitamin Capsule / Sphere / Box / Cylinder stick (STRIKE)
 - A cropped mesh, a right-edge park, or HUD on the object
 - A gray stage disk
 - Empty cream from a far camera
