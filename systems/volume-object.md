@@ -1,6 +1,6 @@
 # volume-object
 
-Recent template: the **homepage masonry** and Web posts such as Liquid Glass Hero, Glass Website, Ice Fracture, Crumpled Paper, Bloom, Earth. A lit, physical object sits in a studio. You use *the object*, not a form.
+Recent template from the reel: **Earth Timeline** (one sphere, a slider, the surface changes) and **Crumple changelog** (a poster becomes a paper ball). Also Liquid Glass / crumpled paper on the homepage. A lit object sits in a studio. You use *the object*, not a form.
 
 **Use:** default for every product / virtual product / 文案 / generate / 回声瓶-class brief.  
 **Never:** a rounded card with a textarea. That is Specimen D.

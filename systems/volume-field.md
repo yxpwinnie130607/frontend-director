@@ -1,6 +1,6 @@
 # volume-field
 
-Recent template: Animated Sphere Clusters, Bloom, Earth Timeline, Black Hole, Gaussian Splat, Koi Fish Hero, WebGL Portfolio. You move through a **volume**, not around a single bottle.
+Recent template from the reel: **Vercel Store Shader** (a jacket dissolves into a living white-dot field). Also Bloom, Sphere Clusters, Black Hole. You move through a **volume**, or a product *becomes* a volume.
 
 **Use:** brand, campaign, or a product that is a world (generate, explore, feed). One of the three default previews.  
 **Never:** a 2D particle canvas on a form.

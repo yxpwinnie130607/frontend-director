@@ -2,14 +2,14 @@
 
 Create highly interactive websites using a coding agent's frontend skills.
 
-The templates are **Recent** ([recent.design](https://recent.design)): lit 3D objects and WebGL websites. This skill ships **volume systems** — `volume-object`, `volume-field`, `kinetic-scroll` — a Three.js studio you can use. A dark form with a yellow button is the same as no skill.
+The templates are the Recent posts in the 2026-10-25 reel: Earth Timeline, Crumple changelog, Gaussian portal rooms, Vercel shader, WebGL 作品集. This skill ships **volume systems** — `volume-object`, `volume-field`, `volume-world`. A dark form with a yellow button is the same as no skill.
 
 Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
 1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**.
-2. For a product / 文案 / generate brief, builds **three 3D first screens**: `volume-object`, `volume-field`, `kinetic-scroll`.
+2. For a product / 文案 / generate brief, builds **three 3D first screens**: `volume-object`, `volume-field`, `volume-world`.
 3. You pick one. Only then does it build the rest of that system.
 4. The first viewport is a WebGL studio. Pointer orbits. The product job hits the mesh. A 2D card fails.
 

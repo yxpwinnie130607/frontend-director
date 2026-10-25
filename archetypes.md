@@ -4,13 +4,13 @@ Do not design from this table. After you pick ids, read those `systems/<id>.md` 
 
 ## Default three (product, virtual product, 文案, generate, 回声瓶, any tool)
 
-| id | Recent template | the loop |
+| id | Recent template (see references.md) | the loop |
 |---|---|---|
-| `volume-object` | Homepage objects, Liquid Glass, Glass Website, crumpled paper | One lit mesh you use. Pointer orbits. |
-| `volume-field` | Bloom, Sphere Clusters, Earth, Black Hole, Koi, WebGL Portfolio | A volume you move through. Click changes the field. |
-| `kinetic-scroll` | Ice Fracture, Calendly pin, scroll WebGL | Scroll puppets a 3D object through chapters. |
+| `volume-object` | Earth Timeline, Crumple changelog | One lit mesh. Slider / scroll / drop changes its surface. |
+| `volume-field` | Vercel Store Shader | A photo or field dissolves into living points. |
+| `volume-world` | Gaussian portal, WebGL 作品集 | You are inside a room or dark space. Look around. Use an object. |
 
-For those briefs, **always preview these three**. All three are WebGL. A 2D form is not a preview.
+For those briefs, **always preview these three**. All three are WebGL. A 2D form is not a preview. Read [references.md](references.md).
 
 ## Only if the brief is not a product
 

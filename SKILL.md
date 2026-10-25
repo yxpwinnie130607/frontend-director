@@ -23,6 +23,7 @@ Read supporting files only when the phase says so:
 - [forbidden.md](forbidden.md) — before shipping.
 - [verdicts.md](verdicts.md) — if the page kind is unclear.
 - [ceiling.md](ceiling.md) — optional, after a system is loaded.
+- [references.md](references.md) — the five Recent posts from the reel. Read in Phase 2.
 
 ---
 
@@ -108,7 +109,7 @@ Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you u
 If they pick "All content ready," ask them to paste it in the same turn.  
 If they send images, scan them before Phase 2.
 
-**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. The three directions are `volume-object`, `volume-field`, and `kinetic-scroll` (kinetic must still put a 3D object in the pin).
+**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. The three directions are `volume-object`, `volume-field`, and `volume-world`. Read [references.md](references.md) — those five Recent posts are the bar.
 
 ---
 
@@ -116,8 +117,8 @@ If they send images, scan them before Phase 2.
 
 Show, don't tell. People pick a room they can *use*.
 
-1. Open [archetypes.md](archetypes.md). For product / tool / virtual-product briefs, shortlist **`volume-object` + `volume-field` + `kinetic-scroll`**. All three are 3D. For brand/studio: `volume-field` + `one-world` + `volume-object`. Do not shortlist a 2D form system.
-2. Open https://recent.design (homepage *and* Web). Pick 3 volumetric posts (glass, ice, paper, orb, fish, hole). Write the material and the verb. Do not clone their mesh. Steal light, scale, and depth.
+1. Open [archetypes.md](archetypes.md) and [references.md](references.md). For product / tool briefs, shortlist **`volume-object` + `volume-field` + `volume-world`**. All three are 3D. Do not shortlist a 2D form.
+2. Open https://recent.design. Prefer the five posts in references.md: Earth Timeline, Crumple changelog, Gaussian portal, Vercel shader, WebGL 作品集. Write the material and the verb. Do not clone their mesh.
 3. Read **only those three** `systems/<id>.md` files and [motion.md](motion.md).
 4. Build **three first-viewport previews** — self-contained HTML. Each preview:
    - Is a WebGL studio (Three.js from the system file)
@@ -126,7 +127,7 @@ Show, don't tell. People pick a room they can *use*.
    - Uses the user's real product name and copy
    - Is one viewport tall
 5. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Orbit each. If a preview is a 2D card, rebuild it.
-6. In the chat, name them for the user only: Direction A: `volume-object` / B: `volume-field` / C: `kinetic-scroll`
+6. In the chat, name them for the user only: Direction A: `volume-object` / B: `volume-field` / C: `volume-world`
 
 **Preview authenticity:**
 
