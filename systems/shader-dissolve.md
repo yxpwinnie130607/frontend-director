@@ -81,7 +81,7 @@ const attr = geo.attributes.position;
 - Pointer X (or hover) dissolves the object into living points. Points keep moving.
 - Black studio. Type is huge and quiet, not a card.
 - The silhouette should read as *this* product (draw it, or cluster the points into a bottle / sheet / mark).
-- After the dissolve, the field is still *this* object: a sheet-shaped cloud, a word as a constellation. Sample points from **bright authored marks** (type, dye edge), not 4% random plane pixels. A generic starfield or a soft rectangle of dots with no readable word is a fail (VEIL v1).
+- After the dissolve, the field is still *this* object: a sheet-shaped cloud, a word as a constellation. Sample points from **bright authored marks** (type, dye edge), not 4% random plane pixels. Scatter ≤ 3% of the glyph width or the line becomes a smear. A generic starfield or a soft bar of dots with no readable word is a fail (VEIL).
 
 ## Fail
 
