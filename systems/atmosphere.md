@@ -12,7 +12,7 @@
 | White studio void | Huge empty paper. Soft contact shadow. No floor disk. | `scene.background` = paper. No fog, or `Fog` so light it is air. Body CSS **equals** the Three color. | Earth Timeline, Crumple, Podium |
 | Night void | Black or near-black. Object or field is the only light. | `scene.background` = ink (`#050508`–`#0b0d12`). Optional `FogExp2` at 0.02–0.06. | Vercel shader, Astro Dither, Nothing to Watch |
 | Fogged room | You are inside. Distance eats color. Light falloff. | `Fog` or `FogExp2` + a ground that receives light + a key. Camera at eye height. | Gaussian portal |
-| White haze still-life | Rim-lit object. Falloff *is* the studio. Not a night void. | Tight key, cool fill, no visible walls. Background is pale haze, not ink. | **Augen** (https://augen.pro) |
+| White haze still-life | Rim-lit object. Falloff *is* the studio. Not a night void. | Pale ground + `FogExp2` in the **same** hue, density 0.04–0.08, so the limb dissolves into light. Tight key + rim. A hard paper void with a peach tile is INK, not Augen. | **Augen** (https://augen.pro) |
 | Shader field as sky | The volume *is* the room. | Fullscreen points / TSL / dither. No second CSS wash. | Astro Dither, Sphere Clusters, Recursive Surface Erosion |
 
 Pick **one**. Write it in a comment at the top of the module: `/* atmosphere: night void + FogExp2 0.045 */`.

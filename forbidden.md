@@ -27,6 +27,9 @@ Lessons already paid for. Do not rediscover them by polishing the glass card. Fa
 ### STRIKE
 A brown `CylinderGeometry` shaft + orange lathe head in leftover cream. Canvas "wood" that reads as a flat crayon. Inscribed type invisible at idle. After the event: the cream becomes black, the crayon stays, two beige blobs appear on the stick. HUD whisper crops to a single letter. **A toy stick is KEPT. Height 25–40% with width ~2% is empty cream. A background hex swap is not a transition. Two blobs are not a dissolve.** Fail. Do not ship a match, pencil, nail, crayon, or capsule-on-end as the hero.
 
+### INK
+Has mass and readable type (better than STRIKE). Still fail if: (1) RoomEnvironment washes the dye to **peach**; (2) hard paper `#e6e1d6` with no falloff is sold as Augen haze; (3) the contact ellipse reads as a gray puck. A colored box on hard white is not a still-life. **Haze must eat the limb. Dye must stay the authored hue.**
+
 ### CHIME
 A smooth lathe pot on leftover cream. The profile never returns down the inner wall, so the well is closed and the inscribed line is invisible. A second `CircleGeometry` under the mesh reads as a **plate / stage-disk cousin**. After the event: cream becomes black, the rim wobbles, no word constellation. **Mass without a readable face is still KEPT. A closed pot is not a singing bowl. A plate under the object is a stage disk.** Fail.
 
