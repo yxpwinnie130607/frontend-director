@@ -1,49 +1,58 @@
 # transition
 
-> Required for every preview and every build, with [motion.md](../motion.md). Recent sites change *worlds*, not opacity on a card.
+> Technique for the **scene change**. Recent sites do not only orbit a mesh. They jump, dissolve, wipe, dolly, or morph. The transition *is* the product event. Steal the family. Invent the event for **this** brief.
 
-**Ceiling:** Gaussian portal (jump the room); Vercel shader (object → field); Crumple (sheet → wad); Earth (surface rewrite); Shopify Editions / Podium (camera + material as you move). Steal the *kind* of change. Do not clone those HTML files.
+**Use:** every preview and every build. A slider that only wrinkles a plane is not enough. Read with [atmosphere.md](atmosphere.md).  
+**Never:** fade the whole page opacity. Never a CSS `transition: all`. Never ship idle-orbit as the only motion.
 
-A slider that only wrinkles a plane, with no scene change, is not enough even if composition is correct.
+## Decide one family (required)
 
-## Decide before markup
+| Family | What happens | How to build | Ceiling |
+|---|---|---|---|
+| Click-to-enter | A gate frame. Click. You are in the world. | Two states. 0.6–1.0s. Camera or field resolves. | Nothing to Watch, Astro Dither |
+| Portal jump | Look at a light. Click. Fog / floor / emissive swap. | 3+ worlds. Lerp fog + key + ground over 0.5–0.9s. Pointer still looks. | Gaussian portal |
+| Dissolve | Object becomes a living field. | Vertex or point mix. Points keep moving after. | Vercel shader, Recursive Surface Erosion |
+| Metaball wipe | A living blob reveals the next chapter. | SDF / metaball mask on a fullscreen pass, or a Three mesh as stencil. | Podium |
+| Camera chapter | The camera *is* the scroll. Dolly, crane, push-through. | Lenis or scroll pin drives `camera.position` + lookAt. 3 properties min. | Shopify Editions, Augen |
+| Material morph | The body changes (crumple, melt, wash). | Vertex mix. Whole object visible the entire time. | Crumple |
+| World lerp | Color of air + lights + fog travel with the event. | Always pair with one of the above. The air must change, not only the mesh. | Portal + Augen falloff |
 
-Pick **one** transition bound to the product job:
+Write it in a comment: `/* transition: dissolve + world lerp, 1.1s */`.
 
-| Kind | The event | Bind |
-|---|---|---|
-| Material morph | Sheet → wad, peel, melt | Vertex mix. Whole object stays visible. |
-| Dissolve to field | Object eaten by living points | Pointer, send, or generate drives mix. Points keep moving. |
-| Camera jump | You enter / leave / approach | Dolly, look-at, or cut. Fog density can pulse. Not `opacity` on `#app`. |
-| Gate | Click / type to enter (Nothing to Watch, Astro Dither) | First frame is a designed void + one control. The click **builds the world** (sphere, field, room). Not a 2D splash. |
-| Chapter wipe | Scroll is the scene change (Podium, Shopify, Becane) | Camera + mesh + lights move together. Lenis-style pin. A CSS wipe over photos is a fail unless a volume is the mask (metaball). |
-| World swap | Room A → room B | Portal, door, send. Swap lights + fog + meshes together. |
-| Surface rewrite | Same volume, new skin | Slider / type swaps the authored map. |
-
-Idle can breathe. The *send / generate / enter* action must run the transition.
-
-## Camera jump (copy)
+## Contract
 
 ```js
-let send = 0, sendT = 0;
-function trigger() { sendT = 1; }
-(function tick() {
-  send += (sendT - send) * 0.06;
-  const k = send * send * (3 - 2 * send);
-  camera.position.z = 5.4 - k * 1.8;       // push through, not a CSS zoom
-  scene.fog.density = 0.04 + k * 0.08;     // air thickens, then you are through
-  // also mix the mesh → field here
-  if (send > 0.98 && sendT === 1) { /* arrived: new state or reset */ }
-  requestAnimationFrame(tick);
-})();
+let event = 0, target = 0;
+function go() { target = target > 0.5 ? 0 : 1; }
+function tick(dt) {
+  event += (target - event) * Math.min(1, dt * 3.2);
+  // drive at least THREE of: camera z, fog density/color, mesh mix, light intensity
+  camera.position.z = THREE.MathUtils.lerp(5.4, 3.4, smooth(event));
+  scene.fog.density = THREE.MathUtils.lerp(0.04, 0.11, pulse(event));
+  scene.background.lerpColors(night, paper, event);
+}
 ```
 
-`z` must stay in the readable band (about 3.5–6.5 on a 1.6-wide mesh). Pushing to 9+ paints empty cream / empty black. Fail.
+- Duration **0.7–1.4s**. Instant swap is a fail. A 4s ease is a fail.
+- The first frame of the event must change **air and object**. Mesh-only (wrinkle) on a frozen cream ground is FOLD.
+- You can return (toggle). A one-way trap is fine if the new world is still the product.
+- `prefers-reduced-motion`: jump to the end state; keep the job.
+
+## Pairing (so the model does not only crumple)
+
+| If the object is… | Prefer this transition |
+|---|---|
+| One studio object | Dissolve, material morph, **or** world lerp + camera push. Not slider-only. |
+| A room you are in | Portal jump or camera chapter. |
+| A field | Dissolve / erosion, or click-to-enter. |
+| A deck | Camera approach + world lerp. |
+
+A white-void sheet + tick slider, even with correct composition, is **not** a complete Recent page. Add a scene change or pick a different family.
 
 ## Fail
 
-- `transition: opacity` on a wrapper as the only change.
-- Route change with no mesh / camera / fog event.
-- A yellow button that prints text under the canvas.
-- Orbit-only. Idle spin is not a transition.
-- A crumple slider and nothing else, sold as the whole site.
+- Orbit-only.
+- Slider wrinkles a plane and stops (FOLD, even when the wad is good).
+- `renderer.domElement.style.opacity` as the transition.
+- Clone Podium's blob, Astro Dither's hand, or Shopify's edition camera path.
+- Two climaxes stacked (dissolve **and** portal **and** wipe).
