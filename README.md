@@ -8,7 +8,7 @@ Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
-1. Infers the brief, then confirms four things at once: **Purpose, Length, Content, Density**.
+1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**, plus a few follow-ups that pin down this site.
 2. Builds **three interactive first-viewport directions** (not three full sites).
 3. You pick one. Only then does it load that system's full recipe and build the site.
 4. The primary object works (paste, add, toggle, open). It opens the page and fails on a forbidden pattern.

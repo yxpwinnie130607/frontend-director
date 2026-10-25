@@ -60,7 +60,9 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 ## Phase 1 — Confirm the brief (four questions)
 
-Infer from what they already said. Then **ask all four together** so they can correct you. Use a structured-question UI if the environment has one. Otherwise one compact message, numbered.
+**Auto-analyze first.** Before asking anything, write 2–4 sentences of your read: what this site is, who it is for, what the first-viewport object might be, and whether it is a marketing page or the product itself. Then **ask all four together**, plus **1–3 follow-up questions** that pin down what they actually mean (not generic taste questions). Use a structured-question UI if the environment has one. Otherwise one compact message, numbered.
+
+Follow-ups are for this brief only. Examples: "Is 拾贝 the product they use, or a landing that sells it?" "One screen they paste into, or a 5-section story?" "Quiet object, or a denser reading page?" Do not ask ten questions. Do not ask about fonts or colors here.
 
 Do not skip this unless they said "直接做 / just build / no questions."
 
