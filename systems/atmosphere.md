@@ -9,10 +9,10 @@
 
 | Family | What you see | How to build | Ceiling |
 |---|---|---|---|
-| White studio void | Huge empty paper. Soft contact shadow. No floor disk. | `scene.background` = paper. No fog, or `Fog` so light it is air. Body CSS **equals** the Three color. | Earth Timeline, Crumple, Augen, Podium |
+| White studio void | Huge empty paper. Soft contact shadow. No floor disk. | `scene.background` = paper. No fog, or `Fog` so light it is air. Body CSS **equals** the Three color. | Earth Timeline, Crumple, Podium |
 | Night void | Black or near-black. Object or field is the only light. | `scene.background` = ink (`#050508`–`#0b0d12`). Optional `FogExp2` at 0.02–0.06. | Vercel shader, Astro Dither, Nothing to Watch |
 | Fogged room | You are inside. Distance eats color. Light falloff. | `Fog` or `FogExp2` + a ground that receives light + a key. Camera at eye height. | Gaussian portal |
-| Photographic still-life | Rim-lit object. Falloff *is* the studio. | Tight key, cool fill, no visible walls. Background matches the darkest rim. | Augen (head in white haze) |
+| White haze still-life | Rim-lit object. Falloff *is* the studio. Not a night void. | Tight key, cool fill, no visible walls. Background is pale haze, not ink. | **Augen** (https://augen.pro) |
 | Shader field as sky | The volume *is* the room. | Fullscreen points / TSL / dither. No second CSS wash. | Astro Dither, Sphere Clusters, Recursive Surface Erosion |
 
 Pick **one**. Write it in a comment at the top of the module: `/* atmosphere: night void + FogExp2 0.045 */`.
@@ -44,3 +44,5 @@ Do not add a skybox PNG. Do not add a gradient CSS behind a transparent canvas. 
 - Visible stage floor that reads as a disk.
 - Bloom on the whole frame. SSAO as decoration.
 - White-void crumple with no designed air (FOLD cousins).
+- Treating Augen as a night void. It is white haze still-life.
+- Treating Interfere as atmosphere. It is 2D SaaS.

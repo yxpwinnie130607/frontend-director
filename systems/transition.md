@@ -12,7 +12,7 @@
 | Click-to-enter | A gate frame. Click. You are in the world. | Two states. 0.6–1.0s. Camera or field resolves. | Nothing to Watch, Astro Dither |
 | Portal jump | Look at a light. Click. Fog / floor / emissive swap. | 3+ worlds. Lerp fog + key + ground over 0.5–0.9s. Pointer still looks. | Gaussian portal |
 | Dissolve | Object becomes a living field. | Vertex or point mix. Points keep moving after. | Vercel shader, Recursive Surface Erosion |
-| Metaball wipe | A living blob reveals the next chapter. | SDF / metaball mask on a fullscreen pass, or a Three mesh as stencil. | Podium |
+| Chapter wipe | A living blob or plane reveals the next chapter. | SDF / metaball mask on a fullscreen pass, or a Three mesh as stencil. | Podium |
 | Camera chapter | The camera *is* the scroll. Dolly, crane, push-through. | Lenis or scroll pin drives `camera.position` + lookAt. 3 properties min. | Shopify Editions, Augen |
 | Material morph | The body changes (crumple, melt, wash). | Vertex mix. Whole object visible the entire time. | Crumple |
 | World lerp | Color of air + lights + fog travel with the event. | Always pair with one of the above. The air must change, not only the mesh. | Portal + Augen falloff |

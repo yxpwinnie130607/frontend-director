@@ -2,16 +2,16 @@
 
 Create 3D, highly interactive websites at the quality of Recent's best Web posts.
 
-The skill teaches a **taste bar**, not a five-template picker. Earth Timeline, Crumple changelog, Gaussian portal rooms, Vercel shader, and the WebGL 作品集 are especially good: they are the ceiling and example **loops** (a control changes a volume; a sheet crumples; you are in a room and jump; an object dissolves into a field; you navigate floating objects). After an agent installs this skill, it should invent a new object and world for **this** brief at that material standard. It should not copy those five HTML files or only pick from them.
+The skill teaches a **taste bar**, not a five-template picker. Earth Timeline, Crumple changelog, Gaussian portal rooms, Vercel shader, and the WebGL 作品集 are especially good: they are the ceiling and example **loops**. After an agent installs this skill, it invents a new object and world for **this** brief. It does not copy those five HTML files or only pick from them.
 
 Works with Cursor, Claude Code, Codex, and any agent that can read a `SKILL.md`.
 
 ## What it does
 
 1. Reads the brief out loud, then confirms four things at once: **Purpose, Length, Content, Density**.
-2. Invents **three original 3D first screens** for this product. Each one hits the bar: WebGL volume, physical light, pointer / scroll / type changes the volume, the product job happens to the mesh. A 2D card fails.
+2. Invents **three original 3D first screens**. Each one fills a card first: object, atmosphere family, transition family, authored surface, studio composition. Then it builds a usable WebGL viewport. A 2D card fails. A cream crumple slider fails.
 3. You pick one. Only then does it build the rest of that direction.
-4. Technique files (`earth-timeline`, `crumple`, `portal-room`, `shader-dissolve`, `spatial-deck`, plus `volume-object` / `volume-field` / `volume-world`) are a library. The model reads at most the 1–2 that match the invented loop, and **always** reads atmosphere + transition + motion. A crumple slider in leftover cream is not the bar.
+4. Technique files are a library. The model reads **atmosphere + transition + motion + at most 1–2 loop files**. It does not load the whole folder.
 
 ## Install
 
@@ -33,7 +33,7 @@ Then: `/frontend-director` or ask in natural language.
 
 ### Any other agent
 
-Point the agent at this repo or at `SKILL.md`. It should read `SKILL.md` first, then `archetypes.md` only when matching a loop family.
+Point the agent at this repo or at `SKILL.md`. It should read `SKILL.md` first and execute from it.
 
 ## Use
 
@@ -55,14 +55,16 @@ The agent should confirm the four questions, invent three usable first screens f
 
 | File | Role |
 |---|---|
-| `SKILL.md` | Director: phases, hard rules, look |
-| `references.md` | The Recent bar: 质感 / 动效 / 炫酷, five loops as ceiling, not a catalog |
-| `archetypes.md` | Loop families. Invent, then read matching techniques |
-| `systems/` | Technique recipes for those families |
-| `motion.md` | Motion after a direction is chosen |
+| `SKILL.md` | Director. Executable. Invent → air → transition → surface → compose → build |
+| `systems/atmosphere.md` | Designed background. Read for every preview and build |
+| `systems/transition.md` | Scene change. Read for every preview and build |
+| `motion.md` | Live engine. Read for every preview and build |
+| `systems/*` | One loop recipe. Read 1–2 after the card is filled |
+| `references.md` | Ceiling loops, optional |
+| `archetypes.md` | Loop family index |
+| `forbidden.md` | Fail specimens, including 拾贝 / 素笺 / 回声瓶 / KEPT / FOLD / VEIL |
 | `verdicts.md` | Where to go hard by page kind |
-| `ceiling.md` | Why the reference sites work |
-| `forbidden.md` | Slop that must not ship |
+| `ceiling.md` | How to use Recent. Not a 2D kit |
 
 ## License
 

@@ -43,11 +43,9 @@ One pinned chapter, 180–220vh tall, inner stage `100vh` sticky.
 
 ```
 sticky 100vh
-  huge word or product name (Instrument Serif, 18–28vw)
-  clip / scale / translateX driven by --progress
-  a second layer (product stage or image) wipes in from the bottom
-    at progress 0.35–1
-  that second layer is usable (type, generate, or drag) once it is in
+  WebGL mesh (copy studio camera from volume-object: FOV 32, z 5.2–6.2)
+  scroll drives at least three MESH properties (rotate, unfold, dissolve, camera z)
+  at progress 0.35–1 the product job hits the mesh
 ```
 
 The pinned layer is a **WebGL object** (copy the studio renderer from `volume-object`). Scroll drives the mesh (rotate, explode, fill, unfold). A 2D type poster with clip-path only is not enough.
@@ -56,7 +54,7 @@ The first screen on load already moves if you nudge the wheel. If the user must 
 
 ## Required interaction
 
-1. Include scroll progress from [motion.md](../motion.md). Bind at least **three** properties to `--progress` (example: type `scale`, type `clip-path`, panel `translateY`).
+1. Include scroll progress from [motion.md](../motion.md). Bind at least **three mesh / camera** properties to `--progress` (rotate, unfold, dissolve, `camera.z`). A 2D clip-path poster is a fail.
 2. At progress > 0.4 the product job hits the **mesh** (type reprints, unfold, dissolve). A 2D textarea is a fail.
 3. A thin progress hairline tracks `--progress`.
 4. `prefers-reduced-motion`: keep the product layer visible and usable; skip the pin.

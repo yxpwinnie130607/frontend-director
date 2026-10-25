@@ -31,7 +31,7 @@ tiny name, top left                    whisper, top right
 ## 质感
 
 Authored surface: a canvas the product wrote, a shader field, or vertices that crumple.  
-A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass needs **thickness**: a thin box, authored face, dark edges, rim light that catches. Face `envMapIntensity` ≤ 0.12 at night or RoomEnvironment washes the dye to pastel. The idle pose must show an edge (rest yaw ≈ 0.35), not a dead-on card. Face roughness ≥ 0.28 with no specular is a **brick**. Oil the face: roughness ≈ 0.1, clearcoat, or a painted streak. Glass also wants `ior` ≈ 1.5 and a little `transmission` (0.1–0.2), not a plastic tile. Printed type is drawn glyph-by-glyph with a 50–70px word gap. Collapsed "Leavethe lighton" is a fail. You should want to pick it up.  
+A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass needs **thickness**: a thin box, authored face, dark edges, rim light that catches. Face `envMapIntensity` ≤ 0.12 at night or RoomEnvironment washes the dye to pastel. The idle pose must show an edge (rest yaw ≈ 0.35), not a dead-on card. Face roughness ≥ 0.28 with no specular is a **brick**. Oil the face: roughness ≈ 0.1, clearcoat, or a painted streak. Glass wants `ior` ≈ 1.5. `transmission` on a mapped night face washes to **milky plastic** (VEIL). Prefer clearcoat + a painted streak; keep the dye ink-dark. If you use transmission, stay ≤ 0.06 and check the first frame is still ink, not gray. Printed type is drawn glyph-by-glyph. Offscreen `measureText` often returns 0; use fallback advance (`w > 2 ? w : 40`) and a 50–70px word gap. Collapsed "Leavethe lighton" is a fail. You should want to pick it up.  
 `CapsuleGeometry` / smooth `SphereGeometry` / `BoxGeometry` + `material.color.lerp` is a vitamin. Fail.
 
 ## Renderer contract
@@ -40,7 +40,8 @@ A `PlaneGeometry` card with a map and no edge is a slab (VEIL). Night glass need
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
-scene.background = new THREE.Color(0xf6f3ec); // or 0x08090d at night
+const GROUND = 0x0b0d12; // authored. paper studio uses a paper hex. leftover 0xf6f3ec is not a choice
+scene.background = new THREE.Color(GROUND);
 camera = new THREE.PerspectiveCamera(32, aspect, 0.1, 40);
 camera.position.set(0, 0.12, 5.5);
 // key + cool fill + a rim from behind. A flat unlit slab is VEIL-fail.

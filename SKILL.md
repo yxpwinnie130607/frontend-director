@@ -5,63 +5,61 @@ description: Create 3D, highly interactive websites at the Recent quality bar (v
 
 # Frontend Director
 
-This skill teaches the **Recent bar**: 3D, highly interactive, strong material. Five posts from a Recent reel are the **ceiling and example loops**, not a catalog: Earth Timeline, Crumple changelog, Gaussian portal, Vercel shader, WebGL portfolio. After this skill is installed, invent a new object and world for **this** brief at that quality. Do not copy those five HTML files. Do not only pick from them.
+Teach the **Recent bar**: volume, physical material, designed air, a real scene change. Five Recent posts are the ceiling and example loops, not a catalog. After install, invent a new object and world for **this** brief. Do not copy Earth, the Vercel jacket, the baroque sofa, the cassette, FOLD, or VEIL.
 
-A dark card with a yellow button is the same as no skill. A cropped poster filling the frame is the same as no skill.
+A dark card with a yellow button is the same as no skill. A cropped poster filling the frame is the same as no skill. A cream crumple slider is not a site.
 
-**Confirm the brief. Invent three live first viewports for this product. Build only the one they pick.**
+**Confirm the brief. Invent three live first viewports. Build only the one they pick.**
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
-Read supporting files only when the phase says so:
+This file is enough to decide. When you build, read only:
 
-- [references.md](references.md) — the ceiling. Five loops as the bar, not a picker. Read in Phase 2.
-- [archetypes.md](archetypes.md) — loop families. Match an invented loop; do not shortlist three ids.
-- [systems/](systems/) — technique library. Read **at most the 1–2 files** that match the invented loop, plus atmosphere + transition.
-- [motion.md](motion.md) — the live engine. Read for every preview and every build.
-- [systems/atmosphere.md](systems/atmosphere.md) — designed background. Read for every preview and every build.
-- [systems/transition.md](systems/transition.md) — scene change. Read for every preview and every build.
-- [forbidden.md](forbidden.md) — before shipping. Includes the five sites this skill already failed.
-- [verdicts.md](verdicts.md) — if the page kind is unclear.
-- [ceiling.md](ceiling.md) — optional, after a technique is loaded.
+- [systems/atmosphere.md](systems/atmosphere.md) — the air you named
+- [systems/transition.md](systems/transition.md) — the scene change you named
+- [motion.md](motion.md) — pointer / type / scroll engine
+- **1–2** `systems/<loop>.md` files that match the invented loop
+
+Read [forbidden.md](forbidden.md) before shipping. Open [references.md](references.md) only if you need a ceiling loop spelled out. Do not load the rest of `systems/`.
 
 ---
 
-## Design aesthetics
+## Hard laws (one line per fail)
 
-You converge toward static landings. Force a living page.
+1. **Do not build the site until they pick a direction.** Phase 1 confirms. Phase 2 is three invented first-viewport previews. Phase 3 is the site.
+2. **Invent the object for this brief.** Then pick air and a transition. Do not shortlist Earth / crumple / portal / jacket / cassette.
+3. **Studio camera.** FOV ~32. `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 on a small mesh paints **empty cream**. Fail. If cropped, pull back a little; do not jump to 9+.
+4. **Canvas CSS = viewport.** `#stage { inset:0; width:100%; height:100%; display:block }`. `setSize(innerWidth, innerHeight)` must update style. A 2× drawing buffer with unlocked CSS **parks the object on the right edge**. Fail.
+5. **Whole object, studio air.** Colored mesh occupies 25–40% of the short axis, centered, air on every side. HUD = top corners + a control **below** the object. HUD never sits on the mesh.
+6. **No gray stage disk.** Soft elliptical contact only. A `CircleGeometry` floor is allowed only when the loop is a room you are inside.
+7. **Authored surface.** Canvas / shader / vertices the product wrote. `Capsule` / smooth `Sphere` / `Box` + `color.lerp` is a vitamin (KEPT). Fail.
+8. **Atmosphere is required.** Name one family before markup: paper studio / white haze / night void / fogged room / field-as-sky. Leftover CSS cream is not air. **Augen is white haze still-life, not a night void.** Interfere is 2D SaaS, not the bar.
+9. **Transition is required.** Name one family before markup: **gate / chapter wipe / dissolve / morph / camera chapter / portal jump**. A crumple slider is a material event, not the site.
+10. **Night glass.** Thickness (thin box, not a mapped plane) + rest yaw ≈ 0.35 + specular / clearcoat. `transmission` on a mapped night face washes to **milky plastic**. Prefer clearcoat; if you transmit, stay ≤ 0.06 and keep the first frame ink-dark.
+11. **Dissolve.** Sample **bright authored marks**. Scatter ≤ 3% of the glyph width. Random plane pixels smear the word.
+12. **Printed type.** Offscreen `measureText` often returns **0**. Load the face, then draw **glyph-by-glyph** with fallback advance (`w > 2 ? w : 40`) and a real word gap. `fillText(wholeLine)` collapsing to one word is a fail.
+13. **The product job hits the mesh.** Type reprints / dissolves / pours. A letter, a 工作台 card, a textarea, or a yellow fill button is a fail.
+14. **No headline word in a second color. No em-dash (`—`) in visible copy.**
+15. **One world per page.** Do not blend night Linear with editorial serif with a teal word.
 
-- **Alive first:** before fonts, decide the loop. What does pointer do? What does scroll do? What does type do? If you cannot answer all three, you are not ready to mark up.
-- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. If you loaded a technique file, use its pair. Otherwise pick one pair and keep it.
-- **Color:** Dominant ground + one sharp accent. Do not tint a single headline word.
-- **Volume:** The first screen is WebGL (Three.js). Physical material, studio lights, ACES, shadows. An unlit cube is a fail. A CSS card is a fail.
-- **Composition (hard):** For a studio object (Earth / Crumple family), the first viewport shows the **whole object** with air around it. The object is smaller than the viewport. HUD is a whisper and never covers the mesh. A cropped sheet that fills the frame is a fail. See [forbidden.md](forbidden.md).
-- **Atmosphere:** A designed world (paper studio, night void, haze room, living field). Not leftover CSS cream. Soft contact only; no gray stage disk unless the loop is a room. See [systems/atmosphere.md](systems/atmosphere.md).
-- **质感:** Grain, dye, thickness, authored marks. You should want to pick it up. See [references.md](references.md).
-- **动效:** The event is physical (crumple, surface rewrite, dissolve, jump). Orbit-only is not enough.
-- **转场:** Send / enter / generate changes the *world* (camera, fog, mesh→field, room swap). CSS opacity on a card is a fail. See [systems/transition.md](systems/transition.md).
-- **炫酷:** Restraint. One complete object or a room you are inside. Designed air. Tiny chrome.
-- **Motion:** Pointer orbits the volume. Idle spin or breath. The product job happens *to the mesh*. See [motion.md](motion.md).
-- **Product:** If the brief is a tool, you use the 3D object (print a line onto a sheet, crumple it, dissolve it). A screenshot, a letter, or a textarea card is a fail.
+Copy these numbers when the loop is one object in a studio:
 
-Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, fake browser chrome with gray bars, dead lists, Space Grotesk as the new Inter.
+```js
+camera = new THREE.PerspectiveCamera(32, aspect, 0.1, 40);
+camera.position.set(0, 0.12, 5.5); // ~1.7 mesh. z 8–10 = empty cream
+renderer.setSize(innerWidth, innerHeight); // also sets canvas CSS. never leave a 2× style
+```
 
 ---
 
-## Hard rules (non-negotiable)
+## Taste (alive, not a kit)
 
-1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three invented live first-viewport previews. Phase 3 is the site.
-2. **Every first viewport is a 3D volume.** WebGL canvas, fullscreen. `MeshPhysicalMaterial` or `MeshStandardMaterial`, lights, environment, shadows, ACES. Pointer / scroll / type changes the volume. A rounded 2D card / textarea / yellow fill button is a fail even if it "works."
-3. **Whole object, studio air.** If the loop is one object in a studio, the colored mesh occupies about 25–40% of the short axis, centered, with air around it (Earth Timeline, Crumple). HUD: top corners + a control **below** the object. Fail if: the mesh is cropped; a caption sits on the mesh; a gray stage floor reads as a disk; the first frame is empty cream (camera too far or WebGL died). After `setSize`, set `canvas.style.width/height` to the CSS pixels.
-4. **Invent the object for this brief.** Then read at most 1–2 technique files that match the loop, plus [motion.md](motion.md). Do not load all five and pick three.
-5. **Steal the loop and the material standard. Do not clone the mesh.** No Earth map, Vercel jacket, baroque sofa, or cassette unless that *is* the product.
-6. **Authored surface, not a vitamin.** The hero is a canvas/shader the product wrote, or vertices that crumple / dissolve / jump. A default Capsule / Sphere / Box plus `color.lerp` is a fail (KEPT).
-7. **The product job happens to the 3D object.** Type feeds the mesh (print, peel, dissolve). A letter, a feature table, a fake window, or a "工作台" card is a fail.
-8. **One world per page.** Do not blend night Linear with editorial serif with a teal word.
-9. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
-10. **No em-dash (`—`) in visible copy.**
-11. **Do not ship a still page, and do not ship a flat live form.** Restrained means one material in a studio. It is still 3D.
-12. **Decide atmosphere and transition before markup.** Name the air (paper studio / white haze / night void / haze room / living field) and the scene change (morph / dissolve / camera jump / gate / chapter wipe / world swap / surface rewrite). A white-void crumple slider with no designed air and no world change is not the bar.
+- **Alive first:** before fonts, name the loop. What does pointer do? Scroll? Type? If you cannot answer all three, you are not ready to mark up.
+- **Type:** one display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display.
+- **Color:** dominant ground + one sharp accent. Do not tint a single headline word.
+- **Volume:** first screen is WebGL. `MeshPhysicalMaterial` or `MeshStandardMaterial`, lights, environment, shadows, ACES. An unlit cube is a fail. A CSS card is a fail.
+- **炫酷:** one complete object, or a room you are inside. Designed air. Tiny chrome.
+- **Avoid:** purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two CTAs, equal feature cards, fake browser chrome, Space Grotesk as the new Inter.
 
 ---
 
@@ -117,40 +115,53 @@ Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you u
 If they pick "All content ready," ask them to paste it in the same turn.  
 If they send images, scan them before Phase 2.
 
-**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. Then invent three original 3D directions for **this** product. Do not default to Earth + crumple + portal. A writing tool is not a planet unless that metaphor fits.
+**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. Then invent three original 3D directions for **this** product. A writing tool is not a planet unless that metaphor fits.
 
 ---
 
-## Phase 2 — Three invented directions (not three of five templates)
+## Phase 2 — Invent, then pick families, then preview
 
 Show, don't tell. People pick a room they can *use*.
 
+**Do not open the technique library yet. Do not open [references.md](references.md) yet.**
+
 1. Confirm the four questions from Phase 1 (or the user skipped them).
-2. Open [references.md](references.md) and [archetypes.md](archetypes.md). Read the **bar** and the **loop families**. Do not shortlist three named template ids.
-3. **Invent three original 3D interactive first-viewport directions for THIS product.** Each one is a new object or world bound to this brief. Each must hit the bar:
-   - WebGL volume, fullscreen
-   - Physical material and studio light (ACES, shadows)
-   - If it is one object in a studio: **the whole object is visible**, with air, HUD off the mesh
-   - Pointer, scroll, or type **changes the volume**
-   - The product job happens **to the mesh / world**
-   - Authored surface (not a vitamin primitive)
-   - A **designed atmosphere** and a **transition** named in one line each
-   - No 2D form, no 工作台 card, no yellow fill button, no letter about the product
-4. Match each invented loop to a **family** (object+control, material transform, room you enter, field/shader, spatial deck). Read **at most the 1–2** `systems/<id>.md` files that teach that family, plus [motion.md](motion.md), [systems/atmosphere.md](systems/atmosphere.md), and [systems/transition.md](systems/transition.md). Also allowed: `volume-object`, `volume-field`, `volume-world`. Do not force every preview to be Earth, crumple, or a portal.
-5. Build **three first-viewport previews** — self-contained HTML. Each preview:
-   - Is a WebGL studio you invented for this product
+2. **Invent three original objects / worlds for THIS product.** Not three template ids. A writing tool might be a vessel, a ribbon of type, a night room of drafts — not a planet, not a changelog poster, unless that *is* the metaphor.
+3. **Write one card per direction before any markup.** If a line is blank, you are not ready to build:
+
+```
+Object:      [invented thing bound to this brief]
+Atmosphere:  paper studio | white haze | night void | fogged room | field-as-sky
+Transition:  gate | chapter wipe | dissolve | morph | camera chapter | portal jump
+Surface:     [canvas / shader / vertices the product wrote]
+Composition: whole object, FOV 32, z 5.2–6.2, HUD below, no stage disk
+```
+
+A cream crumple slider with no named air and no named scene change is not a card. Rebuild the card.
+
+4. Match each card to a **loop family**. Then read **only** [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), [motion.md](motion.md), and the **1–2** files that teach that family:
+
+| Family | The loop | Read |
+|---|---|---|
+| Object + control | One lit mesh. A control rewrites the volume. | `volume-object` (add `earth-timeline` only if a slider rewrites a globe-like body) |
+| Material transform | A sheet or body physically changes. | `crumple` — and you still need a transition that is not the slider |
+| Room you enter | Camera is inside. A portal or door jumps the world. | `portal-room` or `volume-world` |
+| Field / shader | An object becomes a living field. | `shader-dissolve` or `volume-field` |
+| Spatial deck | Dark space. Several authored objects. Click brings one forward. | `spatial-deck` |
+| Kinetic chapter | Scroll drives the **mesh**. | `kinetic-scroll` |
+
+Do not load the other system files. Do not force Earth, crumple, or a portal onto every product.
+
+5. Build **three first-viewport previews** — self-contained HTML. Each one:
+   - Is the invented studio, with the named air and the named transition
+   - Uses the camera / canvas numbers in Hard laws
    - Pointer orbits *now*; the product job hits the mesh
    - Uses the user's real product name and copy
    - Is one viewport tall
-6. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Use each. If a preview is a 2D card, a vitamin mesh, a cropped poster, or a clone of Earth / jacket / sofa / cassette, rebuild it.
-7. In the chat, name them for the user by **what they do**, not by template id. Example: Direction A: a glass vessel you pour a line into / B: a sheet of drafts that peels / C: a night room of echoes.
+6. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Use each. If a preview is a 2D card, a vitamin mesh, a cropped poster, empty cream, a right-edge park, a cream crumple slider, or a clone of Earth / jacket / sofa / cassette / FOLD / VEIL, rebuild it.
+7. In the chat, name them by **what they do**, not by template id. Example: Direction A: a glass vessel you pour a line into / B: a sheet of drafts that peels / C: a night room of echoes.
 
-**Preview authenticity:**
-
-- Looks like the real first screen of their site
-- No "preview", "option A", file names, or system ids on the page
-- No tinted headline word, no em-dash
-- No fake browser window, no yellow fill button, no 工作台 card
+**Preview authenticity:** looks like the real first screen. No "preview", "option A", file names, or system ids on the page. No tinted headline word, no em-dash, no fake browser window, no yellow fill button, no 工作台 card.
 
 Ask (header: "Direction"): which one? A / B / C / mix.
 
@@ -160,21 +171,22 @@ Ask (header: "Direction"): which one? A / B / C / mix.
 
 ## Phase 3 — Build only the one they picked
 
-Rebuild the chosen invented world. Re-read the 1–2 technique files that match its loop, [motion.md](motion.md), [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), and [forbidden.md](forbidden.md) before you call it done.
+Rebuild the chosen invented world. Re-read the 1–2 technique files for its loop, [motion.md](motion.md), [systems/atmosphere.md](systems/atmosphere.md), [systems/transition.md](systems/transition.md), and [forbidden.md](forbidden.md) before you call it done.
 
-Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something* (hover wipe, scroll pin, add, generate). Do not invent a second unrelated system.
+Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something*. Do not invent a second unrelated system.
 
 Default stack: one HTML file with a Three.js importmap. HUD is a whisper over the canvas, **never on the object**.
 
 **Every page must include:**
 
-- A WebGL canvas covering the first viewport
+- A WebGL canvas covering the first viewport, CSS size = viewport
 - Physical materials, studio lights, ACES, shadows
 - The whole studio-object visible with air (unless the loop is a room you are inside)
+- Camera FOV ~32, `z` ~5.2–6.2 on a ~1.7 mesh
 - Pointer / scroll / type changing the volume
 - The product job applied to the mesh
-- A designed atmosphere (not leftover CSS)
-- A transition that changes the world (not wrapper opacity)
+- The named atmosphere (body CSS hex = `scene.background`)
+- The named transition (air **and** object change; duration 0.7–1.4s)
 - `prefers-reduced-motion`: keep the mesh usable, slow the orbit
 
 **Do not include:**
@@ -185,11 +197,15 @@ Default stack: one HTML file with a Three.js importmap. HUD is a whisper over th
 - Feature rows with a line under each claim
 - Lucide icons in rounded squares
 - An unlit cube or a vitamin Capsule / Sphere / Box
-- A cropped mesh with HUD colliding with it
+- A cropped mesh, a right-edge park, or HUD on the object
+- A gray stage disk
+- Empty cream from a far camera
+- A crumple slider sold as the whole site
 - Fake "Sarah Chen, CEO" quotes
-- A cloned Earth, Vercel jacket, baroque room, or cassette
+- A cloned Earth, Vercel jacket, baroque room, cassette, FOLD sheet, or VEIL glass card
 
-Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.
+Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.  
+Comments in JS: `/* atmosphere: … */`, `/* transition: … */`.
 
 ---
 
@@ -197,25 +213,27 @@ Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/*
 
 Open the page. Move the pointer across it. Scroll. Type or click the primary object. Narrow to a phone width.
 
-**Compare to the ceiling.** Screenshot idle and after the event. Hold it next to the family you used in [references.md](references.md). Write the gap in 质感 / 动效 / 炫酷 / atmosphere / transition. If it fails, change the skill so that gap cannot happen again, then rebuild. Do not ship a "close enough" cropped poster or a cream crumple slider.
+Screenshot idle and after the event. If the idle frame is empty cream, a right-edge crop, HUD on the mesh, a gray disk, milky plastic, or a smeared word, the page is not done — fix the matching law in this file or [forbidden.md](forbidden.md), then rebuild. Do not polish a hand-crafted demo instead of the skill.
 
-Then read [forbidden.md](forbidden.md). One hit is a fail. Screenshot the idle frame: if the object is cropped or the HUD covers it, rebuild before anything else.
+Then read [forbidden.md](forbidden.md). One hit is a fail.
 
 **Ship bar:**
 
 - [ ] Four questions confirmed; one of three invented directions picked
-- [ ] The object/world was invented for this brief; matching technique file(s) and `motion.md` were read
+- [ ] Each direction had a filled card (object, atmosphere, transition, surface, composition) before markup
+- [ ] Matching technique file(s) + atmosphere + transition + `motion.md` were read; the rest of `systems/` was not
 - [ ] First viewport is WebGL with physical material and studio light
-- [ ] Studio-object loops show the **whole object** with air; HUD does not overlap the mesh
+- [ ] Studio-object loops: whole object, FOV ~32, `z` ~5.2–6.2, canvas CSS = viewport, HUD off the mesh, no stage disk
 - [ ] Pointer / scroll / type changes the volume; the product job hits the mesh
-- [ ] Surface is authored (texture / crumple / shader / room), not a vitamin primitive
-- [ ] Atmosphere was chosen (paper / night / haze / field) and reads in the first frame
-- [ ] Transition changes the world (morph / dissolve / camera jump / room swap / rewrite)
+- [ ] Surface is authored, not a vitamin primitive
+- [ ] Atmosphere family reads in the first frame (not leftover cream)
+- [ ] Transition family changes the world (not wrapper opacity, not slider-only)
+- [ ] Printed type is glyph-by-glyph if the face is on a canvas
 - [ ] No 2D 工作台 card, no yellow fill button, no 素笺 letter, no 拾贝 centered stack
-- [ ] Not a clone of Earth, crumple-poster-as-changelog, baroque portal, Vercel jacket, or cassette
+- [ ] Not a clone of Earth, crumple-as-the-site, baroque portal, Vercel jacket, cassette, FOLD, or VEIL
 - [ ] Opened in a browser and used, not only screenshotted
 - [ ] No tinted headline word, no em-dash
-- [ ] Mobile keeps the loop; it is not a cramped stack of a dead desktop
+- [ ] Mobile keeps the loop
 
 If a box cannot be ticked, the page is not done.
 
@@ -224,7 +242,7 @@ If a box cannot be ticked, the page is not done.
 ## What this skill is not
 
 - Not a five-template picker. Not permission to copy five HTML files and stop.
-- Not a 2D taste kit (letters, live-machine cards, quiet essays, product-stage panels). Those recipes produced 拾贝 / 素笺 / 回声瓶. They are gone.
+- Not a 2D taste kit. Those recipes produced 拾贝 / 素笺 / 回声瓶. They are gone.
+- Not a license to polish FOLD / VEIL instead of changing this file.
 - Not a slide engine. For decks, use a slides skill.
 - Not a request to restyle a product surface the user did not name.
-- Not permission to ship a static editorial landing, a flat live form, a vitamin mesh, or a cropped poster, and call it taste.

@@ -4,14 +4,14 @@
 
 **Ceiling:** Recent Crumple. One complete poster in a **white** field. Paper grain. Slider / scroll crumples it into a **3D paper wad**. Whole object visible the entire time. HUD below.
 
-**Use:** any product that is a sheet of words.  
-**Never:** a still poster, a cropped sheet that fills the frame (FOLD), a 2D card.
+**Use:** a sheet that must physically change. The slider is the *material event*, not the site. You still name atmosphere + a transition (dissolve, reprint+morph, camera chapter).  
+**Never:** a still poster, a cropped sheet (FOLD), a 2D card, or a cream crumple slider sold as the whole page.
 
 ## Composition (hard)
 
 - White (or paper) studio. No stage floor you can see. Soft contact shadow only.
 - Sheet occupies **25–40%** of the short viewport axis. ≥ 18% empty studio on every side.
-- Camera: FOV ≤ 28, pull back until the full sheet and the full wad fit with margin.
+- Camera: FOV 30–34. `z` ≈ 5.2–6.2 on a ~1.7 sheet. `z` 8–10 paints empty cream. Fail.
 - Canvas CSS must be `width:100%; height:100%; display:block`. Call `renderer.setSize(innerWidth, innerHeight)` so Three sets the style. If `setPixelRatio(2)` runs and CSS stays at the drawing-buffer size, the object sits on the **right edge** and looks cropped. Fail.
 - HUD: product name top-left, one whisper top-right, **tick slider below the object**. Type-to-reprint lives under the slider. If type overlaps the mesh, fail.
 
@@ -52,8 +52,8 @@ const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50);
 camera.position.set(0, 0.15, 5.6); // close enough that the dye is readable. z > 8 on a 1.4 sheet = empty cream frame. Fail.
 
 const geo = new THREE.PlaneGeometry(1.72, 2.26, 96, 128);
-// crumpled[] = wrap the sheet onto a ball (lon/lat), then cut ridges with fold planes.
-// Do not only add z to a plane (bent card). Do not only modulate radius with sine (clay blob / low-poly crystal).
+// crumpled[] = fold-reflect across 7–10 planes, then crush toward the centroid.
+// Do not wrap lon/lat onto a ball (dumpling). Do not only add z to a plane (bent card). Do not only modulate radius with sine (clay blob).
 // radius ~ 0.5–0.85; clamp. First frame: colored mesh is 25–40% of the short axis.
 ```
 
@@ -65,6 +65,7 @@ const geo = new THREE.PlaneGeometry(1.72, 2.26, 96, 128);
 
 ## Fail
 
+- Slider-only page with leftover cream and no world change. That is FOLD cousin, even when the wad is good.
 - Cropped sheet filling the frame. HUD on the paper (FOLD).
 - CSS `transform: scale` on a 2D image.
 - Smooth sphere / capsule (KEPT).

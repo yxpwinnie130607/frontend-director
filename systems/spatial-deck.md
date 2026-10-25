@@ -90,6 +90,7 @@ addEventListener("resize", resize); resize();
 ## Must
 
 - Four or more objects in dark space. Pointer moves the camera. Click brings one forward.
+- Each piece needs an authored map or silhouette. Bare `BoxGeometry` + cream physical is a vitamin deck (KEPT cousin).
 - Fog, physical materials, ACES.
 - HUD only names the focused piece.
 

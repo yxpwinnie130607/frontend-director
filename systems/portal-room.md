@@ -112,3 +112,5 @@ addEventListener("resize", resize); resize();
 - A screenshot of an interior.
 - Gaussian-splat assets you do not have. Build the room.
 - A 工作台 form over the canvas.
+- Shipping the sample `SphereGeometry` + `transmission: 0.7`. That is a vitamin and milky plastic. Invent an authored hero.
+- A gray stage disk in a *studio-object* loop. This file is a room; the floor is allowed here only.

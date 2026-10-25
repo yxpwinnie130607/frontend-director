@@ -2,7 +2,7 @@
 
 Include this engine in every preview and every build. A page that only fades in on load has failed. A 2D card that writes text has also failed.
 
-The first viewport is a Three.js studio. Copy the renderer (ACES, shadows, pointer orbit) from the 1–2 technique files you loaded. HUD is a whisper: top corners + a control **below** the object. Never put type on top of the mesh.
+The first viewport is a Three.js studio. Copy the renderer (ACES, shadows, pointer orbit) from the 1–2 technique files you loaded. Studio camera: FOV ~32, `z` ~5.2–6.2 on a ~1.7 mesh. Canvas CSS = viewport. HUD is a whisper: top corners + a control **below** the object. Never put type on top of the mesh.
 
 `prefers-reduced-motion: reduce` keeps the *job* (type, generate, crumple, jump) and slows the orbit.
 
@@ -55,11 +55,11 @@ onScroll();
 
 Bind the progress to the **mesh** (rotate, unfold, dissolve). A 2D clip-path poster is not enough.
 
-## 5. Transition (required)
+## 4. Transition (required)
 
 Send / enter / generate must change more than a label. Mix at least two of: vertex or point field, camera `z` / look-at, fog density, authored map. See [systems/transition.md](systems/transition.md). `opacity` on a wrapper is a fail.
 
-## 4. Allowed vs fail
+## 5. Allowed vs fail
 
 | Use | Fail |
 |---|---|

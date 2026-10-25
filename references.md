@@ -114,6 +114,7 @@ If the five are not the right metaphor, these loops are the same bar:
 - **Authored surface:** canvas / shader / vertices the product wrote. Capsule + `color.lerp` = KEPT = fail.
 - **Material event:** crumple, dissolve, jump, or surface rewrite. Orbit-only is not enough.
 - **Atmosphere + transition:** the first frame names the air. Send / enter / generate changes the world. A cream crumple slider is not a complete site.
-- **Atmosphere + transition:** the first frame names the air. Send / enter / generate changes the world. A cream crumple slider is not a complete site.
-- Do not ship Earth / jacket / sofa / cassette because the files exist.
+- **Studio camera:** FOV ~32, `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 = empty cream.
+- **Augen** is white haze still-life, not a night void. **Interfere** is 2D SaaS, not the bar.
+- Do not ship Earth / jacket / sofa / cassette / FOLD / VEIL because the files exist.
 - A writing tool is not a planet unless that metaphor fits.

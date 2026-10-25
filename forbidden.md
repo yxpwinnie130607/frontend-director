@@ -2,7 +2,7 @@
 
 If a first viewport could be swapped onto another company by changing three nouns, it is slop.
 
-These five sites were produced by this skill. They are **fail specimens**. If your page looks like any of them, rebuild. Do not "fix" them by shipping the next cousin.
+These sites were produced by this skill. They are **fail specimens**. If your page looks like any of them, rebuild. Do not "fix" them by shipping the next cousin. Do not polish them instead of changing the skill.
 
 ## Specimens this skill already shipped
 
@@ -10,7 +10,7 @@ These five sites were produced by this skill. They are **fail specimens**. If yo
 Centered SaaS. One headline word tinted teal (沉底). Dead product card under a rules list. Em-dash in the body. You cannot paste a clip. **The SaaS average with better copy.** Fail.
 
 ### 素箋
-A letter about the product ("你好，这是一封关于素笺的信"). Fake Mac window + gray bars. Hairline feature rows (无账号 / 行距 / 导出). Dead draft list. Yellow CTA that does not write. **A quiet letter is not the product.** Fail.
+A letter about the product ("你好，这是一封关于素笺的信"). Fake Mac window + gray bars. Hairline feature rows. Dead draft list. Yellow CTA that does not write. **A quiet letter is not the product.** Fail.
 
 ### 回声瓶
 Dark rounded 工作台 card. Textarea. Yellow fill button 「投入瓶中」. Output as body text. Pointer does not orbit a volume. **A live 2D form is the same as no skill.** Fail.
@@ -19,16 +19,20 @@ Dark rounded 工作台 card. Textarea. Yellow fill button 「投入瓶中」. Ou
 Dark studio. Default `CapsuleGeometry` + torus. `material.color.lerp`. A slider that only changes roughness. Type drops a fading plane. It is 3D and it orbits. **It is still a Three.js vitamin with a paint job.** No authored surface, no designed silhouette. Fail.
 
 ### FOLD
-Cousins, all fail: (1) sheet cropped or parked on the right edge (canvas CSS 2× viewport); (2) HUD on the mesh (FOLDO, PRINTT); (3) first frame is **empty cream** with only a caption — camera too far or WebGL died; (4) a visible **gray stage disk**; (5) crumple is a clay blob or a bent card, not a paper wad with creases; (6) a paper slider in leftover cream with **no designed air and no world change**, sold as the whole site. **The first frame must show a colored volume 25–40% of the short axis. Atmosphere and a transition are required. A crumple-only page is not the bar.**
+Cousins, all fail: (1) sheet cropped or parked on the right edge (canvas CSS 2× viewport); (2) HUD on the mesh (FOLDO, PRINTT); (3) first frame is **empty cream** — camera `z` 8–10 on a small mesh, or WebGL died; (4) a visible **gray stage disk**; (5) crumple is a clay blob or a bent card; (6) a paper slider in leftover cream with **no designed air and no world change**, sold as the whole site. **Atmosphere and a transition are required. A crumple-only page is not the bar.**
+
+### VEIL
+Lessons already paid for. Do not rediscover them by polishing the glass card. Fail if any one hits: (1) mapped `PlaneGeometry` with no thickness; (2) dead-on rest pose, no yaw; (3) `transmission` washes the night face to **milky plastic**; (4) face is a matte brick (roughness ≥ 0.28, no specular / clearcoat); (5) dissolve samples random pixels or scatters more than 3% and the word smears; (6) offscreen `measureText` returns 0 and `fillText(wholeLine)` collapses the sentence. **Thickness + rest yaw + ink-dark dye + readable dissolve.**
 
 ## Composition law (hard)
 
-For object + control and material-transform first viewports (Earth Timeline, Crumple):
+For object + control and material-transform first viewports:
 
 1. The first frame shows the **whole object** with studio air around it.
-2. The object is **smaller than the viewport**. Lots of empty studio. Chrome is tiny.
-3. HUD lives in the **top corners** and a **slider below the object**. It never covers the mesh.
-4. If the mesh is cropped by the HUD, or the poster fills the frame like a 2D image, fail.
+2. FOV ~32. Camera `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 = empty cream.
+3. Canvas CSS matches the viewport. A 2× style parks the mesh on the **right edge**.
+4. HUD lives in the **top corners** and a control **below** the object. It never covers the mesh.
+5. No gray stage disk.
 
 Rooms you enter, shader fields, and spatial decks have their own scale. They still do not put a 工作台 card over the volume.
 
@@ -36,7 +40,9 @@ Rooms you enter, shader fields, and spatial decks have their own scale. They sti
 
 **https://smart-email-nexus.lovable.app** — purple pill nav, tinted "Intelligence," two CTAs, four icon cards, "Sarah Chen, CEO." Do not ship any cousin.
 
-**https://interfere.com** — on Recent, still a polished 2D SaaS (gradients, mockups). Featured ≠ ceiling for this skill.
+**https://interfere.com** — on Recent, still a polished **2D SaaS** (gradients, mockups). Featured ≠ ceiling. Do not treat it as the bar.
+
+**https://augen.pro** — steal the **white haze still-life**. It is not a night void.
 
 ## Patterns that fail this skill
 
@@ -49,7 +55,15 @@ Hit any one and the page is not done.
 - Dark rounded 工作台 card + textarea + yellow fill button.
 - Feature rows with a hairline under each claim.
 - Default Capsule / Sphere / Box + `color.lerp` (vitamin mesh).
+- Camera `z` 8–10 on a ~1.7 mesh (empty cream).
+- Canvas CSS 2× viewport (object on the right edge).
 - Cropped hero mesh. HUD colliding with type on the object.
+- Gray `CircleGeometry` stage disk (unless the loop is a room).
+- `transmission` > 0.06 on a mapped night face (milky plastic).
+- Dissolve from random plane pixels, or scatter > 3% of glyph width (smear).
+- `fillText(wholeLine)` after `measureText` returned 0 (collapsed type).
+- A crumple slider as the whole site (no named air, no world change).
+- Treating Augen as a night void. Treating Interfere as the bar.
 - Inter / Roboto / system-ui as the only display voice.
 - Elevate / seamless / unleash / transform your / unlock the power of.
 
@@ -57,4 +71,4 @@ Hit any one and the page is not done.
 
 Cover the logo. If you cannot tell what the company is, rewrite the first viewport.
 
-Does the first screenshot look like Earth or Crumple (one complete object, air around it) or like a cropped poster / a form / a vitamin? If the latter, rebuild.
+Does the first screenshot show a complete object with designed air, or a cropped poster / a form / a vitamin / empty cream / milky plastic? If the latter, rebuild.

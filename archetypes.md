@@ -1,6 +1,6 @@
 # Index — loop families, not a three-id picker
 
-Do not design from this table. After you invent three directions for **this** brief, read at most the 1–2 technique files that match those loops. See [references.md](references.md) for the ceiling.
+Do not design from this table. Invent three objects first (see the Phase 2 card in SKILL.md). Then read at most the 1–2 technique files that match those loops, plus atmosphere + transition + motion. See [references.md](references.md) only if you need a ceiling loop spelled out.
 
 These families are how the Recent bar *moves*. They are not a closed catalog. Do not always preview the same three ids. Do not force Earth, crumple, or a portal onto every product.
 
@@ -16,7 +16,7 @@ These families are how the Recent bar *moves*. They are not a closed catalog. Do
 
 Invent the object for this product. A writing tool might be a vessel, a sheet, a ribbon of type, a room of drafts — not a planet unless Earth is the metaphor. The surface must be authored.
 
-After you invent the object, name **atmosphere** (paper / night / haze / field) and **transition** (morph / dissolve / camera jump / world swap / rewrite). Read [systems/atmosphere.md](systems/atmosphere.md) and [systems/transition.md](systems/transition.md). A cream crumple slider is not a complete direction.
+After you invent the object, name **atmosphere** (paper studio / white haze / night void / fogged room / field-as-sky) and **transition** (gate / chapter wipe / dissolve / morph / camera chapter / portal jump). Read [systems/atmosphere.md](systems/atmosphere.md) and [systems/transition.md](systems/transition.md). A cream crumple slider is not a complete direction.
 
 ## Do not
 
@@ -25,6 +25,8 @@ After you invent the object, name **atmosphere** (paper / night / haze / field) 
 - Preview a centered SaaS stack (拾贝).
 - Preview a default capsule / sphere / box with a color lerp (KEPT).
 - Preview a cropped sheet that fills the frame (FOLD).
+- Preview a cream crumple slider as the whole site (no air, no world change).
+- Preview VEIL: milky transmission glass, smeared dissolve, collapsed type.
 - Tell the user to pick from Earth / crumple / portal / jacket / cassette.
 - Clone Recent's jacket, sofa, cassette, or Earth map.
 - Shortlist three named template ids and copy those HTML files.
