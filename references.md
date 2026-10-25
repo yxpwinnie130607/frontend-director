@@ -1,24 +1,22 @@
-# References — the five loops from the user's Recent reel
+# References — the Recent bar (not a catalog)
 
-These are the sites in `录屏2026-10-25 10.26.04.mov`. They are the ceiling. Open the live post if you can. Steal the **loop**, not the asset.
+These five posts from the Recent reel are the **ceiling**: 3D, highly interactive, strong material. After this skill is installed, the model should make sites **at that quality**. They are example **loops**, not five sites to clone, and not the only recipes allowed.
 
-| # | Recent name | Loop | System |
+Open the live post if you can. Steal the **loop** and the **material standard**. Invent a new object and world for **this** brief. Do not clone Earth, the Vercel jacket, the baroque room, or the cassette.
+
+| Loop family | Recent post | What to steal | Technique file (optional) |
 |---|---|---|---|
-| 1 | 高斯喷射传送门跳跃 / Gaussian Splat Portal Jumping | A real 3D *room*. A glowing portal. You jump worlds. WebGPU/WebGL. Style: 3D, experimental. | `volume-world` |
-| 2 | 地球时间线 / Earth Timeline | One lit sphere on white. A slider. Drag time, the surface and color change. Style: 3D, scroll. | `volume-object` |
-| 3 | Crumple 更新日志 / TypingMind changelog | A poster on white. Scroll or play: it crumples into a 3D paper ball. Material is the event. | `volume-object` |
-| 4 | Vercel 商店着色器 / Vercel Store Shader | A product photo on black. WebGL dissolves half the jacket into a living dot field. Micro-interaction. | `volume-field` |
-| 5 | WebGL 作品集 / Three.js portfolio | Dark space. Project cards and objects (a cassette) float. You navigate the scene. HUD is overlay, not a form. | `volume-world` |
+| Object + control | 地球时间线 / Earth Timeline | A slider (or equivalent) changes a volume: surface, color, scale | [systems/earth-timeline.md](systems/earth-timeline.md), [systems/volume-object.md](systems/volume-object.md) |
+| Material transform | Crumple 更新日志 | A sheet crumples; the material *is* the event | [systems/crumple.md](systems/crumple.md) |
+| Room you enter | 高斯喷射传送门跳跃 | You are inside a room and you jump worlds | [systems/portal-room.md](systems/portal-room.md), [systems/volume-world.md](systems/volume-world.md) |
+| Field / shader | Vercel 商店着色器 | An object dissolves into a living field | [systems/shader-dissolve.md](systems/shader-dissolve.md), [systems/volume-field.md](systems/volume-field.md) |
+| Spatial deck | WebGL 作品集 | You navigate floating objects in dark space | [systems/spatial-deck.md](systems/spatial-deck.md) |
 
-Also on the feed in that reel (steal the *feel*, do not clone):
-
-- 3D globe with a timeline
-- Crumpled paper balls you can almost pick up
-- Magnetic phone UI
-- CRT with a 3D burst
-- A jacket that is half cloth, half particles
+Also on that reel (steal the *feel*, do not clone): crumpled paper you can almost pick up, magnetic phone UI, CRT with a 3D burst, half-cloth / half-particle product shots.
 
 ## Law
 
-If the first viewport could be a screenshot of a form, it is not these sites.  
-If there is no volume (room, sphere, crumple, field, floating object), rebuild.
+- If the first viewport could be a screenshot of a form, it is not this bar. Rebuild.
+- If there is no volume (object, crumple, room, field, floating piece), rebuild.
+- If you shipped Earth / a jacket / a baroque sofa / a cassette because those files exist, you failed. Bind a new mesh to this product.
+- A writing tool does not become a planet unless that metaphor fits.

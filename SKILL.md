@@ -1,29 +1,27 @@
 ---
 name: frontend-director
-description: Create 3D, highly interactive websites using a coding agent's frontend skills. The visual ceiling is Recent (recent.design): lit physical objects, WebGL, glass, volume. Confirms purpose, length, content, and density, then shows three live 3D first-viewport directions. After the user picks one, builds that system only. Use when building landing pages, product sites, portfolios, or marketing sites.
+description: Create 3D, highly interactive websites at the Recent quality bar (volume, physical light, a loop you can use). Confirms purpose, length, content, and density, then invents three original 3D first-viewport directions for this product. After the user picks one, builds that world. Use when building landing pages, product sites, portfolios, or marketing sites.
 ---
 
 # Frontend Director
 
-The ceiling is **Recent** (https://recent.design, formerly Godly). Open the homepage *and* the Web filter. Those cards are the template: a lit torus, a glass hero, crumpled paper, a koi, ice, a black hole. **The first viewport is a 3D studio you can use.** A dark form with a yellow button is the same as no skill (回声瓶).
+This skill teaches the **Recent bar**: 3D, highly interactive, strong material. Five posts from a Recent reel are especially good (Earth Timeline, Crumple changelog, Gaussian portal, Vercel shader, WebGL portfolio). They are the **ceiling and example loops**, not a closed catalog. After this skill is installed, invent a new object and world for **this** brief at that quality. Do not copy those five HTML files. Do not only pick from them.
 
-Displace is interaction. Recent's objects are material. You need both: WebGL volume *and* a job (drop, generate, peel).
+A dark card with a yellow button is the same as no skill.
 
-A still poster, a 2D card, a textarea on black: fail.
-
-**Confirm the brief. Preview three live first viewports. Build only the one they pick.**
+**Confirm the brief. Invent three live first viewports for this product. Build only the one they pick.**
 
 If other aesthetic skills are installed, this file is the director unless the user names another.
 
 Read supporting files only when the phase says so:
 
-- [archetypes.md](archetypes.md) — index. Pick three live ids.
-- [systems/](systems/) — the recipe. Read **only** the shortlisted files, in full.
+- [references.md](references.md) — the ceiling. Five loops as the bar, not a picker. Read in Phase 2.
+- [archetypes.md](archetypes.md) — loop families. Match an invented loop; do not shortlist three ids.
+- [systems/](systems/) — technique library. Read **at most the 1–2 files** that match the invented loop.
 - [motion.md](motion.md) — the live engine. Read for every preview and every build.
 - [forbidden.md](forbidden.md) — before shipping.
 - [verdicts.md](verdicts.md) — if the page kind is unclear.
-- [ceiling.md](ceiling.md) — optional, after a system is loaded.
-- [references.md](references.md) — the five Recent posts from the reel. Read in Phase 2.
+- [ceiling.md](ceiling.md) — optional, after a technique is loaded.
 
 ---
 
@@ -32,8 +30,8 @@ Read supporting files only when the phase says so:
 You converge toward static landings. Force a living page.
 
 - **Alive first:** before fonts, decide the loop. What does pointer do? What does scroll do? What does type do? If you cannot answer all three, you are not ready to mark up.
-- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. The system file names the pair. Use it.
-- **Color:** Copy the system's `:root`. Dominant ground + one sharp accent. Do not tint a single headline word.
+- **Typography:** Load a real display face from Fontshare or Google Fonts. Never Inter, Roboto, Arial, or system-ui as display. If you loaded a technique file, use its pair. Otherwise pick one pair and keep it.
+- **Color:** Dominant ground + one sharp accent. Do not tint a single headline word. Borrow `:root` from a technique only if it fits this world.
 - **Volume:** The first screen is WebGL (Three.js). Physical material, studio lights, ACES, shadows. An unlit cube is a fail. A CSS card is a fail.
 - **Atmosphere:** A studio, not a form. The object has weight, thickness, and a floor or fog.
 - **Motion:** Pointer orbits the volume. Idle spin or breath. The product job happens *to the mesh*. See [motion.md](motion.md).
@@ -45,12 +43,12 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 ## Hard rules (non-negotiable)
 
-1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three live first-viewport previews. Phase 3 is the site.
-2. **Every first viewport is a 3D volume.** WebGL canvas, fullscreen or ≥ 70% of the viewport. `MeshPhysicalMaterial` or `MeshStandardMaterial`, lights, environment, shadows, ACES. Pointer orbits the object. A rounded 2D card / textarea / yellow fill button is a fail even if it "works."
-3. **Load a system and [motion.md](motion.md) before any markup.** If you have not read them, you are guessing.
-4. **Copy the system's `:root`, font `<link>`s, and the live engine.** Do not "interpret" them into a static Tailwind landing.
+1. **Do not build the full site until the user has picked a direction.** Phase 1 confirms. Phase 2 is three invented live first-viewport previews. Phase 3 is the site.
+2. **Every first viewport is a 3D volume.** WebGL canvas, fullscreen or ≥ 70% of the viewport. `MeshPhysicalMaterial` or `MeshStandardMaterial`, lights, environment, shadows, ACES. Pointer / scroll / type changes the volume. A rounded 2D card / textarea / yellow fill button is a fail even if it "works."
+3. **Invent the object for this brief.** Then read at most 1–2 technique files that match the loop, plus [motion.md](motion.md). Do not load all five and pick three.
+4. **Steal the loop and the material standard. Do not clone the mesh.** No Earth map, Vercel jacket, baroque sofa, or cassette unless that *is* the product.
 5. **The product job happens to the 3D object.** Type feeds the mesh (drop, peel, write on). A letter, a feature table, a fake window, or a "工作台" card is a fail.
-6. **One system per page.** Do not blend night Linear with editorial serif with a teal word.
+6. **One world per page.** Do not blend night Linear with editorial serif with a teal word.
 7. **No headline word in a second color.** Emphasis is weight, italic of the same face, or a line break.
 8. **No em-dash (`—`) in visible copy.**
 9. **Do not ship a still page, and do not ship a flat live form.** Restrained means one material in a studio. It is still 3D.
@@ -61,7 +59,7 @@ Avoid: purple-on-white, indigo `#6366f1`, centered badge + headline + sub + two 
 
 - **New page** → Phase 1.
 - **Redesign** → audit tokens and IA first ([verdicts.md](verdicts.md) redesign row), then Phase 1.
-- **Enhance existing** → do not change the system mid-flight unless asked. Make the existing page *alive* first.
+- **Enhance existing** → do not change the world mid-flight unless asked. Make the existing page *alive* first.
 
 ---
 
@@ -109,25 +107,30 @@ Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you u
 If they pick "All content ready," ask them to paste it in the same turn.  
 If they send images, scan them before Phase 2.
 
-**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. The three directions are `volume-object`, `volume-field`, and `volume-world`. Read [references.md](references.md) — those five Recent posts are the bar.
+**Default for any tool / virtual product / 文案 / generate brief:** Purpose = the product itself. Then invent three original 3D directions for **this** product. Do not default to Earth + crumple + portal. A writing tool is not a planet unless that metaphor fits.
 
 ---
 
-## Phase 2 — Three live directions (not three posters)
+## Phase 2 — Three invented directions (not three of five templates)
 
 Show, don't tell. People pick a room they can *use*.
 
-1. Open [archetypes.md](archetypes.md) and [references.md](references.md). For product / tool briefs, shortlist **`volume-object` + `volume-field` + `volume-world`**. All three are 3D. Do not shortlist a 2D form.
-2. Open https://recent.design. Prefer the five posts in references.md: Earth Timeline, Crumple changelog, Gaussian portal, Vercel shader, WebGL 作品集. Write the material and the verb. Do not clone their mesh.
-3. Read **only those three** `systems/<id>.md` files and [motion.md](motion.md).
-4. Build **three first-viewport previews** — self-contained HTML. Each preview:
-   - Is a WebGL studio (Three.js from the system file)
-   - Uses that system's fonts, `:root`, and mesh
+1. Confirm the four questions from Phase 1 (or the user skipped them).
+2. Open [references.md](references.md) and [archetypes.md](archetypes.md). Read the **bar** and the **loop families**. Do not shortlist three named template ids.
+3. **Invent three original 3D interactive first-viewport directions for THIS product.** Each one is a new object or world bound to this brief. Each must hit the bar:
+   - WebGL volume (fullscreen or ≥ 70%)
+   - Physical material and studio light (ACES, shadows)
+   - Pointer, scroll, or type **changes the volume**
+   - The product job happens **to the mesh / world**
+   - No 2D form, no 工作台 card, no yellow fill button
+4. Match each invented loop to a **family** (object+control, material transform, room you enter, field/shader, spatial deck). Read **at most the 1–2** `systems/<id>.md` files that teach that family, plus [motion.md](motion.md). Also allowed: `volume-object`, `volume-field`, `volume-world`. Do not force every preview to be Earth, crumple, or a portal.
+5. Build **three first-viewport previews** — self-contained HTML. Each preview:
+   - Is a WebGL studio you invented for this product
    - Pointer orbits *now*; the product job hits the mesh
    - Uses the user's real product name and copy
    - Is one viewport tall
-5. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Orbit each. If a preview is a 2D card, rebuild it.
-6. In the chat, name them for the user only: Direction A: `volume-object` / B: `volume-field` / C: `volume-world`
+6. Save to `.frontend-director/previews/` as `a.html`, `b.html`, `c.html`. Open all three. Use each. If a preview is a 2D card, or a clone of Earth / jacket / sofa / cassette, rebuild it.
+7. In the chat, name them for the user by **what they do**, not by template id. Example: Direction A: a glass vessel you pour a line into / B: a sheet of drafts that peels / C: a night room of echoes.
 
 **Preview authenticity:**
 
@@ -144,17 +147,17 @@ Ask (header: "Direction"): which one? A / B / C / mix.
 
 ## Phase 3 — Build only the one they picked
 
-Read the chosen `systems/<id>.md` again. Read [motion.md](motion.md). Read [forbidden.md](forbidden.md) before you call it done.
+Rebuild the chosen invented world. Re-read the 1–2 technique files that match its loop, [motion.md](motion.md), and [forbidden.md](forbidden.md) before you call it done.
 
-Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something* (hover wipe, scroll pin, add, generate). Do not invent a second system.
+Length from Phase 1 sets section count. Density sets type scale. Content is the copy. Every later section must still do *something* (hover wipe, scroll pin, add, generate). Do not invent a second unrelated system.
 
-Default stack: one HTML file with the Three.js importmap from the system. HUD is a whisper over the canvas.
+Default stack: one HTML file with a Three.js importmap. HUD is a whisper over the canvas.
 
 **Every page must include:**
 
 - A WebGL canvas covering the first viewport
 - Physical materials, studio lights, ACES, shadows
-- Pointer orbit on the volume
+- Pointer / scroll / type changing the volume
 - The product job applied to the mesh
 - `prefers-reduced-motion`: keep the mesh usable, slow the orbit
 
@@ -167,6 +170,7 @@ Default stack: one HTML file with the Three.js importmap from the system. HUD is
 - Lucide icons in rounded squares
 - An unlit cube
 - Fake "Sarah Chen, CEO" quotes
+- A cloned Earth, Vercel jacket, baroque room, or cassette
 
 Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.
 
@@ -180,12 +184,12 @@ Then read [forbidden.md](forbidden.md). One hit is a fail.
 
 **Ship bar:**
 
-- [ ] Four questions confirmed; one of three directions picked
-- [ ] System id named; `systems/<id>.md` and `motion.md` were read
+- [ ] Four questions confirmed; one of three invented directions picked
+- [ ] The object/world was invented for this brief; matching technique file(s) and `motion.md` were read
 - [ ] First viewport is WebGL with physical material and studio light
-- [ ] Pointer orbits the volume; the product job hits the mesh
+- [ ] Pointer / scroll / type changes the volume; the product job hits the mesh
 - [ ] No 2D 工作台 card, no yellow fill button, no 素笺 letter
-- [ ] Tokens and fonts are the system's
+- [ ] Not a clone of Earth, crumple-poster-as-changelog, baroque portal, Vercel jacket, or cassette
 - [ ] Opened in a browser and used, not only screenshotted
 - [ ] No tinted headline word, no em-dash
 - [ ] Mobile keeps the loop; it is not a cramped stack of a dead desktop
@@ -196,6 +200,7 @@ If a box cannot be ticked, the page is not done.
 
 ## What this skill is not
 
+- Not a five-template picker. Not permission to copy five HTML files and stop.
 - Not a slide engine. For decks, use a slides skill.
 - Not a request to restyle a product surface the user did not name.
 - Not permission to ship a static editorial landing, or a flat live form, and call it taste.

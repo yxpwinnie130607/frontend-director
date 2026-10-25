@@ -1,29 +1,24 @@
-# Index — pick three 3D systems, then read those files
+# Index — loop families, not a three-id picker
 
-Do not design from this table. After you pick ids, read those `systems/<id>.md` files and `motion.md`.
+Do not design from this table. After you invent three directions for **this** brief, read at most the 1–2 technique files that match those loops. See [references.md](references.md) for the ceiling.
 
-## Default three (product, virtual product, 文案, generate, 回声瓶, any tool)
+These families are how the Recent bar *moves*. They are not a closed catalog. Do not always preview the same three ids. Do not force Earth, crumple, or a portal onto every product.
 
-| id | Recent template (see references.md) | the loop |
+## Loop families
+
+| Family | The loop | Technique files (read only if the invented loop matches) |
 |---|---|---|
-| `volume-object` | Earth Timeline, Crumple changelog | One lit mesh. Slider / scroll / drop changes its surface. |
-| `volume-field` | Vercel Store Shader | A photo or field dissolves into living points. |
-| `volume-world` | Gaussian portal, WebGL 作品集 | You are inside a room or dark space. Look around. Use an object. |
+| Object + control | One lit mesh. Pointer / slider / type changes its volume (surface, color, scale, text on the skin). | `earth-timeline`, `volume-object` |
+| Material transform | A sheet or body physically changes (crumple, peel, fold, melt). Material is the event. | `crumple` |
+| Room you enter | Camera is inside a space. Look around. A portal, door, or object jumps the world. | `portal-room`, `volume-world` |
+| Field / shader | An object becomes a living field of points, light, or volume. | `shader-dissolve`, `volume-field` |
+| Spatial deck | Dark space. Several floating objects. You navigate; click brings one forward. | `spatial-deck` |
 
-For those briefs, **always preview these three**. All three are WebGL. A 2D form is not a preview. Read [references.md](references.md).
-
-## Only if the brief is not a product
-
-| id | kind | pick when |
-|---|---|---|
-| `one-world` | brand / studio | One room and a door — still 3D |
-| `live-machine` | last resort | Only if they asked for a 2D tool chrome *and* a volume |
-| `ritual-object` | clip / Sunday | Tray — must sit in the volume-object studio |
-| `pointer-world` | campaign | Cursor light over a 3D field |
-| `recent-overflow` | any | Open recent.design, one volumetric post only |
+Invent the object for this product. A writing tool might be a vessel, a sheet, a ribbon of type, a room of drafts — not a planet unless Earth is the metaphor.
 
 ## Do not
 
 - Preview a dark card + yellow button.
-- Preview three 2D systems.
-- Clone Recent's flower or torus mesh. Steal the studio.
+- Tell the user to pick from Earth / crumple / portal / jacket / cassette.
+- Clone Recent's jacket, sofa, cassette, or Earth map.
+- Shortlist three named template ids and copy those HTML files.
