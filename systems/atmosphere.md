@@ -39,7 +39,7 @@ Do not add a skybox PNG. Do not add a gradient CSS behind a transparent canvas. 
 
 ## Fail
 
-- Accidental cream: camera too far **or** `scene.background` unset **or** CSS `#fff` behind a WebGL clear.
+- Accidental cream: camera too far **or** `scene.background` unset **or** CSS `#fff` behind a WebGL clear **or** a tiny toy stick in a huge pale field (STRIKE). Empty cream around a crayon is not Augen haze. Augen haze has falloff that eats the object's edges **and** an object with presence.
 - A second background (CSS gradient + Three color).
 - Visible stage floor that reads as a disk.
 - Bloom on the whole frame. SSAO as decoration.

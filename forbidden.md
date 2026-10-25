@@ -24,12 +24,15 @@ Cousins, all fail: (1) sheet cropped or parked on the right edge (canvas CSS 2×
 ### VEIL
 Lessons already paid for. Do not rediscover them by polishing the glass card. Fail if any one hits: (1) mapped `PlaneGeometry` with no thickness; (2) dead-on rest pose, no yaw; (3) `transmission` washes the night face to **milky plastic**; (4) face is a matte brick (roughness ≥ 0.28, no specular / clearcoat); (5) dissolve samples random pixels or scatters more than 3% and the word smears; (6) offscreen `measureText` returns 0 and `fillText(wholeLine)` collapses the sentence. **Thickness + rest yaw + ink-dark dye + readable dissolve.**
 
+### STRIKE
+A brown `CylinderGeometry` shaft + orange lathe head in leftover cream. Canvas "wood" that reads as a flat crayon. Inscribed type invisible at idle. After the event: the cream becomes black, the crayon stays, two beige blobs appear on the stick. HUD whisper crops to a single letter. **A toy stick is KEPT. Height 25–40% with width ~2% is empty cream. A background hex swap is not a transition. Two blobs are not a dissolve.** Fail. Do not ship a match, pencil, nail, crayon, or capsule-on-end as the hero.
+
 ## Composition law (hard)
 
 For object + control and material-transform first viewports:
 
-1. The first frame shows the **whole object** with studio air around it.
-2. FOV ~32. Camera `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 = empty cream.
+1. The first frame shows the **whole object** with studio air around it. The object has **mass**: projected width ≥ 18% of the short axis, not a stick that is only tall.
+2. FOV ~32. Camera `z` ~5.2–6.2 on a ~1.7 **wide** mesh. A 0.1-wide cylinder at `z` 5.5 is still empty cream (STRIKE). `z` 8–10 = empty cream.
 3. Canvas CSS matches the viewport. A 2× style parks the mesh on the **right edge**.
 4. HUD lives in the **top corners** and a control **below** the object. It never covers the mesh.
 5. No gray stage disk.
@@ -54,7 +57,10 @@ Hit any one and the page is not done.
 - A letter about the product instead of the product.
 - Dark rounded 工作台 card + textarea + yellow fill button.
 - Feature rows with a hairline under each claim.
-- Default Capsule / Sphere / Box + `color.lerp` (vitamin mesh).
+- Default Capsule / Sphere / Box / Cylinder+sphere head + `color.lerp` or a wood map that does not read (vitamin / STRIKE crayon).
+- Match / pencil / nail / stick / crayon as the hero (no mass).
+- Background hex swap while the mesh stays the same (not a transition).
+- Dissolve that reads as two blobs or a cotton ball.
 - Camera `z` 8–10 on a ~1.7 mesh (empty cream).
 - Canvas CSS 2× viewport (object on the right edge).
 - Cropped hero mesh. HUD colliding with type on the object.
@@ -71,4 +77,4 @@ Hit any one and the page is not done.
 
 Cover the logo. If you cannot tell what the company is, rewrite the first viewport.
 
-Does the first screenshot show a complete object with designed air, or a cropped poster / a form / a vitamin / empty cream / milky plastic? If the latter, rebuild.
+Does the first screenshot show a complete object with designed air and **readable marks**, or a cropped poster / a form / a vitamin / a crayon in cream / empty cream / milky plastic? If the latter, rebuild.

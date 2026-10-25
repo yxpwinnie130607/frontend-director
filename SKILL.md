@@ -30,13 +30,13 @@ Read [forbidden.md](forbidden.md) before shipping. Open [references.md](referenc
 2. **Invent the object for this brief.** Then pick air and a transition. Do not shortlist Earth / crumple / portal / jacket / cassette.
 3. **Studio camera.** FOV ~32. `z` ~5.2–6.2 on a ~1.7 mesh. `z` 8–10 on a small mesh paints **empty cream**. Fail. If cropped, pull back a little; do not jump to 9+.
 4. **Canvas CSS = viewport.** `#stage { inset:0; width:100%; height:100%; display:block }`. `setSize(innerWidth, innerHeight)` must update style. A 2× drawing buffer with unlocked CSS **parks the object on the right edge**. Fail.
-5. **Whole object, studio air.** Colored mesh occupies 25–40% of the short axis, centered, air on every side. HUD = top corners + a control **below** the object. HUD never sits on the mesh.
+5. **Whole object, studio air.** Colored mesh occupies 25–40% of the short axis, centered, air on every side. **Projected width ≥ 18% of the short axis.** A match / pencil / crayon / nail / stick that is 30% tall and 2% wide is empty cream (STRIKE). HUD = top corners + a control **below** the object. HUD never sits on the mesh.
 6. **No gray stage disk.** Soft elliptical contact only. A `CircleGeometry` floor is allowed only when the loop is a room you are inside.
-7. **Authored surface.** Canvas / shader / vertices the product wrote. `Capsule` / smooth `Sphere` / `Box` + `color.lerp` is a vitamin (KEPT). Fail.
+7. **Authored surface with mass.** Canvas / shader / vertices the product wrote, on a silhouette you could name. `Capsule` / smooth `Sphere` / `Box` / `Cylinder` + a sphere head is a vitamin (KEPT / STRIKE) even with a wood map. If a stranger says "that is a Three.js cylinder," fail. **Idle marks must read:** type, continents, or dye must be readable in the first screenshot. Invisible grain on a thin shaft is not authored.
 8. **Atmosphere is required.** Name one family before markup: paper studio / white haze / night void / fogged room / field-as-sky. Leftover CSS cream is not air. **Augen is white haze still-life, not a night void.** Interfere is 2D SaaS, not the bar.
-9. **Transition is required.** Name one family before markup: **gate / chapter wipe / dissolve / morph / camera chapter / portal jump**. A crumple slider is a material event, not the site.
+9. **Transition is required.** Name one family before markup: **gate / chapter wipe / dissolve / morph / camera chapter / portal jump**. A crumple slider is a material event, not the site. **Painting the void a new hex behind a leftover crayon is not a transition** (STRIKE). Air *and* the object must change.
 10. **Night glass.** Thickness (thin box, not a mapped plane) + rest yaw ≈ 0.35 + specular / clearcoat. `transmission` on a mapped night face washes to **milky plastic**. Prefer clearcoat; if you transmit, stay ≤ 0.06 and keep the first frame ink-dark.
-11. **Dissolve.** Sample **bright authored marks**. Scatter ≤ 3% of the glyph width. Random plane pixels smear the word.
+11. **Dissolve.** Sample **bright authored marks**. Scatter ≤ 3% of the glyph width. Random plane pixels smear the word. After the event the field must still **read as the line**. Two blobs or a cotton ball is STRIKE. Fail.
 12. **Printed type.** Offscreen `measureText` often returns **0**. Load the face, then draw **glyph-by-glyph** with fallback advance (`w > 2 ? w : 40`) and a real word gap. `fillText(wholeLine)` collapsing to one word is a fail.
 13. **The product job hits the mesh.** Type reprints / dissolves / pours. A letter, a 工作台 card, a textarea, or a yellow fill button is a fail.
 14. **No headline word in a second color. No em-dash (`—`) in visible copy.**
@@ -202,7 +202,9 @@ Default stack: one HTML file with a Three.js importmap. HUD is a whisper over th
 - Empty cream from a far camera
 - A crumple slider sold as the whole site
 - Fake "Sarah Chen, CEO" quotes
-- A cloned Earth, Vercel jacket, baroque room, cassette, FOLD sheet, or VEIL glass card
+- A cloned Earth, Vercel jacket, baroque room, cassette, FOLD sheet, VEIL glass card, or STRIKE crayon
+- A match / pencil / stick / cylinder+sphere toy in empty cream
+- A background hex swap sold as a world change
 
 Comments in CSS: `/* === SYSTEM TOKENS === */`, `/* === LIVE ENGINE === */`, `/* === FIRST VIEWPORT === */`.  
 Comments in JS: `/* atmosphere: … */`, `/* transition: … */`.
@@ -223,11 +225,11 @@ Then read [forbidden.md](forbidden.md). One hit is a fail.
 - [ ] Each direction had a filled card (object, atmosphere, transition, surface, composition) before markup
 - [ ] Matching technique file(s) + atmosphere + transition + `motion.md` were read; the rest of `systems/` was not
 - [ ] First viewport is WebGL with physical material and studio light
-- [ ] Studio-object loops: whole object, FOV ~32, `z` ~5.2–6.2, canvas CSS = viewport, HUD off the mesh, no stage disk
+- [ ] Studio-object loops: whole object with **mass** (width ≥ 18% short axis), FOV ~32, `z` ~5.2–6.2, canvas CSS = viewport, HUD off the mesh, no stage disk
 - [ ] Pointer / scroll / type changes the volume; the product job hits the mesh
-- [ ] Surface is authored, not a vitamin primitive
-- [ ] Atmosphere family reads in the first frame (not leftover cream)
-- [ ] Transition family changes the world (not wrapper opacity, not slider-only)
+- [ ] Surface is authored and **readable at idle**, not a vitamin cylinder / crayon / stick
+- [ ] Atmosphere family reads in the first frame (not leftover cream around a tiny toy)
+- [ ] Transition family changes air **and** the object (not a hex swap behind a leftover mesh)
 - [ ] Printed type is glyph-by-glyph if the face is on a canvas
 - [ ] No 2D 工作台 card, no yellow fill button, no 素笺 letter, no 拾贝 centered stack
 - [ ] Not a clone of Earth, crumple-as-the-site, baroque portal, Vercel jacket, cassette, FOLD, or VEIL

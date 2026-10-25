@@ -34,7 +34,7 @@ function tick(dt) {
 ```
 
 - Duration **0.7–1.4s**. Instant swap is a fail. A 4s ease is a fail.
-- The first frame of the event must change **air and object**. Mesh-only (wrinkle) on a frozen cream ground is FOLD.
+- The first frame of the event must change **air and object**. Mesh-only (wrinkle) on a frozen cream ground is FOLD. Air-only (`scene.background.lerp` while the mesh stays a crayon) is STRIKE. A hex swap is not a world lerp.
 - You can return (toggle). A one-way trap is fine if the new world is still the product.
 - `prefers-reduced-motion`: jump to the end state; keep the job.
 
@@ -53,6 +53,7 @@ A white-void sheet + tick slider, even with correct composition, is **not** a co
 
 - Orbit-only.
 - Slider wrinkles a plane and stops (FOLD, even when the wad is good).
+- Background hex swap while the mesh stays the same (STRIKE).
 - `renderer.domElement.style.opacity` as the transition.
 - Clone Podium's blob, Astro Dither's hand, or Shopify's edition camera path.
 - Two climaxes stacked (dissolve **and** portal **and** wipe).
