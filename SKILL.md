@@ -67,6 +67,17 @@ How should it feel?
 - Low / cinematic — one idea per viewport, but the idea *moves*
 - High / reading-first — denser, still interactive
 
+**Question 5 — Material** (header: "素材")
+可不可以提供给我真实的素材，让做出来的效果更好？
+
+- 全部可提供（产品截图 / 照片 / logo / 客户标 / 真实数据——要我主动要）
+- 部分可提供（告诉我要哪些，缺的用程序化视觉顶位并标注）
+- 没有（不隐瞒：没有真实素材的场景是占位，交付时逐屏标注哪里必须换）
+
+这不是客套问题。**场景 = 一幅铺满的画 + 压在画上的字**（[systems/cinematic.md](systems/cinematic.md)）。
+没有真实素材，画只能程序化顶位——光场可以，作品墙和人物场景不行。
+问了这一问，交付时才知道哪些屏是"成立"的、哪些屏是"等素材"的。
+
 Prefill inferred answers. Example: *"Purpose (reading this as: a copy tool you use in the first screen)."*
 
 If they pick "All content ready," ask them to paste it in the same turn.  
@@ -113,6 +124,12 @@ Purpose → regime (defaults, not a veto):
 
 A Product first viewport that is CSS + IntersectionObserver is legal. An Editorial first viewport that is flush type and 1px rules is legal. `systems/*` do not forbid those.
 
+**If the brief says「高级感 / 电影感 / 像 Lando / 像 offerstudio」— stop. Do not copy a baseline yet.**
+Read [systems/cinematic.md](systems/cinematic.md) first. That request means a **cinematic product page**:
+6 blocks, two pin long-scenes carrying 50%+ of the scroll, one slogan repeated at the end,
+every scene a full-bleed picture with text pressed onto it. The default Product baseline
+produces a well-measured document for that brief — correct numbers, wrong species.
+
 **If the headline is Chinese, read [systems/cjk-type.md](systems/cjk-type.md) before Step 3.** Every number in the fingerprint table below was measured on Latin sites. Two of them invert on CJK: tracking must go to ~0 (negative makes Hanzi collide) and display line-height must go to 1.05–1.30 (Hanzi fill the em box). Pasting the Latin values onto a 120px Chinese headline produces a black bar.
 
 **If the regime is Editorial, read [systems/editorial.md](systems/editorial.md) before Step 2.** The baseline is one composition; a site is three to five compositions alternated. `systems/` had eleven files for 3D loops and none for type, which is why Editorial pages made with this skill read as "the baseline with new nouns".
@@ -134,7 +151,8 @@ A Product first viewport that is CSS + IntersectionObserver is legal. An Editori
 
 ```bash
 cp "library/02-可运行基线/<regime>/index.html" ./index.html
-# Editorial: <regime> may be editorial | editorial-index | editorial-split | editorial-band
+# <regime> may be editorial | editorial-index | editorial-split | editorial-band
+# cinematic brief: library/02-可运行基线/cinematic/index.html (read systems/cinematic.md first)
 ```
 
 Then only: drop unused sections, swap in real copy, retoken color. **Do not rewrite the structure.** The baseline *is* the grid (flush type, 1px rules, sticky track / lightbox / product stack). Re-organizing it returns the three-card template.
@@ -302,6 +320,7 @@ SKILL.md runs the five steps. Do not load the rest of the tree on every job.
 | Step 1, regime unclear | [library/01-规范/docs/01-taxonomy.md](library/01-规范/docs/01-taxonomy.md) |
 | **Editorial: how to compose sections** | **[systems/editorial.md](systems/editorial.md)** — 5 layout families, fail conditions |
 | **Editorial: a second skeleton to splice** | `library/02-可运行基线/editorial-{index,split,band}/index.html` — one family each, self-contained sections |
+| **「高级感 / 电影感 / 像 offerstudio」** | **[systems/cinematic.md](systems/cinematic.md)** — offerstudio 全站拆解 + Tempo v3 落地：结构、光场、两条 pin 时间线、动作词汇、数值表、四个坑 |
 | **Chinese headline / CJK type** | **[systems/cjk-type.md](systems/cjk-type.md)** — tracking, line-height, punctuation, breaking |
 | Step 3, need the measured tables | [library/01-规范/docs/02-aesthetic-fingerprint.md](library/01-规范/docs/02-aesthetic-fingerprint.md) |
 | Step 4, need a motion recipe | [library/01-规范/docs/03-motion-recipes.md](library/01-规范/docs/03-motion-recipes.md) |

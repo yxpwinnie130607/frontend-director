@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!--
+  BASELINE · Cinematic product page — systems/cinematic.md 的落地样例
+  参照 offerstudio.group 全站语言，从零写就，11/11 / p95 17ms / 13.7 屏。
+  结构：hero pin 4000px（光场+副句轮换）→ 信任行 → 成果 → 过程 → 能力 pin 3400px
+        （128px 大字）→ 定价 → 闭环重复口号。悬浮胶囊导航。
+  规则与数值的解释都在 systems/cinematic.md —— 先读它，再读这份代码。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tempo — 会开完了，事情才开始</title>
+<style>
+/* ============================================================
+   Tempo v3 — 从零写。
+   参照 offerstudio.group 的全站语言：
+   · 场景 = 一幅铺满的画，文字压在画上（不是纸上的排版）
+   · 全站 6 个区块，其中 2 个 pin 长场景占大头
+   · 一句口号贯穿，结尾闭环
+   · 悬浮胶囊导航，不是通栏
+   ============================================================ */
+:root{
+  --bg:#faf9f6;
+  --bg-ink:#060a13;
+  --ink:#101214;
+  --ink-70:rgba(16,18,20,.64);
+  --ink-45:rgba(16,18,20,.42);
+  --line:rgba(16,18,20,.10);
+  --accent:#3d6bff;
+  --ok:#16a34a;
+
+  --sans:"Inter","Helvetica Neue",-apple-system,"PingFang SC","Segoe UI",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,monospace;
+
+  --t-hero:clamp(52px,7.6vw,110px);
+  --t-giant:clamp(64px,9vw,128px);
+  --t-big:clamp(44px,5vw,72px);
+  --t-mid:clamp(30px,3.4vw,48px);
+  --t-h3:clamp(21px,2vw,28px);
+  --t-lead:clamp(17px,1.35vw,20px);
+  --t-body:16px;
+  --t-small:14px;
+  --t-label:11px;
+
+  --r-pill:9999px;
+  --pad:clamp(20px,4vw,56px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:var(--t-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+body::after{
+  content:"";position:fixed;inset:0;z-index:200;pointer-events:none;
+  opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+}
+
+/* ---- Lenis 官方 CSS ---- */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+
+/* ============================================================
+   悬浮胶囊导航
+   ============================================================ */
+.pillnav{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:90;
+  display:flex;align-items:center;gap:4px;
+  padding:7px 10px;border-radius:var(--r-pill);
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:0 1px 2px rgba(10,14,25,.08),0 12px 40px -12px rgba(10,14,25,.25);
+}
+.pillnav a{
+  padding:8px 15px;border-radius:var(--r-pill);
+  font-size:12.5px;font-weight:550;letter-spacing:.02em;color:rgba(16,18,20,.6);
+  transition:color 180ms linear,background 180ms linear;
+}
+.pillnav a:hover{color:var(--ink);background:rgba(16,18,20,.05)}
+.pillnav .brand{
+  font-weight:700;letter-spacing:.16em;font-size:12px;color:var(--ink);
+  padding:8px 17px;
+}
+
+/* ============================================================
+   场景 1：HERO —— pin 4000px 的光场
+   ============================================================ */
+.scene{position:relative}
+.pin{height:100svh;overflow:hidden;position:relative;background:#05070d}
+
+#rays{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow{
+  position:absolute;left:50%;top:50%;width:min(76vw,980px);aspect-ratio:1;
+  transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(circle,
+    rgba(160,200,255,.22) 0%,rgba(90,130,225,.10) 30%,rgba(6,10,19,0) 63%);
+}
+.stage{
+  position:absolute;inset:0;z-index:2;color:#fff;
+  display:grid;place-items:center;text-align:center;
+  padding:0 var(--pad);
+}
+.slogan{
+  margin:0;
+  font-size:var(--t-hero);line-height:1.16;letter-spacing:-.015em;font-weight:700;
+}
+.slogan em{
+  font-style:normal;
+  background:linear-gradient(96deg,#fff 6%,#bcd1ff 44%,#7aa0ff 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.whisper{
+  position:absolute;left:50%;top:63%;transform:translate(-50%,-50%);
+  width:min(92vw,860px);margin:0;
+  font-size:clamp(19px,1.8vw,26px);line-height:1.7;font-weight:500;
+  color:rgba(255,255,255,.92);
+}
+.whisper b{color:#7aa0ff;font-weight:600}
+.hero-cap{
+  position:absolute;left:0;right:0;bottom:clamp(18px,3.4vh,34px);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(255,255,255,.4);
+}
+.hero-cap .mouse{
+  width:17px;height:27px;border-radius:9px;position:relative;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);
+}
+.hero-cap .mouse::after{
+  content:"";position:absolute;left:50%;top:6px;width:2px;height:5px;margin-left:-1px;
+  border-radius:1px;background:rgba(255,255,255,.55);
+  animation:wheel 1.9s ease-in-out infinite;
+}
+@keyframes wheel{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(9px);opacity:0}}
+.js .scene .slogan,.js .whisper{opacity:0}
+
+/* ============================================================
+   场景 2：成果（浅色过场）
+   ============================================================ */
+.proof{background:var(--bg);padding:clamp(88px,14vh,170px) var(--pad)}
+.proof-in{max-width:1060px;margin:0 auto}
+.proof .eyebrow{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-45);text-align:center;
+}
+.proof h2{
+  margin:16px auto clamp(40px,7vh,72px);text-align:center;
+  font-size:var(--t-mid);line-height:1.3;letter-spacing:-.01em;font-weight:600;
+  max-width:22em;
+}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3.5vw,56px)}
+.stat{border-top:1px solid var(--line);padding-top:24px;text-align:left}
+.stat b{
+  display:block;font-size:clamp(52px,5.4vw,84px);line-height:1;
+  letter-spacing:-.045em;font-weight:600;font-variant-numeric:tabular-nums;
+}
+.stat span{display:block;margin-top:14px;font-size:var(--t-small);color:var(--ink-70)}
+
+/* ============================================================
+   场景 3：过程（浅色）
+   ============================================================ */
+.demo{background:var(--bg);padding:clamp(72px,11vh,140px) var(--pad) clamp(96px,15vh,190px)}
+.demo-head{text-align:center;max-width:640px;margin:0 auto clamp(44px,7vh,80px)}
+.demo-head .eyebrow{
+  font-family:var(--mono);font-size:var(--t-label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+.demo-head h2{margin:14px 0 16px;font-size:var(--t-mid);line-height:1.25;letter-spacing:-.01em;font-weight:600}
+.demo-head p{margin:0;color:var(--ink-70);font-size:var(--t-lead)}
+.demo-grid{
+  max-width:1060px;margin:0 auto;display:grid;
+  grid-template-columns:1.05fr .95fr;gap:clamp(26px,4.5vw,68px);align-items:start;
+}
+.lines{display:grid;border-top:1px solid rgba(16,18,20,.22)}
+.ln{
+  position:relative;isolation:isolate;
+  display:grid;grid-template-columns:48px 26px 1fr;gap:10px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--line);
+  font-size:15px;line-height:1.5;color:var(--ink-70);
+}
+.ln::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:rgba(61,107,255,.09);
+  transform:scaleX(var(--sweep,0));transform-origin:left;
+}
+.ln .t{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+  color:color-mix(in srgb, var(--accent) calc(var(--sweep,0) * 100%), var(--ink-45));
+}
+.ln .who{font-family:var(--mono);font-size:11px;color:var(--ink-45)}
+.ln p{margin:0}
+.ln.quiet{opacity:.42}
+.cards{display:grid;gap:clamp(10px,1.5vh,15px)}
+.card{
+  border-radius:14px;background:#fff;border:1px solid var(--line);
+  padding:16px 19px;box-shadow:0 1px 2px rgba(16,18,20,.05),0 14px 34px -14px rgba(16,18,20,.16);
+}
+.card .n{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  color:var(--accent);text-transform:uppercase;
+}
+.card h3{margin:7px 0 10px;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.4}
+.card .meta{
+  display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-45);
+}
+.card .meta b{color:var(--ink-70);font-weight:500}
+.demo-foot{
+  max-width:1060px;margin:clamp(26px,4vh,40px) auto 0;padding-top:14px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-45);
+}
+
+/* ============================================================
+   场景 4：能力 —— pin 长场景
+   ============================================================ */
+.can{background:var(--bg-ink);color:#fff}
+.can .pin{display:grid;place-items:center;padding:0 var(--pad)}
+.can-stage{text-align:center;max-width:1000px;width:100%}
+.giant{
+  margin:0 0 clamp(40px,7vh,84px);
+  font-size:var(--t-giant);line-height:1.04;letter-spacing:-.03em;font-weight:700;
+}
+.giant em{
+  font-style:normal;
+  background:linear-gradient(96deg,#fff 10%,#9db9ff 55%,#5d8bff 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.can-list{display:grid;text-align:left}
+.can-row{
+  display:grid;grid-template-columns:88px 1fr;gap:18px;align-items:baseline;
+  padding:clamp(18px,2.6vh,30px) 0;border-top:1px solid rgba(255,255,255,.14);
+}
+.can-row .k{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:#7aa0ff;
+}
+.can-row h3{margin:0 0 8px;font-size:var(--t-h3);font-weight:600;letter-spacing:-.01em}
+.can-row p{margin:0;color:rgba(255,255,255,.62);font-size:15.5px;line-height:1.65;max-width:44em}
+.js .can-row{opacity:0;transform:translateY(26px)}
+
+/* ============================================================
+   场景 5：定价
+   ============================================================ */
+.price{background:var(--bg);padding:clamp(88px,14vh,170px) var(--pad)}
+.price-in{max-width:860px;margin:0 auto}
+.price-head{text-align:center;margin-bottom:clamp(36px,6vh,56px)}
+.price-head h2{margin:14px 0 12px;font-size:var(--t-mid);line-height:1.25;letter-spacing:-.01em;font-weight:600}
+.price-head p{margin:0;color:var(--ink-70)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.plan{
+  display:flex;flex-direction:column;text-align:left;
+  border-radius:16px;border:1px solid var(--line);background:#fff;
+  padding:30px 28px 26px;box-shadow:0 1px 2px rgba(16,18,20,.05);
+}
+.plan.best{border-color:var(--ink)}
+.plan h3{margin:0 0 8px;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.plan .n{margin:12px 0 20px;font-size:38px;letter-spacing:-.03em;font-weight:600}
+.plan .n small{font-size:13px;font-weight:400;color:var(--ink-45);letter-spacing:0}
+.plan ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;font-size:14px;color:var(--ink-70)}
+.plan ul li::before{content:"—";margin-right:9px;color:var(--ink-45)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:46px;padding:0 24px;border-radius:var(--r-pill);
+  font-size:14.5px;font-weight:550;letter-spacing:-.01em;
+  background:var(--ink);color:#fff;
+  transition:transform 180ms cubic-bezier(.16,1,.3,1),background 180ms linear;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(16,18,20,.2)}
+.btn.ghost:hover{background:rgba(16,18,20,.05)}
+.btn.accent{background:var(--accent)}
+.btn.accent:hover{background:#2b57e6}
+.plan .btn{width:100%;margin-top:auto}
+
+/* ============================================================
+   场景 6：闭环
+   ============================================================ */
+.closing{
+  position:relative;background:var(--bg-ink);color:#fff;overflow:hidden;
+  padding:clamp(110px,18vh,220px) var(--pad);text-align:center;
+}
+.closing::before{
+  content:"";position:absolute;left:50%;top:50%;width:min(80vw,1000px);aspect-ratio:1;
+  transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(circle,rgba(120,160,255,.16) 0%,rgba(70,110,210,.07) 34%,rgba(6,10,19,0) 64%);
+}
+.closing-in{position:relative;z-index:2;max-width:900px;margin:0 auto}
+.closing h2{
+  margin:0 0 30px;font-size:var(--t-big);line-height:1.14;letter-spacing:-.015em;font-weight:700;
+}
+.closing h2 em{
+  font-style:normal;
+  background:linear-gradient(96deg,#fff 10%,#b9d0ff 50%,#7aa0ff 88%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.closing p{margin:0 0 38px;color:rgba(255,255,255,.6);font-size:var(--t-lead)}
+.closing .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.closing .btn{background:#fff;color:#0a0d14}
+.closing .btn:hover{background:#eef2ff}
+.closing .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.foot{
+  background:var(--bg-ink);color:rgba(255,255,255,.4);
+  padding:0 var(--pad) 40px;text-align:center;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* ============================================================
+   信任行
+   ============================================================ */
+.trust{
+  background:var(--bg);padding:0 var(--pad) clamp(28px,4vh,44px);
+  display:flex;justify-content:center;gap:clamp(14px,2.6vw,34px);flex-wrap:wrap;
+}
+.trust span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-70)}
+.trust svg{width:14px;height:14px;color:var(--ok)}
+
+@media (prefers-reduced-motion:reduce){
+  .js .scene .slogan,.js .scene .whisper{opacity:1}
+  .js .can-row{opacity:1;transform:none}
+  .hero-cap .mouse::after{animation:none}
+}
+@media (max-width:900px){
+  .demo-grid{grid-template-columns:1fr;gap:22px}
+  .plans,.stats{grid-template-columns:1fr}
+  .can-row{grid-template-columns:1fr;gap:8px}
+  .pillnav a:not(.brand){display:none}
+  .ln{grid-template-columns:42px 24px 1fr;font-size:14px}
+  .giant{font-size:clamp(52px,13vw,88px)}
+}
+</style>
+</head>
+<body>
+
+<nav class="pillnav">
+  <a href="#how" data-scroll>怎么用</a>
+  <a href="#can" data-scroll>能力</a>
+  <a class="brand" href="#top" data-scroll>TEMPO</a>
+  <a href="#pricing" data-scroll>价格</a>
+  <a href="#closing" data-scroll>开始</a>
+</nav>
+
+<main id="top">
+
+  <!-- ============ 场景 1：HERO（pin ~4000px） ============ -->
+  <section class="scene" id="hero">
+    <div class="pin">
+      <canvas id="rays"></canvas>
+      <div class="hero-glow"></div>
+      <div class="stage">
+        <h1 class="slogan">会开完了，<br>事情<em>才开始</em>。</h1>
+        <p class="whisper w1">一段 <b>40 分钟</b>的录音，<b>40 秒</b>后变成三张任务卡。</p>
+        <p class="whisper w2"><b>谁、做什么、什么时候</b>——不用谁再记。</p>
+      </div>
+      <div class="hero-cap">
+        <span>Scroll</span>
+        <span class="mouse"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 信任行 ============ -->
+  <div class="trust">
+    <span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.2 5a1 1 0 0 1-1.5.05L4.3 9a1 1 0 1 1 1.4-1.42l1.2 1.2 3.5-4.2a1 1 0 1 1 1.3 1.4Z"/></svg>录音 24 小时删除</span>
+    <span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.2 5a1 1 0 0 1-1.5.05L4.3 9a1 1 0 1 1 1.4-1.42l1.2 1.2 3.5-4.2a1 1 0 1 1 1.3 1.4Z"/></svg>不需要信用卡</span>
+    <span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.2 5a1 1 0 0 1-1.5.05L4.3 9a1 1 0 1 1 1.4-1.42l1.2 1.2 3.5-4.2a1 1 0 1 1 1.3 1.4Z"/></svg>中文优先</span>
+    <span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.2 5a1 1 0 0 1-1.5.05L4.3 9a1 1 0 1 1 1.4-1.42l1.2 1.2 3.5-4.2a1 1 0 1 1 1.3 1.4Z"/></svg>40 秒出结果</span>
+  </div>
+
+  <!-- ============ 场景 2：成果 ============ -->
+  <section class="proof">
+    <div class="proof-in">
+      <div class="eyebrow" data-rise>Measured · 2026.01—09 · 4,180 场会议</div>
+      <h2 data-rise>不问你要不要纪要。<br>问你下周谁做什么。</h2>
+      <div class="stats">
+        <div class="stat" data-rise><b data-count="40" data-suffix="s">0s</b><span>一场会议出结果</span></div>
+        <div class="stat" data-rise><b data-count="92" data-suffix="%">0%</b><span>承诺识别准确率</span></div>
+        <div class="stat" data-rise><b data-count="3.4" data-dec="1" data-suffix="h">0h</b><span>每人每周省下</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 场景 3：过程 ============ -->
+  <section class="demo" id="how">
+    <div class="demo-head">
+      <div class="eyebrow" data-rise>看它怎么挑</div>
+      <h2 data-rise>左边是原样转写。<br>右边是它抽出来的东西。</h2>
+      <p data-rise>往下滚，看它一行一行读。</p>
+    </div>
+    <div class="demo-grid">
+      <div class="lines">
+        <div class="ln" data-step="0"><span class="t">10:42</span><span class="who">林</span><p>这版登录流程还是慢，用户要等两秒。</p></div>
+        <div class="ln" data-step="1"><span class="t">10:43</span><span class="who">陈</span><p>是接口的问题吧，我看下监控。</p></div>
+        <div class="ln quiet"><span class="t">10:43</span><span class="who">林</span><p>嗯，先歇口气。</p></div>
+        <div class="ln" data-step="2"><span class="t">10:44</span><span class="who">林</span><p>下周上线前必须解决。</p></div>
+        <div class="ln quiet"><span class="t">10:44</span><span class="who">陈</span><p>好。（笑）</p></div>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="n">Task 01</div><h3>登录流程卡顿排查</h3><div class="meta"><span>负责 <b>陈</b></span><span>截止 <b>下周一</b></span></div></article>
+        <article class="card"><div class="n">Task 02</div><h3>接口延迟监控上报</h3><div class="meta"><span>负责 <b>陈</b></span><span>截止 <b>本周三</b></span></div></article>
+        <article class="card"><div class="n">Task 03</div><h3>上线前性能验收</h3><div class="meta"><span>负责 <b>林</b></span><span>截止 <b>下周五</b></span></div></article>
+      </div>
+    </div>
+    <div class="demo-foot">
+      <span>识别 3 条承诺 · 跳过 2 段闲聊</span>
+      <span>用时 0:04</span>
+    </div>
+  </section>
+
+  <!-- ============ 场景 4：能力（pin ~3400px） ============ -->
+  <section class="scene can" id="can">
+    <div class="pin">
+      <div class="can-stage">
+        <h2 class="giant">它只做<br><em>三件事</em></h2>
+        <div class="can-list">
+          <div class="can-row">
+            <span class="k">Said</span>
+            <div><h3>谁答应了什么</h3><p>从"我来看看""那我先出个方案"里认出承诺，绑到说话人身上。没答应的话不会硬算成任务。</p></div>
+          </div>
+          <div class="can-row">
+            <span class="k">When</span>
+            <div><h3>什么时候要</h3><p>"下周上线前""周一""这两天"换成具体日期，挂到你们的时区和节假日。说不清的标黄，让发起人确认。</p></div>
+          </div>
+          <div class="can-row">
+            <span class="k">Unset</span>
+            <div><h3>哪里还没定</h3><p>悬而未决的决定单独列出来。一场会开完还缺三个决定，这件事本身比任务清单更值得看。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 场景 5：定价 ============ -->
+  <section class="price" id="pricing">
+    <div class="price-in">
+      <div class="price-head">
+        <div class="eyebrow" data-rise>Pricing</div>
+        <h2 data-rise>按人头，不按分钟。</h2>
+        <p data-rise>录音处理完 24 小时后删除。</p>
+      </div>
+      <div class="plans">
+        <div class="plan" data-rise>
+          <h3>试用</h3>
+          <div class="n">¥0</div>
+          <ul><li>每月 5 场会议</li><li>完整任务抽取</li><li>导出 Markdown</li><li>不需要信用卡</li></ul>
+          <a class="btn ghost" href="#">开始</a>
+        </div>
+        <div class="plan best" data-rise>
+          <h3>团队</h3>
+          <div class="n">¥49 <small>/ 人 / 月</small></div>
+          <ul><li>不限场次</li><li>任务自动进 Linear / 飞书</li><li>决定清单与周报</li><li>SSO 与审计日志</li></ul>
+          <a class="btn accent" href="#">试用 14 天</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 场景 6：闭环 ============ -->
+  <section class="closing" id="closing">
+    <div class="closing-in">
+      <h2>会开完了，<br>事情<em>才开始</em>。</h2>
+      <p>第一场会免费。开完就看结果，不用先学怎么用。</p>
+      <div class="hero-cta">
+        <a class="btn" href="#">免费试一次 <span aria-hidden>→</span></a>
+        <a class="btn ghost" href="#">预约演示</a>
+      </div>
+    </div>
+  </section>
+  <footer class="foot">© 2026 Tempo · 录音 24 小时删除</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+document.documentElement.classList.add('js');
+gsap.registerPlugin(ScrollTrigger);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============================================================
+   1. Lenis 单时钟
+   ============================================================ */
+let lenis = null;
+if (!reduced && window.Lenis) {
+  lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, touchMultiplier: 1.25, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t) => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+  window.__lenis = lenis;
+}
+document.querySelectorAll('[data-scroll]').forEach((a) => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    const t = document.querySelector(href);
+    if (!t) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(t, { offset: -70, duration: 1.2 });
+    else t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ============================================================
+   2. 光场：射线（离屏静态）+ 粒子（每帧，离心漂移 + 闪烁）
+   ============================================================ */
+(function rays(){
+  const c = document.getElementById('rays');
+  if (!c) return;
+  const dpr = Math.min(devicePixelRatio, 1.5);
+  let W, H, S;
+  const off = document.createElement('canvas');
+  const o = off.getContext('2d');
+  const ctx = c.getContext('2d');
+
+  let seed = 20261026;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+
+  function size() {
+    W = Math.round(innerWidth * 1.5); H = Math.round(innerHeight * 1.5);
+    S = Math.hypot(W, H);
+    c.width = W * dpr; c.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    off.width = off.height = S;
+    o.setTransform(1, 0, 0, 1, 0, 0);
+    o.clearRect(0, 0, S, S);
+    o.translate(S / 2, S / 2);
+    for (let i = 0; i < 240; i++) {
+      const a = (i / 240) * Math.PI * 2 + rnd() * 0.012;
+      const len = (S / 2) * (0.4 + rnd() * 0.6);
+      const w = rnd() < .1 ? 2.1 : 0.8 + rnd() * 0.7;
+      const g = o.createLinearGradient(0, 0, Math.cos(a) * len, Math.sin(a) * len);
+      g.addColorStop(0, 'rgba(140,180,255,0)');
+      g.addColorStop(0.12, `rgba(150,190,255,${(0.05 + rnd() * 0.10).toFixed(3)})`);
+      g.addColorStop(0.6, `rgba(110,150,235,${(0.02 + rnd() * 0.05).toFixed(3)})`);
+      g.addColorStop(1, 'rgba(80,110,200,0)');
+      o.strokeStyle = g; o.lineWidth = w; o.lineCap = 'round';
+      o.beginPath(); o.moveTo(0, 0);
+      o.lineTo(Math.cos(a) * len, Math.sin(a) * len); o.stroke();
+    }
+  }
+  size();
+  addEventListener('resize', size);
+
+  const P = Array.from({ length: 260 }, () => ({
+    a: rnd() * Math.PI * 2,
+    r: 40 + rnd() * rnd() * 4200,
+    s: 0.12 + rnd() * 0.5,
+    sz: 0.6 + rnd() * 2.4,
+    ph: rnd() * Math.PI * 2,
+  }));
+
+  let ang = 0;
+  const visible = { v: true };
+  new IntersectionObserver(([e]) => { visible.v = e.isIntersecting; }, { threshold: 0 }).observe(c);
+
+  gsap.ticker.add(() => {
+    if (!visible.v) return;
+    ang += 0.00009;
+    ctx.clearRect(0, 0, W, H);
+    ctx.save();
+    ctx.translate(W / 2, H / 2);
+    ctx.rotate(ang);
+    ctx.drawImage(off, -S / 2, -S / 2);
+    ctx.restore();
+    ctx.save();
+    ctx.translate(W / 2, H / 2);
+    ctx.rotate(ang * 1.35);
+    const now = performance.now() / 1000;
+    for (const p of P) {
+      p.r += p.s * 0.55;
+      if (p.r > S * 0.5) { p.r = 30 + rnd() * 60; p.a = rnd() * Math.PI * 2; }
+      const tw = 0.35 + 0.65 * Math.abs(Math.sin(now * (0.6 + p.s) + p.ph));
+      ctx.fillStyle = `rgba(210,225,255,${(0.12 + tw * 0.5).toFixed(3)})`;
+      ctx.beginPath();
+      ctx.arc(Math.cos(p.a) * p.r, Math.sin(p.a) * p.r, p.sz, 0, 6.2832);
+      ctx.fill();
+    }
+    ctx.restore();
+  });
+})();
+
+/* ============================================================
+   3. 场景 1 时间线：口号定住，副句一句一句来
+   ============================================================ */
+if (!reduced) {
+  const heroTl = gsap.timeline({
+    defaults: { ease: 'power2.out' },
+    scrollTrigger: {
+      trigger: '#hero', start: 'top top', end: '+=4000',
+      pin: '#hero .pin', scrub: 1.6, anticipatePin: 1, invalidateOnRefresh: true,
+    },
+  });
+
+  /* 口号是第一印象，显影放加载时——不能等用户滚 1300px 才显完整。
+     滚动时间线只管副句轮换和退场。 */
+  gsap.set('.slogan', { opacity: 0, y: 46, clipPath: 'inset(100% 0% 0% 0%)' });
+  gsap.set('.whisper', { opacity: 0, y: 34 });
+  gsap.to('.slogan', {
+    opacity: 1, y: 0, clipPath: 'inset(0% 0% 0% 0%)',
+    duration: 1.15, delay: 0.15, ease: 'expo.out',
+  });
+
+  heroTl
+    .addLabel('open', 0)
+    .to('.w1', { opacity: 1, y: 0, duration: 0.35 }, 0.05)
+    .to('.w1', { opacity: 0, y: -26, duration: 0.3 }, 0.55)
+    .to('.w2', { opacity: 1, y: 0, duration: 0.35 }, 0.75)
+    .to('.w2', { opacity: 0, y: -26, duration: 0.3 }, 1.25)
+    .to('.hero-glow', { scale: 1.5, opacity: 0.55, duration: 0.5, ease: 'power2.in' }, 1.35)
+    .to('.slogan', { opacity: 0, y: -40, filter: 'blur(6px)', duration: 0.45 }, 1.45)
+    .to('.hero-cap', { opacity: 0, duration: 0.25 }, 1.4);
+}
+</script>
+
+<script>
+/* ============================================================
+   4. 场景 4 时间线：128px 大字定住，三条逐条上来
+   ============================================================ */
+if (!reduced) {
+  const canTl = gsap.timeline({
+    defaults: { ease: 'power2.out' },
+    scrollTrigger: {
+      trigger: '#can', start: 'top top', end: '+=3400',
+      pin: '#can .pin', scrub: 1.6, anticipatePin: 1, invalidateOnRefresh: true,
+    },
+  });
+  gsap.set('.giant', { opacity: 0, y: 60, scale: 0.94 });
+
+  canTl
+    .addLabel('in', 0)
+    .to('.giant', { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'expo.out' }, 'in')
+    .to('.can-row', { opacity: 1, y: 0, duration: 0.6, stagger: 0.5, ease: 'power3.out' }, 'in+=0.5')
+    .to('.can-stage', { y: -40, opacity: 0.25, duration: 0.5, ease: 'power2.in' }, 'in+=2.6');
+}
+
+/* ============================================================
+   5. 过程段 + 数字 + batch
+   ============================================================ */
+if (!reduced) {
+  ScrollTrigger.batch('[data-rise]', {
+    start: 'top 88%', once: true,
+    onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.7, stagger: 0.06, ease: 'power2.out', overwrite: true }),
+  });
+
+  const lns = gsap.utils.toArray('.ln[data-step]');
+  const cards = gsap.utils.toArray('.card');
+  gsap.set(cards, { y: 26, opacity: 0.16, scale: 0.985 });
+
+  lns.forEach((ln, i) => {
+    const p = ln.querySelector('p');
+    gsap.fromTo(ln, { '--sweep': 0 }, {
+      '--sweep': 1, ease: 'power2.inOut',
+      scrollTrigger: { trigger: ln, start: 'top 78%', end: 'top 40%', scrub: 0.8 },
+    });
+    gsap.fromTo(p, { x: -6 }, {
+      x: 0, ease: 'power3.out',
+      scrollTrigger: { trigger: ln, start: 'top 78%', end: 'top 40%', scrub: 0.8 },
+    });
+    gsap.fromTo(cards[i], { y: 26, opacity: 0.16, scale: 0.985 }, {
+      y: 0, opacity: 1, scale: 1, ease: 'back.out(1.5)',
+      scrollTrigger: { trigger: ln, start: 'top 70%', end: 'top 34%', scrub: 0.8 },
+    });
+  });
+
+  document.querySelectorAll('[data-count]').forEach((el) => {
+    const to = parseFloat(el.dataset.count) || 0;
+    const dec = parseInt(el.dataset.dec || '0', 10);
+    const sfx = el.dataset.suffix || '';
+    const obj = { v: 0 };
+    ScrollTrigger.create({
+      trigger: el, start: 'top 85%', once: true,
+      onEnter: () => gsap.to(obj, {
+        v: to, duration: 1, ease: 'power2.out',
+        onUpdate: () => { el.textContent = (dec ? obj.v.toFixed(dec) : Math.round(obj.v)) + sfx; },
+      }),
+    });
+  });
+
+  if (document.fonts) document.fonts.ready.then(() => setTimeout(() => ScrollTrigger.refresh(), 200));
+} else {
+  document.querySelectorAll('[data-rise]').forEach((el) => { el.style.opacity = 1; });
+  document.querySelectorAll('.can-row').forEach((el) => { el.style.opacity = 1; el.style.transform = 'none'; });
+  document.querySelectorAll('.card').forEach((el) => { el.style.opacity = 1; });
+  document.querySelectorAll('[data-count]').forEach((el) => {
+    const to = parseFloat(el.dataset.count) || 0;
+    const dec = parseInt(el.dataset.dec || '0', 10);
+    el.textContent = (dec ? to.toFixed(dec) : to) + (el.dataset.suffix || '');
+  });
+  document.querySelectorAll('.slogan,.whisper').forEach((el) => {
+    el.style.opacity = 1; el.style.transform = 'none'; el.style.clipPath = 'none';
+  });
+}
+</script>
+</body>
+</html>

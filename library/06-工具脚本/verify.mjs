@@ -345,17 +345,24 @@ await browser.close();
 const isEditorial = d.ratio >= 5 && d.borders >= d.shadows;
 const isProduct = d.shadows > d.borders && d.ratio >= 3.8 && d.ratio <= 6.5;
 
-/* 中文 / 西文两套判据
+/* 中文/西文两套判据
    中文：字距 −0.02…+0.05em（可 normal）；大标题行高 1.0–1.5
-   西文：字距 ≤ −0.02em（必须设）；大标题行高 0.85–1.15           */
+   西文：字距 ≤ −0.02em（必须设）；大标题行高 0.85–1.15
+
+   字号分级：≥96px 的大字放宽到 −0.045em / 字重 ≤700。
+   排版规律是字号越大字距越负（128px 的 −0.03em 只占字面 3%，
+   汉字不会粘连），Apple/Linear/offerstudio 的 128px 级标题全是 w600–700。
+   一刀切的 −0.02 会把正常的大字判成失败。 */
 const isCJK = d.cjkRatio >= 0.3;
+const bigType = d.maxPx >= 96;
 const lsOK = isCJK
-  ? (d.lsEm === null || (d.lsEm >= -0.02 && d.lsEm <= 0.05))
+  ? (d.lsEm === null || (d.lsEm >= (bigType ? -0.045 : -0.02) && d.lsEm <= 0.05))
   : (d.lsEm !== null && d.lsEm <= -0.02);
 const lhOK = d.lhRatio === null
   ? true
   : (isCJK ? (d.lhRatio >= 1.0 && d.lhRatio <= 1.5)
            : (d.lhRatio >= 0.85 && d.lhRatio <= 1.15));
+const weightOK = +d.weight <= (bigType ? 700 : 600);
 
 const lsText = d.lsEm === null ? (isCJK ? 'normal' : 'normal（未设）') : `${d.lsEm}em`;
 const lhText = d.lhRatio === null ? 'normal' : String(d.lhRatio);
@@ -367,7 +374,7 @@ const rows = [
   ['1  控制台零报错', errs.length === 0, `${errs.length} 个错误` + (errs[0] ? ` · ${errs[0]}` : '')],
   ['2  字号比 ≥ 4.0', d.ratio >= 4, `${d.maxPx} / ${d.bodyPx} = ${d.ratio}`],
   ['3  非中性色 ≤ 2', d.accentCount <= 2, `${d.accentCount} 个 ${d.accents.join(' ')}`],
-  ['4  大标题字重 ≤ 600', +d.weight <= 600, `w${d.weight}`],
+  ['4  大标题字重', weightOK, `w${d.weight} @ ${d.maxPx}px（≥96px 放宽到 700）`],
   ['5  字距与行高', lsOK && lhOK,
     `ls ${lsText} ｜ lh ${lhText} ｜ ${isCJK ? '中文判据 -0.02…+0.05 / 1.0…1.5' : '西文判据 ≤-0.02 / 0.85…1.15'}`],
   ['6  字号档数 ≥ 5', d.sizeCount >= 5, `${d.sizeCount} 档`],
